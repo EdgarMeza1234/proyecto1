@@ -118,7 +118,7 @@ async function parsearTodo() {
   progreso.value = { actual: 0, total: 0, pct: 0, archivo: '' }
 
   const wsProto = location.protocol === 'https:' ? 'wss:' : 'ws:'
-  const wsUrl = `${wsProto}//${location.hostname}:4001`
+  const wsUrl = `${wsProto}//${location.host}/socket.io`
   const ws = new WebSocket(wsUrl)
 
   ws.onopen = () => {
@@ -156,7 +156,7 @@ async function procesarTodo() {
   progreso.value = { actual: 0, total: 0, pct: 0, archivo: '' }
 
   const wsProto = location.protocol === 'https:' ? 'wss:' : 'ws:'
-  const wsUrl = `${wsProto}//${location.hostname}:4001`
+  const wsUrl = `${wsProto}//${location.host}/socket.io`
   const ws = new WebSocket(wsUrl)
 
   ws.onopen = () => {

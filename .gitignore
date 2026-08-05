@@ -9,6 +9,15 @@
 node_modules/
 **/node_modules/
 
+# ===== Bases de datos y datos generados =====
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+backend/*.out
+backend/*.log
+*.out
+
 # ===== Builds =====
 dist/
 dist-ssr/
