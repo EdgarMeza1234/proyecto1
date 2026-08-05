@@ -1,0 +1,30 @@
+# docker-compose.yml - Sistema de Reparación
+# Levantar: docker compose up -d --build
+services:
+  backend:
+    build: ./backend
+    container_name: sisatt-backend-edgar
+    restart: always
+    ports:
+      - "3001:4001"
+    env_file: .env
+    environment:
+      - DB_HOST=192.168.1.151
+      - NODE_ENV=production
+    networks:
+      - sisatt-net
+
+  frontend:
+    build: ./frontend
+    container_name: sisatt-frontend-edgar
+    restart: always
+    ports:
+      - "3002:80"
+    depends_on:
+      - backend
+    networks:
+      - sisatt-net
+
+networks:
+  sisatt-net:
+    driver: bridge
