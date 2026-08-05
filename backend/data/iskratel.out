@@ -1,0 +1,1337 @@
+|Node|Directory Number|Registration Status|Subscriber Type|Supplementary Service Set
+|1000|02-4562001|Not registered (on 'UC-MAD')|Public|Comfort SIP
+|1000|02-4562002|Not registered (on 'UC-MAD')|Public|Comfort SIP
+|1000|02-4562003|Not registered (on 'UC-MAD')|Public|Comfort SIP
+|1000|02-4562004|Not registered (on 'UC-MAD')|Public|Comfort SIP
+|1000|02-4567000|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-4567001|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-4567002|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-4567003|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-4567004|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-4567005|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-4567006|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6220032|Not registered|Public|Abonado P_SIP
+|1000|02-6220033|Not registered|Public|Abonado P_SIP
+|1000|02-6220034|Not registered|Public|Abonado P_SIP
+|1000|02-6220035|Not registered|Public|Abonado P_SIP
+|1000|02-6220036|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6220037|Not registered|Public|Abonado P_SIP
+|1000|02-6220101|Not registered|Public|Abonado Prueba
+|1000|02-6220102|Not registered|Public|Abonado Prueba
+|1000|02-6220103|Not registered|Public|Abonado Prueba
+|1000|02-6221002|Registered from 10.50.10.79|Public|Abonado Comun
+|1000|02-6221006|Registered from 10.50.13.145|Public|BLOQUEO LD
+|1000|02-6221009|Registered from 10.50.14.165|Public|BLOQUEO LD
+|1000|02-6221016|Registered from 10.50.15.180|Public|BLOQUEO LD
+|1000|02-6221018|Registered from 10.50.15.220|Public|Abonado Comun
+|1000|02-6221020|Registered from 10.50.11.143|Public|Custom
+|1000|02-6221021|Not registered|Public|Custom
+|1000|02-6221141|Registered from 10.50.14.80|Public|BLOQUEO LD
+|1000|02-6221197|Registered from 10.50.14.44|Public|BLOQUEO LD
+|1000|02-6221206|Not registered|Public|Abonado Comun
+|1000|02-6221349|Registered from 10.50.10.143|Public|Abonado Comun
+|1000|02-6221372|Registered from 10.50.15.183|Public|BLOQUEO LD
+|1000|02-6221503|Registered from 10.50.11.239|Public|BLOQUEO LD
+|1000|02-6221762|Registered from 10.50.10.108|Public|Abonado Comun
+|1000|02-6222009|Not registered|Public|BLOQUEO LD
+|1000|02-6222016|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6222018|Registered from 10.50.10.88|Public|Abonado Comun
+|1000|02-6222022|Not registered|Public|BLOQUEO LD
+|1000|02-6222039|Not registered|Public|BLOQUEO LD
+|1000|02-6222057|Not registered|Public|BLOQUEO LD
+|1000|02-6222086|Registered from 10.50.15.244|Public|BLOQUEO LD
+|1000|02-6222112|Not registered|Public|BLOQUEO LD
+|1000|02-6222122|Registered from 10.50.15.239|Public|BLOQUEO LD
+|1000|02-6222165|Registered from 10.50.14.212|Public|BLOQUEO LD
+|1000|02-6222169|Registered from 10.50.15.33|Public|Abonado Comun
+|1000|02-6222231|Registered from 10.50.10.150|Public|BLOQUEO LD
+|1000|02-6222240|Registered from 10.50.12.1|Public|Abonado Comun
+|1000|02-6222594|Registered from 10.50.15.190|Public|Abonado Comun
+|1000|02-6222652|Registered from 10.50.12.235|Public|BLOQUEO LD
+|1000|02-6222691|Registered from 10.50.12.134|Public|Abonado Comun
+|1000|02-6222723|Not registered|Public|BLOQUEO LD
+|1000|02-6222777|Registered from MAD 6227095|Public|Abonado Comun
+|1000|02-6222804|Registered from 10.50.15.242|Public|Abonado Comun
+|1000|02-6222875|Not registered|Public|BLOQUEO LD
+|1000|02-6222885|Registered from 10.50.13.28|Public|Abonado Comun
+|1000|02-6223249|Registered from 10.50.15.204|Public|BLOQUEO LD
+|1000|02-6223620|Registered from 10.50.14.218|Public|Abonado Comun
+|1000|02-6223664|Registered from 10.50.14.4|Public|Abonado Comun
+|1000|02-6223697|Registered from 10.50.10.151|Public|BLOQUEO LD
+|1000|02-6223710|Registered from 10.50.14.51|Public|BLOQUEO LD
+|1000|02-6223721|Registered from 10.50.13.102|Public|Abonado Comun
+|1000|02-6223737|Not registered|Public|BLOQUEO LD
+|1000|02-6223778|Registered from 10.50.13.190|Public|BLOQUEO LD
+|1000|02-6223784|Registered from 10.50.13.114|Public|Abonado Comun
+|1000|02-6223930|Registered from 10.50.12.8|Public|BLOQUEO LD
+|1000|02-6223943|Registered from MAD 6223943|Public|Abonado Comun
+|1000|02-6223986|Registered from MAD 6223986|Public|Abonado Comun
+|1000|02-6223998|Registered from 10.50.13.84|Public|Abonado Comun
+|1000|02-6224013|Not registered|Public|Abonado Comun
+|1000|02-6224045|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6224190|Registered from 10.50.14.184|Public|BLOQUEO LD
+|1000|02-6224205|Registered from 10.50.14.151|Public|BLOQUEO LD
+|1000|02-6224220|Not registered|Public|BLOQUEO LD
+|1000|02-6224257|Registered from 10.50.15.55|Public|Abonado Comun
+|1000|02-6224324|Registered from 10.50.14.75|Public|Abonado Comun
+|1000|02-6224330|Registered from 10.50.13.248|Public|BLOQUEO LD
+|1000|02-6224362|Registered from 10.50.15.167|Public|BLOQUEO LD
+|1000|02-6224385|Registered from 10.50.14.64|Public|BLOQUEO LD
+|1000|02-6224415|Registered from 10.50.15.179|Public|BLOQUEO LD
+|1000|02-6224457|Registered from 10.50.11.240|Public|BLOQUEO LD
+|1000|02-6224642|Registered from 10.50.13.76|Public|BLOQUEO LD
+|1000|02-6224733|Registered from 10.50.14.14|Public|Abonado Comun
+|1000|02-6224832|Registered from 10.50.14.31|Public|BLOQUEO LD
+|1000|02-6224843|Registered from 10.50.14.39|Public|Abonado Comun
+|1000|02-6225098|Registered from 10.50.15.58|Public|BLOQUEO LD
+|1000|02-6225165|Registered from 10.50.11.249|Public|BLOQUEO LD
+|1000|02-6225213|Registered from 10.50.12.216|Public|Abonado Comun
+|1000|02-6225329|Registered from 10.50.14.62|Public|Abonado Comun
+|1000|02-6225406|Registered from MAD 6223986|Public|Abonado Comun
+|1000|02-6225447|Registered from 10.50.11.131|Public|BLOQUEO LD
+|1000|02-6225536|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6225642|Registered from 10.50.15.148|Public|BLOQUEO LD
+|1000|02-6225741|Registered from 10.50.12.11|Public|Abonado Comun
+|1000|02-6225893|Registered from 10.50.13.111|Public|BLOQUEO LD
+|1000|02-6226050|Registered from 10.50.14.69|Public|Abonado Comun
+|1000|02-6226087|Registered from 10.50.15.191|Public|Abonado Comun
+|1000|02-6226127|Registered from 10.50.12.107|Public|Abonado Comun
+|1000|02-6226277|Registered from 10.50.12.141|Public|BLOQUEO LD
+|1000|02-6226422|Registered from 10.50.14.93|Public|BLOQUEO LD
+|1000|02-6226505|Registered from 10.50.15.233|Public|BLOQUEO LD
+|1000|02-6226538|Registered from 10.50.15.56|Public|Abonado Comun
+|1000|02-6226582|Registered from 10.50.13.228|Public|BLOQUEO LD
+|1000|02-6226744|Registered from MAD 6226744|Public|BLOQUEO LD
+|1000|02-6226768|Registered from MAD-6230594|Public|BLOQUEO LD
+|1000|02-6226839|Registered from 10.50.15.40|Public|Abonado Prueba
+|1000|02-6226920|Registered from 10.50.11.46|Public|BLOQUEO LD
+|1000|02-6226941|Registered from 10.50.15.240|Public|BLOQUEO LD
+|1000|02-6226973|Registered from 10.50.15.221|Public|BLOQUEO LD
+|1000|02-6227073|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6227095|Registered from MAD 6227095|Public|Abonado Comun
+|1000|02-6227142|Registered from 10.50.13.128|Public|BLOQUEO LD
+|1000|02-6227161|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6227190|Registered from 10.50.15.211|Public|BLOQUEO LD
+|1000|02-6227222|Registered from MAD 6226744|Public|Abonado Comun
+|1000|02-6227224|Not registered|Public|BLOQUEO LD
+|1000|02-6227232|Registered from 10.50.14.71|Public|Abonado Comun
+|1000|02-6227297|Registered from 10.50.14.25|Public|BLOQUEO LD
+|1000|02-6227324|Not registered|Public|BLOQUEO LD
+|1000|02-6227422|Not registered|Public|Abonado Comun
+|1000|02-6227450|Registered from 10.50.11.159|Public|Abonado Comun
+|1000|02-6227500|Not registered|Public|Abonado Comun
+|1000|02-6227793|Registered from MAD 6230331|Public|BLOQUEO LD
+|1000|02-6227818|Registered from 10.50.13.167|Public|Abonado Comun
+|1000|02-6227844|Registered from 10.50.13.6|Public|BLOQUEO LD
+|1000|02-6227850|Registered from 10.50.13.192|Public|Abonado Comun
+|1000|02-6227873|Not registered|Public|BLOQUEO LD
+|1000|02-6227948|Registered from 10.50.15.6|Public|BLOQUEO LD
+|1000|02-6227955|Registered from 10.50.10.152|Public|Abonado Comun
+|1000|02-6227972|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6228046|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6228071|Not registered|Public|BLOQUEO LD
+|1000|02-6228132|Registered from 10.50.11.59|Public|BLOQUEO LD
+|1000|02-6228273|Registered from 10.50.15.68|Public|BLOQUEO LD
+|1000|02-6228281|Not registered|Public|Abonado P_SIP
+|1000|02-6228282|Not registered|Public|BLOQUEO LD
+|1000|02-6228283|Not registered|Public|Abonado P_SIP
+|1000|02-6228364|Registered from 10.50.14.137|Public|BLOQUEO LD
+|1000|02-6228409|Registered from 10.50.15.225|Public|Abonado Comun
+|1000|02-6228412|Registered from 10.50.10.90|Public|BLOQUEO LD
+|1000|02-6228446|Not registered|Public|BLOQUEO LD
+|1000|02-6228508|Registered from 10.50.15.151|Public|Abonado Comun
+|1000|02-6228533|Registered from 10.50.14.22|Public|Abonado Comun
+|1000|02-6228542|Registered from 10.50.14.34|Public|BLOQUEO LD
+|1000|02-6228553|Registered from 10.50.14.103|Public|Abonado Comun
+|1000|02-6228554|Registered from 10.50.15.42|Public|BLOQUEO LD
+|1000|02-6228601|Registered from 10.50.10.240|Public|Abonado Comun
+|1000|02-6228610|Registered from 10.50.15.86|Public|Abonado Comun
+|1000|02-6228612|Registered from 10.50.10.20|Public|BLOQUEO LD
+|1000|02-6228710|Registered from 10.50.13.154|Public|BLOQUEO LD
+|1000|02-6228831|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6228873|Registered from 10.50.13.61|Public|BLOQUEO LD
+|1000|02-6228892|Registered from 10.50.15.243|Public|Abonado Comun
+|1000|02-6228899|Registered from 10.50.12.129|Public|BLOQUEO LD
+|1000|02-6229002|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6229054|Not registered|Public|Abonado Comun
+|1000|02-6229174|Registered from 10.50.13.162|Public|BLOQUEO LD
+|1000|02-6229246|Registered from 10.50.15.226|Public|Abonado Comun
+|1000|02-6229288|Registered from 10.50.15.246|Public|Abonado Comun
+|1000|02-6229337|Registered from 10.50.14.172|Public|Abonado Comun
+|1000|02-6229375|Registered from 10.50.12.49|Public|BLOQUEO LD
+|1000|02-6229483|Not registered|Public|BLOQUEO LD
+|1000|02-6229590|Not registered|Public|Abonado Comun
+|1000|02-6229687|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6229732|Registered from 10.50.15.208|Public|Abonado Comun
+|1000|02-6229897|Registered from 10.50.11.2|Public|Abonado Comun
+|1000|02-6229909|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6229913|Registered from 10.50.13.13|Public|BLOQUEO LD
+|1000|02-6229997|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6230117|Registered from 10.50.15.205|Public|BLOQUEO LD
+|1000|02-6230161|Registered from 10.50.10.216|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6230181|Registered from 10.50.15.224|Public|BLOQUEO LD
+|1000|02-6230209|Registered from 10.50.14.185|Public|BLOQUEO LD
+|1000|02-6230304|Registered from 10.50.11.193|Public|BLOQUEO LD
+|1000|02-6230331|Registered from MAD 6230331|Public|Abonado Comun
+|1000|02-6230332|Not registered|Public|BLOQUEO LD
+|1000|02-6230444|Registered from 10.50.13.155|Public|BLOQUEO LD
+|1000|02-6230459|Registered from 10.50.11.78|Public|Abonado Comun
+|1000|02-6230485|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6230594|Registered from MAD-6230594|Public|Abonado Comun
+|1000|02-6230756|Registered from 10.50.10.17|Public|Abonado Comun
+|1000|02-6230773|Not registered|Public|BLOQUEO LD
+|1000|02-6230789|Registered from 10.50.10.119|Public|Abonado Comun
+|1000|02-6230804|Registered from 10.50.12.2|Public|Abonado Comun
+|1000|02-6230909|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6231020|Not registered (on 'MAD 6231034')|Public|Abonado Comun
+|1000|02-6231034|Not registered (on 'MAD 6231034')|Public|Abonado Comun
+|1000|02-6231070|Registered from 10.50.10.72|Public|BLOQUEO LD
+|1000|02-6231191|Registered from 10.50.12.63|Public|Abonado Comun
+|1000|02-6231236|Registered from 10.50.15.212|Public|BLOQUEO LD
+|1000|02-6231267|Registered from 10.50.14.59|Public|BLOQUEO LD
+|1000|02-6231278|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6231350|Registered from UC-MAD|Public|Abonado Comun
+|1000|02-6231351|Not registered|Public|BLOQUEO LD
+|1000|02-6231352|Not registered (on 'UC-MAD')|Centrex|yealink_SS_3
+|1000|02-6231353|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6231373|Registered from 10.50.10.239|Public|Abonado Comun
+|1000|02-6231397|Not registered|Public|Abonado Comun
+|1000|02-6231428|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6231457|Not registered|Public|Abonado Comun
+|1000|02-6231515|Not registered|Public|Abonado Comun
+|1000|02-6231575|Registered from 10.50.15.236|Public|BLOQUEO LD
+|1000|02-6231658|Not registered|Public|BLOQUEO LD
+|1000|02-6231682|Registered from 10.50.11.141|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6231731|Registered from 10.50.10.183|Public|BLOQUEO LD
+|1000|02-6232100|Not registered (on 'UC-MAD')|Public|Abonado Comun
+|1000|02-6232101|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232102|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232103|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232105|Not registered (on 'MAD 6232105')|Public|BLOQUEO LD
+|1000|02-6232106|Not registered (on 'MAD 6232105')|Public|BLOQUEO LD
+|1000|02-6232108|Not registered|Public|BLOQUEO LD
+|1000|02-6232109|Registered from 10.50.12.5|Public|BLOQUEO LD
+|1000|02-6232110|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232111|Not registered|Public|BLOQUEO LD
+|1000|02-6232112|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232113|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-6232114|Not registered (on 'UC-MAD')|Public|Custom
+|1000|02-6232115|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232116|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232117|Not registered|Public|BLOQUEO LD
+|1000|02-6232118|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232119|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232120|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232121|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232122|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232123|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232124|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232125|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232126|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232127|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232128|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232129|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232130|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232131|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232132|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232133|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232134|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232135|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232136|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232137|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232138|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232139|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232140|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232141|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232142|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232143|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232144|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232145|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232146|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232147|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232148|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232149|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232150|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232151|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232152|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232153|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232154|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232157|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232158|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232159|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232160|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232161|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232162|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232163|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232164|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232165|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232166|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232167|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232168|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232169|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232170|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232171|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232172|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232173|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232174|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232175|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232176|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232177|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232178|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232179|Not registered (on 'UC-MAD')|Centrex|BLOQUEO LD
+|1000|02-6232180|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232181|Not registered (on 'UC-MAD')|Centrex|yealink_SS_3
+|1000|02-6232182|Not registered (on 'UC-MAD')|Centrex|yealink_SS
+|1000|02-6232183|Not registered (on 'UC-MAD')|Centrex|yealink_SS_3
+|1000|02-6232184|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232185|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232186|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232187|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232188|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232189|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232190|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232191|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232192|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232193|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232194|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232195|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6232199|Not registered|Public|BLOQUEO LD
+|1000|02-6232200|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232201|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232207|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6232208|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232209|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232210|Not registered|Public|Abonado P_SIP
+|1000|02-6232211|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232212|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232215|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232216|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232220|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232222|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232223|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232250|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232251|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6232252|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232255|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232257|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232260|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232261|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232262|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232265|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232266|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232267|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232268|Registered from UC-MAD|Public|advancedSSS
+|1000|02-6232270|Not registered (on 'UC-MAD')|Public|Abonado Comun
+|1000|02-6232275|Not registered (on 'UC-MAD')|Public|advancedSSS_2
+|1000|02-6232280|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232281|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232282|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232283|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6232299|Registered from 10.50.11.146|Public|BLOQUEO LD
+|1000|02-6234000|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6240002|Registered from 10.50.15.232|Public|BLOQUEO LD
+|1000|02-6240004|Registered from 10.50.11.192|Public|BLOQUEO LD
+|1000|02-6240005|Not registered (on 'UC-MAD')|Public|basicSSS
+|1000|02-6240006|Not registered|Public|BLOQUEO LD
+|1000|02-6240007|Registered from 10.50.13.236|Public|BLOQUEO LD
+|1000|02-6240008|Not registered|Public|BLOQUEO LD
+|1000|02-6240009|Registered from 10.50.11.4|Public|BLOQUEO LD
+|1000|02-6240010|Registered from 10.50.12.156|Public|BLOQUEO LD
+|1000|02-6240011|Registered from 10.50.15.165|Public|BLOQUEO LD
+|1000|02-6240012|Not registered|Public|BLOQUEO LD
+|1000|02-6240013|Registered from 10.50.15.209|Public|BLOQUEO LD
+|1000|02-6240014|Registered from 10.50.10.191|Public|BLOQUEO LD
+|1000|02-6240015|Registered from 10.50.14.254|Public|BLOQUEO LD
+|1000|02-6240016|Not registered|Public|BLOQUEO LD
+|1000|02-6240017|Registered from 10.50.11.139|Public|Custom
+|1000|02-6240018|Not registered|Public|BLOQUEO LD
+|1000|02-6240019|Registered from 10.50.15.197|Public|BLOQUEO LD
+|1000|02-6240020|Registered from 10.50.13.156|Public|BLOQUEO LD
+|1000|02-6240021|Registered from 10.50.15.201|Public|BLOQUEO LD
+|1000|02-6240022|Registered from 10.50.15.141|Public|BLOQUEO LD
+|1000|02-6240023|Registered from 10.50.10.71|Public|BLOQUEO LD
+|1000|02-6240024|Registered from 10.50.12.180|Public|BLOQUEO LD
+|1000|02-6240025|Registered from 10.50.15.182|Public|BLOQUEO LD
+|1000|02-6240026|Registered from 10.50.15.189|Public|BLOQUEO LD
+|1000|02-6240027|Registered from 10.50.15.177|Public|BLOQUEO LD
+|1000|02-6240028|Not registered|Public|BLOQUEO LD
+|1000|02-6240029|Not registered|Public|BLOQUEO LD
+|1000|02-6240030|Not registered|Public|BLOQUEO LD
+|1000|02-6240031|Registered from 10.50.12.110|Public|BLOQUEO LD
+|1000|02-6240032|Not registered|Public|BLOQUEO LD
+|1000|02-6240033|Not registered|Public|BLOQUEO LD
+|1000|02-6240034|Registered from 10.50.15.164|Public|BLOQUEO LD
+|1000|02-6240035|Registered from 10.50.12.219|Public|BLOQUEO LD
+|1000|02-6240036|Not registered|Public|BLOQUEO LD
+|1000|02-6240037|Not registered|Public|BLOQUEO LD
+|1000|02-6240038|Registered from 10.50.12.119|Public|BLOQUEO LD
+|1000|02-6240039|Registered from 10.50.15.156|Public|BLOQUEO LD
+|1000|02-6240040|Registered from 10.50.15.160|Public|BLOQUEO LD
+|1000|02-6240041|Registered from 10.50.15.144|Public|BLOQUEO LD
+|1000|02-6240042|Registered from 10.50.15.157|Public|BLOQUEO LD
+|1000|02-6240043|Not registered|Public|BLOQUEO LD
+|1000|02-6240044|Not registered|Public|BLOQUEO LD
+|1000|02-6240046|Not registered|Public|BLOQUEO LD
+|1000|02-6240047|Not registered|Public|BLOQUEO LD
+|1000|02-6240049|Not registered|Public|BLOQUEO LD
+|1000|02-6240050|Not registered|Public|BLOQUEO LD
+|1000|02-6240051|Registered from 10.50.10.55|Public|BLOQUEO LD
+|1000|02-6240052|Registered from 10.50.13.38|Public|BLOQUEO LD
+|1000|02-6240054|Not registered|Public|BLOQUEO LD
+|1000|02-6240056|Not registered|Public|BLOQUEO LD
+|1000|02-6240057|Registered from 10.50.15.135|Public|BLOQUEO LD
+|1000|02-6240058|Registered from 10.50.13.209|Public|BLOQUEO LD
+|1000|02-6240059|Registered from 10.50.13.27|Public|BLOQUEO LD
+|1000|02-6240060|Registered from 10.50.15.65|Public|BLOQUEO LD
+|1000|02-6240061|Registered from 10.50.10.57|Public|BLOQUEO LD
+|1000|02-6240062|Not registered|Public|BLOQUEO LD
+|1000|02-6240063|Registered from 10.50.15.123|Public|BLOQUEO LD
+|1000|02-6240064|Not registered|Public|BLOQUEO LD
+|1000|02-6240066|Registered from 10.50.10.182|Public|BLOQUEO LD
+|1000|02-6240067|Not registered|Public|BLOQUEO LD
+|1000|02-6240068|Registered from 10.50.12.196|Public|BLOQUEO LD
+|1000|02-6240070|Registered from 10.50.11.74|Public|BLOQUEO LD
+|1000|02-6240071|Registered from 10.50.11.183|Public|BLOQUEO LD
+|1000|02-6240073|Registered from 10.50.14.58|Public|BLOQUEO LD
+|1000|02-6240074|Not registered|Public|BLOQUEO LD
+|1000|02-6240075|Registered from 10.50.15.124|Public|BLOQUEO LD
+|1000|02-6240076|Registered from 10.50.11.62|Public|BLOQUEO LD
+|1000|02-6240077|Not registered|Public|BLOQUEO LD
+|1000|02-6240078|Registered from 10.50.11.237|Public|BLOQUEO LD
+|1000|02-6240082|Registered from 10.50.14.0|Public|BLOQUEO LD
+|1000|02-6240084|Not registered|Public|BLOQUEO LD
+|1000|02-6240085|Not registered|Public|BLOQUEO LD
+|1000|02-6240088|Registered from 10.50.11.20|Public|BLOQUEO LD
+|1000|02-6240089|Not registered|Public|BLOQUEO LD
+|1000|02-6240090|Registered from 10.50.15.69|Public|BLOQUEO LD
+|1000|02-6240092|Registered from 10.50.15.113|Public|BLOQUEO LD
+|1000|02-6240094|Registered from 10.50.11.60|Public|BLOQUEO LD
+|1000|02-6240095|Not registered|Public|BLOQUEO LD
+|1000|02-6240096|Not registered|Public|BLOQUEO LD
+|1000|02-6240097|Registered from 10.50.12.72|Public|BLOQUEO LD
+|1000|02-6240098|Registered from 10.50.11.89|Public|BLOQUEO LD
+|1000|02-6240099|Registered from 10.50.15.166|Public|BLOQUEO LD
+|1000|02-6240100|Registered from 10.50.15.3|Public|BLOQUEO LD
+|1000|02-6240101|Not registered|Public|BLOQUEO LD
+|1000|02-6240102|Registered from 10.50.11.200|Public|BLOQUEO LD
+|1000|02-6240103|Registered from 10.50.10.218|Public|BLOQUEO LD
+|1000|02-6240104|Registered from 10.50.15.20|Public|BLOQUEO LD
+|1000|02-6240105|Registered from 10.50.13.55|Public|BLOQUEO LD
+|1000|02-6240106|Registered from 10.50.15.5|Public|BLOQUEO LD
+|1000|02-6240107|Registered from 10.50.15.13|Public|BLOQUEO LD
+|1000|02-6240108|Registered from 10.50.15.37|Public|BLOQUEO LD
+|1000|02-6240109|Not registered|Public|BLOQUEO LD
+|1000|02-6240110|Registered from 10.50.11.176|Public|BLOQUEO LD
+|1000|02-6240113|Registered from 10.50.14.255|Public|BLOQUEO LD
+|1000|02-6240114|Not registered|Public|BLOQUEO LD
+|1000|02-6240115|Registered from 10.50.15.30|Public|BLOQUEO LD
+|1000|02-6240116|Registered from 10.50.15.29|Public|BLOQUEO LD
+|1000|02-6240117|Registered from 10.50.15.19|Public|BLOQUEO LD
+|1000|02-6240120|Registered from 10.50.15.17|Public|BLOQUEO LD
+|1000|02-6240121|Registered from 10.50.13.49|Public|BLOQUEO LD
+|1000|02-6240122|Not registered|Public|BLOQUEO LD
+|1000|02-6240123|Registered from 10.50.13.36|Public|BLOQUEO LD
+|1000|02-6240124|Registered from 10.50.15.2|Public|BLOQUEO LD
+|1000|02-6240125|Registered from 10.50.11.169|Public|BLOQUEO LD
+|1000|02-6240126|Not registered|Public|BLOQUEO LD
+|1000|02-6240128|Registered from 10.50.14.252|Public|BLOQUEO LD
+|1000|02-6240129|Not registered|Public|BLOQUEO LD
+|1000|02-6240130|Registered from 10.50.15.120|Public|BLOQUEO LD
+|1000|02-6240131|Registered from 10.50.11.90|Public|BLOQUEO LD
+|1000|02-6240132|Registered from 10.50.14.81|Public|BLOQUEO LD
+|1000|02-6240133|Registered from 10.50.14.33|Public|BLOQUEO LD
+|1000|02-6240135|Not registered|Public|BLOQUEO LD
+|1000|02-6240136|Registered from 10.50.14.240|Public|BLOQUEO LD
+|1000|02-6240138|Not registered|Public|BLOQUEO LD
+|1000|02-6240139|Registered from 10.50.14.166|Public|BLOQUEO LD
+|1000|02-6240140|Registered from 10.50.11.179|Public|BLOQUEO LD
+|1000|02-6240141|Not registered|Public|BLOQUEO LD
+|1000|02-6240142|Not registered|Public|BLOQUEO LD
+|1000|02-6240143|Registered from 10.50.13.188|Public|BLOQUEO LD
+|1000|02-6240144|Registered from 10.50.11.208|Public|BLOQUEO LD
+|1000|02-6240145|Not registered|Public|BLOQUEO LD
+|1000|02-6240146|Registered from 10.50.10.5|Public|BLOQUEO LD
+|1000|02-6240147|Not registered|Public|BLOQUEO LD
+|1000|02-6240148|Not registered|Public|BLOQUEO LD
+|1000|02-6240149|Not registered|Public|BLOQUEO LD
+|1000|02-6240150|Not registered|Public|BLOQUEO LD
+|1000|02-6240151|Registered from 10.50.15.9|Public|BLOQUEO LD
+|1000|02-6240152|Not registered|Public|BLOQUEO LD
+|1000|02-6240153|Not registered|Public|BLOQUEO LD
+|1000|02-6240154|Registered from 10.50.15.27|Public|BLOQUEO LD
+|1000|02-6240155|Not registered|Public|BLOQUEO LD
+|1000|02-6240156|Registered from 10.50.14.190|Public|BLOQUEO LD
+|1000|02-6240157|Registered from 10.50.14.189|Public|BLOQUEO LD
+|1000|02-6240158|Registered from 10.50.15.31|Public|BLOQUEO LD
+|1000|02-6240159|Registered from 10.50.11.64|Public|BLOQUEO LD
+|1000|02-6240160|Not registered|Public|BLOQUEO LD
+|1000|02-6240161|Registered from 10.50.11.255|Public|BLOQUEO LD
+|1000|02-6240162|Registered from 10.50.12.172|Public|BLOQUEO LD
+|1000|02-6240163|Not registered|Public|BLOQUEO LD
+|1000|02-6240164|Not registered|Public|BLOQUEO LD
+|1000|02-6240165|Registered from 10.50.11.43|Public|BLOQUEO LD
+|1000|02-6240166|Registered from 10.50.14.164|Public|BLOQUEO LD
+|1000|02-6240168|Registered from 10.50.15.105|Public|BLOQUEO LD
+|1000|02-6240169|Registered from 10.50.13.152|Public|BLOQUEO LD
+|1000|02-6240170|Not registered|Public|BLOQUEO LD
+|1000|02-6240171|Registered from 10.50.12.223|Public|BLOQUEO LD
+|1000|02-6240172|Not registered|Public|BLOQUEO LD
+|1000|02-6240175|Not registered|Public|BLOQUEO LD
+|1000|02-6240176|Registered from 10.50.14.30|Public|BLOQUEO LD
+|1000|02-6240178|Registered from 10.50.13.127|Public|BLOQUEO LD
+|1000|02-6240179|Not registered|Public|BLOQUEO LD
+|1000|02-6240180|Registered from 10.50.14.78|Public|BLOQUEO LD
+|1000|02-6240181|Registered from 10.50.11.16|Public|BLOQUEO LD
+|1000|02-6240182|Not registered|Public|BLOQUEO LD
+|1000|02-6240183|Registered from 10.50.14.128|Public|BLOQUEO LD
+|1000|02-6240184|Not registered|Public|BLOQUEO LD
+|1000|02-6240185|Not registered|Public|Abonado Comun
+|1000|02-6240188|Registered from 10.50.14.186|Public|BLOQUEO LD
+|1000|02-6240189|Registered from 10.50.14.37|Public|BLOQUEO LD
+|1000|02-6240191|Registered from 10.50.12.4|Public|BLOQUEO LD
+|1000|02-6240192|Registered from 10.50.11.119|Public|BLOQUEO LD
+|1000|02-6240193|Registered from 10.50.14.97|Public|BLOQUEO LD
+|1000|02-6240196|Not registered|Public|BLOQUEO LD
+|1000|02-6240198|Registered from 10.50.13.159|Public|BLOQUEO LD
+|1000|02-6240200|Registered from 10.50.15.152|Public|BLOQUEO LD
+|1000|02-6240201|Registered from 10.50.10.60|Public|BLOQUEO LD
+|1000|02-6240202|Registered from 10.50.14.76|Public|BLOQUEO LD
+|1000|02-6240204|Registered from 10.50.12.102|Public|BLOQUEO LD
+|1000|02-6240205|Not registered|Public|BLOQUEO LD
+|1000|02-6240206|Not registered|Public|BLOQUEO LD
+|1000|02-6240207|Not registered|Public|BLOQUEO LD
+|1000|02-6240209|Not registered|Public|BLOQUEO LD
+|1000|02-6240211|Registered from 10.50.14.43|Public|BLOQUEO LD
+|1000|02-6240213|Not registered|Public|BLOQUEO LD
+|1000|02-6240214|Registered from 10.50.11.38|Public|BLOQUEO LD
+|1000|02-6240215|Registered from 10.50.13.104|Public|BLOQUEO LD
+|1000|02-6240216|Registered from 10.50.11.209|Public|BLOQUEO LD
+|1000|02-6240217|Registered from 10.50.14.36|Public|BLOQUEO LD
+|1000|02-6240218|Registered from 10.50.15.213|Public|BLOQUEO LD
+|1000|02-6240219|Not registered|Public|BLOQUEO LD
+|1000|02-6240220|Registered from 10.50.14.26|Public|BLOQUEO LD
+|1000|02-6240221|Not registered|Public|BLOQUEO LD
+|1000|02-6240224|Registered from 10.50.12.42|Public|BLOQUEO LD
+|1000|02-6240225|Not registered|Public|BLOQUEO LD
+|1000|02-6240230|Not registered|Public|BLOQUEO LD
+|1000|02-6240231|Registered from 10.50.12.32|Public|BLOQUEO LD
+|1000|02-6240232|Registered from 10.50.10.45|Public|BLOQUEO LD
+|1000|02-6240233|Registered from 10.50.14.208|Public|BLOQUEO LD
+|1000|02-6240234|Not registered|Public|BLOQUEO LD
+|1000|02-6240235|Registered from 10.50.11.7|Public|BLOQUEO LD
+|1000|02-6240236|Registered from 10.50.13.17|Public|BLOQUEO LD
+|1000|02-6240238|Registered from 10.50.10.99|Public|BLOQUEO LD
+|1000|02-6240239|Registered from 10.50.15.251|Public|BLOQUEO LD
+|1000|02-6240240|Not registered|Public|BLOQUEO LD
+|1000|02-6240241|Registered from 10.50.10.101|Public|BLOQUEO LD
+|1000|02-6240242|Not registered|Public|BLOQUEO LD
+|1000|02-6240243|Not registered|Public|BLOQUEO LD
+|1000|02-6240245|Not registered|Public|BLOQUEO LD
+|1000|02-6240246|Registered from 10.50.13.177|Public|BLOQUEO LD
+|1000|02-6240248|Not registered|Public|BLOQUEO LD
+|1000|02-6240249|Not registered|Public|BLOQUEO LD
+|1000|02-6240250|Registered from 10.50.13.214|Public|BLOQUEO LD
+|1000|02-6240252|Registered from 10.50.13.198|Public|BLOQUEO LD
+|1000|02-6240253|Not registered|Public|BLOQUEO LD
+|1000|02-6240254|Registered from 10.50.13.195|Public|BLOQUEO LD
+|1000|02-6240255|Registered from 10.50.13.193|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6240256|Registered from 10.50.13.189|Public|BLOQUEO LD
+|1000|02-6240257|Registered from 10.50.14.72|Public|BLOQUEO LD
+|1000|02-6240258|Registered from 10.50.13.181|Public|Abonado Comun
+|1000|02-6240259|Registered from 10.50.13.182|Public|BLOQUEO LD
+|1000|02-6240260|Registered from 10.50.13.179|Public|BLOQUEO LD
+|1000|02-6240263|Not registered|Public|BLOQUEO LD
+|1000|02-6240265|Registered from 10.50.15.100|Public|BLOQUEO LD
+|1000|02-6240266|Registered from 10.50.10.219|Public|BLOQUEO LD
+|1000|02-6240268|Registered from 10.50.11.100|Public|BLOQUEO LD
+|1000|02-6240269|Registered from 10.50.11.48|Public|BLOQUEO LD
+|1000|02-6240270|Registered from 10.50.10.50|Public|BLOQUEO LD
+|1000|02-6240273|Registered from 10.50.13.140|Public|BLOQUEO LD
+|1000|02-6240274|Registered from 10.50.13.137|Public|BLOQUEO LD
+|1000|02-6240275|Registered from 10.50.13.138|Public|BLOQUEO LD
+|1000|02-6240277|Not registered|Public|BLOQUEO LD
+|1000|02-6240278|Not registered|Public|BLOQUEO LD
+|1000|02-6240279|Registered from 10.50.13.96|Public|BLOQUEO LD
+|1000|02-6240280|Not registered|Public|BLOQUEO LD
+|1000|02-6240281|Not registered|Public|BLOQUEO LD
+|1000|02-6240282|Registered from 10.50.10.95|Public|BLOQUEO LD
+|1000|02-6240283|Not registered|Public|BLOQUEO LD
+|1000|02-6240284|Registered from 10.50.13.101|Public|BLOQUEO LD
+|1000|02-6240285|Not registered|Public|BLOQUEO LD
+|1000|02-6240286|Registered from 10.50.13.91|Public|BLOQUEO LD
+|1000|02-6240287|Registered from 10.50.12.165|Public|BLOQUEO LD
+|1000|02-6240288|Registered from 10.50.13.97|Public|BLOQUEO LD
+|1000|02-6240289|Registered from 10.50.13.93|Public|BLOQUEO LD
+|1000|02-6240290|Registered from 10.50.13.110|Public|BLOQUEO LD
+|1000|02-6240291|Registered from 10.50.13.89|Public|BLOQUEO LD
+|1000|02-6240292|Registered from 10.50.13.85|Public|BLOQUEO LD
+|1000|02-6240293|Registered from 10.50.11.105|Public|BLOQUEO LD
+|1000|02-6240294|Registered from 10.50.12.155|Public|BLOQUEO LD
+|1000|02-6240295|Registered from 10.50.13.7|Public|BLOQUEO LD
+|1000|02-6240297|Registered from 10.50.13.44|Public|BLOQUEO LD
+|1000|02-6240298|Registered from 10.50.14.95|Public|BLOQUEO LD
+|1000|02-6240299|Registered from 10.50.13.71|Public|BLOQUEO LD
+|1000|02-6240301|Registered from 10.50.13.68|Public|BLOQUEO LD
+|1000|02-6240302|Not registered|Public|BLOQUEO LD
+|1000|02-6240304|Registered from 10.50.13.58|Public|BLOQUEO LD
+|1000|02-6240305|Registered from 10.50.13.34|Public|Abonado Comun
+|1000|02-6240306|Not registered|Public|BLOQUEO LD
+|1000|02-6240307|Registered from 10.50.13.54|Public|BLOQUEO LD
+|1000|02-6240308|Not registered|Public|BLOQUEO LD
+|1000|02-6240309|Registered from 10.50.13.43|Public|BLOQUEO LD
+|1000|02-6240310|Registered from 10.50.10.87|Public|BLOQUEO LD
+|1000|02-6240311|Not registered|Public|BLOQUEO LD
+|1000|02-6240312|Registered from 10.50.13.41|Public|BLOQUEO LD
+|1000|02-6240313|Registered from 10.50.13.39|Public|BLOQUEO LD
+|1000|02-6240315|Registered from 10.50.13.37|Public|BLOQUEO LD
+|1000|02-6240318|Registered from 10.50.13.33|Public|BLOQUEO LD
+|1000|02-6240319|Not registered|Public|BLOQUEO LD
+|1000|02-6240321|Registered from 10.50.11.205|Public|BLOQUEO LD
+|1000|02-6240322|Registered from 10.50.13.24|Public|BLOQUEO LD
+|1000|02-6240323|Registered from 10.50.13.23|Public|BLOQUEO LD
+|1000|02-6240324|Registered from 10.50.14.54|Public|BLOQUEO LD
+|1000|02-6240327|Registered from 10.50.14.126|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6240330|Registered from 10.50.13.12|Public|BLOQUEO LD
+|1000|02-6240332|Registered from 10.50.13.11|Public|BLOQUEO LD
+|1000|02-6240333|Registered from 10.50.15.150|Public|BLOQUEO LD
+|1000|02-6240334|Registered from 10.50.11.250|Public|BLOQUEO LD
+|1000|02-6240335|Not registered|Public|BLOQUEO LD
+|1000|02-6240336|Not registered|Public|BLOQUEO LD
+|1000|02-6240337|Registered from 10.50.13.3|Public|BLOQUEO LD
+|1000|02-6240341|Registered from 10.50.12.250|Public|BLOQUEO LD
+|1000|02-6240342|Registered from 10.50.12.255|Public|BLOQUEO LD
+|1000|02-6240344|Registered from 10.50.12.243|Public|BLOQUEO LD
+|1000|02-6240346|Registered from 10.50.12.240|Public|BLOQUEO LD
+|1000|02-6240347|Registered from 10.50.14.160|Public|BLOQUEO LD
+|1000|02-6240348|Registered from 10.50.11.186|Public|BLOQUEO LD
+|1000|02-6240349|Registered from 10.50.12.123|Public|BLOQUEO LD
+|1000|02-6240351|Registered from 10.50.12.236|Public|BLOQUEO LD
+|1000|02-6240353|Not registered|Public|BLOQUEO LD
+|1000|02-6240354|Registered from 10.50.12.229|Public|BLOQUEO LD
+|1000|02-6240355|Registered from 10.50.12.227|Public|BLOQUEO LD
+|1000|02-6240358|Registered from 10.50.12.214|Public|BLOQUEO LD
+|1000|02-6240359|Registered from 10.50.12.212|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6240360|Registered from 10.50.12.205|Public|BLOQUEO LD
+|1000|02-6240361|Registered from 10.50.12.207|Public|BLOQUEO LD
+|1000|02-6240362|Registered from 10.50.12.208|Public|BLOQUEO LD
+|1000|02-6240363|Registered from 10.50.13.207|Public|BLOQUEO LD
+|1000|02-6240365|Registered from 10.50.12.199|Public|BLOQUEO LD
+|1000|02-6240366|Registered from 10.50.12.203|Public|BLOQUEO LD
+|1000|02-6240369|Registered from 10.50.12.192|Public|BLOQUEO LD
+|1000|02-6240370|Not registered|Public|BLOQUEO LD
+|1000|02-6240373|Registered from 10.50.12.188|Public|BLOQUEO LD
+|1000|02-6240374|Registered from 10.50.12.169|Public|BLOQUEO LD
+|1000|02-6240375|Registered from 10.50.12.187|Public|BLOQUEO LD
+|1000|02-6240376|Registered from 10.50.12.175|Public|BLOQUEO LD
+|1000|02-6240377|Registered from 10.50.13.215|Public|BLOQUEO LD
+|1000|02-6240379|Not registered|Public|BLOQUEO LD
+|1000|02-6240381|Registered from 10.50.12.166|Public|BLOQUEO LD
+|1000|02-6240382|Not registered|Public|BLOQUEO LD
+|1000|02-6240385|Registered from 10.50.12.162|Public|BLOQUEO LD
+|1000|02-6240386|Registered from 10.50.12.159|Public|BLOQUEO LD
+|1000|02-6240387|Registered from 10.50.12.161|Public|BLOQUEO LD
+|1000|02-6240388|Not registered|Public|BLOQUEO LD
+|1000|02-6240389|Not registered|Public|BLOQUEO LD
+|1000|02-6240391|Registered from 10.50.10.200|Public|BLOQUEO LD
+|1000|02-6240392|Registered from 10.50.12.154|Public|BLOQUEO LD
+|1000|02-6240393|Registered from 10.50.10.166|Public|BLOQUEO LD
+|1000|02-6240394|Registered from 10.50.12.153|Public|BLOQUEO LD
+|1000|02-6240395|Not registered|Public|BLOQUEO LD
+|1000|02-6240396|Registered from 10.50.11.221|Public|BLOQUEO LD
+|1000|02-6240397|Registered from 10.50.12.92|Public|BLOQUEO LD
+|1000|02-6240399|Registered from 10.50.12.147|Public|BLOQUEO LD
+|1000|02-6240400|Registered from 10.50.12.194|Public|BLOQUEO LD
+|1000|02-6240402|Registered from 10.50.13.203|Public|BLOQUEO LD
+|1000|02-6240403|Not registered|Public|BLOQUEO LD
+|1000|02-6240404|Registered from 10.50.12.80|Public|BLOQUEO LD
+|1000|02-6240406|Registered from 10.50.12.143|Public|BLOQUEO LD
+|1000|02-6240407|Registered from 10.50.13.194|Public|BLOQUEO LD
+|1000|02-6240410|Registered from 10.50.12.139|Public|BLOQUEO LD
+|1000|02-6240411|Not registered|Public|BLOQUEO LD
+|1000|02-6240412|Not registered|Public|BLOQUEO LD
+|1000|02-6240413|Registered from 10.50.12.122|Public|BLOQUEO LD
+|1000|02-6240415|Not registered|Public|Abonado Comun
+|1000|02-6240416|Registered from 10.50.12.121|Public|BLOQUEO LD
+|1000|02-6240417|Registered from 10.50.11.189|Public|BLOQUEO LD
+|1000|02-6240419|Registered from 10.50.15.112|Public|BLOQUEO LD
+|1000|02-6240422|Registered from 10.50.13.238|Public|BLOQUEO LD
+|1000|02-6240425|Registered from 10.50.11.72|Public|BLOQUEO LD
+|1000|02-6240426|Registered from 10.50.11.135|Public|BLOQUEO LD
+|1000|02-6240429|Registered from 10.50.12.99|Public|BLOQUEO LD
+|1000|02-6240431|Not registered|Public|BLOQUEO LD
+|1000|02-6240432|Not registered|Public|BLOQUEO LD
+|1000|02-6240433|Registered from 10.50.12.76|Public|BLOQUEO LD
+|1000|02-6240434|Registered from 10.50.15.110|Public|BLOQUEO LD
+|1000|02-6240435|Registered from 10.50.12.87|Public|BLOQUEO LD
+|1000|02-6240436|Registered from 10.50.12.83|Public|BLOQUEO LD
+|1000|02-6240437|Registered from 10.50.12.84|Public|BLOQUEO LD
+|1000|02-6240438|Registered from 10.50.12.95|Public|BLOQUEO LD
+|1000|02-6240439|Not registered|Public|BLOQUEO LD
+|1000|02-6240440|Registered from 10.50.13.32|Public|BLOQUEO LD
+|1000|02-6240442|Registered from 10.50.15.75|Public|BLOQUEO LD
+|1000|02-6240445|Registered from 10.50.10.254|Public|BLOQUEO LD
+|1000|02-6240446|Registered from 10.50.12.75|Public|BLOQUEO LD
+|1000|02-6240447|Registered from 10.50.12.62|Public|BLOQUEO LD
+|1000|02-6240448|Registered from 10.50.12.71|Public|BLOQUEO LD
+|1000|02-6240449|Registered from 10.50.12.55|Public|BLOQUEO LD
+|1000|02-6240452|Registered from 10.50.12.51|Public|BLOQUEO LD
+|1000|02-6240454|Registered from 10.50.12.57|Public|BLOQUEO LD
+|1000|02-6240455|Registered from 10.50.12.50|Public|BLOQUEO LD
+|1000|02-6240457|Not registered|Public|BLOQUEO LD
+|1000|02-6240459|Registered from 10.50.12.48|Public|BLOQUEO LD
+|1000|02-6240462|Not registered|Public|BLOQUEO LD
+|1000|02-6240463|Not registered (on 'MAD 6240463')|Public|BLOQUEO LD
+|1000|02-6240464|Not registered (on 'MAD 6240463')|Public|BLOQUEO LD
+|1000|02-6240465|Not registered (on 'MAD 6240465')|Public|BLOQUEO LD
+|1000|02-6240466|Not registered (on 'MAD 6240465')|Public|BLOQUEO LD
+|1000|02-6240467|Registered from MAD 6240467|Public|BLOQUEO LD
+|1000|02-6240468|Registered from MAD 6240467|Public|BLOQUEO LD
+|1000|02-6240469|Registered from MAD 6240469|Public|BLOQUEO LD
+|1000|02-6240470|Registered from MAD 6240469|Public|BLOQUEO LD
+|1000|02-6240471|Registered from MAD 6240471|Public|BLOQUEO LD
+|1000|02-6240472|Registered from MAD 6240471|Public|BLOQUEO LD
+|1000|02-6240473|Not registered (on 'MAD 6240473')|Public|BLOQUEO LD
+|1000|02-6240474|Not registered (on 'MAD 6240473')|Public|BLOQUEO LD
+|1000|02-6240475|Registered from 10.50.12.27|Public|BLOQUEO LD
+|1000|02-6240476|Registered from 10.50.12.36|Public|BLOQUEO LD
+|1000|02-6240477|Registered from 10.50.12.35|Public|BLOQUEO LD
+|1000|02-6240478|Registered from 10.50.10.154|Public|BLOQUEO LD
+|1000|02-6240479|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6240480|Not registered|Public|BLOQUEO LD
+|1000|02-6240481|Not registered|Public|BLOQUEO LD
+|1000|02-6240484|Registered from 10.50.10.9|Public|BLOQUEO LD
+|1000|02-6240485|Registered from 10.50.11.232|Public|BLOQUEO LD
+|1000|02-6240487|Registered from 10.50.11.238|Public|BLOQUEO LD
+|1000|02-6240490|Registered from 10.50.11.188|Public|BLOQUEO LD
+|1000|02-6240491|Registered from 10.50.12.190|Public|BLOQUEO LD
+|1000|02-6240492|Registered from 10.50.11.236|Public|BLOQUEO LD
+|1000|02-6240494|Registered from 10.50.11.231|Public|BLOQUEO LD
+|1000|02-6240498|Registered from 10.50.11.224|Public|BLOQUEO LD
+|1000|02-6240501|Not registered|Public|BLOQUEO LD
+|1000|02-6240502|Registered from 10.50.15.237|Public|BLOQUEO LD
+|1000|02-6240505|Not registered|Public|BLOQUEO LD
+|1000|02-6240506|Registered from 10.50.12.98|Public|BLOQUEO LD
+|1000|02-6240507|Not registered|Public|BLOQUEO LD
+|1000|02-6240510|Registered from 10.50.11.214|Public|BLOQUEO LD
+|1000|02-6240512|Registered from 10.50.11.53|Public|BLOQUEO LD
+|1000|02-6240515|Not registered|Public|Abonado Comun
+|1000|02-6240517|Not registered|Public|BLOQUEO LD
+|1000|02-6240520|Registered from 10.50.11.115|Public|BLOQUEO LD
+|1000|02-6240525|Registered from 10.50.10.98|Public|BLOQUEO LD
+|1000|02-6240529|Not registered|Public|BLOQUEO LD
+|1000|02-6240530|Registered from 10.50.11.137|Public|BLOQUEO LD
+|1000|02-6240532|Registered from 10.50.15.215|Public|BLOQUEO LD
+|1000|02-6240534|Registered from 10.50.14.3|Public|BLOQUEO LD
+|1000|02-6240537|Not registered|Public|BLOQUEO LD
+|1000|02-6240539|Registered from 10.50.11.23|Public|BLOQUEO LD
+|1000|02-6240548|Not registered|Public|BLOQUEO LD
+|1000|02-6240550|Registered from 10.50.12.178|Public|BLOQUEO LD
+|1000|02-6240552|Registered from 10.50.15.176|Public|BLOQUEO LD
+|1000|02-6240553|Registered from 10.50.10.236|Public|BLOQUEO LD
+|1000|02-6240555|Registered from 10.50.11.167|Public|BLOQUEO LD
+|1000|02-6240556|Not registered|Public|BLOQUEO LD
+|1000|02-6240557|Registered from 10.50.15.116|Public|BLOQUEO LD
+|1000|02-6240558|Not registered|Public|BLOQUEO LD
+|1000|02-6240561|Registered from 10.50.14.234|Public|BLOQUEO LD
+|1000|02-6240562|Not registered|Public|BLOQUEO LD
+|1000|02-6240566|Registered from 10.50.10.70|Public|BLOQUEO LD
+|1000|02-6240567|Registered from 10.50.10.187|Public|BLOQUEO LD
+|1000|02-6240568|Registered from 10.50.11.1|Public|BLOQUEO LD
+|1000|02-6240571|Registered from 10.50.10.197|Public|BLOQUEO LD
+|1000|02-6240572|Not registered|Public|BLOQUEO LD
+|1000|02-6240574|Registered from 10.50.13.56|Public|BLOQUEO LD
+|1000|02-6240575|Registered from 10.50.14.102|Public|BLOQUEO LD
+|1000|02-6240579|Registered from 10.50.14.107|Public|BLOQUEO LD
+|1000|02-6240580|Registered from 10.50.11.104|Public|BLOQUEO LD
+|1000|02-6240581|Registered from 10.50.15.57|Public|BLOQUEO LD
+|1000|02-6240582|Registered from 10.50.10.186|Public|BLOQUEO LD
+|1000|02-6240584|Registered from 10.50.10.82|Public|BLOQUEO LD
+|1000|02-6240585|Registered from 10.50.10.29|Public|BLOQUEO LD
+|1000|02-6240586|Registered from 10.50.12.65|Public|BLOQUEO LD
+|1000|02-6240587|Registered from 10.50.11.26|Public|BLOQUEO LD
+|1000|02-6240593|Registered from 10.50.13.133|Public|BLOQUEO LD
+|1000|02-6240595|Registered from 10.50.11.243|Public|BLOQUEO LD
+|1000|02-6240596|Not registered|Public|BLOQUEO LD
+|1000|02-6240598|Not registered|Public|BLOQUEO LD
+|1000|02-6240602|Not registered|Public|BLOQUEO LD
+|1000|02-6240603|Registered from 10.50.11.69|Public|BLOQUEO LD
+|1000|02-6240605|Registered from 10.50.15.127|Public|BLOQUEO LD
+|1000|02-6240607|Registered from 10.50.15.59|Public|BLOQUEO LD
+|1000|02-6240608|Registered from 10.50.14.251|Public|BLOQUEO LD
+|1000|02-6240609|Registered from 10.50.11.61|Public|BLOQUEO LD
+|1000|02-6240610|Registered from 10.50.13.213|Public|BLOQUEO LD
+|1000|02-6240611|Registered from 10.50.10.255|Public|BLOQUEO LD
+|1000|02-6240612|Registered from 10.50.15.66|Public|BLOQUEO LD
+|1000|02-6240614|Not registered|Public|BLOQUEO LD
+|1000|02-6240616|Registered from 10.50.11.11|Public|BLOQUEO LD
+|1000|02-6240618|Registered from 10.50.15.7|Public|BLOQUEO LD
+|1000|02-6240621|Not registered|Public|BLOQUEO LD
+|1000|02-6240622|Not registered|Public|BLOQUEO LD
+|1000|02-6240623|Not registered|Public|BLOQUEO LD
+|1000|02-6240624|Registered from 10.50.11.9|Public|BLOQUEO LD
+|1000|02-6240625|Registered from 10.50.10.243|Public|BLOQUEO LD
+|1000|02-6240628|Registered from 10.50.12.45|Public|BLOQUEO LD
+|1000|02-6240630|Registered from 10.50.11.0|Public|BLOQUEO LD
+|1000|02-6240633|Not registered|Public|BLOQUEO LD
+|1000|02-6240637|Registered from 10.50.13.205|Public|BLOQUEO LD
+|1000|02-6240638|Not registered|Public|BLOQUEO LD
+|1000|02-6240642|Registered from 10.50.10.96|Public|BLOQUEO LD
+|1000|02-6240643|Registered from 10.50.14.16|Public|BLOQUEO LD
+|1000|02-6240644|Not registered|Public|BLOQUEO LD
+|1000|02-6240647|Registered from 10.50.12.7|Public|BLOQUEO LD
+|1000|02-6240649|Registered from 10.50.15.25|Public|BLOQUEO LD
+|1000|02-6240650|Registered from 10.50.15.126|Public|BLOQUEO LD
+|1000|02-6240651|Registered from 10.50.14.223|Public|BLOQUEO LD
+|1000|02-6240660|Not registered|Public|BLOQUEO LD
+|1000|02-6240662|Not registered|Public|BLOQUEO LD
+|1000|02-6240663|Registered from 10.50.12.22|Public|BLOQUEO LD
+|1000|02-6240665|Registered from 10.50.11.101|Public|BLOQUEO LD
+|1000|02-6240666|Registered from 10.50.11.52|Public|BLOQUEO LD
+|1000|02-6240669|Not registered|Public|BLOQUEO LD
+|1000|02-6240670|Registered from 10.50.15.230|Public|BLOQUEO LD
+|1000|02-6240677|Registered from 10.50.15.111|Public|BLOQUEO LD
+|1000|02-6240679|Registered from 10.50.14.11|Public|BLOQUEO LD
+|1000|02-6240680|Not registered|Public|BLOQUEO LD
+|1000|02-6240682|Registered from 10.50.10.85|Public|BLOQUEO LD
+|1000|02-6240686|Registered from 10.50.15.53|Public|BLOQUEO LD
+|1000|02-6240687|Registered from 10.50.11.158|Public|BLOQUEO LD
+|1000|02-6240688|Registered from 10.50.15.199|Public|BLOQUEO LD
+|1000|02-6240690|Not registered|Public|BLOQUEO LD
+|1000|02-6240691|Registered from 10.50.13.235|Public|BLOQUEO LD
+|1000|02-6240697|Registered from 10.50.11.14|Public|Abonado Comun
+|1000|02-6240700|Not registered|Public|BLOQUEO LD
+|1000|02-6240702|Registered from 10.50.14.131|Public|BLOQUEO LD
+|1000|02-6240705|Registered from 10.50.13.112|Public|BLOQUEO LD
+|1000|02-6240710|Registered from 10.50.10.30|Public|BLOQUEO LD
+|1000|02-6240711|Registered from 10.50.10.131|Public|BLOQUEO LD
+|1000|02-6240712|Registered from 10.50.15.87|Public|BLOQUEO LD
+|1000|02-6240713|Not registered|Public|BLOQUEO LD
+|1000|02-6240714|Registered from 10.50.10.22|Public|BLOQUEO LD
+|1000|02-6240715|Not registered|Public|BLOQUEO LD
+|1000|02-6240716|Not registered|Public|BLOQUEO LD
+|1000|02-6240717|Not registered|Public|BLOQUEO LD
+|1000|02-6240718|Not registered|Public|BLOQUEO LD
+|1000|02-6240719|Not registered|Public|BLOQUEO LD
+|1000|02-6240720|Registered from 10.50.10.59|Public|BLOQUEO LD
+|1000|02-6240723|Registered from 10.50.15.206|Public|BLOQUEO LD
+|1000|02-6240724|Registered from 10.50.15.95|Public|BLOQUEO LD
+|1000|02-6240726|Registered from 10.50.10.132|Public|BLOQUEO LD
+|1000|02-6240727|Not registered|Public|BLOQUEO LD
+|1000|02-6240730|Registered from 10.50.13.124|Public|BLOQUEO LD
+|1000|02-6240732|Registered from 10.50.12.211|Public|BLOQUEO LD
+|1000|02-6240735|Registered from 10.50.14.40|Public|BLOQUEO LD
+|1000|02-6240738|Not registered|Public|BLOQUEO LD
+|1000|02-6240739|Registered from 10.50.15.154|Public|BLOQUEO LD
+|1000|02-6240740|Registered from 10.50.11.184|Public|BLOQUEO LD
+|1000|02-6240741|Registered from 10.50.13.72|Public|BLOQUEO LD
+|1000|02-6240742|Registered from 10.50.10.58|Public|BLOQUEO LD
+|1000|02-6240744|Registered from 10.50.15.181|Public|BLOQUEO LD
+|1000|02-6240746|Registered from 10.50.15.130|Public|BLOQUEO LD
+|1000|02-6240748|Not registered|Public|BLOQUEO LD
+|1000|02-6240750|Not registered|Public|BLOQUEO LD
+|1000|02-6240752|Registered from 10.50.11.87|Public|BLOQUEO LD
+|1000|02-6240754|Not registered|Public|BLOQUEO LD
+|1000|02-6240755|Registered from 10.50.10.36|Public|BLOQUEO LD
+|1000|02-6240756|Registered from 10.50.10.23|Public|BLOQUEO LD
+|1000|02-6240757|Not registered|Public|BLOQUEO LD
+|1000|02-6240758|Registered from 10.50.14.114|Public|BLOQUEO LD
+|1000|02-6240761|Registered from 10.50.10.178|Public|BLOQUEO LD
+|1000|02-6240762|Registered from 10.50.10.125|Public|BLOQUEO LD
+|1000|02-6240765|Registered from 10.50.14.187|Public|BLOQUEO LD
+|1000|02-6240767|Not registered|Public|BLOQUEO LD
+|1000|02-6240770|Registered from 10.50.14.178|Public|BLOQUEO LD
+|1000|02-6240773|Registered from 10.50.12.157|Public|BLOQUEO LD
+|1000|02-6240774|Registered from 10.50.11.147|Public|BLOQUEO LD
+|1000|02-6240775|Not registered|Public|BLOQUEO LD
+|1000|02-6240776|Registered from 10.50.14.242|Public|BLOQUEO LD
+|1000|02-6240777|Not registered|Public|BLOQUEO LD
+|1000|02-6240780|Not registered|Public|BLOQUEO LD
+|1000|02-6240781|Registered from 10.50.13.244|Public|BLOQUEO LD
+|1000|02-6240783|Registered from 10.50.12.39|Public|BLOQUEO LD
+|1000|02-6240785|Registered from 10.50.11.93|Public|BLOQUEO LD
+|1000|02-6240790|Registered from 10.50.14.214|Public|BLOQUEO LD
+|1000|02-6240792|Registered from 10.50.10.10|Public|BLOQUEO LD
+|1000|02-6240793|Registered from 10.50.14.230|Public|BLOQUEO LD
+|1000|02-6240795|Registered from 10.50.12.170|Public|BLOQUEO LD
+|1000|02-6240797|Registered from 10.50.12.125|Public|BLOQUEO LD
+|1000|02-6240798|Not registered|Public|BLOQUEO LD
+|1000|02-6240799|Registered from 10.50.15.107|Public|BLOQUEO LD
+|1000|02-6240801|Registered from 10.50.11.160|Public|BLOQUEO LD
+|1000|02-6240804|Not registered|Public|BLOQUEO LD
+|1000|02-6240805|Registered from 10.50.11.156|Public|BLOQUEO LD
+|1000|02-6240807|Registered from 10.50.15.85|Public|Abonado Comun
+|1000|02-6240810|Registered from 10.50.14.73|Public|BLOQUEO LD
+|1000|02-6240814|Registered from 10.50.15.78|Public|BLOQUEO LD
+|1000|02-6240816|Registered from 10.50.12.226|Public|BLOQUEO LD
+|1000|02-6240818|Registered from 10.50.14.47|Public|BLOQUEO LD
+|1000|02-6240823|Registered from 10.50.14.175|Public|BLOQUEO LD
+|1000|02-6240824|Registered from 10.50.14.91|Public|BLOQUEO LD
+|1000|02-6240826|Registered from 10.50.14.109|Public|BLOQUEO LD
+|1000|02-6240827|Registered from 10.50.15.131|Public|BLOQUEO LD
+|1000|02-6240830|Registered from 10.50.10.128|Public|BLOQUEO LD
+|1000|02-6240831|Registered from 10.50.13.121|Public|BLOQUEO LD
+|1000|02-6240833|Registered from 10.50.14.196|Public|BLOQUEO LD
+|1000|02-6240834|Registered from 10.50.13.232|Public|BLOQUEO LD
+|1000|02-6240836|Registered from 10.50.10.102|Public|BLOQUEO LD
+|1000|02-6240837|Not registered|Public|BLOQUEO LD
+|1000|02-6240838|Not registered|Public|BLOQUEO LD
+|1000|02-6240839|Not registered|Public|BLOQUEO LD
+|1000|02-6240840|Registered from 10.50.14.49|Public|BLOQUEO LD
+|1000|02-6240842|Not registered|Public|BLOQUEO LD
+|1000|02-6240843|Registered from 10.50.11.13|Public|BLOQUEO LD
+|1000|02-6240844|Registered from 10.50.11.166|Public|BLOQUEO LD
+|1000|02-6240845|Registered from 10.50.10.15|Public|BLOQUEO LD
+|1000|02-6240846|Registered from 10.50.15.207|Public|BLOQUEO LD
+|1000|02-6240848|Registered from 10.50.11.83|Public|BLOQUEO LD
+|1000|02-6240849|Registered from 10.50.13.75|Public|BLOQUEO LD
+|1000|02-6240853|Registered from 10.50.14.130|Public|BLOQUEO LD
+|1000|02-6240855|Registered from 10.50.10.103|Public|BLOQUEO LD
+|1000|02-6240856|Registered from 10.50.15.60|Public|BLOQUEO LD
+|1000|02-6240859|Registered from 10.50.15.238|Public|BLOQUEO LD
+|1000|02-6240860|Registered from 10.50.11.118|Public|BLOQUEO LD
+|1000|02-6240861|Registered from 10.50.14.19|Public|BLOQUEO LD
+|1000|02-6240862|Not registered|Public|BLOQUEO LD
+|1000|02-6240869|Registered from 10.50.10.74|Public|BLOQUEO LD
+|1000|02-6240870|Registered from 10.50.10.161|Public|BLOQUEO LD
+|1000|02-6240871|Registered from 10.50.13.233|Public|BLOQUEO LD
+|1000|02-6240872|Registered from 10.50.13.250|Public|BLOQUEO LD
+|1000|02-6240873|Registered from 10.50.14.194|Public|BLOQUEO LD
+|1000|02-6240875|Registered from 10.50.14.156|Public|BLOQUEO LD
+|1000|02-6240877|Registered from 10.50.11.63|Public|BLOQUEO LD
+|1000|02-6240878|Not registered|Public|BLOQUEO LD
+|1000|02-6240881|Registered from 10.50.11.97|Public|BLOQUEO LD
+|1000|02-6240882|Registered from 10.50.12.185|Public|BLOQUEO LD
+|1000|02-6240884|Registered from 10.50.14.118|Public|BLOQUEO LD
+|1000|02-6240886|Registered from 10.50.11.40|Public|BLOQUEO LD
+|1000|02-6240887|Registered from 10.50.13.74|Public|BLOQUEO LD
+|1000|02-6240889|Registered from 10.50.14.140|Public|BLOQUEO LD
+|1000|02-6240893|Registered from 10.50.13.173|Public|BLOQUEO LD
+|1000|02-6240894|Registered from 10.50.13.212|Public|BLOQUEO LD
+|1000|02-6240895|Registered from 10.50.14.35|Public|BLOQUEO LD
+|1000|02-6240898|Registered from 10.50.10.110|Public|BLOQUEO LD
+|1000|02-6240899|Registered from 10.50.12.91|Public|BLOQUEO LD
+|1000|02-6240900|Registered from 10.50.12.251|Public|BLOQUEO LD
+|1000|02-6240905|Registered from 10.50.15.81|Public|BLOQUEO LD
+|1000|02-6240907|Not registered|Public|BLOQUEO LD
+|1000|02-6240914|Not registered|Public|BLOQUEO LD
+|1000|02-6240915|Not registered|Public|BLOQUEO LD
+|1000|02-6240916|Registered from 10.50.12.173|Public|BLOQUEO LD
+|1000|02-6240919|Not registered|Public|BLOQUEO LD
+|1000|02-6240920|Registered from 10.50.14.9|Public|BLOQUEO LD
+|1000|02-6240927|Registered from 10.50.10.12|Public|BLOQUEO LD
+|1000|02-6240933|Registered from 10.50.10.235|Public|BLOQUEO LD
+|1000|02-6240935|Not registered|Public|BLOQUEO LD
+|1000|02-6240936|Not registered|Public|BLOQUEO LD
+|1000|02-6240940|Registered from 10.50.12.40|Public|BLOQUEO LD
+|1000|02-6240944|Registered from 10.50.15.97|Public|BLOQUEO LD
+|1000|02-6240954|Registered from 10.50.14.232|Public|BLOQUEO LD
+|1000|02-6240960|Registered from 10.50.10.140|Public|BLOQUEO LD
+|1000|02-6240961|Registered from 10.50.12.176|Public|BLOQUEO LD
+|1000|02-6240965|Registered from 10.50.14.207|Public|BLOQUEO LD
+|1000|02-6240966|Registered from 10.50.11.212|Public|BLOQUEO LD
+|1000|02-6240967|Not registered|Public|BLOQUEO LD
+|1000|02-6240969|Registered from 10.50.13.57|Public|BLOQUEO LD
+|1000|02-6240970|Not registered|Public|BLOQUEO LD
+|1000|02-6240973|Registered from 10.50.15.128|Public|BLOQUEO LD
+|1000|02-6240974|Registered from 10.50.14.152|Public|BLOQUEO LD
+|1000|02-6240983|Registered from 10.50.12.234|Public|BLOQUEO LD
+|1000|02-6240985|Registered from 10.50.14.8|Public|BLOQUEO LD
+|1000|02-6240991|Registered from 10.50.11.154|Public|BLOQUEO LD
+|1000|02-6240992|Registered from 10.50.14.100|Public|BLOQUEO LD
+|1000|02-6240998|Registered from 10.50.11.88|Public|BLOQUEO LD
+|1000|02-6241008|Registered from 10.50.10.44|Public|BLOQUEO LD
+|1000|02-6241009|Registered from 10.50.10.24|Public|BLOQUEO LD
+|1000|02-6241026|Registered from 10.50.15.44|Public|BLOQUEO LD
+|1000|02-6241040|Registered from 10.50.11.198|Public|BLOQUEO LD
+|1000|02-6241076|Registered from 10.50.13.25|Public|BLOQUEO LD
+|1000|02-6241083|Registered from 10.50.11.81|Public|BLOQUEO LD
+|1000|02-6241085|Registered from 10.50.15.137|Public|BLOQUEO LD
+|1000|02-6241086|Registered from 10.50.10.139|Public|BLOQUEO LD
+|1000|02-6241087|Registered from 10.50.13.231|Public|BLOQUEO LD
+|1000|02-6241088|Registered from 10.50.14.154|Public|BLOQUEO LD
+|1000|02-6241089|Registered from 10.50.13.67|Public|BLOQUEO LD
+|1000|02-6241090|Registered from 10.50.13.83|Public|BLOQUEO LD
+|1000|02-6241091|Registered from 10.50.11.121|Public|BLOQUEO LD
+|1000|02-6241092|Not registered|Public|BLOQUEO LD
+|1000|02-6241093|Registered from 10.50.13.118|Public|BLOQUEO LD
+|1000|02-6241094|Registered from 10.50.15.106|Public|BLOQUEO LD
+|1000|02-6241112|Not registered|Public|BLOQUEO LD
+|1000|02-6241115|Registered from 10.50.14.61|Public|BLOQUEO LD
+|1000|02-6241116|Registered from 10.50.13.161|Public|BLOQUEO LD
+|1000|02-6241119|Registered from 10.50.10.173|Public|BLOQUEO LD
+|1000|02-6241120|Registered from 10.50.10.192|Public|BLOQUEO LD
+|1000|02-6241134|Registered from 10.50.10.13|Public|BLOQUEO LD
+|1000|02-6241137|Registered from 10.50.14.167|Public|BLOQUEO LD
+|1000|02-6241145|Not registered|Public|BLOQUEO LD
+|1000|02-6241146|Registered from 10.50.10.3|Public|BLOQUEO LD
+|1000|02-6241157|Registered from 10.50.13.8|Public|BLOQUEO LD
+|1000|02-6241159|Not registered|Public|BLOQUEO LD
+|1000|02-6241160|Registered from 10.50.14.41|Public|BLOQUEO LD
+|1000|02-6241161|Registered from 10.50.10.167|Public|BLOQUEO LD
+|1000|02-6241166|Registered from 10.50.15.24|Public|BLOQUEO LD
+|1000|02-6241171|Registered from 10.50.10.123|Public|BLOQUEO LD
+|1000|02-6241175|Registered from 10.50.14.147|Public|BLOQUEO LD
+|1000|02-6241177|Registered from 10.50.13.94|Public|BLOQUEO LD
+|1000|02-6241178|Registered from 10.50.15.0|Public|BLOQUEO LD
+|1000|02-6241186|Registered from 10.50.14.158|Public|BLOQUEO LD
+|1000|02-6241187|Registered from 10.50.10.172|Public|BLOQUEO LD
+|1000|02-6241188|Not registered|Public|BLOQUEO LD
+|1000|02-6241191|Registered from 10.50.10.241|Public|BLOQUEO LD
+|1000|02-6241194|Registered from 10.50.13.19|Public|BLOQUEO LD
+|1000|02-6241195|Registered from 10.50.12.136|Public|BLOQUEO LD
+|1000|02-6241197|Not registered|Public|BLOQUEO LD
+|1000|02-6241198|Registered from 10.50.14.119|Public|BLOQUEO LD
+|1000|02-6241200|Registered from 10.50.10.226|Public|BLOQUEO LD
+|1000|02-6241201|Registered from 10.50.13.230|Public|BLOQUEO LD
+|1000|02-6241205|Registered from 10.50.10.21|Public|BLOQUEO LD
+|1000|02-6241207|Registered from 10.50.15.241|Public|BLOQUEO LD
+|1000|02-6241208|Registered from 10.50.10.136|Public|BLOQUEO LD
+|1000|02-6241210|Registered from 10.50.14.231|Public|BLOQUEO LD
+|1000|02-6241215|Registered from 10.50.15.250|Public|BLOQUEO LD
+|1000|02-6241218|Registered from 10.50.10.202|Public|BLOQUEO LD
+|1000|02-6241224|Registered from 10.50.10.160|Public|BLOQUEO LD
+|1000|02-6241226|Registered from 10.50.12.252|Public|BLOQUEO LD
+|1000|02-6241231|Registered from 10.50.10.65|Public|BLOQUEO LD
+|1000|02-6241236|Not registered|Public|BLOQUEO LD
+|1000|02-6241240|Registered from 10.50.12.86|Public|BLOQUEO LD
+|1000|02-6241241|Registered from 10.50.10.1|Public|BLOQUEO LD
+|1000|02-6241244|Not registered|Public|BLOQUEO LD
+|1000|02-6241245|Registered from 10.50.10.238|Public|BLOQUEO LD
+|1000|02-6241246|Registered from 10.50.13.129|Public|BLOQUEO LD
+|1000|02-6241252|Registered from 10.50.12.82|Public|BLOQUEO LD
+|1000|02-6241257|Registered from 10.50.10.206|Public|BLOQUEO LD
+|1000|02-6241260|Registered from 10.50.10.61|Public|BLOQUEO LD
+|1000|02-6241265|Registered from 10.50.10.159|Public|BLOQUEO LD
+|1000|02-6241270|Registered from 10.50.14.155|Public|BLOQUEO LD
+|1000|02-6241275|Registered from 10.50.10.69|Public|BLOQUEO LD
+|1000|02-6241276|Not registered|Public|BLOQUEO LD
+|1000|02-6241277|Registered from 10.50.10.156|Public|BLOQUEO LD
+|1000|02-6241282|Not registered|Public|BLOQUEO LD
+|1000|02-6241299|Registered from 10.50.12.183|Public|BLOQUEO LD
+|1000|02-6241352|Not registered|Public|BLOQUEO LD
+|1000|02-6241353|Not registered|Public|BLOQUEO LD
+|1000|02-6242009|Registered from 10.50.13.144|Public|Custom
+|1000|02-6242027|Registered from 10.50.13.51|Public|Abonado Comun
+|1000|02-6242049|Registered from 10.50.15.10|Public|BLOQUEO LD
+|1000|02-6242050|Not registered|Public|Abonado Comun
+|1000|02-6242061|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6242062|Not registered|Public|BLOQUEO LD
+|1000|02-6242063|Registered from 10.50.14.65|Public|BLOQUEO LD
+|1000|02-6242141|Registered from 10.50.13.31|Public|Abonado Comun
+|1000|02-6242177|Registered from 10.50.14.17|Public|BLOQUEO LD
+|1000|02-6242192|Registered from 10.50.15.210|Public|BLOQUEO LD
+|1000|02-6242250|Registered from 10.50.15.198|Public|Abonado Comun
+|1000|02-6242282|Not registered|Public|Abonado Comun
+|1000|02-6242300|Registered from 10.50.11.54|Public|BLOQUEO LD
+|1000|02-6242330|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6242352|Registered from 10.50.15.186|Public|Abonado Comun
+|1000|02-6242385|Not registered|Public|Abonado Comun
+|1000|02-6242456|Registered from 10.50.12.133|Public|BLOQUEO LD
+|1000|02-6242462|Registered from 10.50.12.202|Public|BLOQUEO LD
+|1000|02-6242521|Registered from 10.50.15.171|Public|BLOQUEO LD
+|1000|02-6242550|Registered from 10.50.15.216|Public|BLOQUEO LD
+|1000|02-6242571|Registered from 10.50.14.56|Public|Abonado Comun
+|1000|02-6242600|Not registered|Public|Abonado Comun
+|1000|02-6242671|Registered from 10.50.12.191|Public|Abonado Comun
+|1000|02-6242672|Registered from 10.50.11.27|Public|Abonado Comun
+|1000|02-6242730|Registered from 10.50.11.35|Public|BLOQUEO LD
+|1000|02-6242734|Registered from 10.50.14.217|Public|Abonado Comun
+|1000|02-6242743|Registered from 10.50.14.115|Public|BLOQUEO LD
+|1000|02-6242807|Registered from 10.50.12.245|Public|BLOQUEO LD
+|1000|02-6242897|Not registered|Public|Abonado Comun
+|1000|02-6242902|Registered from 10.50.15.170|Public|BLOQUEO LD
+|1000|02-6242904|Registered from 10.50.15.103|Public|BLOQUEO LD
+|1000|02-6242971|Registered from 10.50.15.129|Public|Abonado Comun
+|1000|02-6243000|Not registered (on 'MAD 6223943')|Public|Abonado Comun
+|1000|02-6243032|Not registered|Public|BLOQUEO LD
+|1000|02-6243061|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6243090|Not registered|Public|BLOQUEO LD
+|1000|02-6243092|Registered from 10.50.10.130|Public|Abonado Comun
+|1000|02-6243131|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6243206|Not registered|Public|BLOQUEO LD
+|1000|02-6243312|Registered from 10.50.13.141|Public|Abonado Comun
+|1000|02-6243330|Registered from 10.50.11.151|Public|BLOQUEO LD
+|1000|02-6243339|Registered from 10.50.13.149|Public|Abonado Comun
+|1000|02-6243452|Not registered|Public|BLOQUEO LD
+|1000|02-6243455|Registered from 10.50.10.141|Public|BLOQUEO LD
+|1000|02-6243675|Registered from 10.50.15.108|Public|BLOQUEO LD
+|1000|02-6243718|Not registered|Public|BLOQUEO LD
+|1000|02-6243773|Registered from 10.50.14.110|Public|Abonado Comun
+|1000|02-6243780|Registered from 10.50.14.104|Public|BLOQUEO LD
+|1000|02-6243870|Registered from 10.50.14.176|Public|Abonado Comun
+|1000|02-6243893|Registered from MAD 6244516|Public|Abonado Comun
+|1000|02-6243944|Registered from 10.50.15.62|Public|Abonado Comun
+|1000|02-6244001|Registered from 10.50.14.45|Public|Abonado Comun
+|1000|02-6244093|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6244096|Registered from 10.50.14.146|Public|Abonado Comun
+|1000|02-6244104|Registered from 10.50.13.130|Public|Abonado Comun
+|1000|02-6244133|Registered from 10.50.14.70|Public|BLOQUEO LD
+|1000|02-6244219|Registered from 10.50.13.65|Public|Abonado Comun
+|1000|02-6244220|Registered from 10.50.13.134|Public|BLOQUEO LD
+|1000|02-6244228|Registered from 10.50.13.107|Public|BLOQUEO LD
+|1000|02-6244257|Registered from 10.50.13.224|Public|Abonado Comun
+|1000|02-6244448|Registered from 10.50.11.37|Public|BLOQUEO LD
+|1000|02-6244464|Not registered|Public|BLOQUEO LD
+|1000|02-6244471|Registered from 10.50.15.104|Public|BLOQUEO LD
+|1000|02-6244513|Registered from MAD 6244513|Public|Abonado Comun
+|1000|02-6244516|Registered from MAD 6244516|Public|Abonado Comun
+|1000|02-6244522|Registered from MAD 6244513|Public|Abonado Comun
+|1000|02-6244531|Registered from 10.50.10.177|Public|Abonado Comun
+|1000|02-6244646|Registered from 10.50.15.249|Public|Abonado Comun
+|1000|02-6244743|Registered from 10.50.15.200|Public|Abonado Comun
+|1000|02-6244798|Registered from 10.50.13.183|Public|BLOQUEO LD
+|1000|02-6244820|Registered from 10.50.15.159|Public|Abonado Comun
+|1000|02-6244826|Registered from 10.50.15.146|Public|Abonado Comun
+|1000|02-6244934|Not registered|Public|BLOQUEO LD
+|1000|02-6244935|Registered from 10.50.11.196|Public|BLOQUEO LD
+|1000|02-6245015|Registered from 10.50.10.201|Public|BLOQUEO LD
+|1000|02-6245018|Registered from 10.50.14.193|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6245108|Registered from 10.50.14.180|Public|BLOQUEO LD
+|1000|02-6245111|Registered from 10.50.10.203|Public|BLOQUEO LD
+|1000|02-6245320|Registered from 10.50.13.216|Public|Abonado Comun
+|1000|02-6245368|Registered from 10.50.13.142|Public|Abonado Comun
+|1000|02-6245383|Registered from 10.50.12.67|Public|BLOQUEO LD
+|1000|02-6245390|Not registered|Public|BLOQUEO LD
+|1000|02-6245444|Registered from 10.50.14.13|Public|Abonado Comun
+|1000|02-6245591|Registered from 10.50.13.46|Public|Abonado Comun
+|1000|02-6245602|Registered from 10.50.15.203|Public|Abonado Comun
+|1000|02-6245621|Registered from 10.50.15.80|Public|BLOQUEO LD
+|1000|02-6245637|Registered from 10.50.14.55|Public|BLOQUEO LD
+|1000|02-6245819|Registered from 10.50.15.217|Public|Abonado Comun
+|1000|02-6245822|Registered from 10.50.11.211|Public|BLOQUEO LD
+|1000|02-6246069|Not registered|Public|Abonado Comun
+|1000|02-6246161|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6246180|Registered from 10.50.11.24|Public|BLOQUEO LD
+|1000|02-6246207|Registered from 10.50.15.64|Public|Abonado Comun
+|1000|02-6246237|Registered from 10.50.13.219|Public|Abonado Comun
+|1000|02-6246333|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6246355|Registered from 10.50.14.209|Public|Abonado Comun
+|1000|02-6246372|Registered from 10.50.11.17|Public|Abonado Comun
+|1000|02-6246461|Registered from 10.50.13.5|Public|BLOQUEO LD
+|1000|02-6246472|Registered from 10.50.12.148|Public|Abonado Comun
+|1000|02-6246503|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6246779|Not registered|Public|Abonado Comun
+|1000|02-6246799|Registered from 10.50.12.126|Public|Abonado Comun
+|1000|02-6246898|Registered from 10.50.14.63|Public|Abonado Comun
+|1000|02-6246984|Registered from 10.50.15.117|Public|Abonado Comun
+|1000|02-6247023|Not registered|Public|BLOQUEO LD
+|1000|02-6247030|Not registered|Public|Abonado Comun
+|1000|02-6247093|Registered from 10.50.11.58|Public|Abonado Comun
+|1000|02-6247120|Registered from 10.50.15.50|Public|BLOQUEO LD
+|1000|02-6247122|Not registered|Public|BLOQUEO LD
+|1000|02-6247154|Registered from 10.50.10.54|Public|BLOQUEO LD
+|1000|02-6247262|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6247319|Registered from 10.50.10.147|Public|BLOQUEO LD
+|1000|02-6248041|Not registered|Public|BLOQUEO LD
+|1000|02-6248070|Registered from 10.50.13.139|Public|BLOQUEO LD
+|1000|02-6248085|Not registered|Public|BLOQUEO LD
+|1000|02-6249004|Registered from 10.50.14.50|Public|BLOQUEO LD
+|1000|02-6249005|Registered from 10.50.14.21|Public|Abonado Comun
+|1000|02-6249007|Not registered|Public|BLOQUEO LD
+|1000|02-6249011|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6249012|Registered from 10.50.15.76|Public|BLOQUEO LD
+|1000|02-6249015|Registered from 10.50.11.172|Public|Abonado Comun
+|1000|02-6249017|Registered from 10.50.11.138|Public|Abonado Comun
+|1000|02-6249021|Not registered|Public|BLOQUEO LD
+|1000|02-6249024|Registered from 10.50.10.220|Public|BLOQUEO LD
+|1000|02-6249026|Registered from 10.50.15.91|Public|Abonado Comun
+|1000|02-6249027|Registered from 10.50.13.196|Public|Abonado Comun
+|1000|02-6249029|Registered from 10.50.11.122|Public|Abonado Comun
+|1000|02-6249030|Registered from 10.50.12.29|Public|BLOQUEO LD
+|1000|02-6249032|Registered from 10.50.11.134|Public|BLOQUEO LD
+|1000|02-6249037|Registered from 10.50.12.241|Public|Abonado Comun
+|1000|02-6249041|Registered from 10.50.15.23|Public|Abonado Comun
+|1000|02-6249044|Registered from 10.50.13.169|Public|BLOQUEO LD
+|1000|02-6249045|Not registered|Public|BLOQUEO LD
+|1000|02-6249047|Not registered|Public|BLOQUEO LD
+|1000|02-6249049|Registered from 10.50.12.215|Public|Abonado Comun
+|1000|02-6249057|Registered from 10.50.11.164|Public|BLOQUEO LD
+|1000|02-6249061|Not registered|Public|BLOQUEO LD
+|1000|02-6249063|Registered from 10.50.13.222|Public|BLOQUEO LD
+|1000|02-6249064|Registered from 10.50.12.18|Public|BLOQUEO LD
+|1000|02-6249065|Registered from 10.50.14.48|Public|Abonado Comun
+|1000|02-6249068|Registered from 10.50.11.103|Public|Abonado Comun
+|1000|02-6249076|Registered from 10.50.11.114|Public|BLOQUEO LD
+|1000|02-6249079|Registered from 10.50.13.70|Public|BLOQUEO LD
+|1000|02-6249081|Not registered|Public|BLOQUEO LD
+|1000|02-6249083|Registered from 10.50.11.125|Public|BLOQUEO LD
+|1000|02-6249088|Not registered|Public|BLOQUEO LD
+|1000|02-6249089|Registered from 10.50.11.162|Public|Abonado Comun
+|1000|02-6249092|Registered from 10.50.11.67|Public|Abonado Comun
+|1000|02-6249093|Registered from 10.50.12.116|Public|BLOQUEO LD
+|1000|02-6249094|Registered from 10.50.12.60|Public|Abonado Comun
+|1000|02-6249095|Not registered|Public|BLOQUEO LD
+|1000|02-6249097|Registered from 10.50.14.85|Public|Abonado Comun
+|1000|02-6249098|Registered from 10.50.11.161|Public|BLOQUEO LD
+|1000|02-6249099|Registered from 10.50.10.41|Public|Abonado Comun
+|1000|02-6249100|Registered from 10.50.15.192|Public|BLOQUEO LD
+|1000|02-6249102|Registered from 10.50.11.15|Public|BLOQUEO LD
+|1000|02-6249105|Registered from 10.50.13.185|Public|BLOQUEO LD
+|1000|02-6249110|Registered from 10.50.11.102|Public|Abonado Comun
+|1000|02-6249112|Registered from 10.50.13.201|Public|Abonado Comun
+|1000|02-6249115|Registered from 10.50.11.92|Public|BLOQUEO LD
+|1000|02-6249505|Not registered|Public|Abonado Comun
+|1000|02-6249761|Registered from 10.50.13.60|Public|Abonado Comun
+|1000|02-6250000|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250001|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250002|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250003|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250004|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250005|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250006|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250007|Not registered (on 'UC-MAD')|Centrex|Abonado Comun
+|1000|02-6250508|Not registered|Public|Abonado Comun
+|1000|02-6253000|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6253001|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6253002|Not registered (on 'UC-MAD')|Public|advanced_CLIRO
+|1000|02-6253003|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253004|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253006|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253007|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253008|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253009|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253010|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253011|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253012|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253013|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253014|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253015|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253016|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253017|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253018|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253019|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253020|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253021|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253022|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253023|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253024|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253025|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253026|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253027|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253028|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253029|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253030|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253031|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253032|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253033|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253034|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253035|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253036|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253037|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253038|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253039|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253040|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253041|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253042|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253043|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253044|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253045|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253046|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253047|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253048|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253049|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253050|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253051|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253052|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253053|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253054|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253055|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253056|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253057|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253058|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253059|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253060|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253061|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253062|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253063|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253064|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253065|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253066|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253067|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253068|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253069|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253070|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253071|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253072|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6253073|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253074|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253075|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253076|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253077|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253078|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253079|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253080|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253081|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253082|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253083|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253084|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253085|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253086|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253087|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6253088|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6257000|Not registered (on 'UC-MAD')|Public|advancedSSS_3
+|1000|02-6257003|Not registered|Public|BLOQUEO LD
+|1000|02-6261840|Registered from 10.50.11.136|Public|BLOQUEO LD
+|1000|02-6262034|Registered from 10.50.11.39|Public|BLOQUEO LD
+|1000|02-6262126|Registered from 10.50.13.184|Public|BLOQUEO LD
+|1000|02-6262178|Registered from MAD 6262178|Public|Abonado Comun
+|1000|02-6262180|Registered from 10.50.12.197|Public|Abonado Comun
+|1000|02-6262200|Not registered (on 'MAD 6262200')|Public|Abonado Comun
+|1000|02-6262201|Not registered (on 'MAD 6262200')|Public|Abonado Comun
+|1000|02-6262202|Registered from MAD 6262202|Public|BLOQUEO LD
+|1000|02-6262203|Registered from MAD 6262202|Public|Abonado Comun
+|1000|02-6262204|Registered from MAD 6262204|Public|Abonado Comun
+|1000|02-6262205|Registered from MAD 6262204|Public|BLOQUEO LD
+|1000|02-6262206|Registered from MAD 6262206|Public|BLOQUEO LD
+|1000|02-6262207|Registered from MAD 6262206|Public|Abonado Comun
+|1000|02-6262215|Registered from 10.50.10.252|Public|Abonado Comun
+|1000|02-6262217|Registered from MAD 6262217|Public|Abonado Comun
+|1000|02-6262218|Registered from MAD 6262178|Public|Abonado Comun
+|1000|02-6262219|Registered from MAD 6262217|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6262222|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6262240|Registered from 10.50.11.217|Public|BLOQUEO LD
+|1000|02-6262261|Not registered|Public/Suspended|BLOQUEO TOTAL
+|1000|02-6262272|Registered from 10.50.11.202|Public|BLOQUEO LD
+|1000|02-6262275|Registered from 10.50.10.100|Public|BLOQUEO LD
+|1000|02-6262358|Registered from 10.50.11.252|Public|BLOQUEO LD
+|1000|02-6262370|Registered from 10.50.13.53|Public|Abonado Comun
+|1000|02-6262444|Registered from 10.50.15.228|Public|Abonado Comun
+|1000|02-6262520|Registered from 10.50.14.161|Public|BLOQUEO LD
+|1000|02-6262562|Registered from 10.50.12.70|Public|Abonado Comun
+|1000|02-6262587|Not registered|Public|BLOQUEO LD
+|1000|02-6262656|Registered from 10.50.15.8|Public|Abonado Comun
+|1000|02-6262934|Registered from 10.50.12.145|Public|BLOQUEO LD
+|1000|02-6262967|Registered from 10.50.11.117|Public|BLOQUEO LD
+|1000|02-6263107|Registered from 10.50.13.165|Public|BLOQUEO LD
+|1000|02-6263128|Registered from 10.50.13.99|Public|BLOQUEO LD
+|1000|02-6263166|Registered from 10.50.10.97|Public|BLOQUEO LD
+|1000|02-6263199|Registered from 10.50.12.68|Public|BLOQUEO LD
+|1000|02-6263203|Registered from 10.50.13.126|Public|BLOQUEO LD
+|1000|02-6263227|Not registered|Public|BLOQUEO LD
+|1000|02-6263231|Registered from 10.50.10.250|Public|BLOQUEO LD
+|1000|02-6263380|Not registered|Public|BLOQUEO LD
+|1000|02-6263392|Not registered|Public|BLOQUEO LD
+|1000|02-6263438|Registered from 10.50.13.42|Public|BLOQUEO LD
+|1000|02-6263488|Registered from 10.50.10.76|Public|Abonado Comun
+|1000|02-6263717|Registered from 10.50.15.121|Public|BLOQUEO LD
+|1000|02-6263779|Registered from 10.50.15.83|Public|BLOQUEO LD
+|1000|02-6263782|Registered from 10.50.15.188|Public|BLOQUEO LD
+|1000|02-6263840|Registered from 10.50.12.150|Public|BLOQUEO LD
+|1000|02-6263848|Registered from 10.50.15.178|Public|BLOQUEO LD
+|1000|02-6263871|Registered from 10.50.13.18|Public|Abonado Comun
+|1000|02-6263872|Not registered|Public|Abonado Comun
+|1000|02-6263924|Registered from 10.50.15.145|Public|BLOQUEO LD
+|1000|02-6263988|Registered from 10.50.14.67|Public|Abonado Comun
+|1000|02-6263999|Registered from 10.50.14.229|Public|BLOQUEO LD
+|1000|02-6264023|Registered from 10.50.11.127|Public|BLOQUEO LD
+|1000|02-6264030|Registered from 10.50.14.183|Public|BLOQUEO LD
+|1000|02-6264301|Registered from 10.50.13.204|Public|Abonado Comun
+|1000|02-6264332|Not registered|Public|Abonado Comun
+|1000|02-6264338|Registered from 10.50.15.142|Public|BLOQUEO LD
+|1000|02-6264439|Registered from 10.50.11.66|Public|BLOQUEO LD
+|1000|02-6264442|Registered from 10.50.13.109|Public|BLOQUEO LD
+|1000|02-6266666|Not registered (on 'UC-MAD')|Public|advanced_CLIRO_3
+|1000|02-6269990|Not registered (on 'UC-MAD')|Public|advancedSSS
+|1000|02-6279243|Registered from 10.50.14.2|Public|Abonado Comun
+|1000|02-ABB6231373001|Not registered (on 'UC-MAD')|Public|mduSSS
+[End of Document]

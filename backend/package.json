@@ -1,0 +1,22 @@
+{
+  "name": "sistema-reparacion-backend",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Backend refactorizado Express + JWT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mssql": "^12.5.2",
+    "socket.io": "^4.8.3"
+  }
+}

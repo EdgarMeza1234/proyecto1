@@ -1,0 +1,1000 @@
+|Node|Directory Number|Basic Service|Interface / Access|Subscriber Type|Supplementary Service Set
+|1000|02-6223879|Telephony, 64kBit, Audio 3.1kHz|San Roque / 990|Analog / Public|BLOQUEO LD
+|1000|02-6227555|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1|Analog / Public|Abonado Comun
+|1000|02-6230383|Telephony, 64kBit, Audio 3.1kHz|San Roque / 989|Analog / Public|BLOQUEO LD
+|1000|02-6262000|Telephony, 64kBit, Audio 3.1kHz|San Roque / 195|Analog / Public|BLOQUEO LD
+|1000|02-6262005|Telephony, 64kBit, Audio 3.1kHz|San Roque / 971|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262006|Telephony, 64kBit, Audio 3.1kHz|San Roque / 20|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262008|Telephony, 64kBit, Audio 3.1kHz|San Roque / 0|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262010|Telephony, 64kBit, Audio 3.1kHz|San Roque / 7|Analog / Public|BLOQUEO LD
+|1000|02-6262011|Telephony, 64kBit, Audio 3.1kHz|San Roque / 8|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262016|Telephony, 64kBit, Audio 3.1kHz|San Roque / 9|Analog / Public|Abonado Comun
+|1000|02-6262019|Telephony, 64kBit, Audio 3.1kHz|San Roque / 12|Analog / Public|Abonado Comun
+|1000|02-6262020|Telephony, 64kBit, Audio 3.1kHz|San Roque / 13|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262021|Telephony, 64kBit, Audio 3.1kHz|San Roque / 975|Analog / Public|Abonado Comun
+|1000|02-6262022|Telephony, 64kBit, Audio 3.1kHz|San Roque / 14|Analog / Public|BLOQUEO LD
+|1000|02-6262025|Telephony, 64kBit, Audio 3.1kHz|San Roque / 15|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262027|Telephony, 64kBit, Audio 3.1kHz|San Roque / 21|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262035|Telephony, 64kBit, Audio 3.1kHz|San Roque / 18|Analog / Public|BLOQUEO LD
+|1000|02-6262040|Telephony, 64kBit, Audio 3.1kHz|San Roque / 19|Analog / Public|BLOQUEO LD
+|1000|02-6262043|Telephony, 64kBit, Audio 3.1kHz|San Roque / 23|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262044|Telephony, 64kBit, Audio 3.1kHz|San Roque / 985|Analog / Public|BLOQUEO LD
+|1000|02-6262045|Telephony, 64kBit, Audio 3.1kHz|San Roque / 24|Analog / Public|BLOQUEO LD
+|1000|02-6262047|Telephony, 64kBit, Audio 3.1kHz|San Roque / 25|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262052|Telephony, 64kBit, Audio 3.1kHz|San Roque / 27|Analog / Public|Abonado Comun
+|1000|02-6262053|Telephony, 64kBit, Audio 3.1kHz|San Roque / 28|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262056|Telephony, 64kBit, Audio 3.1kHz|San Roque / 29|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262058|Telephony, 64kBit, Audio 3.1kHz|San Roque / 30|Analog / Public|BLOQUEO LD
+|1000|02-6262060|Telephony, 64kBit, Audio 3.1kHz|San Roque / 31|Analog / Public|Abonado Comun
+|1000|02-6262062|Telephony, 64kBit, Audio 3.1kHz|San Roque / 32|Analog / Public|Abonado Comun
+|1000|02-6262063|Telephony, 64kBit, Audio 3.1kHz|San Roque / 33|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262064|Telephony, 64kBit, Audio 3.1kHz|San Roque / 34|Analog / Public|BLOQUEO LD
+|1000|02-6262065|Telephony, 64kBit, Audio 3.1kHz|San Roque / 35|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262067|Telephony, 64kBit, Audio 3.1kHz|San Roque / 986|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262069|Telephony, 64kBit, Audio 3.1kHz|San Roque / 36|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262070|Telephony, 64kBit, Audio 3.1kHz|San Roque / 37|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262071|Telephony, 64kBit, Audio 3.1kHz|San Roque / 38|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262072|Telephony, 64kBit, Audio 3.1kHz|San Roque / 39|Analog / Public|BLOQUEO LD
+|1000|02-6262073|Telephony, 64kBit, Audio 3.1kHz|San Roque / 40|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262075|Telephony, 64kBit, Audio 3.1kHz|San Roque / 41|Analog / Public|Abonado Comun
+|1000|02-6262080|Telephony, 64kBit, Audio 3.1kHz|San Roque / 42|Analog / Public|Abonado Comun
+|1000|02-6262081|Telephony, 64kBit, Audio 3.1kHz|San Roque / 43|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262082|Telephony, 64kBit, Audio 3.1kHz|San Roque / 44|Analog / Public|Abonado Comun
+|1000|02-6262089|Telephony, 64kBit, Audio 3.1kHz|San Roque / 45|Analog / Public|BLOQUEO LD
+|1000|02-6262090|Telephony, 64kBit, Audio 3.1kHz|San Roque / 46|Analog / Public|Abonado Comun
+|1000|02-6262092|Telephony, 64kBit, Audio 3.1kHz|San Roque / 47|Analog / Public|Abonado Comun
+|1000|02-6262094|Telephony, 64kBit, Audio 3.1kHz|San Roque / 48|Analog / Public|Abonado Comun
+|1000|02-6262095|Telephony, 64kBit, Audio 3.1kHz|San Roque / 49|Analog / Public|BLOQUEO LD
+|1000|02-6262096|Telephony, 64kBit, Audio 3.1kHz|San Roque / 50|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262097|Telephony, 64kBit, Audio 3.1kHz|San Roque / 51|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262101|Telephony, 64kBit, Audio 3.1kHz|San Roque / 52|Analog / Public|Abonado Comun
+|1000|02-6262102|Telephony, 64kBit, Audio 3.1kHz|San Roque / 53|Analog / Public|Abonado Comun
+|1000|02-6262103|Telephony, 64kBit, Audio 3.1kHz|San Roque / 54|Analog / Public|Abonado Comun
+|1000|02-6262108|Telephony, 64kBit, Audio 3.1kHz|San Roque / 55|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262109|Telephony, 64kBit, Audio 3.1kHz|San Roque / 56|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262110|Telephony, 64kBit, Audio 3.1kHz|San Roque / 57|Analog / Public|BLOQUEO LD
+|1000|02-6262111|Telephony, 64kBit, Audio 3.1kHz|San Roque / 58|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262113|Telephony, 64kBit, Audio 3.1kHz|San Roque / 59|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262116|Telephony, 64kBit, Audio 3.1kHz|San Roque / 60|Analog / Public|BLOQUEO LD
+|1000|02-6262117|Telephony, 64kBit, Audio 3.1kHz|San Roque / 743|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262119|Telephony, 64kBit, Audio 3.1kHz|San Roque / 61|Analog / Public|BLOQUEO LD
+|1000|02-6262120|Telephony, 64kBit, Audio 3.1kHz|San Roque / 62|Analog / Public|Abonado Comun
+|1000|02-6262122|Telephony, 64kBit, Audio 3.1kHz|San Roque / 63|Analog / Public|BLOQUEO LD
+|1000|02-6262123|Telephony, 64kBit, Audio 3.1kHz|San Roque / 64|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262124|Telephony, 64kBit, Audio 3.1kHz|San Roque / 65|Analog / Public|Abonado Comun
+|1000|02-6262125|Telephony, 64kBit, Audio 3.1kHz|San Roque / 66|Analog / Public|Abonado Comun
+|1000|02-6262127|Telephony, 64kBit, Audio 3.1kHz|San Roque / 68|Analog / Public|Abonado Comun
+|1000|02-6262130|Telephony, 64kBit, Audio 3.1kHz|San Roque / 69|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262131|Telephony, 64kBit, Audio 3.1kHz|San Roque / 70|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262132|Telephony, 64kBit, Audio 3.1kHz|San Roque / 71|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262133|Telephony, 64kBit, Audio 3.1kHz|San Roque / 72|Analog / Public|BLOQUEO LD
+|1000|02-6262134|Telephony, 64kBit, Audio 3.1kHz|San Roque / 73|Analog / Public|BLOQUEO LD
+|1000|02-6262135|Telephony, 64kBit, Audio 3.1kHz|San Roque / 74|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262136|Telephony, 64kBit, Audio 3.1kHz|San Roque / 75|Analog / Public|BLOQUEO LD
+|1000|02-6262138|Telephony, 64kBit, Audio 3.1kHz|San Roque / 76|Analog / Public|Abonado Comun
+|1000|02-6262141|Telephony, 64kBit, Audio 3.1kHz|San Roque / 77|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262143|Telephony, 64kBit, Audio 3.1kHz|San Roque / 78|Analog / Public|BLOQUEO LD
+|1000|02-6262144|Telephony, 64kBit, Audio 3.1kHz|San Roque / 79|Analog / Public|Abonado Comun
+|1000|02-6262145|Telephony, 64kBit, Audio 3.1kHz|San Roque / 80|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262146|Telephony, 64kBit, Audio 3.1kHz|San Roque / 81|Analog / Public|Abonado Comun
+|1000|02-6262152|Telephony, 64kBit, Audio 3.1kHz|San Roque / 83|Analog / Public|BLOQUEO LD
+|1000|02-6262155|Telephony, 64kBit, Audio 3.1kHz|San Roque / 84|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262158|Telephony, 64kBit, Audio 3.1kHz|San Roque / 85|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262159|Telephony, 64kBit, Audio 3.1kHz|San Roque / 86|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262160|Telephony, 64kBit, Audio 3.1kHz|San Roque / 87|Analog / Public|BLOQUEO LD
+|1000|02-6262162|Telephony, 64kBit, Audio 3.1kHz|San Roque / 88|Analog / Public|Abonado Comun
+|1000|02-6262164|Telephony, 64kBit, Audio 3.1kHz|San Roque / 89|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262165|Telephony, 64kBit, Audio 3.1kHz|San Roque / 997|Analog / Public|BLOQUEO LD
+|1000|02-6262167|Telephony, 64kBit, Audio 3.1kHz|San Roque / 91|Analog / Public|BLOQUEO LD
+|1000|02-6262169|Telephony, 64kBit, Audio 3.1kHz|San Roque / 92|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262173|Telephony, 64kBit, Audio 3.1kHz|San Roque / 93|Analog / Public|BLOQUEO LD
+|1000|02-6262175|Telephony, 64kBit, Audio 3.1kHz|San Roque / 94|Analog / Public|BLOQUEO LD
+|1000|02-6262176|Telephony, 64kBit, Audio 3.1kHz|San Roque / 95|Analog / Public|Abonado Comun
+|1000|02-6262177|Telephony, 64kBit, Audio 3.1kHz|San Roque / 96|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262183|Telephony, 64kBit, Audio 3.1kHz|San Roque / 99|Analog / Public|Abonado Comun
+|1000|02-6262184|Telephony, 64kBit, Audio 3.1kHz|San Roque / 100|Analog / Public|Abonado Comun
+|1000|02-6262185|Telephony, 64kBit, Audio 3.1kHz|San Roque / 101|Analog / Public|Abonado Comun
+|1000|02-6262186|Telephony, 64kBit, Audio 3.1kHz|San Roque / 102|Analog / Public|BLOQUEO LD
+|1000|02-6262190|Telephony, 64kBit, Audio 3.1kHz|San Roque / 104|Analog / Public|BLOQUEO LD
+|1000|02-6262191|Telephony, 64kBit, Audio 3.1kHz|San Roque / 987|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262194|Telephony, 64kBit, Audio 3.1kHz|San Roque / 105|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262195|Telephony, 64kBit, Audio 3.1kHz|San Roque / 106|Analog / Public|BLOQUEO LD
+|1000|02-6262196|Telephony, 64kBit, Audio 3.1kHz|San Roque / 107|Analog / Public|Abonado Comun
+|1000|02-6262197|Telephony, 64kBit, Audio 3.1kHz|San Roque / 108|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262198|Telephony, 64kBit, Audio 3.1kHz|San Roque / 109|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262199|Telephony, 64kBit, Audio 3.1kHz|San Roque / 110|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262208|Telephony, 64kBit, Audio 3.1kHz|San Roque / 119|Analog / Public|BLOQUEO LD
+|1000|02-6262209|Telephony, 64kBit, Audio 3.1kHz|San Roque / 120|Analog / Public|Abonado Comun
+|1000|02-6262211|Telephony, 64kBit, Audio 3.1kHz|San Roque / 121|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262213|Telephony, 64kBit, Audio 3.1kHz|San Roque / 122|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262220|Telephony, 64kBit, Audio 3.1kHz|San Roque / 126|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262221|Telephony, 64kBit, Audio 3.1kHz|San Roque / 127|Analog / Public|BLOQUEO LD
+|1000|02-6262227|Telephony, 64kBit, Audio 3.1kHz|San Roque / 129|Analog / Public|Abonado Comun
+|1000|02-6262228|Telephony, 64kBit, Audio 3.1kHz|San Roque / 130|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262231|Telephony, 64kBit, Audio 3.1kHz|San Roque / 132|Analog / Public|BLOQUEO LD
+|1000|02-6262233|Telephony, 64kBit, Audio 3.1kHz|San Roque / 134|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262234|Telephony, 64kBit, Audio 3.1kHz|San Roque / 135|Analog / Public|BLOQUEO LD
+|1000|02-6262235|Telephony, 64kBit, Audio 3.1kHz|San Roque / 136|Analog / Public|Abonado Comun
+|1000|02-6262236|Telephony, 64kBit, Audio 3.1kHz|San Roque / 137|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262241|Telephony, 64kBit, Audio 3.1kHz|San Roque / 139|Analog / Public|BLOQUEO LD
+|1000|02-6262243|Telephony, 64kBit, Audio 3.1kHz|San Roque / 140|Analog / Public|BLOQUEO LD
+|1000|02-6262244|Telephony, 64kBit, Audio 3.1kHz|San Roque / 141|Analog / Public|BLOQUEO LD
+|1000|02-6262246|Telephony, 64kBit, Audio 3.1kHz|San Roque / 142|Analog / Public|Abonado Comun
+|1000|02-6262247|Telephony, 64kBit, Audio 3.1kHz|San Roque / 143|Analog / Public|BLOQUEO LD
+|1000|02-6262248|Telephony, 64kBit, Audio 3.1kHz|San Roque / 995|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262249|Telephony, 64kBit, Audio 3.1kHz|San Roque / 144|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262250|Telephony, 64kBit, Audio 3.1kHz|San Roque / 145|Analog / Public|BLOQUEO LD
+|1000|02-6262253|Telephony, 64kBit, Audio 3.1kHz|San Roque / 146|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262254|Telephony, 64kBit, Audio 3.1kHz|San Roque / 147|Analog / Public|Abonado Comun
+|1000|02-6262255|Telephony, 64kBit, Audio 3.1kHz|San Roque / 148|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262256|Telephony, 64kBit, Audio 3.1kHz|San Roque / 149|Analog / Public|BLOQUEO LD
+|1000|02-6262257|Telephony, 64kBit, Audio 3.1kHz|San Roque / 150|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262260|Telephony, 64kBit, Audio 3.1kHz|San Roque / 988|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262262|Telephony, 64kBit, Audio 3.1kHz|San Roque / 151|Analog / Public|BLOQUEO LD
+|1000|02-6262266|Telephony, 64kBit, Audio 3.1kHz|San Roque / 152|Analog / Public|Abonado Comun
+|1000|02-6262268|Telephony, 64kBit, Audio 3.1kHz|San Roque / 154|Analog / Public|Abonado Comun
+|1000|02-6262269|Telephony, 64kBit, Audio 3.1kHz|San Roque / 155|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262271|Telephony, 64kBit, Audio 3.1kHz|San Roque / 156|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262274|Telephony, 64kBit, Audio 3.1kHz|San Roque / 158|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262276|Telephony, 64kBit, Audio 3.1kHz|San Roque / 10|Analog / Public|Abonado Comun
+|1000|02-6262277|Telephony, 64kBit, Audio 3.1kHz|San Roque / 880|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262283|Telephony, 64kBit, Audio 3.1kHz|San Roque / 160|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262284|Telephony, 64kBit, Audio 3.1kHz|San Roque / 22|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262285|Telephony, 64kBit, Audio 3.1kHz|San Roque / 161|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262287|Telephony, 64kBit, Audio 3.1kHz|San Roque / 162|Analog / Public|Abonado Comun
+|1000|02-6262288|Telephony, 64kBit, Audio 3.1kHz|San Roque / 163|Analog / Public|BLOQUEO LD
+|1000|02-6262289|Telephony, 64kBit, Audio 3.1kHz|San Roque / 164|Analog / Public|Abonado Comun
+|1000|02-6262290|Telephony, 64kBit, Audio 3.1kHz|San Roque / 165|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262292|Telephony, 64kBit, Audio 3.1kHz|San Roque / 166|Analog / Public|BLOQUEO LD
+|1000|02-6262293|Telephony, 64kBit, Audio 3.1kHz|San Roque / 167|Analog / Public|Abonado Comun
+|1000|02-6262298|Telephony, 64kBit, Audio 3.1kHz|San Roque / 981|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262299|Telephony, 64kBit, Audio 3.1kHz|San Roque / 169|Analog / Public|BLOQUEO LD
+|1000|02-6262301|Telephony, 64kBit, Audio 3.1kHz|San Roque / 170|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262302|Telephony, 64kBit, Audio 3.1kHz|San Roque / 171|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262303|Telephony, 64kBit, Audio 3.1kHz|San Roque / 172|Analog / Public|BLOQUEO LD
+|1000|02-6262306|Telephony, 64kBit, Audio 3.1kHz|San Roque / 173|Analog / Public|Abonado Comun
+|1000|02-6262308|Telephony, 64kBit, Audio 3.1kHz|San Roque / 174|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262309|Telephony, 64kBit, Audio 3.1kHz|San Roque / 175|Analog / Public|Abonado Comun
+|1000|02-6262313|Telephony, 64kBit, Audio 3.1kHz|San Roque / 982|Analog / Public|BLOQUEO LD
+|1000|02-6262317|Telephony, 64kBit, Audio 3.1kHz|San Roque / 177|Analog / Public|Abonado Comun
+|1000|02-6262319|Telephony, 64kBit, Audio 3.1kHz|San Roque / 983|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262321|Telephony, 64kBit, Audio 3.1kHz|San Roque / 984|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262322|Telephony, 64kBit, Audio 3.1kHz|San Roque / 178|Analog / Public|Abonado Comun
+|1000|02-6262324|Telephony, 64kBit, Audio 3.1kHz|San Roque / 179|Analog / Public|BLOQUEO LD
+|1000|02-6262325|Telephony, 64kBit, Audio 3.1kHz|San Roque / 180|Analog / Public|Abonado Comun
+|1000|02-6262331|Telephony, 64kBit, Audio 3.1kHz|San Roque / 182|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262332|Telephony, 64kBit, Audio 3.1kHz|San Roque / 183|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262333|Telephony, 64kBit, Audio 3.1kHz|San Roque / 184|Analog / Public|BLOQUEO LD
+|1000|02-6262339|Telephony, 64kBit, Audio 3.1kHz|San Roque / 185|Analog / Public|Abonado Comun
+|1000|02-6262341|Telephony, 64kBit, Audio 3.1kHz|San Roque / 186|Analog / Public|Abonado Comun
+|1000|02-6262344|Telephony, 64kBit, Audio 3.1kHz|San Roque / 187|Analog / Public|Abonado Comun
+|1000|02-6262347|Telephony, 64kBit, Audio 3.1kHz|San Roque / 188|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262349|Telephony, 64kBit, Audio 3.1kHz|San Roque / 189|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262350|Telephony, 64kBit, Audio 3.1kHz|San Roque / 190|Analog / Public|BLOQUEO LD
+|1000|02-6262351|Telephony, 64kBit, Audio 3.1kHz|San Roque / 191|Analog / Public|BLOQUEO LD
+|1000|02-6262355|Telephony, 64kBit, Audio 3.1kHz|San Roque / 193|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262357|Telephony, 64kBit, Audio 3.1kHz|San Roque / 194|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262364|Telephony, 64kBit, Audio 3.1kHz|San Roque / 196|Analog / Public|Abonado Comun
+|1000|02-6262368|Telephony, 64kBit, Audio 3.1kHz|San Roque / 197|Analog / Public|BLOQUEO LD
+|1000|02-6262371|Telephony, 64kBit, Audio 3.1kHz|San Roque / 199|Analog / Public|BLOQUEO LD
+|1000|02-6262373|Telephony, 64kBit, Audio 3.1kHz|San Roque / 200|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262374|Telephony, 64kBit, Audio 3.1kHz|San Roque / 201|Analog / Public|Abonado Comun
+|1000|02-6262375|Telephony, 64kBit, Audio 3.1kHz|San Roque / 202|Analog / Public|BLOQUEO LD
+|1000|02-6262376|Telephony, 64kBit, Audio 3.1kHz|San Roque / 419|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262387|Telephony, 64kBit, Audio 3.1kHz|San Roque / 203|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262389|Telephony, 64kBit, Audio 3.1kHz|San Roque / 204|Analog / Public|Abonado Comun
+|1000|02-6262390|Telephony, 64kBit, Audio 3.1kHz|San Roque / 205|Analog / Public|BLOQUEO LD
+|1000|02-6262391|Telephony, 64kBit, Audio 3.1kHz|San Roque / 206|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262393|Telephony, 64kBit, Audio 3.1kHz|San Roque / 207|Analog / Public|BLOQUEO LD
+|1000|02-6262398|Telephony, 64kBit, Audio 3.1kHz|San Roque / 208|Analog / Public|BLOQUEO LD
+|1000|02-6262403|Telephony, 64kBit, Audio 3.1kHz|San Roque / 209|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262405|Telephony, 64kBit, Audio 3.1kHz|San Roque / 210|Analog / Public|Abonado Comun
+|1000|02-6262410|Telephony, 64kBit, Audio 3.1kHz|San Roque / 211|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262412|Telephony, 64kBit, Audio 3.1kHz|San Roque / 212|Analog / Public|Abonado Comun
+|1000|02-6262413|Telephony, 64kBit, Audio 3.1kHz|San Roque / 11|Analog / Public|BLOQUEO LD
+|1000|02-6262416|Telephony, 64kBit, Audio 3.1kHz|San Roque / 213|Analog / Public|Abonado Comun
+|1000|02-6262417|Telephony, 64kBit, Audio 3.1kHz|San Roque / 214|Analog / Public|Abonado Comun
+|1000|02-6262419|Telephony, 64kBit, Audio 3.1kHz|San Roque / 215|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262421|Telephony, 64kBit, Audio 3.1kHz|San Roque / 733|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262423|Telephony, 64kBit, Audio 3.1kHz|San Roque / 217|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262425|Telephony, 64kBit, Audio 3.1kHz|San Roque / 218|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262427|Telephony, 64kBit, Audio 3.1kHz|San Roque / 219|Analog / Public|BLOQUEO LD
+|1000|02-6262430|Telephony, 64kBit, Audio 3.1kHz|San Roque / 221|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262432|Telephony, 64kBit, Audio 3.1kHz|San Roque / 222|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262433|Telephony, 64kBit, Audio 3.1kHz|San Roque / 153|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262434|Telephony, 64kBit, Audio 3.1kHz|San Roque / 223|Analog / Public|BLOQUEO LD
+|1000|02-6262436|Telephony, 64kBit, Audio 3.1kHz|San Roque / 224|Analog / Public|Abonado Comun
+|1000|02-6262437|Telephony, 64kBit, Audio 3.1kHz|San Roque / 225|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262438|Telephony, 64kBit, Audio 3.1kHz|San Roque / 226|Analog / Public|Abonado Comun
+|1000|02-6262440|Telephony, 64kBit, Audio 3.1kHz|San Roque / 227|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262445|Telephony, 64kBit, Audio 3.1kHz|San Roque / 229|Analog / Public|Abonado Comun
+|1000|02-6262447|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1014|Analog / Public|BLOQUEO LD
+|1000|02-6262448|Telephony, 64kBit, Audio 3.1kHz|San Roque / 230|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262451|Telephony, 64kBit, Audio 3.1kHz|San Roque / 231|Analog / Public|BLOQUEO LD
+|1000|02-6262452|Telephony, 64kBit, Audio 3.1kHz|San Roque / 232|Analog / Public|Abonado Comun
+|1000|02-6262453|Telephony, 64kBit, Audio 3.1kHz|San Roque / 888|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262455|Telephony, 64kBit, Audio 3.1kHz|San Roque / 994|Analog / Public|BLOQUEO LD
+|1000|02-6262457|Telephony, 64kBit, Audio 3.1kHz|San Roque / 234|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262459|Telephony, 64kBit, Audio 3.1kHz|San Roque / 236|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262461|Telephony, 64kBit, Audio 3.1kHz|San Roque / 237|Analog / Public|Abonado Comun
+|1000|02-6262462|Telephony, 64kBit, Audio 3.1kHz|San Roque / 238|Analog / Public|Abonado Comun
+|1000|02-6262467|Telephony, 64kBit, Audio 3.1kHz|San Roque / 239|Analog / Public|BLOQUEO LD
+|1000|02-6262471|Telephony, 64kBit, Audio 3.1kHz|San Roque / 240|Analog / Public|BLOQUEO LD
+|1000|02-6262472|Telephony, 64kBit, Audio 3.1kHz|San Roque / 241|Analog / Public|BLOQUEO LD
+|1000|02-6262473|Telephony, 64kBit, Audio 3.1kHz|San Roque / 242|Analog / Public|Custom
+|1000|02-6262476|Telephony, 64kBit, Audio 3.1kHz|San Roque / 243|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262477|Telephony, 64kBit, Audio 3.1kHz|San Roque / 244|Analog / Public|Abonado Comun
+|1000|02-6262487|Telephony, 64kBit, Audio 3.1kHz|San Roque / 245|Analog / Public|BLOQUEO LD
+|1000|02-6262488|Telephony, 64kBit, Audio 3.1kHz|San Roque / 246|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262491|Telephony, 64kBit, Audio 3.1kHz|San Roque / 247|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262492|Telephony, 64kBit, Audio 3.1kHz|San Roque / 248|Analog / Public|Abonado Comun
+|1000|02-6262493|Telephony, 64kBit, Audio 3.1kHz|San Roque / 249|Analog / Public|Abonado Comun
+|1000|02-6262494|Telephony, 64kBit, Audio 3.1kHz|San Roque / 250|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262496|Telephony, 64kBit, Audio 3.1kHz|San Roque / 251|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262498|Telephony, 64kBit, Audio 3.1kHz|San Roque / 252|Analog / Public|BLOQUEO LD
+|1000|02-6262504|Telephony, 64kBit, Audio 3.1kHz|San Roque / 253|Analog / Public|Abonado Comun
+|1000|02-6262506|Telephony, 64kBit, Audio 3.1kHz|San Roque / 254|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262510|Telephony, 64kBit, Audio 3.1kHz|San Roque / 255|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262511|Telephony, 64kBit, Audio 3.1kHz|San Roque / 256|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262514|Telephony, 64kBit, Audio 3.1kHz|San Roque / 257|Analog / Public|BLOQUEO LD
+|1000|02-6262515|Telephony, 64kBit, Audio 3.1kHz|San Roque / 258|Analog / Public|BLOQUEO LD
+|1000|02-6262516|Telephony, 64kBit, Audio 3.1kHz|San Roque / 259|Analog / Public|BLOQUEO LD
+|1000|02-6262518|Telephony, 64kBit, Audio 3.1kHz|San Roque / 260|Analog / Public|BLOQUEO LD
+|1000|02-6262519|Telephony, 64kBit, Audio 3.1kHz|San Roque / 261|Analog / Public|BLOQUEO LD
+|1000|02-6262522|Telephony, 64kBit, Audio 3.1kHz|San Roque / 262|Analog / Public|Abonado Comun
+|1000|02-6262524|Telephony, 64kBit, Audio 3.1kHz|San Roque / 263|Analog / Public|BLOQUEO LD
+|1000|02-6262525|Telephony, 64kBit, Audio 3.1kHz|San Roque / 264|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262527|Telephony, 64kBit, Audio 3.1kHz|San Roque / 265|Analog / Public|BLOQUEO LD
+|1000|02-6262528|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1007|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262529|Telephony, 64kBit, Audio 3.1kHz|San Roque / 266|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262530|Telephony, 64kBit, Audio 3.1kHz|San Roque / 947|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262531|Telephony, 64kBit, Audio 3.1kHz|San Roque / 267|Analog / Public|BLOQUEO LD
+|1000|02-6262533|Telephony, 64kBit, Audio 3.1kHz|San Roque / 268|Analog / Public|Abonado Comun
+|1000|02-6262534|Telephony, 64kBit, Audio 3.1kHz|San Roque / 269|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262535|Telephony, 64kBit, Audio 3.1kHz|San Roque / 270|Analog / Public|BLOQUEO LD
+|1000|02-6262536|Telephony, 64kBit, Audio 3.1kHz|San Roque / 271|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262537|Telephony, 64kBit, Audio 3.1kHz|San Roque / 272|Analog / Public|Abonado Comun
+|1000|02-6262540|Telephony, 64kBit, Audio 3.1kHz|San Roque / 273|Analog / Public|Abonado Comun
+|1000|02-6262541|Telephony, 64kBit, Audio 3.1kHz|San Roque / 274|Analog / Public|Abonado Comun
+|1000|02-6262543|Telephony, 64kBit, Audio 3.1kHz|San Roque / 275|Analog / Public|BLOQUEO LD
+|1000|02-6262544|Telephony, 64kBit, Audio 3.1kHz|San Roque / 276|Analog / Public|BLOQUEO LD
+|1000|02-6262545|Telephony, 64kBit, Audio 3.1kHz|San Roque / 277|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262547|Telephony, 64kBit, Audio 3.1kHz|San Roque / 278|Analog / Public|Abonado Comun
+|1000|02-6262548|Telephony, 64kBit, Audio 3.1kHz|San Roque / 279|Analog / Public|BLOQUEO LD
+|1000|02-6262550|Telephony, 64kBit, Audio 3.1kHz|San Roque / 280|Analog / Public|Abonado Comun
+|1000|02-6262552|Telephony, 64kBit, Audio 3.1kHz|San Roque / 281|Analog / Public|Abonado Comun
+|1000|02-6262556|Telephony, 64kBit, Audio 3.1kHz|San Roque / 282|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262560|Telephony, 64kBit, Audio 3.1kHz|San Roque / 283|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262565|Telephony, 64kBit, Audio 3.1kHz|San Roque / 285|Analog / Public|Abonado Comun
+|1000|02-6262566|Telephony, 64kBit, Audio 3.1kHz|San Roque / 286|Analog / Public|BLOQUEO LD
+|1000|02-6262571|Telephony, 64kBit, Audio 3.1kHz|San Roque / 287|Analog / Public|BLOQUEO LD
+|1000|02-6262574|Telephony, 64kBit, Audio 3.1kHz|San Roque / 288|Analog / Public|BLOQUEO LD
+|1000|02-6262575|Telephony, 64kBit, Audio 3.1kHz|San Roque / 289|Analog / Public|Abonado Comun
+|1000|02-6262577|Telephony, 64kBit, Audio 3.1kHz|San Roque / 290|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262580|Telephony, 64kBit, Audio 3.1kHz|San Roque / 291|Analog / Public|Abonado Comun
+|1000|02-6262583|Telephony, 64kBit, Audio 3.1kHz|San Roque / 292|Analog / Public|BLOQUEO LD
+|1000|02-6262584|Telephony, 64kBit, Audio 3.1kHz|San Roque / 293|Analog / Public|BLOQUEO LD
+|1000|02-6262590|Telephony, 64kBit, Audio 3.1kHz|San Roque / 295|Analog / Public|BLOQUEO LD
+|1000|02-6262591|Telephony, 64kBit, Audio 3.1kHz|San Roque / 296|Analog / Public|Abonado Comun
+|1000|02-6262592|Telephony, 64kBit, Audio 3.1kHz|San Roque / 297|Analog / Public|Abonado Comun
+|1000|02-6262594|Telephony, 64kBit, Audio 3.1kHz|San Roque / 298|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262595|Telephony, 64kBit, Audio 3.1kHz|San Roque / 299|Analog / Public|Abonado Comun
+|1000|02-6262596|Telephony, 64kBit, Audio 3.1kHz|San Roque / 300|Analog / Public|BLOQUEO LD
+|1000|02-6262598|Telephony, 64kBit, Audio 3.1kHz|San Roque / 301|Analog / Public|BLOQUEO LD
+|1000|02-6262601|Telephony, 64kBit, Audio 3.1kHz|San Roque / 302|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262602|Telephony, 64kBit, Audio 3.1kHz|San Roque / 303|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262608|Telephony, 64kBit, Audio 3.1kHz|San Roque / 305|Analog / Public|Abonado Comun
+|1000|02-6262609|Telephony, 64kBit, Audio 3.1kHz|San Roque / 306|Analog / Public|Abonado Comun
+|1000|02-6262612|Telephony, 64kBit, Audio 3.1kHz|San Roque / 307|Analog / Public|Abonado Comun
+|1000|02-6262613|Telephony, 64kBit, Audio 3.1kHz|San Roque / 308|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262617|Telephony, 64kBit, Audio 3.1kHz|San Roque / 309|Analog / Public|Abonado Comun
+|1000|02-6262619|Telephony, 64kBit, Audio 3.1kHz|San Roque / 310|Analog / Public|BLOQUEO LD
+|1000|02-6262620|Telephony, 64kBit, Audio 3.1kHz|San Roque / 311|Analog / Public|Abonado Comun
+|1000|02-6262621|Telephony, 64kBit, Audio 3.1kHz|San Roque / 312|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262623|Telephony, 64kBit, Audio 3.1kHz|San Roque / 313|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262626|Telephony, 64kBit, Audio 3.1kHz|San Roque / 304|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262627|Telephony, 64kBit, Audio 3.1kHz|San Roque / 124|Analog / Public|BLOQUEO LD
+|1000|02-6262628|Telephony, 64kBit, Audio 3.1kHz|San Roque / 314|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262632|Telephony, 64kBit, Audio 3.1kHz|San Roque / 315|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262634|Telephony, 64kBit, Audio 3.1kHz|San Roque / 316|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262635|Telephony, 64kBit, Audio 3.1kHz|San Roque / 317|Analog / Public|Abonado Comun
+|1000|02-6262638|Telephony, 64kBit, Audio 3.1kHz|San Roque / 318|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262639|Telephony, 64kBit, Audio 3.1kHz|San Roque / 319|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262640|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1015|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262642|Telephony, 64kBit, Audio 3.1kHz|San Roque / 320|Analog / Public|BLOQUEO LD
+|1000|02-6262643|Telephony, 64kBit, Audio 3.1kHz|San Roque / 321|Analog / Public|Abonado Comun
+|1000|02-6262644|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1019|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262645|Telephony, 64kBit, Audio 3.1kHz|San Roque / 322|Analog / Public|BLOQUEO LD
+|1000|02-6262646|Telephony, 64kBit, Audio 3.1kHz|San Roque / 323|Analog / Public|BLOQUEO LD
+|1000|02-6262647|Telephony, 64kBit, Audio 3.1kHz|San Roque / 324|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262648|Telephony, 64kBit, Audio 3.1kHz|San Roque / 325|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262649|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1016|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262651|Telephony, 64kBit, Audio 3.1kHz|San Roque / 326|Analog / Public|BLOQUEO LD
+|1000|02-6262654|Telephony, 64kBit, Audio 3.1kHz|San Roque / 327|Analog / Public|BLOQUEO LD
+|1000|02-6262657|Telephony, 64kBit, Audio 3.1kHz|San Roque / 329|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262661|Telephony, 64kBit, Audio 3.1kHz|San Roque / 330|Analog / Public|BLOQUEO LD
+|1000|02-6262662|Telephony, 64kBit, Audio 3.1kHz|San Roque / 331|Analog / Public|BLOQUEO LD
+|1000|02-6262663|Telephony, 64kBit, Audio 3.1kHz|San Roque / 332|Analog / Public|Abonado Comun
+|1000|02-6262667|Telephony, 64kBit, Audio 3.1kHz|San Roque / 333|Analog / Public|BLOQUEO LD
+|1000|02-6262670|Telephony, 64kBit, Audio 3.1kHz|San Roque / 334|Analog / Public|Abonado Comun
+|1000|02-6262671|Telephony, 64kBit, Audio 3.1kHz|San Roque / 335|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262673|Telephony, 64kBit, Audio 3.1kHz|San Roque / 336|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262674|Telephony, 64kBit, Audio 3.1kHz|San Roque / 337|Analog / Public|BLOQUEO LD
+|1000|02-6262677|Telephony, 64kBit, Audio 3.1kHz|San Roque / 338|Analog / Public|BLOQUEO LD
+|1000|02-6262678|Telephony, 64kBit, Audio 3.1kHz|San Roque / 339|Analog / Public|BLOQUEO LD
+|1000|02-6262680|Telephony, 64kBit, Audio 3.1kHz|San Roque / 340|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262682|Telephony, 64kBit, Audio 3.1kHz|San Roque / 341|Analog / Public|BLOQUEO LD
+|1000|02-6262685|Telephony, 64kBit, Audio 3.1kHz|San Roque / 342|Analog / Public|Abonado Comun
+|1000|02-6262687|Telephony, 64kBit, Audio 3.1kHz|San Roque / 343|Analog / Public|Abonado Comun
+|1000|02-6262688|Telephony, 64kBit, Audio 3.1kHz|San Roque / 344|Analog / Public|BLOQUEO LD
+|1000|02-6262694|Telephony, 64kBit, Audio 3.1kHz|San Roque / 345|Analog / Public|Abonado Comun
+|1000|02-6262697|Telephony, 64kBit, Audio 3.1kHz|San Roque / 346|Analog / Public|BLOQUEO LD
+|1000|02-6262699|Telephony, 64kBit, Audio 3.1kHz|San Roque / 347|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262700|Telephony, 64kBit, Audio 3.1kHz|San Roque / 348|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262701|Telephony, 64kBit, Audio 3.1kHz|San Roque / 349|Analog / Public|BLOQUEO LD
+|1000|02-6262703|Telephony, 64kBit, Audio 3.1kHz|San Roque / 350|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262704|Telephony, 64kBit, Audio 3.1kHz|San Roque / 351|Analog / Public|BLOQUEO LD
+|1000|02-6262705|Telephony, 64kBit, Audio 3.1kHz|San Roque / 352|Analog / Public|BLOQUEO LD
+|1000|02-6262707|Telephony, 64kBit, Audio 3.1kHz|San Roque / 353|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262711|Telephony, 64kBit, Audio 3.1kHz|San Roque / 354|Analog / Public|BLOQUEO LD
+|1000|02-6262715|Telephony, 64kBit, Audio 3.1kHz|San Roque / 355|Analog / Public|BLOQUEO LD
+|1000|02-6262717|Telephony, 64kBit, Audio 3.1kHz|San Roque / 356|Analog / Public|BLOQUEO LD
+|1000|02-6262725|Telephony, 64kBit, Audio 3.1kHz|San Roque / 357|Analog / Public|Abonado Comun
+|1000|02-6262726|Telephony, 64kBit, Audio 3.1kHz|San Roque / 358|Analog / Public|Abonado Comun
+|1000|02-6262727|Telephony, 64kBit, Audio 3.1kHz|San Roque / 359|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262728|Telephony, 64kBit, Audio 3.1kHz|San Roque / 545|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262731|Telephony, 64kBit, Audio 3.1kHz|San Roque / 360|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262732|Telephony, 64kBit, Audio 3.1kHz|San Roque / 361|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262733|Telephony, 64kBit, Audio 3.1kHz|San Roque / 362|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262734|Telephony, 64kBit, Audio 3.1kHz|San Roque / 363|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262738|Telephony, 64kBit, Audio 3.1kHz|San Roque / 364|Analog / Public|Abonado Comun
+|1000|02-6262740|Telephony, 64kBit, Audio 3.1kHz|San Roque / 365|Analog / Public|BLOQUEO LD
+|1000|02-6262742|Telephony, 64kBit, Audio 3.1kHz|San Roque / 366|Analog / Public|Abonado Comun
+|1000|02-6262743|Telephony, 64kBit, Audio 3.1kHz|San Roque / 367|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262744|Telephony, 64kBit, Audio 3.1kHz|San Roque / 368|Analog / Public|BLOQUEO LD
+|1000|02-6262746|Telephony, 64kBit, Audio 3.1kHz|San Roque / 369|Analog / Public|Abonado Comun
+|1000|02-6262754|Telephony, 64kBit, Audio 3.1kHz|San Roque / 371|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262757|Telephony, 64kBit, Audio 3.1kHz|San Roque / 372|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262759|Telephony, 64kBit, Audio 3.1kHz|San Roque / 373|Analog / Public|Abonado Comun
+|1000|02-6262764|Telephony, 64kBit, Audio 3.1kHz|San Roque / 374|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262766|Telephony, 64kBit, Audio 3.1kHz|San Roque / 375|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262767|Telephony, 64kBit, Audio 3.1kHz|San Roque / 376|Analog / Public|BLOQUEO LD
+|1000|02-6262768|Telephony, 64kBit, Audio 3.1kHz|San Roque / 377|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262769|Telephony, 64kBit, Audio 3.1kHz|San Roque / 378|Analog / Public|BLOQUEO LD
+|1000|02-6262771|Telephony, 64kBit, Audio 3.1kHz|San Roque / 379|Analog / Public|Abonado Comun
+|1000|02-6262772|Telephony, 64kBit, Audio 3.1kHz|San Roque / 380|Analog / Public|BLOQUEO LD
+|1000|02-6262773|Telephony, 64kBit, Audio 3.1kHz|San Roque / 381|Analog / Public|Abonado Comun
+|1000|02-6262777|Telephony, 64kBit, Audio 3.1kHz|San Roque / 382|Analog / Public|BLOQUEO LD
+|1000|02-6262778|Telephony, 64kBit, Audio 3.1kHz|San Roque / 383|Analog / Public|BLOQUEO LD
+|1000|02-6262779|Telephony, 64kBit, Audio 3.1kHz|San Roque / 384|Analog / Public|Abonado Comun
+|1000|02-6262781|Telephony, 64kBit, Audio 3.1kHz|San Roque / 385|Analog / Public|BLOQUEO LD
+|1000|02-6262783|Telephony, 64kBit, Audio 3.1kHz|San Roque / 386|Analog / Public|BLOQUEO LD
+|1000|02-6262784|Telephony, 64kBit, Audio 3.1kHz|San Roque / 970|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262787|Telephony, 64kBit, Audio 3.1kHz|San Roque / 387|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262789|Telephony, 64kBit, Audio 3.1kHz|San Roque / 388|Analog / Public|Abonado Comun
+|1000|02-6262794|Telephony, 64kBit, Audio 3.1kHz|San Roque / 389|Analog / Public|Abonado Comun
+|1000|02-6262799|Telephony, 64kBit, Audio 3.1kHz|San Roque / 391|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262801|Telephony, 64kBit, Audio 3.1kHz|San Roque / 392|Analog / Public|BLOQUEO LD
+|1000|02-6262804|Telephony, 64kBit, Audio 3.1kHz|San Roque / 393|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262806|Telephony, 64kBit, Audio 3.1kHz|San Roque / 394|Analog / Public|BLOQUEO LD
+|1000|02-6262807|Telephony, 64kBit, Audio 3.1kHz|San Roque / 395|Analog / Public|BLOQUEO LD
+|1000|02-6262808|Telephony, 64kBit, Audio 3.1kHz|San Roque / 396|Analog / Public|Abonado Comun
+|1000|02-6262809|Telephony, 64kBit, Audio 3.1kHz|San Roque / 397|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262810|Telephony, 64kBit, Audio 3.1kHz|San Roque / 398|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262811|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1013|Analog / Public|Abonado Comun
+|1000|02-6262812|Telephony, 64kBit, Audio 3.1kHz|San Roque / 399|Analog / Public|BLOQUEO LD
+|1000|02-6262815|Telephony, 64kBit, Audio 3.1kHz|San Roque / 400|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262816|Telephony, 64kBit, Audio 3.1kHz|San Roque / 401|Analog / Public|Abonado Comun
+|1000|02-6262817|Telephony, 64kBit, Audio 3.1kHz|San Roque / 176|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262818|Telephony, 64kBit, Audio 3.1kHz|San Roque / 402|Analog / Public|Abonado Comun
+|1000|02-6262819|Telephony, 64kBit, Audio 3.1kHz|San Roque / 403|Analog / Public|Abonado Comun
+|1000|02-6262820|Telephony, 64kBit, Audio 3.1kHz|San Roque / 404|Analog / Public|BLOQUEO LD
+|1000|02-6262821|Telephony, 64kBit, Audio 3.1kHz|San Roque / 405|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262822|Telephony, 64kBit, Audio 3.1kHz|San Roque / 406|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262824|Telephony, 64kBit, Audio 3.1kHz|San Roque / 408|Analog / Public|Abonado Comun
+|1000|02-6262825|Telephony, 64kBit, Audio 3.1kHz|San Roque / 409|Analog / Public|BLOQUEO LD
+|1000|02-6262828|Telephony, 64kBit, Audio 3.1kHz|San Roque / 116|Analog / Public|BLOQUEO LD
+|1000|02-6262829|Telephony, 64kBit, Audio 3.1kHz|San Roque / 410|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262831|Telephony, 64kBit, Audio 3.1kHz|San Roque / 411|Analog / Public|BLOQUEO LD
+|1000|02-6262836|Telephony, 64kBit, Audio 3.1kHz|San Roque / 412|Analog / Public|Abonado Comun
+|1000|02-6262837|Telephony, 64kBit, Audio 3.1kHz|San Roque / 413|Analog / Public|BLOQUEO LD
+|1000|02-6262841|Telephony, 64kBit, Audio 3.1kHz|San Roque / 414|Analog / Public|BLOQUEO LD
+|1000|02-6262842|Telephony, 64kBit, Audio 3.1kHz|San Roque / 415|Analog / Public|Abonado Comun
+|1000|02-6262845|Telephony, 64kBit, Audio 3.1kHz|San Roque / 416|Analog / Public|Abonado Comun
+|1000|02-6262848|Telephony, 64kBit, Audio 3.1kHz|San Roque / 417|Analog / Public|Abonado Comun
+|1000|02-6262849|Telephony, 64kBit, Audio 3.1kHz|San Roque / 418|Analog / Public|BLOQUEO LD
+|1000|02-6262858|Telephony, 64kBit, Audio 3.1kHz|San Roque / 421|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262862|Telephony, 64kBit, Audio 3.1kHz|San Roque / 422|Analog / Public|BLOQUEO LD
+|1000|02-6262863|Telephony, 64kBit, Audio 3.1kHz|San Roque / 423|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262865|Telephony, 64kBit, Audio 3.1kHz|San Roque / 424|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262866|Telephony, 64kBit, Audio 3.1kHz|San Roque / 425|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262876|Telephony, 64kBit, Audio 3.1kHz|San Roque / 426|Analog / Public|Abonado Comun
+|1000|02-6262879|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1020|Analog / Public|BLOQUEO LD
+|1000|02-6262882|Telephony, 64kBit, Audio 3.1kHz|San Roque / 98|Analog / Public|BLOQUEO LD
+|1000|02-6262884|Telephony, 64kBit, Audio 3.1kHz|San Roque / 420|Analog / Public|BLOQUEO LD
+|1000|02-6262885|Telephony, 64kBit, Audio 3.1kHz|San Roque / 430|Analog / Public|BLOQUEO LD
+|1000|02-6262886|Telephony, 64kBit, Audio 3.1kHz|San Roque / 431|Analog / Public|Abonado Comun
+|1000|02-6262887|Telephony, 64kBit, Audio 3.1kHz|San Roque / 432|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262888|Telephony, 64kBit, Audio 3.1kHz|San Roque / 433|Analog / Public|BLOQUEO LD
+|1000|02-6262889|Telephony, 64kBit, Audio 3.1kHz|San Roque / 434|Analog / Public|Abonado Comun
+|1000|02-6262891|Telephony, 64kBit, Audio 3.1kHz|San Roque / 435|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262896|Telephony, 64kBit, Audio 3.1kHz|San Roque / 436|Analog / Public|Abonado Comun
+|1000|02-6262897|Telephony, 64kBit, Audio 3.1kHz|San Roque / 437|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262898|Telephony, 64kBit, Audio 3.1kHz|San Roque / 438|Analog / Public|Abonado Comun
+|1000|02-6262900|Telephony, 64kBit, Audio 3.1kHz|San Roque / 439|Analog / Public|BLOQUEO LD
+|1000|02-6262902|Telephony, 64kBit, Audio 3.1kHz|San Roque / 440|Analog / Public|BLOQUEO LD
+|1000|02-6262905|Telephony, 64kBit, Audio 3.1kHz|San Roque / 441|Analog / Public|BLOQUEO LD
+|1000|02-6262910|Telephony, 64kBit, Audio 3.1kHz|San Roque / 442|Analog / Public|BLOQUEO LD
+|1000|02-6262921|Telephony, 64kBit, Audio 3.1kHz|San Roque / 444|Analog / Public|Abonado Comun
+|1000|02-6262922|Telephony, 64kBit, Audio 3.1kHz|San Roque / 445|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262927|Telephony, 64kBit, Audio 3.1kHz|San Roque / 447|Analog / Public|BLOQUEO LD
+|1000|02-6262933|Telephony, 64kBit, Audio 3.1kHz|San Roque / 448|Analog / Public|BLOQUEO LD
+|1000|02-6262936|Telephony, 64kBit, Audio 3.1kHz|San Roque / 449|Analog / Public|Abonado Comun
+|1000|02-6262937|Telephony, 64kBit, Audio 3.1kHz|San Roque / 450|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262939|Telephony, 64kBit, Audio 3.1kHz|San Roque / 451|Analog / Public|BLOQUEO LD
+|1000|02-6262940|Telephony, 64kBit, Audio 3.1kHz|San Roque / 452|Analog / Public|Abonado Comun
+|1000|02-6262941|Telephony, 64kBit, Audio 3.1kHz|San Roque / 453|Analog / Public|BLOQUEO LD
+|1000|02-6262942|Telephony, 64kBit, Audio 3.1kHz|San Roque / 454|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262944|Telephony, 64kBit, Audio 3.1kHz|San Roque / 455|Analog / Public|BLOQUEO LD
+|1000|02-6262950|Telephony, 64kBit, Audio 3.1kHz|San Roque / 90|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262951|Telephony, 64kBit, Audio 3.1kHz|San Roque / 563|Analog / Public|BLOQUEO LD
+|1000|02-6262959|Telephony, 64kBit, Audio 3.1kHz|San Roque / 457|Analog / Public|Abonado Comun
+|1000|02-6262960|Telephony, 64kBit, Audio 3.1kHz|San Roque / 458|Analog / Public|Abonado Comun
+|1000|02-6262962|Telephony, 64kBit, Audio 3.1kHz|San Roque / 459|Analog / Public|Abonado Comun
+|1000|02-6262963|Telephony, 64kBit, Audio 3.1kHz|San Roque / 460|Analog / Public|BLOQUEO LD
+|1000|02-6262964|Telephony, 64kBit, Audio 3.1kHz|San Roque / 461|Analog / Public|BLOQUEO LD
+|1000|02-6262966|Telephony, 64kBit, Audio 3.1kHz|San Roque / 462|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262970|Telephony, 64kBit, Audio 3.1kHz|San Roque / 464|Analog / Public|Abonado Comun
+|1000|02-6262975|Telephony, 64kBit, Audio 3.1kHz|San Roque / 465|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262978|Telephony, 64kBit, Audio 3.1kHz|San Roque / 466|Analog / Public|BLOQUEO LD
+|1000|02-6262988|Telephony, 64kBit, Audio 3.1kHz|San Roque / 468|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262990|Telephony, 64kBit, Audio 3.1kHz|San Roque / 469|Analog / Public|Abonado Comun
+|1000|02-6262991|Telephony, 64kBit, Audio 3.1kHz|San Roque / 470|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262992|Telephony, 64kBit, Audio 3.1kHz|San Roque / 471|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262995|Telephony, 64kBit, Audio 3.1kHz|San Roque / 472|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6262996|Telephony, 64kBit, Audio 3.1kHz|San Roque / 473|Analog / Public|Abonado Comun
+|1000|02-6262997|Telephony, 64kBit, Audio 3.1kHz|San Roque / 474|Analog / Public|Abonado Comun
+|1000|02-6263001|Telephony, 64kBit, Audio 3.1kHz|San Roque / 475|Analog / Public|Abonado Comun
+|1000|02-6263002|Telephony, 64kBit, Audio 3.1kHz|San Roque / 476|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263003|Telephony, 64kBit, Audio 3.1kHz|San Roque / 477|Analog / Public|BLOQUEO LD
+|1000|02-6263005|Telephony, 64kBit, Audio 3.1kHz|San Roque / 478|Analog / Public|Abonado Comun
+|1000|02-6263008|Telephony, 64kBit, Audio 3.1kHz|San Roque / 479|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263009|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1010|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263011|Telephony, 64kBit, Audio 3.1kHz|San Roque / 480|Analog / Public|Abonado Comun
+|1000|02-6263013|Telephony, 64kBit, Audio 3.1kHz|San Roque / 481|Analog / Public|BLOQUEO LD
+|1000|02-6263014|Telephony, 64kBit, Audio 3.1kHz|San Roque / 482|Analog / Public|BLOQUEO LD
+|1000|02-6263015|Telephony, 64kBit, Audio 3.1kHz|San Roque / 483|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263016|Telephony, 64kBit, Audio 3.1kHz|San Roque / 484|Analog / Public|Abonado Comun
+|1000|02-6263017|Telephony, 64kBit, Audio 3.1kHz|San Roque / 485|Analog / Public|BLOQUEO LD
+|1000|02-6263021|Telephony, 64kBit, Audio 3.1kHz|San Roque / 486|Analog / Public|Abonado Comun
+|1000|02-6263023|Telephony, 64kBit, Audio 3.1kHz|San Roque / 487|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263024|Telephony, 64kBit, Audio 3.1kHz|San Roque / 488|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263026|Telephony, 64kBit, Audio 3.1kHz|San Roque / 489|Analog / Public|Abonado Comun
+|1000|02-6263031|Telephony, 64kBit, Audio 3.1kHz|San Roque / 490|Analog / Public|BLOQUEO LD
+|1000|02-6263035|Telephony, 64kBit, Audio 3.1kHz|San Roque / 973|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263039|Telephony, 64kBit, Audio 3.1kHz|San Roque / 491|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263041|Telephony, 64kBit, Audio 3.1kHz|San Roque / 492|Analog / Public|BLOQUEO LD
+|1000|02-6263046|Telephony, 64kBit, Audio 3.1kHz|San Roque / 700|Analog / Public|Abonado Comun
+|1000|02-6263047|Telephony, 64kBit, Audio 3.1kHz|San Roque / 493|Analog / Public|BLOQUEO LD
+|1000|02-6263048|Telephony, 64kBit, Audio 3.1kHz|San Roque / 494|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263049|Telephony, 64kBit, Audio 3.1kHz|San Roque / 284|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263050|Telephony, 64kBit, Audio 3.1kHz|San Roque / 495|Analog / Public|BLOQUEO LD
+|1000|02-6263052|Telephony, 64kBit, Audio 3.1kHz|San Roque / 496|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263054|Telephony, 64kBit, Audio 3.1kHz|San Roque / 497|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263055|Telephony, 64kBit, Audio 3.1kHz|San Roque / 498|Analog / Public|BLOQUEO LD
+|1000|02-6263057|Telephony, 64kBit, Audio 3.1kHz|San Roque / 499|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263058|Telephony, 64kBit, Audio 3.1kHz|San Roque / 500|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263059|Telephony, 64kBit, Audio 3.1kHz|San Roque / 501|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263061|Telephony, 64kBit, Audio 3.1kHz|San Roque / 502|Analog / Public|BLOQUEO LD
+|1000|02-6263062|Telephony, 64kBit, Audio 3.1kHz|San Roque / 503|Analog / Public|BLOQUEO LD
+|1000|02-6263063|Telephony, 64kBit, Audio 3.1kHz|San Roque / 504|Analog / Public|Abonado Comun
+|1000|02-6263066|Telephony, 64kBit, Audio 3.1kHz|San Roque / 505|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263067|Telephony, 64kBit, Audio 3.1kHz|San Roque / 133|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263068|Telephony, 64kBit, Audio 3.1kHz|San Roque / 506|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263069|Telephony, 64kBit, Audio 3.1kHz|San Roque / 507|Analog / Public|BLOQUEO LD
+|1000|02-6263070|Telephony, 64kBit, Audio 3.1kHz|San Roque / 508|Analog / Public|Abonado Comun
+|1000|02-6263071|Telephony, 64kBit, Audio 3.1kHz|San Roque / 509|Analog / Public|Abonado Comun
+|1000|02-6263072|Telephony, 64kBit, Audio 3.1kHz|San Roque / 510|Analog / Public|Abonado Comun
+|1000|02-6263073|Telephony, 64kBit, Audio 3.1kHz|San Roque / 511|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263075|Telephony, 64kBit, Audio 3.1kHz|San Roque / 963|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263076|Telephony, 64kBit, Audio 3.1kHz|San Roque / 512|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263077|Telephony, 64kBit, Audio 3.1kHz|San Roque / 513|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263078|Telephony, 64kBit, Audio 3.1kHz|San Roque / 514|Analog / Public|Abonado Comun
+|1000|02-6263079|Telephony, 64kBit, Audio 3.1kHz|San Roque / 515|Analog / Public|BLOQUEO LD
+|1000|02-6263080|Telephony, 64kBit, Audio 3.1kHz|San Roque / 516|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263082|Telephony, 64kBit, Audio 3.1kHz|San Roque / 517|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263084|Telephony, 64kBit, Audio 3.1kHz|San Roque / 518|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263088|Telephony, 64kBit, Audio 3.1kHz|San Roque / 519|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263091|Telephony, 64kBit, Audio 3.1kHz|San Roque / 520|Analog / Public|Abonado Comun
+|1000|02-6263094|Telephony, 64kBit, Audio 3.1kHz|San Roque / 522|Analog / Public|BLOQUEO LD
+|1000|02-6263095|Telephony, 64kBit, Audio 3.1kHz|San Roque / 523|Analog / Public|Abonado Comun
+|1000|02-6263096|Telephony, 64kBit, Audio 3.1kHz|San Roque / 524|Analog / Public|Abonado Comun
+|1000|02-6263097|Telephony, 64kBit, Audio 3.1kHz|San Roque / 525|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263099|Telephony, 64kBit, Audio 3.1kHz|San Roque / 526|Analog / Public|BLOQUEO LD
+|1000|02-6263100|Telephony, 64kBit, Audio 3.1kHz|San Roque / 527|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263101|Telephony, 64kBit, Audio 3.1kHz|San Roque / 528|Analog / Public|Abonado Comun
+|1000|02-6263102|Telephony, 64kBit, Audio 3.1kHz|San Roque / 529|Analog / Public|BLOQUEO LD
+|1000|02-6263105|Telephony, 64kBit, Audio 3.1kHz|San Roque / 530|Analog / Public|BLOQUEO LD
+|1000|02-6263106|Telephony, 64kBit, Audio 3.1kHz|San Roque / 531|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263109|Telephony, 64kBit, Audio 3.1kHz|San Roque / 533|Analog / Public|BLOQUEO LD
+|1000|02-6263110|Telephony, 64kBit, Audio 3.1kHz|San Roque / 534|Analog / Public|Abonado Comun
+|1000|02-6263111|Telephony, 64kBit, Audio 3.1kHz|San Roque / 535|Analog / Public|BLOQUEO LD
+|1000|02-6263113|Telephony, 64kBit, Audio 3.1kHz|San Roque / 536|Analog / Public|BLOQUEO LD
+|1000|02-6263116|Telephony, 64kBit, Audio 3.1kHz|San Roque / 537|Analog / Public|Abonado Comun
+|1000|02-6263117|Telephony, 64kBit, Audio 3.1kHz|San Roque / 538|Analog / Public|BLOQUEO LD
+|1000|02-6263118|Telephony, 64kBit, Audio 3.1kHz|San Roque / 539|Analog / Public|BLOQUEO LD
+|1000|02-6263119|Telephony, 64kBit, Audio 3.1kHz|San Roque / 540|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263121|Telephony, 64kBit, Audio 3.1kHz|San Roque / 541|Analog / Public|BLOQUEO LD
+|1000|02-6263122|Telephony, 64kBit, Audio 3.1kHz|San Roque / 542|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263126|Telephony, 64kBit, Audio 3.1kHz|San Roque / 543|Analog / Public|BLOQUEO LD
+|1000|02-6263127|Telephony, 64kBit, Audio 3.1kHz|San Roque / 544|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263129|Telephony, 64kBit, Audio 3.1kHz|San Roque / 996|Analog / Public|Abonado Comun
+|1000|02-6263133|Telephony, 64kBit, Audio 3.1kHz|San Roque / 547|Analog / Public|Abonado Comun
+|1000|02-6263134|Telephony, 64kBit, Audio 3.1kHz|San Roque / 548|Analog / Public|BLOQUEO LD
+|1000|02-6263135|Telephony, 64kBit, Audio 3.1kHz|San Roque / 549|Analog / Public|Abonado Comun
+|1000|02-6263136|Telephony, 64kBit, Audio 3.1kHz|San Roque / 550|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263138|Telephony, 64kBit, Audio 3.1kHz|San Roque / 551|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263140|Telephony, 64kBit, Audio 3.1kHz|San Roque / 552|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263141|Telephony, 64kBit, Audio 3.1kHz|San Roque / 553|Analog / Public|BLOQUEO LD
+|1000|02-6263143|Telephony, 64kBit, Audio 3.1kHz|San Roque / 554|Analog / Public|BLOQUEO LD
+|1000|02-6263144|Telephony, 64kBit, Audio 3.1kHz|San Roque / 555|Analog / Public|BLOQUEO LD
+|1000|02-6263146|Telephony, 64kBit, Audio 3.1kHz|San Roque / 556|Analog / Public|BLOQUEO LD
+|1000|02-6263148|Telephony, 64kBit, Audio 3.1kHz|San Roque / 557|Analog / Public|Abonado Comun
+|1000|02-6263149|Telephony, 64kBit, Audio 3.1kHz|San Roque / 558|Analog / Public|Abonado Comun
+|1000|02-6263151|Telephony, 64kBit, Audio 3.1kHz|San Roque / 559|Analog / Public|BLOQUEO LD
+|1000|02-6263152|Telephony, 64kBit, Audio 3.1kHz|San Roque / 560|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263154|Telephony, 64kBit, Audio 3.1kHz|San Roque / 561|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263157|Telephony, 64kBit, Audio 3.1kHz|San Roque / 562|Analog / Public|Abonado Comun
+|1000|02-6263159|Telephony, 64kBit, Audio 3.1kHz|San Roque / 456|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263160|Telephony, 64kBit, Audio 3.1kHz|San Roque / 564|Analog / Public|BLOQUEO LD
+|1000|02-6263162|Telephony, 64kBit, Audio 3.1kHz|San Roque / 565|Analog / Public|BLOQUEO LD
+|1000|02-6263163|Telephony, 64kBit, Audio 3.1kHz|San Roque / 566|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263164|Telephony, 64kBit, Audio 3.1kHz|San Roque / 567|Analog / Public|BLOQUEO LD
+|1000|02-6263170|Telephony, 64kBit, Audio 3.1kHz|San Roque / 569|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263171|Telephony, 64kBit, Audio 3.1kHz|San Roque / 570|Analog / Public|BLOQUEO LD
+|1000|02-6263173|Telephony, 64kBit, Audio 3.1kHz|San Roque / 571|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263175|Telephony, 64kBit, Audio 3.1kHz|San Roque / 572|Analog / Public|Abonado Comun
+|1000|02-6263178|Telephony, 64kBit, Audio 3.1kHz|San Roque / 696|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263179|Telephony, 64kBit, Audio 3.1kHz|San Roque / 573|Analog / Public|BLOQUEO LD
+|1000|02-6263181|Telephony, 64kBit, Audio 3.1kHz|San Roque / 574|Analog / Public|Abonado Comun
+|1000|02-6263183|Telephony, 64kBit, Audio 3.1kHz|San Roque / 575|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263185|Telephony, 64kBit, Audio 3.1kHz|San Roque / 576|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263189|Telephony, 64kBit, Audio 3.1kHz|San Roque / 577|Analog / Public|Abonado Comun
+|1000|02-6263191|Telephony, 64kBit, Audio 3.1kHz|San Roque / 578|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263194|Telephony, 64kBit, Audio 3.1kHz|San Roque / 579|Analog / Public|Abonado Comun
+|1000|02-6263195|Telephony, 64kBit, Audio 3.1kHz|San Roque / 580|Analog / Public|BLOQUEO LD
+|1000|02-6263196|Telephony, 64kBit, Audio 3.1kHz|San Roque / 581|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263197|Telephony, 64kBit, Audio 3.1kHz|San Roque / 582|Analog / Public|Abonado Comun
+|1000|02-6263198|Telephony, 64kBit, Audio 3.1kHz|San Roque / 583|Analog / Public|Abonado Comun
+|1000|02-6263200|Telephony, 64kBit, Audio 3.1kHz|San Roque / 585|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263205|Telephony, 64kBit, Audio 3.1kHz|San Roque / 587|Analog / Public|BLOQUEO LD
+|1000|02-6263208|Telephony, 64kBit, Audio 3.1kHz|San Roque / 588|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263209|Telephony, 64kBit, Audio 3.1kHz|San Roque / 589|Analog / Public|Abonado Comun
+|1000|02-6263211|Telephony, 64kBit, Audio 3.1kHz|San Roque / 590|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263212|Telephony, 64kBit, Audio 3.1kHz|San Roque / 591|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263214|Telephony, 64kBit, Audio 3.1kHz|San Roque / 592|Analog / Public|Abonado Comun
+|1000|02-6263215|Telephony, 64kBit, Audio 3.1kHz|San Roque / 593|Analog / Public|BLOQUEO LD
+|1000|02-6263220|Telephony, 64kBit, Audio 3.1kHz|San Roque / 594|Analog / Public|BLOQUEO LD
+|1000|02-6263223|Telephony, 64kBit, Audio 3.1kHz|San Roque / 595|Analog / Public|Abonado Comun
+|1000|02-6263224|Telephony, 64kBit, Audio 3.1kHz|San Roque / 596|Analog / Public|BLOQUEO LD
+|1000|02-6263225|Telephony, 64kBit, Audio 3.1kHz|San Roque / 597|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263232|Telephony, 64kBit, Audio 3.1kHz|San Roque / 600|Analog / Public|BLOQUEO LD
+|1000|02-6263236|Telephony, 64kBit, Audio 3.1kHz|San Roque / 601|Analog / Public|Abonado Comun
+|1000|02-6263237|Telephony, 64kBit, Audio 3.1kHz|San Roque / 602|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263239|Telephony, 64kBit, Audio 3.1kHz|San Roque / 603|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263240|Telephony, 64kBit, Audio 3.1kHz|San Roque / 604|Analog / Public|Abonado Comun
+|1000|02-6263243|Telephony, 64kBit, Audio 3.1kHz|San Roque / 605|Analog / Public|Abonado Comun
+|1000|02-6263249|Telephony, 64kBit, Audio 3.1kHz|San Roque / 606|Analog / Public|Abonado Comun
+|1000|02-6263250|Telephony, 64kBit, Audio 3.1kHz|San Roque / 607|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263251|Telephony, 64kBit, Audio 3.1kHz|San Roque / 969|Analog / Public|BLOQUEO LD
+|1000|02-6263253|Telephony, 64kBit, Audio 3.1kHz|San Roque / 608|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263254|Telephony, 64kBit, Audio 3.1kHz|San Roque / 609|Analog / Public|BLOQUEO LD
+|1000|02-6263255|Telephony, 64kBit, Audio 3.1kHz|San Roque / 610|Analog / Public|BLOQUEO LD
+|1000|02-6263256|Telephony, 64kBit, Audio 3.1kHz|San Roque / 611|Analog / Public|Abonado Comun
+|1000|02-6263257|Telephony, 64kBit, Audio 3.1kHz|San Roque / 192|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263258|Telephony, 64kBit, Audio 3.1kHz|San Roque / 612|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263259|Telephony, 64kBit, Audio 3.1kHz|San Roque / 999|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263263|Telephony, 64kBit, Audio 3.1kHz|San Roque / 613|Analog / Public|BLOQUEO LD
+|1000|02-6263266|Telephony, 64kBit, Audio 3.1kHz|San Roque / 614|Analog / Public|BLOQUEO LD
+|1000|02-6263267|Telephony, 64kBit, Audio 3.1kHz|San Roque / 615|Analog / Public|BLOQUEO LD
+|1000|02-6263269|Telephony, 64kBit, Audio 3.1kHz|San Roque / 616|Analog / Public|Abonado Comun
+|1000|02-6263270|Telephony, 64kBit, Audio 3.1kHz|San Roque / 617|Analog / Public|BLOQUEO LD
+|1000|02-6263271|Telephony, 64kBit, Audio 3.1kHz|San Roque / 618|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263273|Telephony, 64kBit, Audio 3.1kHz|San Roque / 619|Analog / Public|BLOQUEO LD
+|1000|02-6263274|Telephony, 64kBit, Audio 3.1kHz|San Roque / 620|Analog / Public|Abonado Comun
+|1000|02-6263275|Telephony, 64kBit, Audio 3.1kHz|San Roque / 621|Analog / Public|BLOQUEO LD
+|1000|02-6263276|Telephony, 64kBit, Audio 3.1kHz|San Roque / 622|Analog / Public|BLOQUEO LD
+|1000|02-6263280|Telephony, 64kBit, Audio 3.1kHz|San Roque / 623|Analog / Public|BLOQUEO LD
+|1000|02-6263282|Telephony, 64kBit, Audio 3.1kHz|San Roque / 624|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263284|Telephony, 64kBit, Audio 3.1kHz|San Roque / 625|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263287|Telephony, 64kBit, Audio 3.1kHz|San Roque / 626|Analog / Public|BLOQUEO LD
+|1000|02-6263288|Telephony, 64kBit, Audio 3.1kHz|San Roque / 627|Analog / Public|BLOQUEO LD
+|1000|02-6263290|Telephony, 64kBit, Audio 3.1kHz|San Roque / 628|Analog / Public|BLOQUEO LD
+|1000|02-6263291|Telephony, 64kBit, Audio 3.1kHz|San Roque / 629|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263292|Telephony, 64kBit, Audio 3.1kHz|San Roque / 630|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263294|Telephony, 64kBit, Audio 3.1kHz|San Roque / 631|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263296|Telephony, 64kBit, Audio 3.1kHz|San Roque / 632|Analog / Public|BLOQUEO LD
+|1000|02-6263297|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1001|Analog / Public|BLOQUEO LD
+|1000|02-6263300|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1008|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263301|Telephony, 64kBit, Audio 3.1kHz|San Roque / 634|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263302|Telephony, 64kBit, Audio 3.1kHz|San Roque / 635|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263304|Telephony, 64kBit, Audio 3.1kHz|San Roque / 636|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263305|Telephony, 64kBit, Audio 3.1kHz|San Roque / 637|Analog / Public|BLOQUEO LD
+|1000|02-6263306|Telephony, 64kBit, Audio 3.1kHz|San Roque / 638|Analog / Public|BLOQUEO LD
+|1000|02-6263307|Telephony, 64kBit, Audio 3.1kHz|San Roque / 639|Analog / Public|BLOQUEO LD
+|1000|02-6263309|Telephony, 64kBit, Audio 3.1kHz|San Roque / 640|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263310|Telephony, 64kBit, Audio 3.1kHz|San Roque / 641|Analog / Public|BLOQUEO LD
+|1000|02-6263311|Telephony, 64kBit, Audio 3.1kHz|San Roque / 642|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263313|Telephony, 64kBit, Audio 3.1kHz|San Roque / 643|Analog / Public|BLOQUEO LD
+|1000|02-6263319|Telephony, 64kBit, Audio 3.1kHz|San Roque / 644|Analog / Public|BLOQUEO LD
+|1000|02-6263320|Telephony, 64kBit, Audio 3.1kHz|San Roque / 645|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263322|Telephony, 64kBit, Audio 3.1kHz|San Roque / 646|Analog / Public|Abonado Comun
+|1000|02-6263325|Telephony, 64kBit, Audio 3.1kHz|San Roque / 647|Analog / Public|BLOQUEO LD
+|1000|02-6263326|Telephony, 64kBit, Audio 3.1kHz|San Roque / 648|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263327|Telephony, 64kBit, Audio 3.1kHz|San Roque / 649|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263328|Telephony, 64kBit, Audio 3.1kHz|San Roque / 650|Analog / Public|Abonado Comun
+|1000|02-6263330|Telephony, 64kBit, Audio 3.1kHz|San Roque / 651|Analog / Public|Abonado Comun
+|1000|02-6263331|Telephony, 64kBit, Audio 3.1kHz|San Roque / 652|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263332|Telephony, 64kBit, Audio 3.1kHz|San Roque / 653|Analog / Public|BLOQUEO LD
+|1000|02-6263334|Telephony, 64kBit, Audio 3.1kHz|San Roque / 654|Analog / Public|Abonado Comun
+|1000|02-6263335|Telephony, 64kBit, Audio 3.1kHz|San Roque / 655|Analog / Public|Abonado Comun
+|1000|02-6263337|Telephony, 64kBit, Audio 3.1kHz|San Roque / 656|Analog / Public|Abonado Comun
+|1000|02-6263338|Telephony, 64kBit, Audio 3.1kHz|San Roque / 657|Analog / Public|Abonado Comun
+|1000|02-6263339|Telephony, 64kBit, Audio 3.1kHz|San Roque / 168|Analog / Public|Abonado Comun
+|1000|02-6263340|Telephony, 64kBit, Audio 3.1kHz|San Roque / 658|Analog / Public|Abonado Comun
+|1000|02-6263342|Telephony, 64kBit, Audio 3.1kHz|San Roque / 659|Analog / Public|BLOQUEO LD
+|1000|02-6263345|Telephony, 64kBit, Audio 3.1kHz|San Roque / 660|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263346|Telephony, 64kBit, Audio 3.1kHz|San Roque / 661|Analog / Public|BLOQUEO LD
+|1000|02-6263347|Telephony, 64kBit, Audio 3.1kHz|San Roque / 662|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263349|Telephony, 64kBit, Audio 3.1kHz|San Roque / 663|Analog / Public|BLOQUEO LD
+|1000|02-6263350|Telephony, 64kBit, Audio 3.1kHz|San Roque / 925|Analog / Public|BLOQUEO LD
+|1000|02-6263351|Telephony, 64kBit, Audio 3.1kHz|San Roque / 664|Analog / Public|Abonado Comun
+|1000|02-6263354|Telephony, 64kBit, Audio 3.1kHz|San Roque / 665|Analog / Public|BLOQUEO LD
+|1000|02-6263355|Telephony, 64kBit, Audio 3.1kHz|San Roque / 666|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263358|Telephony, 64kBit, Audio 3.1kHz|San Roque / 667|Analog / Public|Abonado Comun
+|1000|02-6263359|Telephony, 64kBit, Audio 3.1kHz|San Roque / 668|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263360|Telephony, 64kBit, Audio 3.1kHz|San Roque / 669|Analog / Public|Abonado Comun
+|1000|02-6263361|Telephony, 64kBit, Audio 3.1kHz|San Roque / 670|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263362|Telephony, 64kBit, Audio 3.1kHz|San Roque / 671|Analog / Public|BLOQUEO LD
+|1000|02-6263364|Telephony, 64kBit, Audio 3.1kHz|San Roque / 672|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263365|Telephony, 64kBit, Audio 3.1kHz|San Roque / 673|Analog / Public|Abonado Comun
+|1000|02-6263366|Telephony, 64kBit, Audio 3.1kHz|San Roque / 674|Analog / Public|Abonado Comun
+|1000|02-6263369|Telephony, 64kBit, Audio 3.1kHz|San Roque / 675|Analog / Public|Abonado Comun
+|1000|02-6263371|Telephony, 64kBit, Audio 3.1kHz|San Roque / 676|Analog / Public|Abonado Comun
+|1000|02-6263373|Telephony, 64kBit, Audio 3.1kHz|San Roque / 677|Analog / Public|Abonado Comun
+|1000|02-6263374|Telephony, 64kBit, Audio 3.1kHz|San Roque / 678|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263375|Telephony, 64kBit, Audio 3.1kHz|San Roque / 679|Analog / Public|BLOQUEO LD
+|1000|02-6263378|Telephony, 64kBit, Audio 3.1kHz|San Roque / 680|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263383|Telephony, 64kBit, Audio 3.1kHz|San Roque / 681|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263384|Telephony, 64kBit, Audio 3.1kHz|San Roque / 682|Analog / Public|BLOQUEO LD
+|1000|02-6263386|Telephony, 64kBit, Audio 3.1kHz|San Roque / 683|Analog / Public|BLOQUEO LD
+|1000|02-6263387|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1000|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263389|Telephony, 64kBit, Audio 3.1kHz|San Roque / 684|Analog / Public|Abonado Comun
+|1000|02-6263390|Telephony, 64kBit, Audio 3.1kHz|San Roque / 685|Analog / Public|BLOQUEO LD
+|1000|02-6263393|Telephony, 64kBit, Audio 3.1kHz|San Roque / 687|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263397|Telephony, 64kBit, Audio 3.1kHz|San Roque / 688|Analog / Public|BLOQUEO LD
+|1000|02-6263398|Telephony, 64kBit, Audio 3.1kHz|San Roque / 689|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263401|Telephony, 64kBit, Audio 3.1kHz|San Roque / 690|Analog / Public|BLOQUEO LD
+|1000|02-6263402|Telephony, 64kBit, Audio 3.1kHz|San Roque / 691|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263404|Telephony, 64kBit, Audio 3.1kHz|San Roque / 692|Analog / Public|Abonado Comun
+|1000|02-6263406|Telephony, 64kBit, Audio 3.1kHz|San Roque / 693|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263407|Telephony, 64kBit, Audio 3.1kHz|San Roque / 694|Analog / Public|BLOQUEO LD
+|1000|02-6263408|Telephony, 64kBit, Audio 3.1kHz|San Roque / 695|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263412|Telephony, 64kBit, Audio 3.1kHz|San Roque / 697|Analog / Public|BLOQUEO LD
+|1000|02-6263414|Telephony, 64kBit, Audio 3.1kHz|San Roque / 4|Analog / Public|Custom
+|1000|02-6263415|Telephony, 64kBit, Audio 3.1kHz|San Roque / 698|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263416|Telephony, 64kBit, Audio 3.1kHz|San Roque / 699|Analog / Public|BLOQUEO LD
+|1000|02-6263417|Telephony, 64kBit, Audio 3.1kHz|San Roque / 3|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263418|Telephony, 64kBit, Audio 3.1kHz|San Roque / 701|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263420|Telephony, 64kBit, Audio 3.1kHz|San Roque / 702|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263423|Telephony, 64kBit, Audio 3.1kHz|San Roque / 703|Analog / Public|BLOQUEO LD
+|1000|02-6263424|Telephony, 64kBit, Audio 3.1kHz|San Roque / 968|Analog / Public|Abonado Comun
+|1000|02-6263426|Telephony, 64kBit, Audio 3.1kHz|San Roque / 704|Analog / Public|Abonado Comun
+|1000|02-6263427|Telephony, 64kBit, Audio 3.1kHz|San Roque / 705|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263428|Telephony, 64kBit, Audio 3.1kHz|San Roque / 706|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263430|Telephony, 64kBit, Audio 3.1kHz|San Roque / 707|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263431|Telephony, 64kBit, Audio 3.1kHz|San Roque / 708|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263432|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1011|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263437|Telephony, 64kBit, Audio 3.1kHz|San Roque / 709|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263442|Telephony, 64kBit, Audio 3.1kHz|San Roque / 710|Analog / Public|Abonado Comun
+|1000|02-6263444|Telephony, 64kBit, Audio 3.1kHz|San Roque / 711|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263446|Telephony, 64kBit, Audio 3.1kHz|San Roque / 712|Analog / Public|BLOQUEO LD
+|1000|02-6263447|Telephony, 64kBit, Audio 3.1kHz|San Roque / 713|Analog / Public|Abonado Comun
+|1000|02-6263451|Telephony, 64kBit, Audio 3.1kHz|San Roque / 714|Analog / Public|Abonado Comun
+|1000|02-6263452|Telephony, 64kBit, Audio 3.1kHz|San Roque / 715|Analog / Public|Custom
+|1000|02-6263453|Telephony, 64kBit, Audio 3.1kHz|San Roque / 716|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263455|Telephony, 64kBit, Audio 3.1kHz|San Roque / 717|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263456|Telephony, 64kBit, Audio 3.1kHz|San Roque / 599|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263457|Telephony, 64kBit, Audio 3.1kHz|San Roque / 718|Analog / Public|BLOQUEO LD
+|1000|02-6263458|Telephony, 64kBit, Audio 3.1kHz|San Roque / 719|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263459|Telephony, 64kBit, Audio 3.1kHz|San Roque / 720|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263461|Telephony, 64kBit, Audio 3.1kHz|San Roque / 721|Analog / Public|Abonado Comun
+|1000|02-6263462|Telephony, 64kBit, Audio 3.1kHz|San Roque / 722|Analog / Public|BLOQUEO LD
+|1000|02-6263464|Telephony, 64kBit, Audio 3.1kHz|San Roque / 5|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263465|Telephony, 64kBit, Audio 3.1kHz|San Roque / 723|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263467|Telephony, 64kBit, Audio 3.1kHz|San Roque / 724|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263468|Telephony, 64kBit, Audio 3.1kHz|San Roque / 725|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263473|Telephony, 64kBit, Audio 3.1kHz|San Roque / 726|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263481|Telephony, 64kBit, Audio 3.1kHz|San Roque / 727|Analog / Public|Abonado Comun
+|1000|02-6263482|Telephony, 64kBit, Audio 3.1kHz|San Roque / 728|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263483|Telephony, 64kBit, Audio 3.1kHz|San Roque / 729|Analog / Public|BLOQUEO LD
+|1000|02-6263485|Telephony, 64kBit, Audio 3.1kHz|San Roque / 730|Analog / Public|Abonado Comun
+|1000|02-6263486|Telephony, 64kBit, Audio 3.1kHz|San Roque / 731|Analog / Public|BLOQUEO LD
+|1000|02-6263487|Telephony, 64kBit, Audio 3.1kHz|San Roque / 732|Analog / Public|BLOQUEO LD
+|1000|02-6263489|Telephony, 64kBit, Audio 3.1kHz|San Roque / 734|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263490|Telephony, 64kBit, Audio 3.1kHz|San Roque / 735|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263501|Telephony, 64kBit, Audio 3.1kHz|San Roque / 736|Analog / Public|Abonado Comun
+|1000|02-6263502|Telephony, 64kBit, Audio 3.1kHz|San Roque / 737|Analog / Public|BLOQUEO LD
+|1000|02-6263503|Telephony, 64kBit, Audio 3.1kHz|San Roque / 128|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263505|Telephony, 64kBit, Audio 3.1kHz|San Roque / 521|Analog / Public|BLOQUEO LD
+|1000|02-6263506|Telephony, 64kBit, Audio 3.1kHz|San Roque / 738|Analog / Public|Abonado Comun
+|1000|02-6263508|Telephony, 64kBit, Audio 3.1kHz|San Roque / 739|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263509|Telephony, 64kBit, Audio 3.1kHz|San Roque / 740|Analog / Public|Abonado Comun
+|1000|02-6263516|Telephony, 64kBit, Audio 3.1kHz|San Roque / 742|Analog / Public|BLOQUEO LD
+|1000|02-6263521|Telephony, 64kBit, Audio 3.1kHz|San Roque / 744|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263525|Telephony, 64kBit, Audio 3.1kHz|San Roque / 745|Analog / Public|BLOQUEO LD
+|1000|02-6263527|Telephony, 64kBit, Audio 3.1kHz|San Roque / 746|Analog / Public|BLOQUEO LD
+|1000|02-6263528|Telephony, 64kBit, Audio 3.1kHz|San Roque / 747|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263529|Telephony, 64kBit, Audio 3.1kHz|San Roque / 748|Analog / Public|Abonado Comun
+|1000|02-6263530|Telephony, 64kBit, Audio 3.1kHz|San Roque / 749|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263531|Telephony, 64kBit, Audio 3.1kHz|San Roque / 750|Analog / Public|BLOQUEO LD
+|1000|02-6263533|Telephony, 64kBit, Audio 3.1kHz|San Roque / 751|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263537|Telephony, 64kBit, Audio 3.1kHz|San Roque / 752|Analog / Public|BLOQUEO LD
+|1000|02-6263540|Telephony, 64kBit, Audio 3.1kHz|San Roque / 753|Analog / Public|Abonado Comun
+|1000|02-6263550|Telephony, 64kBit, Audio 3.1kHz|San Roque / 754|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263552|Telephony, 64kBit, Audio 3.1kHz|San Roque / 755|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263553|Telephony, 64kBit, Audio 3.1kHz|San Roque / 756|Analog / Public|BLOQUEO LD
+|1000|02-6263556|Telephony, 64kBit, Audio 3.1kHz|San Roque / 757|Analog / Public|BLOQUEO LD
+|1000|02-6263557|Telephony, 64kBit, Audio 3.1kHz|San Roque / 758|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263558|Telephony, 64kBit, Audio 3.1kHz|San Roque / 228|Analog / Public|BLOQUEO LD
+|1000|02-6263561|Telephony, 64kBit, Audio 3.1kHz|San Roque / 759|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263562|Telephony, 64kBit, Audio 3.1kHz|San Roque / 760|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263565|Telephony, 64kBit, Audio 3.1kHz|San Roque / 761|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263569|Telephony, 64kBit, Audio 3.1kHz|San Roque / 762|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263570|Telephony, 64kBit, Audio 3.1kHz|San Roque / 463|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263572|Telephony, 64kBit, Audio 3.1kHz|San Roque / 763|Analog / Public|Abonado Comun
+|1000|02-6263575|Telephony, 64kBit, Audio 3.1kHz|San Roque / 764|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263576|Telephony, 64kBit, Audio 3.1kHz|San Roque / 765|Analog / Public|BLOQUEO LD
+|1000|02-6263581|Telephony, 64kBit, Audio 3.1kHz|San Roque / 766|Analog / Public|BLOQUEO LD
+|1000|02-6263584|Telephony, 64kBit, Audio 3.1kHz|San Roque / 767|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263586|Telephony, 64kBit, Audio 3.1kHz|San Roque / 768|Analog / Public|BLOQUEO LD
+|1000|02-6263593|Telephony, 64kBit, Audio 3.1kHz|San Roque / 769|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263595|Telephony, 64kBit, Audio 3.1kHz|San Roque / 770|Analog / Public|Abonado Comun
+|1000|02-6263597|Telephony, 64kBit, Audio 3.1kHz|San Roque / 771|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263600|Telephony, 64kBit, Audio 3.1kHz|San Roque / 772|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263602|Telephony, 64kBit, Audio 3.1kHz|San Roque / 773|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263604|Telephony, 64kBit, Audio 3.1kHz|San Roque / 780|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263605|Telephony, 64kBit, Audio 3.1kHz|San Roque / 774|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263606|Telephony, 64kBit, Audio 3.1kHz|San Roque / 775|Analog / Public|Abonado Comun
+|1000|02-6263607|Telephony, 64kBit, Audio 3.1kHz|San Roque / 776|Analog / Public|BLOQUEO LD
+|1000|02-6263608|Telephony, 64kBit, Audio 3.1kHz|San Roque / 777|Analog / Public|BLOQUEO LD
+|1000|02-6263609|Telephony, 64kBit, Audio 3.1kHz|San Roque / 778|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263611|Telephony, 64kBit, Audio 3.1kHz|San Roque / 779|Analog / Public|BLOQUEO LD
+|1000|02-6263617|Telephony, 64kBit, Audio 3.1kHz|San Roque / 854|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263618|Telephony, 64kBit, Audio 3.1kHz|San Roque / 781|Analog / Public|Abonado Comun
+|1000|02-6263619|Telephony, 64kBit, Audio 3.1kHz|San Roque / 782|Analog / Public|BLOQUEO LD
+|1000|02-6263620|Telephony, 64kBit, Audio 3.1kHz|San Roque / 783|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263621|Telephony, 64kBit, Audio 3.1kHz|San Roque / 784|Analog / Public|BLOQUEO LD
+|1000|02-6263622|Telephony, 64kBit, Audio 3.1kHz|San Roque / 785|Analog / Public|BLOQUEO LD
+|1000|02-6263624|Telephony, 64kBit, Audio 3.1kHz|San Roque / 786|Analog / Public|Abonado Comun
+|1000|02-6263625|Telephony, 64kBit, Audio 3.1kHz|San Roque / 787|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263630|Telephony, 64kBit, Audio 3.1kHz|San Roque / 788|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263631|Telephony, 64kBit, Audio 3.1kHz|San Roque / 789|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263632|Telephony, 64kBit, Audio 3.1kHz|San Roque / 790|Analog / Public|BLOQUEO LD
+|1000|02-6263633|Telephony, 64kBit, Audio 3.1kHz|San Roque / 791|Analog / Public|BLOQUEO LD
+|1000|02-6263634|Telephony, 64kBit, Audio 3.1kHz|San Roque / 792|Analog / Public|BLOQUEO LD
+|1000|02-6263636|Telephony, 64kBit, Audio 3.1kHz|San Roque / 794|Analog / Public|BLOQUEO LD
+|1000|02-6263637|Telephony, 64kBit, Audio 3.1kHz|San Roque / 795|Analog / Public|BLOQUEO LD
+|1000|02-6263638|Telephony, 64kBit, Audio 3.1kHz|San Roque / 796|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263639|Telephony, 64kBit, Audio 3.1kHz|San Roque / 797|Analog / Public|Abonado Comun
+|1000|02-6263641|Telephony, 64kBit, Audio 3.1kHz|San Roque / 97|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263642|Telephony, 64kBit, Audio 3.1kHz|San Roque / 798|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263643|Telephony, 64kBit, Audio 3.1kHz|San Roque / 799|Analog / Public|BLOQUEO LD
+|1000|02-6263644|Telephony, 64kBit, Audio 3.1kHz|San Roque / 800|Analog / Public|Abonado Comun
+|1000|02-6263646|Telephony, 64kBit, Audio 3.1kHz|San Roque / 801|Analog / Public|BLOQUEO LD
+|1000|02-6263647|Telephony, 64kBit, Audio 3.1kHz|San Roque / 802|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263648|Telephony, 64kBit, Audio 3.1kHz|San Roque / 803|Analog / Public|BLOQUEO LD
+|1000|02-6263649|Telephony, 64kBit, Audio 3.1kHz|San Roque / 804|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263650|Telephony, 64kBit, Audio 3.1kHz|San Roque / 805|Analog / Public|Abonado Comun
+|1000|02-6263656|Telephony, 64kBit, Audio 3.1kHz|San Roque / 826|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263657|Telephony, 64kBit, Audio 3.1kHz|San Roque / 807|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263658|Telephony, 64kBit, Audio 3.1kHz|San Roque / 808|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263660|Telephony, 64kBit, Audio 3.1kHz|San Roque / 993|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263665|Telephony, 64kBit, Audio 3.1kHz|San Roque / 809|Analog / Public|BLOQUEO LD
+|1000|02-6263666|Telephony, 64kBit, Audio 3.1kHz|San Roque / 810|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263669|Telephony, 64kBit, Audio 3.1kHz|San Roque / 811|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263670|Telephony, 64kBit, Audio 3.1kHz|San Roque / 812|Analog / Public|BLOQUEO LD
+|1000|02-6263671|Telephony, 64kBit, Audio 3.1kHz|San Roque / 813|Analog / Public|BLOQUEO LD
+|1000|02-6263675|Telephony, 64kBit, Audio 3.1kHz|San Roque / 814|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263676|Telephony, 64kBit, Audio 3.1kHz|San Roque / 815|Analog / Public|BLOQUEO LD
+|1000|02-6263677|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1017|Analog / Public|Abonado Comun
+|1000|02-6263678|Telephony, 64kBit, Audio 3.1kHz|San Roque / 816|Analog / Public|BLOQUEO LD
+|1000|02-6263680|Telephony, 64kBit, Audio 3.1kHz|San Roque / 17|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263683|Telephony, 64kBit, Audio 3.1kHz|San Roque / 546|Analog / Public|BLOQUEO LD
+|1000|02-6263687|Telephony, 64kBit, Audio 3.1kHz|San Roque / 817|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263693|Telephony, 64kBit, Audio 3.1kHz|San Roque / 818|Analog / Public|BLOQUEO LD
+|1000|02-6263697|Telephony, 64kBit, Audio 3.1kHz|San Roque / 819|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263698|Telephony, 64kBit, Audio 3.1kHz|San Roque / 991|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263704|Telephony, 64kBit, Audio 3.1kHz|San Roque / 820|Analog / Public|Abonado Comun
+|1000|02-6263706|Telephony, 64kBit, Audio 3.1kHz|San Roque / 821|Analog / Public|BLOQUEO LD
+|1000|02-6263707|Telephony, 64kBit, Audio 3.1kHz|San Roque / 822|Analog / Public|Abonado Comun
+|1000|02-6263709|Telephony, 64kBit, Audio 3.1kHz|San Roque / 823|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263713|Telephony, 64kBit, Audio 3.1kHz|San Roque / 824|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263714|Telephony, 64kBit, Audio 3.1kHz|San Roque / 825|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263718|Telephony, 64kBit, Audio 3.1kHz|San Roque / 827|Analog / Public|BLOQUEO LD
+|1000|02-6263722|Telephony, 64kBit, Audio 3.1kHz|San Roque / 117|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263724|Telephony, 64kBit, Audio 3.1kHz|San Roque / 828|Analog / Public|Abonado Comun
+|1000|02-6263726|Telephony, 64kBit, Audio 3.1kHz|San Roque / 829|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263727|Telephony, 64kBit, Audio 3.1kHz|San Roque / 830|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263730|Telephony, 64kBit, Audio 3.1kHz|San Roque / 831|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263731|Telephony, 64kBit, Audio 3.1kHz|San Roque / 832|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263732|Telephony, 64kBit, Audio 3.1kHz|San Roque / 833|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263733|Telephony, 64kBit, Audio 3.1kHz|San Roque / 834|Analog / Public|BLOQUEO LD
+|1000|02-6263734|Telephony, 64kBit, Audio 3.1kHz|San Roque / 835|Analog / Public|BLOQUEO LD
+|1000|02-6263735|Telephony, 64kBit, Audio 3.1kHz|San Roque / 836|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263740|Telephony, 64kBit, Audio 3.1kHz|San Roque / 837|Analog / Public|BLOQUEO LD
+|1000|02-6263741|Telephony, 64kBit, Audio 3.1kHz|San Roque / 838|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263744|Telephony, 64kBit, Audio 3.1kHz|San Roque / 839|Analog / Public|Abonado Comun
+|1000|02-6263751|Telephony, 64kBit, Audio 3.1kHz|San Roque / 840|Analog / Public|Abonado Comun
+|1000|02-6263752|Telephony, 64kBit, Audio 3.1kHz|San Roque / 841|Analog / Public|BLOQUEO LD
+|1000|02-6263755|Telephony, 64kBit, Audio 3.1kHz|San Roque / 842|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263757|Telephony, 64kBit, Audio 3.1kHz|San Roque / 843|Analog / Public|BLOQUEO LD
+|1000|02-6263759|Telephony, 64kBit, Audio 3.1kHz|San Roque / 6|Analog / Public|Abonado Comun
+|1000|02-6263761|Telephony, 64kBit, Audio 3.1kHz|San Roque / 844|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263764|Telephony, 64kBit, Audio 3.1kHz|San Roque / 845|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263765|Telephony, 64kBit, Audio 3.1kHz|San Roque / 846|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263766|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1012|Analog / Public|Abonado Comun
+|1000|02-6263767|Telephony, 64kBit, Audio 3.1kHz|San Roque / 847|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263769|Telephony, 64kBit, Audio 3.1kHz|San Roque / 848|Analog / Public|Abonado Comun
+|1000|02-6263770|Telephony, 64kBit, Audio 3.1kHz|San Roque / 849|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263772|Telephony, 64kBit, Audio 3.1kHz|San Roque / 850|Analog / Public|BLOQUEO LD
+|1000|02-6263774|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1002|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263775|Telephony, 64kBit, Audio 3.1kHz|San Roque / 851|Analog / Public|Abonado Comun
+|1000|02-6263780|Telephony, 64kBit, Audio 3.1kHz|San Roque / 853|Analog / Public|Abonado Comun
+|1000|02-6263783|Telephony, 64kBit, Audio 3.1kHz|San Roque / 855|Analog / Public|Abonado Comun
+|1000|02-6263785|Telephony, 64kBit, Audio 3.1kHz|San Roque / 856|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263786|Telephony, 64kBit, Audio 3.1kHz|San Roque / 857|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263787|Telephony, 64kBit, Audio 3.1kHz|San Roque / 858|Analog / Public|BLOQUEO LD
+|1000|02-6263789|Telephony, 64kBit, Audio 3.1kHz|San Roque / 859|Analog / Public|BLOQUEO LD
+|1000|02-6263790|Telephony, 64kBit, Audio 3.1kHz|San Roque / 860|Analog / Public|Abonado Comun
+|1000|02-6263791|Telephony, 64kBit, Audio 3.1kHz|San Roque / 861|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263792|Telephony, 64kBit, Audio 3.1kHz|San Roque / 862|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263794|Telephony, 64kBit, Audio 3.1kHz|San Roque / 863|Analog / Public|Abonado Comun
+|1000|02-6263796|Telephony, 64kBit, Audio 3.1kHz|San Roque / 864|Analog / Public|BLOQUEO LD
+|1000|02-6263797|Telephony, 64kBit, Audio 3.1kHz|San Roque / 865|Analog / Public|BLOQUEO LD
+|1000|02-6263801|Telephony, 64kBit, Audio 3.1kHz|San Roque / 867|Analog / Public|BLOQUEO LD
+|1000|02-6263802|Telephony, 64kBit, Audio 3.1kHz|San Roque / 868|Analog / Public|BLOQUEO LD
+|1000|02-6263804|Telephony, 64kBit, Audio 3.1kHz|San Roque / 869|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263806|Telephony, 64kBit, Audio 3.1kHz|San Roque / 870|Analog / Public|Abonado Comun
+|1000|02-6263807|Telephony, 64kBit, Audio 3.1kHz|San Roque / 871|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263812|Telephony, 64kBit, Audio 3.1kHz|San Roque / 872|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263822|Telephony, 64kBit, Audio 3.1kHz|San Roque / 741|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263823|Telephony, 64kBit, Audio 3.1kHz|San Roque / 873|Analog / Public|BLOQUEO LD
+|1000|02-6263824|Telephony, 64kBit, Audio 3.1kHz|San Roque / 874|Analog / Public|Abonado Comun
+|1000|02-6263825|Telephony, 64kBit, Audio 3.1kHz|San Roque / 875|Analog / Public|BLOQUEO LD
+|1000|02-6263834|Telephony, 64kBit, Audio 3.1kHz|San Roque / 876|Analog / Public|Abonado Comun
+|1000|02-6263837|Telephony, 64kBit, Audio 3.1kHz|San Roque / 877|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263839|Telephony, 64kBit, Audio 3.1kHz|San Roque / 633|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263841|Telephony, 64kBit, Audio 3.1kHz|San Roque / 878|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263843|Telephony, 64kBit, Audio 3.1kHz|San Roque / 953|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263845|Telephony, 64kBit, Audio 3.1kHz|San Roque / 879|Analog / Public|BLOQUEO LD
+|1000|02-6263849|Telephony, 64kBit, Audio 3.1kHz|San Roque / 881|Analog / Public|BLOQUEO LD
+|1000|02-6263850|Telephony, 64kBit, Audio 3.1kHz|San Roque / 882|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263852|Telephony, 64kBit, Audio 3.1kHz|San Roque / 883|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263854|Telephony, 64kBit, Audio 3.1kHz|San Roque / 884|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263855|Telephony, 64kBit, Audio 3.1kHz|San Roque / 885|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263858|Telephony, 64kBit, Audio 3.1kHz|San Roque / 886|Analog / Public|Abonado Comun
+|1000|02-6263862|Telephony, 64kBit, Audio 3.1kHz|San Roque / 887|Analog / Public|BLOQUEO LD
+|1000|02-6263866|Telephony, 64kBit, Audio 3.1kHz|San Roque / 889|Analog / Public|BLOQUEO LD
+|1000|02-6263867|Telephony, 64kBit, Audio 3.1kHz|San Roque / 890|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263869|Telephony, 64kBit, Audio 3.1kHz|San Roque / 891|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263870|Telephony, 64kBit, Audio 3.1kHz|San Roque / 892|Analog / Public|Abonado Comun
+|1000|02-6263873|Telephony, 64kBit, Audio 3.1kHz|San Roque / 895|Analog / Public|BLOQUEO LD
+|1000|02-6263874|Telephony, 64kBit, Audio 3.1kHz|San Roque / 896|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263875|Telephony, 64kBit, Audio 3.1kHz|San Roque / 897|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263877|Telephony, 64kBit, Audio 3.1kHz|San Roque / 898|Analog / Public|Abonado Comun
+|1000|02-6263880|Telephony, 64kBit, Audio 3.1kHz|San Roque / 899|Analog / Public|BLOQUEO LD
+|1000|02-6263881|Telephony, 64kBit, Audio 3.1kHz|San Roque / 900|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263883|Telephony, 64kBit, Audio 3.1kHz|San Roque / 901|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263884|Telephony, 64kBit, Audio 3.1kHz|San Roque / 902|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263885|Telephony, 64kBit, Audio 3.1kHz|San Roque / 903|Analog / Public|Abonado Comun
+|1000|02-6263888|Telephony, 64kBit, Audio 3.1kHz|San Roque / 904|Analog / Public|Abonado Comun
+|1000|02-6263889|Telephony, 64kBit, Audio 3.1kHz|San Roque / 905|Analog / Public|Abonado Comun
+|1000|02-6263895|Telephony, 64kBit, Audio 3.1kHz|San Roque / 906|Analog / Public|Abonado Comun
+|1000|02-6263897|Telephony, 64kBit, Audio 3.1kHz|San Roque / 907|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263898|Telephony, 64kBit, Audio 3.1kHz|San Roque / 908|Analog / Public|BLOQUEO LD
+|1000|02-6263899|Telephony, 64kBit, Audio 3.1kHz|San Roque / 909|Analog / Public|BLOQUEO LD
+|1000|02-6263900|Telephony, 64kBit, Audio 3.1kHz|San Roque / 910|Analog / Public|BLOQUEO LD
+|1000|02-6263901|Telephony, 64kBit, Audio 3.1kHz|San Roque / 911|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263902|Telephony, 64kBit, Audio 3.1kHz|San Roque / 912|Analog / Public|Abonado Comun
+|1000|02-6263903|Telephony, 64kBit, Audio 3.1kHz|San Roque / 913|Analog / Public|BLOQUEO LD
+|1000|02-6263904|Telephony, 64kBit, Audio 3.1kHz|San Roque / 914|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263907|Telephony, 64kBit, Audio 3.1kHz|San Roque / 915|Analog / Public|Abonado Comun
+|1000|02-6263909|Telephony, 64kBit, Audio 3.1kHz|San Roque / 916|Analog / Public|Abonado Comun
+|1000|02-6263910|Telephony, 64kBit, Audio 3.1kHz|San Roque / 917|Analog / Public|Abonado Comun
+|1000|02-6263913|Telephony, 64kBit, Audio 3.1kHz|San Roque / 918|Analog / Public|Abonado Comun
+|1000|02-6263914|Telephony, 64kBit, Audio 3.1kHz|San Roque / 919|Analog / Public|BLOQUEO LD
+|1000|02-6263915|Telephony, 64kBit, Audio 3.1kHz|San Roque / 920|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263916|Telephony, 64kBit, Audio 3.1kHz|San Roque / 921|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263917|Telephony, 64kBit, Audio 3.1kHz|San Roque / 922|Analog / Public|Abonado Comun
+|1000|02-6263918|Telephony, 64kBit, Audio 3.1kHz|San Roque / 923|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263923|Telephony, 64kBit, Audio 3.1kHz|San Roque / 924|Analog / Public|Abonado Comun
+|1000|02-6263931|Telephony, 64kBit, Audio 3.1kHz|San Roque / 926|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263934|Telephony, 64kBit, Audio 3.1kHz|San Roque / 927|Analog / Public|Abonado Comun
+|1000|02-6263935|Telephony, 64kBit, Audio 3.1kHz|San Roque / 928|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263937|Telephony, 64kBit, Audio 3.1kHz|San Roque / 929|Analog / Public|BLOQUEO LD
+|1000|02-6263941|Telephony, 64kBit, Audio 3.1kHz|San Roque / 930|Analog / Public|Abonado Comun
+|1000|02-6263943|Telephony, 64kBit, Audio 3.1kHz|San Roque / 931|Analog / Public|BLOQUEO LD
+|1000|02-6263951|Telephony, 64kBit, Audio 3.1kHz|San Roque / 933|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263952|Telephony, 64kBit, Audio 3.1kHz|San Roque / 934|Analog / Public|Abonado Comun
+|1000|02-6263953|Telephony, 64kBit, Audio 3.1kHz|San Roque / 935|Analog / Public|BLOQUEO LD
+|1000|02-6263957|Telephony, 64kBit, Audio 3.1kHz|San Roque / 936|Analog / Public|Abonado Comun
+|1000|02-6263958|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1018|Analog / Public|BLOQUEO LD
+|1000|02-6263963|Telephony, 64kBit, Audio 3.1kHz|San Roque / 937|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263964|Telephony, 64kBit, Audio 3.1kHz|San Roque / 938|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263965|Telephony, 64kBit, Audio 3.1kHz|San Roque / 939|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263967|Telephony, 64kBit, Audio 3.1kHz|San Roque / 940|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263970|Telephony, 64kBit, Audio 3.1kHz|San Roque / 584|Analog / Public|BLOQUEO LD
+|1000|02-6263971|Telephony, 64kBit, Audio 3.1kHz|San Roque / 941|Analog / Public|BLOQUEO LD
+|1000|02-6263972|Telephony, 64kBit, Audio 3.1kHz|San Roque / 942|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263974|Telephony, 64kBit, Audio 3.1kHz|San Roque / 943|Analog / Public|Abonado Comun
+|1000|02-6263976|Telephony, 64kBit, Audio 3.1kHz|San Roque / 944|Analog / Public|Abonado Comun
+|1000|02-6263977|Telephony, 64kBit, Audio 3.1kHz|San Roque / 945|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263983|Telephony, 64kBit, Audio 3.1kHz|San Roque / 946|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263990|Telephony, 64kBit, Audio 3.1kHz|San Roque / 948|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263991|Telephony, 64kBit, Audio 3.1kHz|San Roque / 949|Analog / Public|BLOQUEO LD
+|1000|02-6263994|Telephony, 64kBit, Audio 3.1kHz|San Roque / 950|Analog / Public|BLOQUEO LD
+|1000|02-6263995|Telephony, 64kBit, Audio 3.1kHz|San Roque / 951|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263996|Telephony, 64kBit, Audio 3.1kHz|San Roque / 198|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6263998|Telephony, 64kBit, Audio 3.1kHz|San Roque / 952|Analog / Public|BLOQUEO LD
+|1000|02-6264002|Telephony, 64kBit, Audio 3.1kHz|San Roque / 954|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264003|Telephony, 64kBit, Audio 3.1kHz|San Roque / 955|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264012|Telephony, 64kBit, Audio 3.1kHz|San Roque / 956|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264014|Telephony, 64kBit, Audio 3.1kHz|San Roque / 957|Analog / Public|Abonado Comun
+|1000|02-6264016|Telephony, 64kBit, Audio 3.1kHz|San Roque / 16|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264020|Telephony, 64kBit, Audio 3.1kHz|San Roque / 958|Analog / Public|Abonado Comun
+|1000|02-6264021|Telephony, 64kBit, Audio 3.1kHz|San Roque / 131|Analog / Public|BLOQUEO LD
+|1000|02-6264022|Telephony, 64kBit, Audio 3.1kHz|San Roque / 959|Analog / Public|Abonado Comun
+|1000|02-6264024|Telephony, 64kBit, Audio 3.1kHz|San Roque / 960|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264026|Telephony, 64kBit, Audio 3.1kHz|San Roque / 961|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264027|Telephony, 64kBit, Audio 3.1kHz|San Roque / 962|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264031|Telephony, 64kBit, Audio 3.1kHz|San Roque / 964|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264033|Telephony, 64kBit, Audio 3.1kHz|San Roque / 532|Analog / Public|Abonado Comun
+|1000|02-6264034|Telephony, 64kBit, Audio 3.1kHz|San Roque / 965|Analog / Public|Abonado Comun
+|1000|02-6264041|Telephony, 64kBit, Audio 3.1kHz|San Roque / 966|Analog / Public|BLOQUEO LD
+|1000|02-6264042|Telephony, 64kBit, Audio 3.1kHz|San Roque / 967|Analog / Public|BLOQUEO LD
+|1000|02-6264045|Telephony, 64kBit, Audio 3.1kHz|San Roque / 443|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264052|Telephony, 64kBit, Audio 3.1kHz|San Roque / 82|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264062|Telephony, 64kBit, Audio 3.1kHz|San Roque / 123|Analog / Public|Abonado Comun
+|1000|02-6264102|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1021|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264103|Telephony, 64kBit, Audio 3.1kHz|San Roque / 992|Analog / Public|BLOQUEO LD
+|1000|02-6264107|Telephony, 64kBit, Audio 3.1kHz|San Roque / 125|Analog / Public|Abonado Comun
+|1000|02-6264108|Telephony, 64kBit, Audio 3.1kHz|San Roque / 2|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264141|Telephony, 64kBit, Audio 3.1kHz|San Roque / 67|Analog / Public|Abonado Comun
+|1000|02-6264303|Telephony, 64kBit, Audio 3.1kHz|San Roque / 115|Analog / Public|BLOQUEO LD
+|1000|02-6264305|Telephony, 64kBit, Audio 3.1kHz|San Roque / 159|Analog / Public|Abonado Comun
+|1000|02-6264307|Telephony, 64kBit, Audio 3.1kHz|San Roque / 111|Analog / Public|Abonado Comun
+|1000|02-6264308|Telephony, 64kBit, Audio 3.1kHz|San Roque / 114|Analog / Public|BLOQUEO LD
+|1000|02-6264312|Telephony, 64kBit, Audio 3.1kHz|San Roque / 112|Analog / Public|BLOQUEO LD
+|1000|02-6264313|Telephony, 64kBit, Audio 3.1kHz|San Roque / 972|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264314|Telephony, 64kBit, Audio 3.1kHz|San Roque / 932|Analog / Public|Abonado Comun
+|1000|02-6264318|Telephony, 64kBit, Audio 3.1kHz|San Roque / 294|Analog / Public|BLOQUEO LD
+|1000|02-6264320|Telephony, 64kBit, Audio 3.1kHz|San Roque / 113|Analog / Public|Abonado Comun
+|1000|02-6264321|Telephony, 64kBit, Audio 3.1kHz|San Roque / 157|Analog / Public|Abonado Comun
+|1000|02-6264323|Telephony, 64kBit, Audio 3.1kHz|San Roque / 467|Analog / Public|Abonado Comun
+|1000|02-6264328|Telephony, 64kBit, Audio 3.1kHz|San Roque / 568|Analog / Public|Abonado Comun
+|1000|02-6264331|Telephony, 64kBit, Audio 3.1kHz|San Roque / 328|Analog / Public|BLOQUEO LD
+|1000|02-6264343|Telephony, 64kBit, Audio 3.1kHz|San Roque / 138|Analog / Public|BLOQUEO LD
+|1000|02-6264432|Telephony, 64kBit, Audio 3.1kHz|San Roque / 233|Analog / Public|BLOQUEO LD
+|1000|02-6264435|Telephony, 64kBit, Audio 3.1kHz|San Roque / 118|Analog / Public / Suspended|BLOQUEO TOTAL
+|1000|02-6264441|Telephony, 64kBit, Audio 3.1kHz|San Roque / 974|Analog / Public|Abonado Comun
+|1000|02-6265555|Telephony, 64kBit, Audio 3.1kHz|San Roque / 428|Analog / Public|BLOQUEO LD
+|1000|02-6265556|Telephony, 64kBit, Audio 3.1kHz|San Roque / 429|Analog / Public|BLOQUEO LD
+|1000|02-6265557|Telephony, 64kBit, Audio 3.1kHz|San Roque / 976|Analog / Public|BLOQUEO LD
+|1000|02-6265558|Telephony, 64kBit, Audio 3.1kHz|San Roque / 977|Analog / Public|BLOQUEO LD
+|1000|02-6265559|Telephony, 64kBit, Audio 3.1kHz|San Roque / 979|Analog / Public|BLOQUEO LD
+|1000|02-6265560|Telephony, 64kBit, Audio 3.1kHz|San Roque / 978|Analog / Public|BLOQUEO LD
+|1000|02-6265562|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1003|Analog / Public|BLOQUEO LD
+|1000|02-6265563|Telephony, 64kBit, Audio 3.1kHz|San Roque / 1004|Analog / Public|BLOQUEO LD
+|1000|02-6269999|Telephony, 64kBit, Audio 3.1kHz|San Roque / 103|Analog / Public|BLOQUEO LD
+[End of Document]
