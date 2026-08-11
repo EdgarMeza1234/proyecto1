@@ -42,7 +42,7 @@ const canvas = ref(null)
 let animationId = null
 
 function homeRoute() {
-  return auth.role === 'operador' ? '/registro' : '/'
+  return auth.role === 'operador' ? '/blocks' : '/'
 }
 
 onMounted(() => {
