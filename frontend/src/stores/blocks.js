@@ -23,9 +23,9 @@ export const useBlockStore = defineStore('blocks', () => {
       ParPriBloq: blockVal,
       ParPriPar: String(i + 1),
       ParSec: '',
-      Pots: '',
-      Armario: '',
-      CajDis: '',
+      ParSecCentral: '',
+      ParSecBloq: '',
+      ParSecPar: '',
       Obs: ''
     }))
   }
@@ -42,9 +42,9 @@ export const useBlockStore = defineStore('blocks', () => {
         ParPriBloq: existing.ParPriBloq || blockVal,
         ParPriPar: existing.ParPriPar || pairNum,
         ParSec: existing.ParSec || '',
-        Pots: existing.Pots || '',
-        Armario: existing.Armario || '',
-        CajDis: existing.CajDis || '',
+        ParSecCentral: existing.ParSecCentral || '',
+        ParSecBloq: existing.ParSecBloq || '',
+        ParSecPar: existing.ParSecPar || '',
         Obs: existing.Obs || ''
       }
     })
@@ -86,9 +86,9 @@ export const useBlockStore = defineStore('blocks', () => {
       ParPriBloq: block.value,
       ParPriPar: r.ParPriPar || '',
       ParSec: r.ParSec || '',
-      Pots: r.Pots || '',
-      Armario: r.Armario || '',
-      CajDis: r.CajDis || '',
+      ParSecCentral: r.ParSecCentral || '',
+      ParSecBloq: r.ParSecBloq || '',
+      ParSecPar: r.ParSecPar || '',
       Obs: r.Obs || ''
     }))
 

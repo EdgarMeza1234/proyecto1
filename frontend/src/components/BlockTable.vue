@@ -9,9 +9,9 @@
           <th>ParPriBloq</th>
           <th>ParPriPar</th>
           <th>ParSec</th>
-          <th>Pots</th>
-          <th>Armario</th>
-          <th>CajDis</th>
+          <th>ParSecCentral</th>
+          <th>ParSecBloq</th>
+          <th>ParSecPar</th>
           <th style="min-width:220px">Obs</th>
         </tr>
       </thead>
@@ -23,9 +23,9 @@
           <td><input v-model="row.ParPriBloq" maxlength="10" /></td>
           <td><input v-model="row.ParPriPar" maxlength="10" /></td>
           <td><input v-model="row.ParSec" maxlength="10" /></td>
-          <td><input v-model="row.Pots" maxlength="10" /></td>
-          <td><input v-model="row.Armario" maxlength="10" /></td>
-          <td><input v-model="row.CajDis" maxlength="50" /></td>
+          <td><input v-model="row.ParSecCentral" maxlength="50" /></td>
+          <td><input v-model="row.ParSecBloq" maxlength="10" /></td>
+          <td><input v-model="row.ParSecPar" maxlength="10" /></td>
           <td class="obs-cell">
             <select :value="row.Obs" @change="onObsChange($event, row, index)" class="obs-combo">
               <option value="">── Sin observacion ──</option>

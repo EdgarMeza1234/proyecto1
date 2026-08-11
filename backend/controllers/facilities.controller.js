@@ -12,7 +12,7 @@ async function lookupDn(req, res, next) {
       .query(`
         WITH FacilidadesNumeradas AS (
           SELECT
-            ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, Pots, Armario, CajDis, Obs,
+            ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs,
             ROW_NUMBER() OVER (
               PARTITION BY
                 COALESCE(NULLIF(LTRIM(RTRIM(Central)), ''), LTRIM(RTRIM(ParPriBloq))),
@@ -25,7 +25,7 @@ async function lookupDn(req, res, next) {
           FROM ${table}
         )
         SELECT TOP (1)
-          ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, Pots, Armario, CajDis, Obs, NumeroParCalculado
+          ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs, NumeroParCalculado
         FROM FacilidadesNumeradas
         WHERE Dn = @dn
         ORDER BY ID DESC
@@ -53,7 +53,7 @@ async function lookupBlock(req, res, next) {
       .input('bloque', (await getSql()).VarChar(10), bloque)
       .query(`
         SELECT TOP (100)
-          ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, Pots, Armario, CajDis, Obs
+          ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs
         FROM ${table}
         WHERE (LTRIM(RTRIM(Central)) = @central
             AND LTRIM(RTRIM(ParPriBloq)) = @bloque)
@@ -98,9 +98,9 @@ async function updateBlock(req, res, next) {
         request.input('ParPriBloq', sql.VarChar(10), bloque);
         request.input('ParPriPar', sql.VarChar(10), String(row.ParPriPar || '').trim().slice(0, 10));
         request.input('ParSec', sql.VarChar(10), String(row.ParSec || '').trim().slice(0, 10));
-        request.input('Pots', sql.VarChar(10), String(row.Pots || '').trim().slice(0, 10));
-        request.input('Armario', sql.VarChar(10), String(row.Armario || '').trim().slice(0, 10));
-        request.input('CajDis', sql.VarChar(50), String(row.CajDis || '').trim().slice(0, 50));
+        request.input('ParSecCentral', sql.VarChar(50), String(row.ParSecCentral || '').trim().slice(0, 50));
+        request.input('ParSecBloq', sql.VarChar(10), String(row.ParSecBloq || '').trim().slice(0, 10));
+        request.input('ParSecPar', sql.VarChar(10), String(row.ParSecPar || '').trim().slice(0, 10));
         request.input('Obs', sql.VarChar(50), String(row.Obs || '').trim().slice(0, 50));
 
         await request.query(`
@@ -119,14 +119,15 @@ async function updateBlock(req, res, next) {
           IF @ExistingID IS NOT NULL
           BEGIN
             UPDATE ${table}
-            SET Dn = @Dn, ParSec = @ParSec, Pots = @Pots,
-                Armario = @Armario, CajDis = @CajDis, Obs = @Obs
+            SET Dn = @Dn, ParSec = @ParSec,
+                ParSecCentral = @ParSecCentral, ParSecBloq = @ParSecBloq, ParSecPar = @ParSecPar,
+                Obs = @Obs
             WHERE ID = @ExistingID
           END
           ELSE
           BEGIN
-            INSERT INTO ${table} (Dn, Central, ParPriBloq, ParPriPar, ParSec, Pots, Armario, CajDis, Obs)
-            VALUES (@Dn, @Central, @ParPriBloq, @ParPriPar, @ParSec, @Pots, @Armario, @CajDis, @Obs)
+            INSERT INTO ${table} (Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs)
+            VALUES (@Dn, @Central, @ParPriBloq, @ParPriPar, @ParSec, @ParSecCentral, @ParSecBloq, @ParSecPar, @Obs)
           END
         `);
       }
