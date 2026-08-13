@@ -9,6 +9,7 @@ const DEFAULT_PERMISSIONS = {
   tickets: ['admin', 'jefe', 'operador', 'tecnico', 'usuario', 'odeco'],
   reclamos: ['admin', 'odeco', 'operador', 'jefe'],
   blocks: ['admin', 'operador'],
+  auditoria: ['admin'],
   reports: ['admin', 'jefe'],
   users: ['admin'],
   integrations: ['admin'],

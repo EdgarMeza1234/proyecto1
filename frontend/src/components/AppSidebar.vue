@@ -68,7 +68,7 @@ function toggleSection(name) {
 }
 
 const navGroups = computed(() => {
-  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales' }
+  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/auditoria': 'auditoria', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales' }
 
   const all = [
     { view: '/', label: 'Tablero', icon: '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
@@ -83,6 +83,7 @@ const navGroups = computed(() => {
     { view: '/nortel', label: 'Trafico Nortel', icon: '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>' },
     { view: '/registro', label: 'Registro de Trabajos', icon: '<svg viewBox="0 0 24 24"><path d="M9 12h6"></path><path d="M9 16h6"></path><path d="M9 8h6"></path><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18"></path></svg>' },
     { view: '/permisos', label: 'Permisos', icon: '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>' },
+    { view: '/auditoria', label: 'Auditoria', icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 11 11 13 15 9"></polyline></svg>' },
     { view: '/sisatt', label: 'Trafico SISATT', icon: '<svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>' },
   ]
 
@@ -90,7 +91,7 @@ const navGroups = computed(() => {
     { name: 'General', items: ['/', '/tickets', '/reclamos', '/reports', '/registro'] },
     { name: 'Centrales', items: ['/iskratel', '/trafico', '/nortel', '/sisatt'] },
     { name: 'Facilidades', items: ['/blocks'] },
-    { name: 'Administración', items: ['/users', '/permisos', '/integrations'] }
+    { name: 'Administración', items: ['/users', '/permisos', '/auditoria', '/integrations'] }
   ]
 
   return groups.map(g => ({

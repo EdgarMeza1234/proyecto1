@@ -42,6 +42,7 @@ const titles = {
   '/reclamos': 'Reclamos telefonicos - ODECO',
   '/tickets': 'Boletas de reparacion',
   '/blocks': 'Administracion de pares por bloque',
+  '/auditoria': 'Auditoria de cambios en bloques',
   '/reports': 'Reportes operativos',
   '/users': 'Administracion de usuarios',
   '/integrations': 'Conexion con API y base de datos'

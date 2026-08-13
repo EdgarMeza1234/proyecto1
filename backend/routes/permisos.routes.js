@@ -11,6 +11,7 @@ const PERMISSION_LIST = [
   { codigo: 'tickets', nombre: 'Boletas', modulo: 'General' },
   { codigo: 'reclamos', nombre: 'Reclamos', modulo: 'General' },
   { codigo: 'blocks', nombre: 'Bloques', modulo: 'Facilidades' },
+  { codigo: 'auditoria', nombre: 'Auditoria de bloques', modulo: 'Facilidades' },
   { codigo: 'reports', nombre: 'Reportes', modulo: 'General' },
   { codigo: 'users', nombre: 'Usuarios', modulo: 'Admin' },
   { codigo: 'integrations', nombre: 'Integraciones', modulo: 'Admin' },

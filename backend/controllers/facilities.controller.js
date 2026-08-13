@@ -1,4 +1,30 @@
 const { getPool, getSql, getFacilidadesTable, safeSqlName } = require('../db/pool');
+const { registrarAuditoria } = require('../services/facilities-audit.service');
+
+const CAMPOS_COMPARABLES = ['Dn', 'ParSec', 'ParSecCentral', 'ParSecBloq', 'ParSecPar', 'Obs'];
+
+function normalizar(v) {
+  return String(v || '').trim();
+}
+
+function snapshotsSonIguales(a, b) {
+  for (const campo of CAMPOS_COMPARABLES) {
+    if (normalizar(a[campo]) !== normalizar(b[campo])) return false;
+  }
+  return true;
+}
+
+function construirDetalle(antes, despues) {
+  const cambios = [];
+  for (const campo of CAMPOS_COMPARABLES) {
+    const vAntes = normalizar(antes[campo]);
+    const vDespues = normalizar(despues[campo]);
+    if (vAntes !== vDespues) {
+      cambios.push(`${campo}: '${vAntes || '—'}' -> '${vDespues || '—'}'`);
+    }
+  }
+  return cambios.join(' | ');
+}
 
 async function lookupDn(req, res, next) {
   try {
@@ -89,6 +115,9 @@ async function updateBlock(req, res, next) {
     const transaction = new sql.Transaction(pool);
     await transaction.begin();
 
+    const usuario = req.user?.username || '';
+    const nombreCompleto = req.user?.name || '';
+
     try {
       for (const row of rows.slice(0, 100)) {
         const request = new sql.Request(transaction);
@@ -103,7 +132,7 @@ async function updateBlock(req, res, next) {
         request.input('ParSecPar', sql.VarChar(10), String(row.ParSecPar || '').trim().slice(0, 10));
         request.input('Obs', sql.VarChar(50), String(row.Obs || '').trim().slice(0, 50));
 
-        await request.query(`
+        const result = await request.query(`
           DECLARE @ExistingID INT = NULL;
 
           IF @ID IS NOT NULL AND EXISTS (SELECT 1 FROM ${table} WHERE ID = @ID)
@@ -116,20 +145,92 @@ async function updateBlock(req, res, next) {
             WHERE Central = @Central AND ParPriBloq = @ParPriBloq AND ParPriPar = @ParPriPar;
           END
 
-          IF @ExistingID IS NOT NULL
-          BEGIN
+          SELECT
+            @ExistingID AS ExistingID,
+            CASE WHEN @ExistingID IS NOT NULL THEN 1 ELSE 0 END AS Existe
+        `);
+
+        const existe = result.recordset[0]?.Existe === 1;
+        const idExistente = result.recordset[0]?.ExistingID || null;
+
+        if (existe) {
+          const antesReq = new sql.Request(transaction);
+          antesReq.input('ExistingID', sql.Int, idExistente);
+          const antesResult = await antesReq.query(`
+            SELECT TOP (1) Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs
+            FROM ${table}
+            WHERE ID = @ExistingID
+          `);
+          const antes = antesResult.recordset[0] || {};
+
+          if (snapshotsSonIguales(antes, row)) {
+            continue;
+          }
+
+          const updateReq = new sql.Request(transaction);
+          updateReq.input('ExistingID', sql.Int, idExistente);
+          updateReq.input('Dn', sql.VarChar(20), String(row.Dn || '').trim().slice(0, 20));
+          updateReq.input('ParSec', sql.VarChar(10), String(row.ParSec || '').trim().slice(0, 10));
+          updateReq.input('ParSecCentral', sql.VarChar(50), String(row.ParSecCentral || '').trim().slice(0, 50));
+          updateReq.input('ParSecBloq', sql.VarChar(10), String(row.ParSecBloq || '').trim().slice(0, 10));
+          updateReq.input('ParSecPar', sql.VarChar(10), String(row.ParSecPar || '').trim().slice(0, 10));
+          updateReq.input('Obs', sql.VarChar(50), String(row.Obs || '').trim().slice(0, 50));
+          await updateReq.query(`
             UPDATE ${table}
             SET Dn = @Dn, ParSec = @ParSec,
                 ParSecCentral = @ParSecCentral, ParSecBloq = @ParSecBloq, ParSecPar = @ParSecPar,
                 Obs = @Obs
             WHERE ID = @ExistingID
-          END
-          ELSE
-          BEGIN
+          `);
+
+          await registrarAuditoria({
+            accion: 'MODIFICAR',
+            idRegistro: idExistente,
+            central,
+            parPriBloq: bloque,
+            parPriPar: normalizar(row.ParPriPar) || normalizar(antes.ParPriPar),
+            dn: normalizar(row.Dn) || normalizar(antes.Dn),
+            datosAntes: JSON.stringify(antes),
+            datosDespues: JSON.stringify(row),
+            detalle: construirDetalle(antes, row),
+            usuario,
+            nombreCompleto,
+            transaction
+          });
+        } else {
+          const insertReq = new sql.Request(transaction);
+          insertReq.input('Dn', sql.VarChar(20), String(row.Dn || '').trim().slice(0, 20));
+          insertReq.input('Central', sql.VarChar(50), central);
+          insertReq.input('ParPriBloq', sql.VarChar(10), bloque);
+          insertReq.input('ParPriPar', sql.VarChar(10), String(row.ParPriPar || '').trim().slice(0, 10));
+          insertReq.input('ParSec', sql.VarChar(10), String(row.ParSec || '').trim().slice(0, 10));
+          insertReq.input('ParSecCentral', sql.VarChar(50), String(row.ParSecCentral || '').trim().slice(0, 50));
+          insertReq.input('ParSecBloq', sql.VarChar(10), String(row.ParSecBloq || '').trim().slice(0, 10));
+          insertReq.input('ParSecPar', sql.VarChar(10), String(row.ParSecPar || '').trim().slice(0, 10));
+          insertReq.input('Obs', sql.VarChar(50), String(row.Obs || '').trim().slice(0, 50));
+
+          const insertResult = await insertReq.query(`
             INSERT INTO ${table} (Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs)
+            OUTPUT INSERTED.ID
             VALUES (@Dn, @Central, @ParPriBloq, @ParPriPar, @ParSec, @ParSecCentral, @ParSecBloq, @ParSecPar, @Obs)
-          END
-        `);
+          `);
+          const nuevoId = insertResult.recordset[0]?.ID || null;
+
+          await registrarAuditoria({
+            accion: 'CREAR',
+            idRegistro: nuevoId,
+            central,
+            parPriBloq: bloque,
+            parPriPar: normalizar(row.ParPriPar),
+            dn: normalizar(row.Dn),
+            datosAntes: null,
+            datosDespues: JSON.stringify(row),
+            detalle: 'Se creo el par en la tabla MDF.',
+            usuario,
+            nombreCompleto,
+            transaction
+          });
+        }
       }
 
       await transaction.commit();
@@ -173,4 +274,15 @@ async function addObservation(req, res, next) {
   }
 }
 
-module.exports = { lookupDn, lookupBlock, updateBlock, getObservations, addObservation };
+async function getAuditoria(req, res, next) {
+  try {
+    const { listarAuditoria } = require('../services/facilities-audit.service');
+    const registros = await listarAuditoria({ limit: req.query.limit, usuario: req.query.usuario });
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.json(registros);
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { lookupDn, lookupBlock, updateBlock, getObservations, addObservation, getAuditoria };

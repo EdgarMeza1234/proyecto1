@@ -6,6 +6,7 @@ const routes = [
   { path: '/', name: 'Dashboard', component: () => import('../views/DashboardView.vue'), meta: { requiresAuth: true } },
   { path: '/tickets', name: 'Tickets', component: () => import('../views/TicketsView.vue'), meta: { requiresAuth: true } },
   { path: '/blocks', name: 'Blocks', component: () => import('../views/BlocksView.vue'), meta: { requiresAuth: true } },
+  { path: '/auditoria', name: 'Auditoria', component: () => import('../views/AuditoriaView.vue'), meta: { requiresAuth: true } },
   { path: '/reports', name: 'Reports', component: () => import('../views/ReportsView.vue'), meta: { requiresAuth: true } },
   { path: '/users', name: 'Users', component: () => import('../views/UsersView.vue'), meta: { requiresAuth: true } },
   { path: '/integrations', name: 'Integrations', component: () => import('../views/IntegrationsView.vue'), meta: { requiresAuth: true } },
