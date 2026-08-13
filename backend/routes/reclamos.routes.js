@@ -5,6 +5,7 @@ const { authenticate, authorize } = require('../middleware/auth');
 const router = Router();
 
 router.get('/', authenticate, reclamosController.list);
+router.get('/abonado/:dn', authenticate, reclamosController.historial);
 router.get('/:id', authenticate, reclamosController.detail);
 router.post('/', authenticate, authorize('odeco', 'admin', 'operador'), reclamosController.create);
 router.post('/:id/seguimiento', authenticate, reclamosController.addEvent);

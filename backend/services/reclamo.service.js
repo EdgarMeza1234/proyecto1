@@ -38,6 +38,36 @@ async function getReclamoEvents(id) {
   return result.recordset;
 }
 
+async function getAbonadoHistorial(dn) {
+  const pool = await getPool();
+  const sql = await getSql();
+  const request = pool.request();
+  request.input('Dn', sql.VarChar(20), String(dn).trim().slice(0, 20));
+
+  const reclamosResult = await request.query(`
+    SELECT TOP (50)
+      IdReclamo, CodigoReclamo, Dn, NombreCliente, TipoFalla, ReclamoDescripcion,
+      FechaRegistro, Estado, ResultadoRevision, RevisadoPor, FechaRevision, IdBoletaGenerada
+    FROM ReclamosTelefonia
+    WHERE Dn = @Dn
+    ORDER BY FechaRegistro DESC
+  `);
+
+  const boletasResult = await request.query(`
+    SELECT TOP (50)
+      IdBoleta, CodigoBoleta, Dn, NombreCliente, Central, ParPrimarioCompleto,
+      TipoFalla, Prioridad, Estado, TecnicoAsignado, FechaCreacion, FechaCierre
+    FROM BoletasReparacion
+    WHERE Dn = @Dn
+    ORDER BY FechaCreacion DESC
+  `);
+
+  return {
+    reclamos: reclamosResult.recordset,
+    boletas: boletasResult.recordset
+  };
+}
+
 async function createReclamo(data, transaction) {
   const sql = await getSql();
   const code = data.CodigoReclamo || await nextReclamoCode(transaction);
@@ -188,4 +218,4 @@ function cleanText(value, maxLength) {
   return text ? text.slice(0, maxLength) : null;
 }
 
-module.exports = { listReclamos, getReclamoById, getReclamoEvents, createReclamo, insertReclamoEvent, reviewReclamo, nextReclamoCode };
+module.exports = { listReclamos, getReclamoById, getReclamoEvents, getAbonadoHistorial, createReclamo, insertReclamoEvent, reviewReclamo, nextReclamoCode };

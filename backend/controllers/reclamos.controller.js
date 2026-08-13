@@ -2,6 +2,19 @@ const { getPool, getSql } = require('../db/pool');
 const reclamoService = require('../services/reclamo.service');
 const { emitEvent } = require('../services/socket');
 
+async function historial(req, res, next) {
+  try {
+    const dn = decodeURIComponent(req.params.dn || '').trim();
+    if (!dn) return res.status(400).json({ message: 'Debe enviar el numero telefonico.' });
+
+    const historial = await reclamoService.getAbonadoHistorial(dn);
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.json(historial);
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function list(req, res, next) {
   try {
     const reclamos = await reclamoService.listReclamos();
@@ -94,4 +107,4 @@ async function review(req, res, next) {
   }
 }
 
-module.exports = { list, detail, create, addEvent, review };
+module.exports = { list, historial, detail, create, addEvent, review };

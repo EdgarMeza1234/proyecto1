@@ -40,6 +40,31 @@
             <span style="font-size:17px" :class="erpStatus.type">{{ erpStatus.text }}</span>
           </div>
 
+          <div v-if="historialActivo.length" class="historial-warn">
+            <strong>Este abonado tiene registros activos:</strong>
+            <ul>
+              <li v-for="item in historialActivo" :key="item.tipo + item.codigo">
+                <span :class="badgeClass(item.tipo)">{{ item.tipo }}</span>
+                <strong>{{ item.codigo }}</strong>
+                <span>— {{ item.estado }}</span>
+                <small class="muted" v-if="item.tipo === 'Boleta' && item.tecnico">Tecnico: {{ item.tecnico }}</small>
+                <small class="muted" v-if="item.tipo === 'Reclamo'">{{ item.descripcion }}</small>
+              </li>
+            </ul>
+          </div>
+
+          <div v-if="historialCerrado.length" class="historial-info">
+            <strong>Historial previo ({{ historialCerrado.length }}):</strong>
+            <ul>
+              <li v-for="item in historialCerrado" :key="item.tipo + item.codigo">
+                <span :class="badgeClass(item.tipo)">{{ item.tipo }}</span>
+                <strong>{{ item.codigo }}</strong>
+                <span>— {{ item.estado }}</span>
+                <small class="muted" v-if="item.tipo === 'Boleta' && item.tecnico">Tecnico: {{ item.tecnico }}</small>
+              </li>
+            </ul>
+          </div>
+
           <h3 class="paper-section">Detalle del reclamo</h3>
           <div class="form-grid" style="grid-template-columns:1fr">
             <label class="field">
@@ -95,6 +120,44 @@ const saving = ref(false)
 const faultTypes = ref([])
 const submitError = ref('')
 const erpStatus = reactive({ type: 'muted', text: 'Digite el numero (minimo 5 digitos) y presione Enter para consultar el ERP.' })
+const historial = ref({ reclamos: [], boletas: [] })
+
+const ESTADOS_RECLAMO_ACTIVOS = ['Pendiente', 'EnRevision']
+const ESTADOS_BOLETA_ACTIVOS = ['Pendiente', 'Asignada', 'EnProceso', 'EnRevision']
+
+const historialActivo = computed(() => {
+  const items = []
+  for (const r of historial.value.reclamos || []) {
+    if (ESTADOS_RECLAMO_ACTIVOS.includes(r.Estado)) {
+      items.push({ tipo: 'Reclamo', codigo: r.CodigoReclamo, estado: r.Estado, descripcion: r.ReclamoDescripcion || r.TipoFalla })
+    }
+  }
+  for (const b of historial.value.boletas || []) {
+    if (ESTADOS_BOLETA_ACTIVOS.includes(b.Estado)) {
+      items.push({ tipo: 'Boleta', codigo: b.CodigoBoleta, estado: b.Estado, tecnico: b.TecnicoAsignado })
+    }
+  }
+  return items
+})
+
+const historialCerrado = computed(() => {
+  const items = []
+  for (const r of historial.value.reclamos || []) {
+    if (!ESTADOS_RECLAMO_ACTIVOS.includes(r.Estado)) {
+      items.push({ tipo: 'Reclamo', codigo: r.CodigoReclamo, estado: r.Estado, descripcion: r.ReclamoDescripcion || r.TipoFalla })
+    }
+  }
+  for (const b of historial.value.boletas || []) {
+    if (!ESTADOS_BOLETA_ACTIVOS.includes(b.Estado)) {
+      items.push({ tipo: 'Boleta', codigo: b.CodigoBoleta, estado: b.Estado, tecnico: b.TecnicoAsignado })
+    }
+  }
+  return items.slice(0, 10)
+})
+
+function badgeClass(tipo) {
+  return tipo === 'Boleta' ? 'badge-boleta' : 'badge-reclamo'
+}
 
 const form = reactive({
   phone: '', name: '', address: '', reference: '',
@@ -125,10 +188,26 @@ async function lookupErp() {
   erpStatus.type = 'muted'
   erpStatus.text = 'Consultando...'
 
+  const [erpRes, histRes] = await Promise.allSettled([
+    api.get(`/erp/personas/${encodeURIComponent(form.phone)}`),
+    api.get(`/reclamos/abonado/${encodeURIComponent(form.phone)}`)
+  ])
+
+  if (histRes.status === 'fulfilled' && histRes.value.data) {
+    const data = histRes.value.data
+    historial.value = {
+      reclamos: Array.isArray(data.reclamos) ? data.reclamos : [],
+      boletas: Array.isArray(data.boletas) ? data.boletas : []
+    }
+  } else {
+    historial.value = { reclamos: [], boletas: [] }
+  }
+
   try {
-    const erpRes = await api.get(`/erp/personas/${encodeURIComponent(form.phone)}`)
-    if (erpRes.data) {
-      const source = Array.isArray(erpRes.data) ? erpRes.data[0] : erpRes.data
+    if (erpRes.status !== 'fulfilled') throw erpRes.reason
+    const erpData = erpRes.value.data
+    if (erpData) {
+      const source = Array.isArray(erpData) ? erpData[0] : erpData
       if (source && typeof source === 'object') {
         form.name = source.nombreCompleto || source.NombreCompleto || source.nombre || source.Nombre || form.name
         form.address = source.direccion || source.Direccion || form.address
@@ -213,3 +292,52 @@ onMounted(() => {
   loadFaultTypes()
 })
 </script>
+
+<style scoped>
+.historial-warn,
+.historial-info {
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.historial-warn {
+  border: 1px solid var(--danger);
+  background: rgba(239, 68, 68, 0.12);
+}
+.historial-info {
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+}
+.historial-warn ul,
+.historial-info ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.historial-warn li,
+.historial-info li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge-boleta,
+.badge-reclamo {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.badge-boleta {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--accent);
+}
+.badge-reclamo {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+}
+</style>
