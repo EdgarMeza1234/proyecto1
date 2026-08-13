@@ -20,7 +20,7 @@
           <div class="form-grid customer-grid">
             <label class="field">
               <span>No. Telef.</span>
-              <input v-model="form.phone" placeholder="Numero del abonado" required />
+              <input v-model="form.phone" placeholder="Numero del abonado" required @keydown.enter.prevent="lookupErp" />
             </label>
             <label class="field">
               <span>Nombre</span>
@@ -37,9 +37,6 @@
           </div>
 
           <div class="lookup-strip">
-            <button type="button" class="secondary" :disabled="loading" @click="lookupErp">
-              {{ loading ? 'Consultando...' : 'Consultar ERP' }}
-            </button>
             <span style="font-size:17px" :class="erpStatus.type">{{ erpStatus.text }}</span>
           </div>
 
@@ -47,7 +44,7 @@
           <div class="form-grid" style="grid-template-columns:1fr">
             <label class="field">
               <span>Tipo de falla</span>
-              <select :value="form.tipoFalla" @change="onTipoFallaChange($event)" style="width:100%;min-height:44px;border:1px solid var(--line);border-radius:8px;padding:0 12px;background:white;color:var(--ink)">
+              <select :value="form.tipoFalla" @change="onTipoFallaChange($event)" style="width:100%;min-height:44px">
                 <option value="">-- Seleccione tipo de falla --</option>
                 <option v-for="t in faultTypes" :key="t.IdTipoFalla" :value="t.Nombre">{{ t.Nombre }}</option>
                 <option disabled>──────────</option>
@@ -97,7 +94,7 @@ const loading = ref(false)
 const saving = ref(false)
 const faultTypes = ref([])
 const submitError = ref('')
-const erpStatus = reactive({ type: 'muted', text: 'Digite el numero y consulte para traer datos del abonado.' })
+const erpStatus = reactive({ type: 'muted', text: 'Digite el numero (minimo 5 digitos) y presione Enter para consultar el ERP.' })
 
 const form = reactive({
   phone: '', name: '', address: '', reference: '',
@@ -118,9 +115,10 @@ async function loadFaultTypes() {
 }
 
 async function lookupErp() {
-  if (!form.phone.trim()) {
+  const numero = form.phone.replace(/\D/g, '')
+  if (numero.length < 5) {
     erpStatus.type = 'error-text'
-    erpStatus.text = 'Ingrese el numero telefonico antes de consultar.'
+    erpStatus.text = 'Ingrese al menos 5 digitos del numero antes de consultar.'
     return
   }
   loading.value = true
