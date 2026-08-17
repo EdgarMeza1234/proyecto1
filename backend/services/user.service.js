@@ -98,4 +98,19 @@ function cleanText(value, maxLength) {
   return text ? text.slice(0, maxLength) : null;
 }
 
-module.exports = { findByUsername, listUsers, listRoles, createUser, updateUser, verifyPassword, hashPassword };
+async function changePassword(userId, currentPassword, newPassword) {
+  const sql = await getSql();
+  const pool = await getPool();
+  const result = await pool.request()
+    .input('IdUsuario', sql.Int, userId)
+    .query('SELECT PasswordHash FROM UsuariosSistema WHERE IdUsuario = @IdUsuario');
+  const user = result.recordset[0];
+  if (!user) throw new Error('Usuario no encontrado');
+  if (!verifyPassword(currentPassword, user.PasswordHash)) throw new Error('La contrasena actual es incorrecta');
+  await pool.request()
+    .input('IdUsuario', sql.Int, userId)
+    .input('PasswordHash', sql.VarChar(300), hashPassword(newPassword))
+    .query('UPDATE UsuariosSistema SET PasswordHash = @PasswordHash WHERE IdUsuario = @IdUsuario');
+}
+
+module.exports = { findByUsername, listUsers, listRoles, createUser, updateUser, verifyPassword, hashPassword, changePassword };

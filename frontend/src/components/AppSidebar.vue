@@ -39,17 +39,78 @@
         </div>
       </template>
     </nav>
+    <div class="sidebar-footer" v-if="auth.isLoggedIn">
+      <button class="user-btn" @click="showPasswordModal = true" title="Cambiar contraseña">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label" v-if="!collapsed">{{ auth.name || auth.username }}</span>
+      </button>
+    </div>
   </aside>
+
+  <div v-if="showPasswordModal" class="modal-backdrop" @click.self="showPasswordModal = false">
+    <div class="modal" style="max-width:400px;">
+      <div class="modal-head">
+        <h3 style="margin:0;font-size:1.1rem;">Cambiar contraseña</h3>
+        <button @click="showPasswordModal = false" class="icon-button" style="width:36px;height:36px;">&times;</button>
+      </div>
+      <form @submit.prevent="changePassword" style="padding:1.5rem;">
+        <div class="field" style="margin-bottom:12px;">
+          <span>Contraseña actual</span>
+          <input v-model="pwForm.currentPassword" type="password" required minlength="6" />
+        </div>
+        <div class="field" style="margin-bottom:12px;">
+          <span>Nueva contraseña</span>
+          <input v-model="pwForm.newPassword" type="password" required minlength="6" />
+        </div>
+        <div class="field" style="margin-bottom:12px;">
+          <span>Confirmar nueva contraseña</span>
+          <input v-model="pwForm.confirmPassword" type="password" required minlength="6" />
+        </div>
+        <p v-if="pwError" style="color:var(--danger);font-size:0.85rem;margin:0 0 10px;">{{ pwError }}</p>
+        <p v-if="pwSuccess" style="color:var(--ok);font-size:0.85rem;margin:0 0 10px;">{{ pwSuccess }}</p>
+        <div class="modal-actions" style="padding:0;">
+          <button type="button" @click="showPasswordModal = false" class="ghost">Cancelar</button>
+          <button type="submit" class="primary" :disabled="pwSaving">{{ pwSaving ? 'Guardando...' : 'Guardar' }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { ref, computed, reactive } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
+import api from '../services/api'
 
 const auth = useAuthStore()
 const router = useRouter()
 const route = useRoute()
+
+const showPasswordModal = ref(false)
+const pwForm = reactive({ currentPassword: '', newPassword: '', confirmPassword: '' })
+const pwSaving = ref(false)
+const pwError = ref('')
+const pwSuccess = ref('')
+
+async function changePassword() {
+  pwError.value = ''; pwSuccess.value = ''
+  if (pwForm.newPassword !== pwForm.confirmPassword) {
+    pwError.value = 'Las contraseñas no coinciden'; return
+  }
+  if (pwForm.newPassword.length < 6) {
+    pwError.value = 'Mínimo 6 caracteres'; return
+  }
+  pwSaving.value = true
+  try {
+    await api.put('/cambiar-password', { currentPassword: pwForm.currentPassword, newPassword: pwForm.newPassword })
+    pwSuccess.value = 'Contraseña actualizada correctamente'
+    pwForm.currentPassword = ''; pwForm.newPassword = ''; pwForm.confirmPassword = ''
+    setTimeout(() => { showPasswordModal.value = false; pwSuccess.value = '' }, 1500)
+  } catch (err) {
+    pwError.value = err.message
+  } finally { pwSaving.value = false }
+}
 
 const collapsed = ref(localStorage.getItem('telefonia-sidebar-collapsed') === 'true')
 
@@ -114,3 +175,26 @@ function toggle() {
 
 defineExpose({ toggle })
 </script>
+
+<style scoped>
+.sidebar-footer {
+  margin-top: auto;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s;
+}
+.user-btn:hover { background: rgba(255,255,255,0.08); color: #e2e8f0; }
+</style>
