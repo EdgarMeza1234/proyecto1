@@ -160,7 +160,7 @@ router.get('/autocomplete-autorizado', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const pool = await getPool()
-    const { formulario, numero_telefono, nombre_abonado, direccion, tipo_trabajo, observaciones, autorizado_nombre, personal } = req.body
+    const { formulario, numero_telefono, nombre_abonado, direccion, tipo_trabajo, observaciones, autorizado_nombre, personal, fecha: bodyFecha, hora: bodyHora } = req.body
 
     if (!numero_telefono || !nombre_abonado || !tipo_trabajo) {
       return res.status(400).json({ message: 'Campos requeridos incompletos' })
@@ -184,8 +184,9 @@ router.post('/', async (req, res) => {
       }
     }
 
-    const fecha = new Date().toISOString().split('T')[0]
-    const hora = new Date().toTimeString().split(' ')[0].substring(0, 8)
+    const now = new Date()
+    const fecha = bodyFecha || now.toISOString().split('T')[0]
+    const hora = bodyHora || now.toTimeString().split(' ')[0].substring(0, 8)
 
     const nextId = await pool.request()
       .query('SELECT ISNULL(MAX(id), 0) + 1 AS nextId FROM trabajos')

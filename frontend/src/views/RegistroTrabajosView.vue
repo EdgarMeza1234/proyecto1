@@ -139,6 +139,8 @@
             </div>
             <div class="field"><span>Abonado</span><input v-model="modalForm.nombre_abonado" type="text" required /></div>
             <div class="field"><span>Dirección</span><input v-model="modalForm.direccion" type="text" /></div>
+            <div class="field"><span>Fecha</span><input v-model="modalForm.fecha" type="date" required /></div>
+            <div class="field"><span>Hora</span><input v-model="modalForm.hora" type="time" required /></div>
             <div class="field" style="grid-column:span 2;position:relative;">
               <span>Autorizado por (Nombre completo)</span>
               <div class="autocomplete-wrap">
@@ -348,10 +350,13 @@ const modalError = ref('')
 const formIdStatus = ref('')
 const formIdExists = ref(false)
 const abonadoStatus = ref('')
-const modalForm = ref({ id: null, formulario: '', numero_telefono: '', nombre_abonado: '', direccion: '', tipo_trabajo: [], observaciones: '', autorizado_nombre: '' })
+const modalForm = ref({ id: null, formulario: '', numero_telefono: '', nombre_abonado: '', direccion: '', tipo_trabajo: [], observaciones: '', autorizado_nombre: '', fecha: '', hora: '' })
 
 function resetModalForm() {
-  modalForm.value = { id: null, formulario: '', numero_telefono: '', nombre_abonado: '', direccion: '', tipo_trabajo: [], observaciones: '', autorizado_nombre: '' }
+  const now = new Date()
+  const today = now.toISOString().split('T')[0]
+  const nowTime = now.toTimeString().substring(0, 5)
+  modalForm.value = { id: null, formulario: '', numero_telefono: '', nombre_abonado: '', direccion: '', tipo_trabajo: [], observaciones: '', autorizado_nombre: '', fecha: today, hora: nowTime }
   formIdStatus.value = ''; formIdExists.value = false; abonadoStatus.value = ''; modalError.value = ''
 }
 
@@ -361,13 +366,24 @@ function openAdd() {
 
 function openEdit(job) {
   isEditing.value = true; modalError.value = ''
+  let jobFecha = ''
+  if (job.fecha) {
+    const clean = typeof job.fecha === 'string' ? job.fecha.split('T')[0] : ''
+    jobFecha = clean
+  }
+  let jobHora = ''
+  if (job.hora) {
+    const str = String(job.hora)
+    jobHora = str.substring(0, 5)
+  }
   modalForm.value = {
     id: job.id, formulario: job.formulario || '', numero_telefono: job.numero_telefono,
     nombre_abonado: job.nombre_abonado, direccion: job.direccion || '',
     tipo_trabajo: job.tipo_trabajo ? job.tipo_trabajo.split(',').map(t => t.trim()) : [],
     observaciones: job.observaciones || '',
     autorizado_nombre: job.personal || job.autorizado_nombre || '',
-    autorizado_apellido: ''
+    autorizado_apellido: '',
+    fecha: jobFecha, hora: jobHora
   }
   formIdStatus.value = ''; formIdExists.value = false; abonadoStatus.value = ''
   showModal.value = true
