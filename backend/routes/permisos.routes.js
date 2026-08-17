@@ -28,7 +28,8 @@ const PERMISSION_LIST = [
   { codigo: 'distribucion', nombre: 'Distribucion', modulo: 'Acciones' },
   { codigo: 'addEvent', nombre: 'Agregar Evento', modulo: 'Acciones' },
   { codigo: 'closeTicket', nombre: 'Cerrar Boleta', modulo: 'Acciones' },
-  { codigo: 'printTicket', nombre: 'Imprimir Boleta', modulo: 'Acciones' }
+  { codigo: 'printTicket', nombre: 'Imprimir Boleta', modulo: 'Acciones' },
+  { codigo: 'auditoria-general', nombre: 'Auditoria General', modulo: 'Admin' }
 ]
 
 const DEFAULT_PERMISOS = {

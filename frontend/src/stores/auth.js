@@ -26,7 +26,8 @@ const DEFAULT_PERMISSIONS = {
   addEvent: ['admin', 'jefe', 'operador', 'tecnico', 'odeco'],
   closeTicket: ['admin', 'jefe', 'tecnico'],
   printTicket: ['admin', 'jefe', 'operador', 'tecnico', 'usuario', 'odeco'],
-  permisos: ['admin']
+  permisos: ['admin'],
+  'auditoria-general': ['admin']
 }
 
 export const useAuthStore = defineStore('auth', () => {

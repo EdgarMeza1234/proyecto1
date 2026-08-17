@@ -150,6 +150,10 @@ permisosRoutes.seedPermisos().then(() => {
 const { ensureAuditTable } = require('./services/facilities-audit.service');
 ensureAuditTable().catch(err => console.error('[facilidades-audit] Error fatal:', err.message))
 
+const { ensureAuditTable: ensureGeneralAuditTable, ensureTrabajosColumns } = require('./services/auditoria.service');
+ensureGeneralAuditTable().catch(err => console.error('[auditoria] Error fatal:', err.message))
+ensureTrabajosColumns().catch(err => console.error('[auditoria-trabajos] Error fatal:', err.message))
+
 server.listen(config.port, config.host, () => {
   const displayHost = config.host === '0.0.0.0' ? 'TU_IP_LOCAL' : config.host;
   console.log(`Backend disponible en http://${displayHost}:${config.port}`);

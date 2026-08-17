@@ -68,7 +68,7 @@ function toggleSection(name) {
 }
 
 const navGroups = computed(() => {
-  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/auditoria': 'auditoria', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales' }
+  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/auditoria': 'auditoria', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales', '/auditoria-general': 'auditoria-general' }
 
   const all = [
     { view: '/', label: 'Tablero', icon: '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
@@ -85,13 +85,14 @@ const navGroups = computed(() => {
     { view: '/permisos', label: 'Permisos', icon: '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>' },
     { view: '/auditoria', label: 'Auditoria', icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 11 11 13 15 9"></polyline></svg>' },
     { view: '/sisatt', label: 'Trafico SISATT', icon: '<svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>' },
+    { view: '/auditoria-general', label: 'Auditoría General', icon: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>' },
   ]
 
   const groups = [
     { name: 'General', items: ['/', '/tickets', '/reclamos', '/reports', '/registro'] },
     { name: 'Centrales', items: ['/iskratel', '/trafico', '/nortel', '/sisatt'] },
     { name: 'Facilidades', items: ['/blocks'] },
-    { name: 'Administración', items: ['/users', '/permisos', '/auditoria', '/integrations'] }
+    { name: 'Administración', items: ['/users', '/permisos', '/auditoria', '/auditoria-general', '/integrations'] }
   ]
 
   return groups.map(g => ({

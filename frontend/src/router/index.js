@@ -17,7 +17,8 @@ const routes = [
   { path: '/nortel', name: 'Nortel', component: () => import('../views/NortelView.vue'), meta: { requiresAuth: true } },
   { path: '/permisos', name: 'Permisos', component: () => import('../views/PermisosView.vue'), meta: { requiresAuth: true } },
   { path: '/sisatt', name: 'SISATT', component: () => import('../views/SISATTView.vue'), meta: { requiresAuth: true } },
-  { path: '/minerales', name: 'Minerales', component: () => import('../views/MineralesView.vue'), meta: { requiresAuth: true } }
+  { path: '/minerales', name: 'Minerales', component: () => import('../views/MineralesView.vue'), meta: { requiresAuth: true } },
+  { path: '/auditoria-general', name: 'AuditoriaGeneral', component: () => import('../views/AuditoriaGeneralView.vue'), meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({
