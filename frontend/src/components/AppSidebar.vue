@@ -181,6 +181,7 @@ defineExpose({ toggle })
   margin-top: auto;
   padding: 12px;
   border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
 }
 .user-btn {
   display: flex;
@@ -195,6 +196,15 @@ defineExpose({ toggle })
   cursor: pointer;
   font-size: 0.8rem;
   transition: background 0.15s;
+  white-space: nowrap;
 }
 .user-btn:hover { background: rgba(255,255,255,0.08); color: #e2e8f0; }
+</style>
+
+<style>
+.sidebar nav {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
 </style>
