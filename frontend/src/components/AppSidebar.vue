@@ -204,7 +204,6 @@ defineExpose({ toggle })
 <style>
 .sidebar nav {
   overflow-y: auto;
-  flex: 1;
   min-height: 0;
 }
 </style>
