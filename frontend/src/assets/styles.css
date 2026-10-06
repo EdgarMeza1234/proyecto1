@@ -876,6 +876,22 @@ h3 {
   white-space: nowrap;
 }
 
+/* Reset genérico: el tr debe comportarse como fila de tabla, no grid/flex */
+.reclamos-table .table-row,
+.reclamos-table .reclamo-row {
+  display: table-row;
+  width: auto;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: none;
+  gap: 0;
+  align-items: normal;
+  justify-content: normal;
+}
+
 .reclamos-table tbody td {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border);
@@ -887,11 +903,9 @@ h3 {
   border-bottom: none;
 }
 
-.reclamos-table .table-row,
 .reclamos-table .reclamo-row {
   cursor: pointer;
-  transition: background var(--transition), box-shadow var(--transition);
-  border-left: 4px solid transparent;
+  transition: background var(--transition);
 }
 
 .reclamos-table .reclamo-row:hover {
@@ -899,21 +913,16 @@ h3 {
 }
 
 .reclamos-table .reclamo-row.selected {
-  border-color: var(--accent);
   background: rgba(6, 182, 212, 0.08);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
 }
 
 .reclamos-table .reclamo-row.time-ok {
-  border-left: 4px solid var(--ok);
   background: rgba(16, 185, 129, 0.02);
 }
 .reclamos-table .reclamo-row.time-warn {
-  border-left: 4px solid var(--warn);
   background: rgba(245, 158, 11, 0.02);
 }
 .reclamos-table .reclamo-row.time-overdue {
-  border-left: 4px solid var(--danger);
   background: rgba(244, 63, 94, 0.02);
 }
 

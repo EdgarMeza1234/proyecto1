@@ -66,7 +66,7 @@
             <tr
               v-for="reclamo in store.filteredReclamos"
               :key="reclamo.IdReclamo"
-              class="table-row reclamo-row"
+              class="reclamo-row"
               :class="[timeColorClass(reclamo.FechaRegistro, reclamo.Estado), { selected: store.selectedId === reclamo.IdReclamo }]"
               @click="select(reclamo)"
             >
