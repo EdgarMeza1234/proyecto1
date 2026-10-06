@@ -5,7 +5,7 @@ import api from '../services/api'
 const STORAGE_KEY = 'telefonia-session-v2'
 
 const DEFAULT_PERMISSIONS = {
-  dashboard: ['admin', 'jefe', 'operador', 'tecnico', 'odeco'],
+  dashboard: ['admin', 'jefe', 'operador', 'tecnico'],
   tickets: ['admin', 'jefe', 'operador', 'tecnico', 'usuario', 'odeco'],
   reclamos: ['admin', 'odeco', 'operador', 'jefe'],
   blocks: ['admin', 'operador'],
@@ -44,6 +44,12 @@ export const useAuthStore = defineStore('auth', () => {
     if (!role.value) return false
     const map = permissionsMap.value || DEFAULT_PERMISSIONS
     return map[permission]?.includes(role.value)
+  }
+
+  function homeRoute() {
+    if (role.value === 'operador') return '/blocks'
+    if (role.value === 'odeco') return '/reclamos'
+    return '/'
   }
 
   async function loadPermissions() {
@@ -92,5 +98,5 @@ export const useAuthStore = defineStore('auth', () => {
 
   loadSession()
 
-  return { session, isLoggedIn, role, username, name, roleName, hasPermission, login, logout, loadSession, loadPermissions, permissionsMap }
+  return { session, isLoggedIn, role, username, name, roleName, hasPermission, homeRoute, login, logout, loadSession, loadPermissions, permissionsMap }
 })

@@ -36,7 +36,7 @@ const DEFAULT_PERMISOS = {
   admin: PERMISSION_LIST.map(p => p.codigo),
   jefe: ['dashboard', 'tickets', 'reclamos', 'reports', 'iskratel', 'registro', 'trafico', 'nortel', 'sisatt', 'assignTech', 'distribucion', 'addEvent', 'closeTicket', 'printTicket'],
   operador: ['dashboard', 'tickets', 'reclamos', 'blocks', 'iskratel', 'registro', 'trafico', 'nortel', 'createTicket', 'reviewReclamo', 'addEvent', 'printTicket'],
-  odeco: ['dashboard', 'tickets', 'reclamos', 'iskratel', 'createReclamo', 'addEvent', 'printTicket'],
+  odeco: ['tickets', 'reclamos', 'iskratel', 'createReclamo', 'addEvent', 'printTicket'],
   tecnico: ['dashboard', 'tickets', 'iskratel', 'addEvent', 'closeTicket', 'printTicket'],
   usuario: ['tickets', 'printTicket']
 }

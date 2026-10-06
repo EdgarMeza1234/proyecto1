@@ -3,7 +3,7 @@
     <section class="modal" role="dialog" aria-modal="true">
       <div class="modal-head">
         <div>
-          <span class="eyebrow">ODECO - Atencion al cliente</span>
+          <span class="eyebrow">ODECO - Atencion al abonado</span>
           <h2>Registrar reclamo telefonico</h2>
         </div>
         <button class="icon-button" @click="$emit('close')">x</button>
