@@ -102,7 +102,11 @@
         </table>
       </div>
     </div>
-    <div class="panel reclamos-detail-panel">
+    <div class="panel reclamos-detail-panel" :class="{ open: mobileDetailOpen }">
+      <div class="mobile-detail-bar">
+        <button type="button" class="ghost" @click="closeMobileDetail">← Volver</button>
+        <strong>{{ store.selectedReclamo?.CodigoReclamo || '' }}</strong>
+      </div>
       <ReclamoDetail
         v-if="store.selectedReclamo"
         :reclamo="store.selectedReclamo"
@@ -142,6 +146,7 @@ const auth = useAuthStore()
 const ticketStore = useTicketStore()
 const showModal = ref(false)
 const reviewTarget = ref(null)
+const mobileDetailOpen = ref(false)
 
 const canCreate = computed(() => auth.hasPermission('createReclamo'))
 
@@ -149,6 +154,14 @@ const conTecnico = computed(() => store.reclamos.filter((r) => r.TecnicoAsignado
 
 function select(reclamo) {
   store.selectedId = reclamo.IdReclamo
+  if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+    mobileDetailOpen.value = true
+  }
+}
+
+function closeMobileDetail() {
+  mobileDetailOpen.value = false
+  store.selectedId = null
 }
 
 function openReview(reclamo) {
