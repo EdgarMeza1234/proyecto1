@@ -4,7 +4,8 @@ async function listTickets() {
   const pool = await getPool();
   const result = await pool.request().query(`
     SELECT TOP (200)
-      IdBoleta, CodigoBoleta, Dn, NombreCliente, Direccion, Central,
+      IdBoleta, CodigoBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
+      Central,
       ParPrimarioCompleto, ParSec, Armario, CajDis, TipoFalla, Prioridad,
       Estado, TecnicoAsignado, FechaCreacion, FechaCierre
     FROM BoletasReparacion
@@ -37,6 +38,8 @@ async function createTicket(ticket, transaction) {
   request.input('Dn', sql.VarChar(20), cleanText(ticket.Dn, 20));
   request.input('NombreCliente', sql.VarChar(200), cleanText(ticket.NombreCliente, 200));
   request.input('Direccion', sql.VarChar(300), cleanText(ticket.Direccion, 300));
+  request.input('Direccion1', sql.VarChar(300), cleanText(ticket.Direccion1, 300));
+  request.input('Celulares', sql.VarChar(100), cleanText(ticket.Celulares, 100));
   request.input('Referencia', sql.VarChar(300), cleanText(ticket.Referencia, 300));
   request.input('Central', sql.VarChar(50), cleanCode(ticket.Central, 50));
   request.input('ParPriBloq', sql.VarChar(10), cleanCode(ticket.ParPriBloq, 10));
@@ -54,14 +57,16 @@ async function createTicket(ticket, transaction) {
 
   const insert = await request.query(`
     INSERT INTO BoletasReparacion (
-      CodigoBoleta, Dn, NombreCliente, Direccion, Referencia, Central,
+      CodigoBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
+      Referencia, Central,
       ParPriBloq, ParPriPar, ParPrimarioCompleto, ParSec, Armario, CajDis,
       TipoFalla, Prioridad, Estado, ReclamoAbonado, PruebaCentral,
       Observaciones, RecibidoPor
     )
     OUTPUT INSERTED.IdBoleta
     VALUES (
-      @CodigoBoleta, @Dn, @NombreCliente, @Direccion, @Referencia, @Central,
+      @CodigoBoleta, @Dn, @NombreCliente, @Direccion, @Direccion1, @Celulares,
+      @Referencia, @Central,
       @ParPriBloq, @ParPriPar, @ParPrimarioCompleto, @ParSec, @Armario, @CajDis,
       @TipoFalla, @Prioridad, 'Pendiente', @ReclamoAbonado, @PruebaCentral,
       @Observaciones, @RecibidoPor

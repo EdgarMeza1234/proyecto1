@@ -71,7 +71,9 @@ export const useTicketStore = defineStore('tickets', () => {
       user: {
         name: t.NombreCliente || t.user?.name || '',
         phone: t.Dn || t.user?.phone || '',
-        address: t.Direccion || t.user?.address || ''
+        celulares: t.Celulares || t.user?.celulares || '',
+        address: t.Direccion || t.user?.address || '',
+        address1: t.Direccion1 || t.user?.address1 || ''
       },
       network: {
         primaryPair: t.ParPrimarioCompleto || t.network?.primaryPair || '',

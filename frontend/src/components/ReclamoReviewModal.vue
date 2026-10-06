@@ -19,6 +19,8 @@
 
           <div style="padding:12px;border-bottom:1px solid #98a7ad">
             <p><strong>Abonado:</strong> {{ reclamo.NombreCliente }} — {{ reclamo.Dn }}</p>
+            <p><strong>Celular contacto:</strong> {{ reclamo.Celulares || '—' }}</p>
+            <p><strong>Direccion:</strong> {{ reclamo.Direccion1 || reclamo.Direccion || '—' }}</p>
             <p><strong>Reclamo:</strong> {{ reclamo.ReclamoDescripcion }}</p>
           </div>
 

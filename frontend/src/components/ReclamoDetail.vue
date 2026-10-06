@@ -4,13 +4,16 @@
       <div>
         <span class="eyebrow">{{ reclamo.CodigoReclamo }}</span>
         <h2>{{ reclamo.NombreCliente || 'Sin nombre' }}</h2>
-        <p>{{ reclamo.Direccion || 'Sin direccion' }}</p>
+        <p>{{ reclamo.Direccion1 || reclamo.Direccion || 'Sin direccion' }}</p>
       </div>
       <span class="badge" :class="statusClass(reclamo.Estado)">{{ statusLabel }}</span>
     </div>
 
     <div class="info-grid">
       <div class="info"><span>Telefono</span><strong>{{ reclamo.Dn }}</strong></div>
+      <div class="info"><span>Celular contacto</span><strong>{{ reclamo.Celulares || '—' }}</strong></div>
+      <div class="info"><span>Direccion</span><strong>{{ reclamo.Direccion || '—' }}</strong></div>
+      <div class="info" v-if="reclamo.Direccion1"><span>Direccion actual</span><strong>{{ reclamo.Direccion1 }}</strong></div>
       <div class="info"><span>Tipo de falla</span><strong>{{ reclamo.TipoFalla || '—' }}</strong></div>
       <div class="info"><span>Registrado por</span><strong>{{ reclamo.RegistradoPor }}</strong></div>
       <div class="info"><span>Fecha registro</span><strong>{{ formatDate(reclamo.FechaRegistro) }}</strong></div>

@@ -5,7 +5,8 @@ async function listReclamos() {
   const result = await pool.request().query(`
     SELECT TOP (200)
       r.IdReclamo, r.CodigoReclamo, r.Dn, r.NombreCliente,
-      r.Direccion, r.TipoFalla, r.ReclamoDescripcion, r.RegistradoPor,
+      r.Direccion, r.Direccion1, r.Celulares,
+      r.TipoFalla, r.ReclamoDescripcion, r.RegistradoPor,
       r.FechaRegistro, r.Estado, r.ResultadoRevision,
       r.RevisadoPor, r.FechaRevision, r.IdBoletaGenerada,
       r.Observaciones,
@@ -76,6 +77,8 @@ async function createReclamo(data, transaction) {
   request.input('Dn', sql.VarChar(20), cleanText(data.Dn, 20));
   request.input('NombreCliente', sql.VarChar(200), cleanText(data.NombreCliente, 200));
   request.input('Direccion', sql.VarChar(300), cleanText(data.Direccion, 300));
+  request.input('Direccion1', sql.VarChar(300), cleanText(data.Direccion1, 300));
+  request.input('Celulares', sql.VarChar(100), cleanText(data.Celulares, 100));
   request.input('Referencia', sql.VarChar(300), cleanText(data.Referencia, 300));
   request.input('TipoFalla', sql.VarChar(200), cleanText(data.TipoFalla, 200));
   request.input('ReclamoDescripcion', sql.VarChar(sql.MAX), cleanText(data.ReclamoDescripcion, 8000));
@@ -84,11 +87,13 @@ async function createReclamo(data, transaction) {
 
   const insert = await request.query(`
     INSERT INTO ReclamosTelefonia
-      (CodigoReclamo, Dn, NombreCliente, Direccion, Referencia,
+      (CodigoReclamo, Dn, NombreCliente, Direccion, Direccion1,
+       Celulares, Referencia,
        TipoFalla, ReclamoDescripcion, RegistradoPor, Observaciones)
     OUTPUT INSERTED.IdReclamo
     VALUES
-      (@CodigoReclamo, @Dn, @NombreCliente, @Direccion, @Referencia,
+      (@CodigoReclamo, @Dn, @NombreCliente, @Direccion, @Direccion1,
+       @Celulares, @Referencia,
        @TipoFalla, @ReclamoDescripcion, @RegistradoPor, @Observaciones)
   `);
 
@@ -154,6 +159,8 @@ async function reviewReclamo(id, reviewData, userId) {
         Dn: reclamo.Dn,
         NombreCliente: reclamo.NombreCliente,
         Direccion: reclamo.Direccion,
+        Direccion1: reclamo.Direccion1,
+        Celulares: reclamo.Celulares,
         Referencia: reclamo.Referencia,
         ReclamoAbonado: reviewData.ReclamoAbonado || reclamo.ReclamoDescripcion,
         RecibidoPor: userId,

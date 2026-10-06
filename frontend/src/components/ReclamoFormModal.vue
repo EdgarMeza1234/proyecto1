@@ -31,6 +31,15 @@
               <input v-model="form.address" placeholder="Direccion del domicilio" />
             </label>
             <label class="field">
+              <span>Direccion actual (dictada)</span>
+              <input v-model="form.direccion1" placeholder="Direccion correcta indicada por el abonado (opcional)" />
+            </label>
+            <label class="field">
+              <span>Celular de contacto</span>
+              <input v-model="form.celulares" placeholder="Ej: 71234567 / 69876543" required />
+              <small class="muted">Separe los numeros con / o coma (puede ser mas de uno)</small>
+            </label>
+            <label class="field">
               <span>Referencia</span>
               <input v-model="form.reference" placeholder="Referencia para ubicar" />
             </label>
@@ -160,7 +169,7 @@ function badgeClass(tipo) {
 }
 
 const form = reactive({
-  phone: '', name: '', address: '', reference: '',
+  phone: '', name: '', address: '', direccion1: '', celulares: '', reference: '',
   tipoFalla: '', description: '', observations: ''
 })
 
@@ -253,6 +262,10 @@ async function submit() {
     submitError.value = 'Seleccione el tipo de falla.'
     return
   }
+  if (!form.celulares.trim()) {
+    submitError.value = 'El numero de celular de contacto es obligatorio.'
+    return
+  }
   saving.value = true
 
   try {
@@ -261,6 +274,8 @@ async function submit() {
         Dn: form.phone,
         NombreCliente: form.name,
         Direccion: form.address,
+        Direccion1: form.direccion1,
+        Celulares: form.celulares,
         Referencia: form.reference,
         TipoFalla: form.tipoFalla,
         ReclamoDescripcion: form.description || form.tipoFalla,
@@ -274,6 +289,8 @@ async function submit() {
       Dn: form.phone,
       NombreCliente: form.name,
       Direccion: form.address,
+      Direccion1: form.direccion1,
+      Celulares: form.celulares,
       TipoFalla: form.tipoFalla,
       ReclamoDescripcion: form.description || form.tipoFalla,
       RegistradoPor: auth.name,

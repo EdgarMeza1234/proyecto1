@@ -11,6 +11,8 @@
 
     <div class="info-grid">
       <div class="info"><span>Telefono</span><strong>{{ ticket.user?.phone }}</strong></div>
+      <div class="info"><span>Celular contacto</span><strong>{{ ticket.user?.celulares || '—' }}</strong></div>
+      <div class="info"><span>Direccion</span><strong>{{ ticket.user?.address1 || ticket.user?.address }}</strong></div>
       <div class="info"><span>Tipo de falla</span><strong>{{ ticket.faultType }}</strong></div>
       <div class="info"><span>Prioridad</span><strong>{{ ticket.priority }}</strong></div>
       <div class="info"><span>Tecnico</span><strong>{{ ticket.technician }}</strong></div>
