@@ -49,29 +49,57 @@
         <h2>{{ store.filteredReclamos.length }} reclamos</h2>
         <button v-if="canCreate" class="primary" @click="showModal = true" style="font-size:21px;padding:8px 24px;min-height:48px">+ Nuevo reclamo</button>
       </div>
-      <div class="table">
-        <button
-          v-for="reclamo in store.filteredReclamos"
-          :key="reclamo.IdReclamo"
-          class="table-row reclamo-row"
-          :class="[timeColorClass(reclamo.FechaRegistro, reclamo.Estado), { selected: store.selectedId === reclamo.IdReclamo }]"
-          @click="select(reclamo)"
-        >
-          <span class="reclamo-main">
-            <strong>{{ reclamo.CodigoReclamo }}</strong>
-            <small>{{ reclamo.NombreCliente }} - {{ reclamo.Dn }}</small>
-          </span>
-          <span class="reclamo-fecha">
-            <small>{{ formatDate(reclamo.FechaRegistro) }}</small>
-          </span>
-          <span class="reclamo-horas" :class="timeColorClass(reclamo.FechaRegistro, reclamo.Estado)">
-            <strong>{{ elapsedHours(reclamo.FechaRegistro, reclamo.Estado) }}</strong>
-          </span>
-          <span>{{ reclamo.TipoFalla || '—' }}</span>
-          <span v-if="reclamo.TecnicoAsignado" class="badge tech">{{ reclamo.TecnicoAsignado }}</span>
-          <span v-else class="badge" :class="statusBadge(reclamo.Estado)">{{ estadoLabel(reclamo.Estado) }}</span>
-        </button>
-        <p v-if="!store.filteredReclamos.length" class="empty">No hay reclamos para el filtro actual.</p>
+      <div class="table-wrap">
+        <table class="reclamos-table">
+          <thead>
+            <tr>
+              <th>Reclamo</th>
+              <th>Telefono</th>
+              <th>Nombres</th>
+              <th>Fecha y hora</th>
+              <th>Tiempo</th>
+              <th>Tipo de falla</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="reclamo in store.filteredReclamos"
+              :key="reclamo.IdReclamo"
+              class="table-row reclamo-row"
+              :class="[timeColorClass(reclamo.FechaRegistro, reclamo.Estado), { selected: store.selectedId === reclamo.IdReclamo }]"
+              @click="select(reclamo)"
+            >
+              <td class="reclamo-main">
+                <strong>{{ reclamo.CodigoReclamo }}</strong>
+              </td>
+              <td class="reclamo-tel">
+                <span>{{ reclamo.Dn }}</span>
+                <small v-if="reclamo.Celulares">Cel {{ reclamo.Celulares }}</small>
+              </td>
+              <td class="reclamo-nombres">
+                <span>{{ reclamo.NombreCliente || '—' }}</span>
+              </td>
+              <td class="reclamo-fecha">
+                <small>{{ formatDate(reclamo.FechaRegistro) }}</small>
+              </td>
+              <td class="reclamo-horas" :class="timeColorClass(reclamo.FechaRegistro, reclamo.Estado)">
+                <strong>{{ elapsedHours(reclamo.FechaRegistro, reclamo.Estado) }}</strong>
+              </td>
+              <td class="reclamo-tipo">
+                <span>{{ reclamo.TipoFalla || '—' }}</span>
+                <small v-if="reclamo.TecnicoAsignado">Tec: {{ reclamo.TecnicoAsignado }}</small>
+              </td>
+              <td class="reclamo-accion">
+                <span v-if="reclamo.TecnicoAsignado" class="badge tech">{{ reclamo.TecnicoAsignado }}</span>
+                <span v-else class="badge" :class="statusBadge(reclamo.Estado)">{{ estadoLabel(reclamo.Estado) }}</span>
+              </td>
+            </tr>
+            <tr v-if="!store.filteredReclamos.length">
+              <td colspan="7" class="empty">No hay reclamos para el filtro actual.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="panel">
