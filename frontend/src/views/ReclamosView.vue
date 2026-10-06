@@ -102,7 +102,7 @@
         </table>
       </div>
     </div>
-    <div class="panel">
+    <div class="panel reclamos-detail-panel">
       <ReclamoDetail
         v-if="store.selectedReclamo"
         :reclamo="store.selectedReclamo"

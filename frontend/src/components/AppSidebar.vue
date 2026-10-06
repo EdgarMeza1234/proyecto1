@@ -1,5 +1,6 @@
 <template>
-  <aside class="sidebar" :class="{ collapsed: collapsed }">
+  <div class="sidebar-backdrop" v-if="mobileOpen" @click="toggle()"></div>
+  <aside class="sidebar" :class="{ collapsed: collapsed, 'mobile-open': mobileOpen }">
     <div class="brand">
       <img class="brand-logo" src="/assets/coma-logo.png" alt="COM&A" />
       <div class="brand-collapsed-text">CO</div>
@@ -113,6 +114,11 @@ async function changePassword() {
 }
 
 const collapsed = ref(localStorage.getItem('telefonia-sidebar-collapsed') === 'true')
+const mobileOpen = ref(false)
+
+function isMobileView() {
+  return window.matchMedia('(max-width: 1024px)').matches
+}
 
 function getDefaultSections() {
   try {
@@ -166,11 +172,16 @@ const currentView = computed(() => route.path)
 
 function navigate(view) {
   router.push(view)
+  if (isMobileView()) mobileOpen.value = false
 }
 
 function toggle() {
-  collapsed.value = !collapsed.value
-  localStorage.setItem('telefonia-sidebar-collapsed', String(collapsed.value))
+  if (isMobileView()) {
+    mobileOpen.value = !mobileOpen.value
+  } else {
+    collapsed.value = !collapsed.value
+    localStorage.setItem('telefonia-sidebar-collapsed', String(collapsed.value))
+  }
 }
 
 defineExpose({ toggle })
