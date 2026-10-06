@@ -4,7 +4,7 @@ async function listTickets() {
   const pool = await getPool();
   const result = await pool.request().query(`
     SELECT TOP (200)
-      IdBoleta, CodigoBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
+      IdBoleta, CodigoBoleta, NumBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
       Central,
       ParPrimarioCompleto, ParSec, Armario, CajDis, TipoFalla, Prioridad,
       Estado, TecnicoAsignado, FechaCreacion, FechaCierre
@@ -35,6 +35,7 @@ async function createTicket(ticket, transaction) {
   const code = ticket.CodigoBoleta || await nextTicketCode(transaction);
   const request = new sql.Request(transaction);
   request.input('CodigoBoleta', sql.VarChar(30), code);
+  request.input('NumBoleta', sql.VarChar(50), cleanText(ticket.NumBoleta, 50));
   request.input('Dn', sql.VarChar(20), cleanText(ticket.Dn, 20));
   request.input('NombreCliente', sql.VarChar(200), cleanText(ticket.NombreCliente, 200));
   request.input('Direccion', sql.VarChar(300), cleanText(ticket.Direccion, 300));
@@ -57,7 +58,7 @@ async function createTicket(ticket, transaction) {
 
   const insert = await request.query(`
     INSERT INTO BoletasReparacion (
-      CodigoBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
+      CodigoBoleta, NumBoleta, Dn, NombreCliente, Direccion, Direccion1, Celulares,
       Referencia, Central,
       ParPriBloq, ParPriPar, ParPrimarioCompleto, ParSec, Armario, CajDis,
       TipoFalla, Prioridad, Estado, ReclamoAbonado, PruebaCentral,
@@ -65,7 +66,7 @@ async function createTicket(ticket, transaction) {
     )
     OUTPUT INSERTED.IdBoleta
     VALUES (
-      @CodigoBoleta, @Dn, @NombreCliente, @Direccion, @Direccion1, @Celulares,
+      @CodigoBoleta, @NumBoleta, @Dn, @NombreCliente, @Direccion, @Direccion1, @Celulares,
       @Referencia, @Central,
       @ParPriBloq, @ParPriPar, @ParPrimarioCompleto, @ParSec, @Armario, @CajDis,
       @TipoFalla, @Prioridad, 'Pendiente', @ReclamoAbonado, @PruebaCentral,

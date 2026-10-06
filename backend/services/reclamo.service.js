@@ -10,7 +10,7 @@ async function listReclamos() {
       r.FechaRegistro, r.Estado, r.ResultadoRevision,
       r.RevisadoPor, r.FechaRevision, r.IdBoletaGenerada,
       r.Observaciones,
-      b.CodigoBoleta, b.TecnicoAsignado
+      b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado
     FROM ReclamosTelefonia r
     LEFT JOIN BoletasReparacion b ON b.IdBoleta = r.IdBoletaGenerada
     ORDER BY r.FechaRegistro DESC
@@ -23,7 +23,7 @@ async function getReclamoById(id) {
   const result = await pool.request()
     .input('IdReclamo', (await getSql()).Int, id)
     .query(`
-      SELECT r.*, b.CodigoBoleta, b.TecnicoAsignado
+      SELECT r.*, b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado
       FROM ReclamosTelefonia r
       LEFT JOIN BoletasReparacion b ON b.IdBoleta = r.IdBoletaGenerada
       WHERE r.IdReclamo = @IdReclamo
@@ -162,6 +162,7 @@ async function reviewReclamo(id, reviewData, userId) {
         Direccion1: reclamo.Direccion1,
         Celulares: reclamo.Celulares,
         Referencia: reclamo.Referencia,
+        NumBoleta: reviewData.NumBoleta || '',
         ReclamoAbonado: reviewData.ReclamoAbonado || reclamo.ReclamoDescripcion,
         RecibidoPor: userId,
         TipoFalla: reviewData.TipoFalla || 'Sin tono',

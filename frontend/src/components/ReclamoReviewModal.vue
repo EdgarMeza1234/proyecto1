@@ -72,6 +72,18 @@
           <div v-if="decision === 'GeneradoBoleta'">
             <h3 class="paper-section">Datos para la boleta tecnica</h3>
 
+            <div class="form-grid" style="grid-template-columns:1fr 2fr">
+              <label class="field">
+                <span>Numero de boleta (talonario)</span>
+                <input v-model="form.numBoleta" placeholder="Ej: BR-2026-1016" required />
+                <small class="muted">Numero impreso en el talonario de boletas.</small>
+              </label>
+              <label class="field">
+                <span>Observaciones</span>
+                <textarea v-model="form.observations" rows="2"></textarea>
+              </label>
+            </div>
+
             <div v-if="facilitiesLoading" style="padding:12px;color:#666">Buscando datos de facilidades...</div>
             <div v-else-if="facilitiesNotFound" style="padding:12px;color:#b91c1c;font-size:13px">No se encontraron datos en la tabla MDF para el DN {{ reclamo.Dn }}. Complete los campos manualmente.</div>
 
@@ -92,9 +104,6 @@
                 </select>
               </label>
               <label class="field"><span>Prueba central</span><input v-model="form.centralTest" /></label>
-            </div>
-            <div class="form-grid" style="grid-template-columns:1fr">
-              <label class="field"><span>Observaciones</span><textarea v-model="form.observations" rows="2"></textarea></label>
             </div>
           </div>
         </section>
@@ -133,7 +142,8 @@ const iskratelData = ref([])
 
 const form = reactive({
   central: '', primaryPair: '', secondaryPair: '', cabinet: '', accessBox: '',
-  faultType: 'Sin tono', priority: 'Media', centralTest: '', observations: ''
+  faultType: 'Sin tono', priority: 'Media', centralTest: '', observations: '',
+  numBoleta: ''
 })
 
 function buildIskratelSearchKey(dn) {
@@ -226,6 +236,10 @@ async function submit() {
     alert('Debe ingresar el resultado de la revision.')
     return
   }
+  if (decision.value === 'GeneradoBoleta' && !form.numBoleta.trim()) {
+    alert('Debe ingresar el numero de boleta del talonario.')
+    return
+  }
   saving.value = true
 
   try {
@@ -234,6 +248,7 @@ async function submit() {
       ResultadoRevision: resultado.value,
       TipoFalla: form.faultType,
       Prioridad: form.priority,
+      NumBoleta: form.numBoleta,
       Central: form.central,
       ParPriBloq: form.primaryPair ? form.primaryPair.split('-')[1] || '' : '',
       ParPriPar: form.primaryPair ? form.primaryPair.split('-')[2] || '' : '',

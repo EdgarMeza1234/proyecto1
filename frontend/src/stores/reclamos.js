@@ -64,6 +64,7 @@ export const useReclamoStore = defineStore('reclamos', () => {
     if (reclamo) {
       Object.assign(reclamo, res.data.reclamo)
       reclamo.events = res.data.events || []
+      reclamo.boletaEvents = res.data.boletaEvents || []
     }
   }
 

@@ -1,5 +1,6 @@
 const { getPool, getSql } = require('../db/pool');
 const reclamoService = require('../services/reclamo.service');
+const ticketService = require('../services/ticket.service');
 const { emitEvent } = require('../services/socket');
 
 async function historial(req, res, next) {
@@ -30,8 +31,13 @@ async function detail(req, res, next) {
     const reclamo = await reclamoService.getReclamoById(id);
     if (!reclamo) return res.status(404).json({ message: 'Reclamo no encontrado.' });
 
-    const events = await reclamoService.getReclamoEvents(id);
-    res.json({ reclamo, events });
+    const [events, boletaEvents] = await Promise.all([
+      reclamoService.getReclamoEvents(id),
+      reclamo.IdBoletaGenerada
+        ? ticketService.getTicketEvents(reclamo.IdBoletaGenerada).catch(() => [])
+        : Promise.resolve([])
+    ]);
+    res.json({ reclamo, events, boletaEvents });
   } catch (error) {
     next(error);
   }
@@ -81,6 +87,12 @@ async function addEvent(req, res, next) {
 
     try {
       await reclamoService.insertReclamoEvent(transaction, id, req.body || {});
+      if (req.body?.EstadoResultante) {
+        await new sql.Request(transaction)
+          .input('IdReclamo', sql.Int, id)
+          .input('Estado', sql.VarChar(30), String(req.body.EstadoResultante).trim().slice(0, 30))
+          .query(`UPDATE ReclamosTelefonia SET Estado = @Estado WHERE IdReclamo = @IdReclamo`);
+      }
       await transaction.commit();
       emitEvent('reclamo:updated', { id });
       res.status(201).json({ message: 'Seguimiento registrado.' });

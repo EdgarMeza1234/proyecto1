@@ -23,6 +23,10 @@
         <span>Boleta generada</span>
         <strong>{{ reclamo.CodigoBoleta || '—' }}</strong>
       </div>
+      <div v-if="reclamo.NumBoleta" class="info">
+        <span>Nro. boleta talonario</span>
+        <strong>{{ reclamo.NumBoleta }}</strong>
+      </div>
       <div v-if="reclamo.TecnicoAsignado" class="info">
         <span>Tecnico asignado</span>
         <strong>{{ reclamo.TecnicoAsignado }}</strong>
@@ -44,6 +48,7 @@
 
     <div class="actions" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
       <button v-if="canReview" class="primary" @click="$emit('review', reclamo)">Revisar reclamo</button>
+      <button v-if="canCloseBoleta" class="primary" @click="closeBoleta">Cerrar boleta</button>
       <div v-if="canDistribute" style="display:flex;align-items:center;gap:8px;margin-left:auto">
         <span style="color:var(--muted);font-size:13px">Tecnico:</span>
         <select
@@ -90,10 +95,20 @@ const auth = useAuthStore()
 const reclamoStore = useReclamoStore()
 
 const events = computed(() => {
-  const raw = props.reclamo.events || []
-  const sorted = [...raw].sort((a, b) => new Date(a.FechaHora) - new Date(b.FechaHora))
-  return sorted.map((evt, i) => {
-    const prev = i === 0 ? props.reclamo.FechaRegistro : sorted[i - 1].FechaHora
+  const reclamoEvents = (props.reclamo.events || []).map((evt) => ({
+    ...evt,
+    FechaHora: evt.FechaHora,
+    _source: 'reclamo'
+  }))
+  const boletaEvents = (props.reclamo.boletaEvents || []).map((evt) => ({
+    ...evt,
+    FechaHora: evt.FechaHora,
+    _source: 'boleta'
+  }))
+  const raw = [...reclamoEvents, ...boletaEvents]
+    .sort((a, b) => new Date(a.FechaHora) - new Date(b.FechaHora))
+  return raw.map((evt, i) => {
+    const prev = i === 0 ? props.reclamo.FechaRegistro : raw[i - 1].FechaHora
     return { ...evt, _elapsed: formatElapsed(prev, evt.FechaHora) }
   })
 })
@@ -141,6 +156,34 @@ const canReview = computed(() => {
 const canDistribute = computed(() => {
   return props.reclamo.IdBoletaGenerada && auth.hasPermission('distribucion')
 })
+
+const canCloseBoleta = computed(() => {
+  const boletaClosed = (props.reclamo.boletaEvents || []).some((e) => e.EstadoResultante === 'Cerrada')
+  return props.reclamo.IdBoletaGenerada && !boletaClosed && auth.hasPermission('closeTicket')
+})
+
+async function closeBoleta() {
+  if (!confirm('Confirmar cierre de la boleta?')) return
+  try {
+    await api.post(`/boletas/${props.reclamo.IdBoletaGenerada}/seguimiento`, {
+      TipoEvento: 'Cierre',
+      Titulo: 'Boleta cerrada',
+      Detalle: 'Servicio validado y boleta culminada.',
+      Actor: auth.name,
+      EstadoResultante: 'Cerrada'
+    })
+    await api.post(`/reclamos/${props.reclamo.IdReclamo}/seguimiento`, {
+      TipoEvento: 'Cierre',
+      Titulo: 'Boleta cerrada',
+      Detalle: `Boleta ${props.reclamo.CodigoBoleta || ''} cerrada.`,
+      Actor: auth.name,
+      EstadoResultante: 'Cerrado'
+    }).catch(() => {})
+    await reclamoStore.fetchReclamoDetail(props.reclamo.IdReclamo)
+  } catch (e) {
+    alert('Error al cerrar la boleta.')
+  }
+}
 
 const assignMsg = ref('')
 const technicians = ref([])

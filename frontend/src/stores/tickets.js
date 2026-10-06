@@ -62,6 +62,7 @@ export const useTicketStore = defineStore('tickets', () => {
     return {
       id: t.CodigoBoleta || t.id,
       dbId: t.IdBoleta || t.dbId,
+      numBoleta: t.NumBoleta || t.numBoleta || '',
       status: t.Estado || t.status || 'Pendiente',
       priority: t.Prioridad || t.priority || 'Media',
       faultType: t.TipoFalla || t.faultType || '',

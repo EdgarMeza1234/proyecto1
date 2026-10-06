@@ -25,7 +25,8 @@
         >
           <span>
             <strong>{{ ticket.id }}</strong>
-            <small>{{ ticket.user?.name }} - {{ ticket.user?.phone }}</small>
+            <small v-if="ticket.numBoleta">Talonario: {{ ticket.numBoleta }} · {{ ticket.user?.name }} - {{ ticket.user?.phone }}</small>
+            <small v-else>{{ ticket.user?.name }} - {{ ticket.user?.phone }}</small>
           </span>
           <span>{{ ticket.faultType }}</span>
           <span>{{ ticket.network?.accessBox }}</span>
