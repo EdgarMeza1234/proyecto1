@@ -156,4 +156,36 @@ async function procesarPDF(buffer) {
   return { campos, advertencias };
 }
 
-module.exports = { uploadDir, ensureUploadDir, ensurePapeletasTable, procesarPDF };
+async function listarPapeletas({ soloPendientes = false } = {}) {
+  const pool = await getPool();
+  const where = soloPendientes
+    ? 'WHERE NOT EXISTS (SELECT 1 FROM trabajos t WHERE t.papeleta_id = p.id AND t.eliminado = 0)'
+    : '';
+  const result = await pool.request().query(`
+    SELECT p.id, p.nombre_original, p.mime, p.tamano, p.campos, p.creado_en, p.creado_por,
+           CASE WHEN EXISTS (SELECT 1 FROM trabajos t WHERE t.papeleta_id = p.id AND t.eliminado = 0) THEN 1 ELSE 0 END AS procesado,
+           (SELECT TOP 1 t.id FROM trabajos t WHERE t.papeleta_id = p.id AND t.eliminado = 0 ORDER BY t.id DESC) AS trabajo_id,
+           (SELECT TOP 1 t.formulario FROM trabajos t WHERE t.papeleta_id = p.id AND t.eliminado = 0 ORDER BY t.id DESC) AS trabajo_formulario
+    FROM trabajos_papeletas p
+    ${where}
+    ORDER BY p.id DESC
+  `);
+  return result.recordset.map(r => {
+    let campos = null;
+    try { campos = r.campos ? JSON.parse(r.campos) : null; } catch { campos = null; }
+    return {
+      id: r.id,
+      nombre: r.nombre_original,
+      mime: r.mime,
+      tamano: r.tamano,
+      campos,
+      creado_en: r.creado_en,
+      creado_por: r.creado_por,
+      procesado: !!r.procesado,
+      trabajo_id: r.trabajo_id || null,
+      trabajo_formulario: r.trabajo_formulario || null
+    };
+  });
+}
+
+module.exports = { uploadDir, ensureUploadDir, ensurePapeletasTable, procesarPDF, listarPapeletas };

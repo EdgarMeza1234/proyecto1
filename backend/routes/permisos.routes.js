@@ -20,6 +20,7 @@ const PERMISSION_LIST = [
   { codigo: 'nortel', nombre: 'Trafico Nortel', modulo: 'Centrales' },
   { codigo: 'sisatt', nombre: 'Trafico SISATT', modulo: 'Centrales' },
   { codigo: 'registro', nombre: 'Registro de Trabajos', modulo: 'General' },
+  { codigo: 'suscripciones', nombre: 'Suscripciones', modulo: 'General' },
   { codigo: 'registro1', nombre: 'Registro de Trabajo 1', modulo: 'General' },
   { codigo: 'permisos', nombre: 'Permisos', modulo: 'Admin' },
   { codigo: 'createTicket', nombre: 'Crear Boleta', modulo: 'Acciones' },

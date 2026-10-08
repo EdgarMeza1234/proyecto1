@@ -34,7 +34,6 @@
     <div class="panel" style="margin-bottom:1rem;">
       <div class="filters" style="flex-wrap:wrap;">
         <input v-model="searchQuery" type="text" placeholder="Buscar por Formulario, Teléfono, Abonado..." @input="onSearchInput" style="flex:1;min-width:180px;" />
-        <button class="secondary" @click="openUpload"><i class="bi bi-upload"></i> Subir papeleta</button>
         <button class="primary" @click="openAdd"><i class="bi bi-plus-lg"></i> Nuevo Trabajo</button>
         <button class="ghost" @click="showFilters = !showFilters"><i class="bi bi-funnel"></i> Filtros</button>
         <button class="secondary" @click="exportCSV" :disabled="trabajos.length === 0"><i class="bi bi-file-earmark-spreadsheet"></i> CSV</button>
@@ -49,6 +48,38 @@
           <option value="">— Tipo Trabajo —</option>
           <option v-for="t in tipoTrabajoOptions" :key="t.value" :value="t.value">{{ t.label }}</option>
         </select>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:8px;">
+        <h3 style="margin:0;display:flex;align-items:center;gap:8px;font-size:1.05rem;">
+          <i class="bi bi-inbox-fill"></i> Formularios pendientes
+          <span class="papeleta-badge badge-warn">{{ pendientes.length }}</span>
+        </h3>
+        <span style="color:var(--muted);font-size:12px;">Recibidos desde Suscripciones · elige uno para precargar el registro</span>
+      </div>
+
+      <div v-if="pendientesLoading" style="text-align:center;padding:1rem;color:var(--muted);">
+        <i class="bi bi-arrow-clockwise animate-spin"></i>
+      </div>
+      <div v-else-if="pendientes.length === 0" style="text-align:center;color:var(--dimmed);padding:1rem;font-size:13px;">
+        No hay formularios pendientes por procesar.
+      </div>
+      <div v-else class="pendientes-list">
+        <div v-for="p in pendientes" :key="p.id" class="pendiente-item">
+          <div class="pendiente-info">
+            <strong class="pendiente-form">{{ p.campos?.formulario || '—' }}</strong>
+            <span class="pendiente-tel"><i class="bi bi-telephone"></i> {{ p.campos?.numero_telefono || '—' }}</span>
+            <span class="pendiente-abonado" :title="p.campos?.nombre_abonado">{{ p.campos?.nombre_abonado || p.nombre }}</span>
+            <span class="pendiente-tipo">{{ tipoLabel(p.campos?.tipo_trabajo) || p.campos?.tipo_servicio || '—' }}</span>
+            <span class="pendiente-fecha">{{ formatDate(p.campos?.fecha) }} {{ p.campos?.hora || '' }}</span>
+          </div>
+          <div class="pendiente-actions">
+            <button class="secondary" @click="loadPapeleta(p.id)" title="Ver papeleta"><i class="bi bi-paperclip"></i></button>
+            <button class="primary" @click="usarPapeleta(p)"><i class="bi bi-box-arrow-in-down"></i> Usar datos</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -105,59 +136,6 @@
           <div style="display:flex;gap:8px;">
             <button @click="fetchTrabajos(currentPage-1)" class="ghost" :disabled="currentPage===1||loading"><i class="bi bi-chevron-left"></i> Anterior</button>
             <button @click="fetchTrabajos(currentPage+1)" class="ghost" :disabled="currentPage===totalPages||loading">Siguiente <i class="bi bi-chevron-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal subir papeleta -->
-    <div v-if="showUploadModal" class="modal-backdrop" @click.self="closeUploadModal">
-      <div class="modal" style="max-width:900px;">
-        <div class="modal-head">
-          <h3 style="margin:0;display:flex;align-items:center;gap:8px;font-size:1.1rem;">
-            <i class="bi bi-upload"></i> Subir papeleta
-          </h3>
-          <button @click="closeUploadModal" class="icon-button" style="width:36px;height:36px;">&times;</button>
-        </div>
-        <div style="padding:1.5rem;">
-          <div v-if="uploadError" class="alert-error" style="margin-bottom:1rem;"><i class="bi bi-exclamation-triangle-fill"></i> {{ uploadError }}</div>
-
-          <div class="dropzone" @click="fileInput?.click()" @dragover.prevent @drop.prevent="onDrop">
-            <i class="bi bi-cloud-arrow-up"></i>
-            <p>Arrastra las papeletas aquí o haz clic para seleccionar</p>
-            <small>PDF, JPG, PNG o WEBP · hasta 15MB cada una · máximo 10 por vez</small>
-          </div>
-          <input ref="fileInput" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.webp" style="display:none" @change="onFileInput" />
-
-          <div v-if="uploading" style="text-align:center;padding:1rem;color:var(--muted);">
-            <i class="bi bi-arrow-clockwise animate-spin"></i> Subiendo y leyendo las papeletas...
-          </div>
-
-          <div v-for="item in uploadItems" :key="item.uid" class="papeleta-item">
-            <div class="pi-head">
-              <i class="bi" :class="item.mime === 'application/pdf' ? 'bi-file-earmark-pdf' : 'bi-file-earmark-image'" style="font-size:1.3rem;color:var(--accent);"></i>
-              <span class="pi-name" :title="item.nombre">{{ item.nombre }}</span>
-              <span :class="badgeClass(item)">{{ badgeText(item) }}</span>
-            </div>
-            <div v-if="item.campos" class="pi-grid">
-              <div><span>Formulario</span><strong>{{ item.campos.formulario || '—' }}</strong></div>
-              <div><span>Teléfono</span><strong>{{ item.campos.numero_telefono || '—' }}</strong></div>
-              <div><span>Abonado</span><strong>{{ item.campos.nombre_abonado || '—' }}</strong></div>
-              <div><span>Dirección</span><strong>{{ item.campos.direccion || '—' }}</strong></div>
-              <div><span>Tipo de trabajo</span><strong>{{ tipoLabel(item.campos.tipo_trabajo) || item.campos.tipo_servicio || '—' }}</strong></div>
-              <div><span>Fecha solicitud</span><strong>{{ formatDate(item.campos.fecha) }} {{ item.campos.hora || '' }}</strong></div>
-              <div><span>C.I.</span><strong>{{ item.campos.ci || '—' }}</strong></div>
-              <div><span>Celular</span><strong>{{ item.campos.celular || '—' }}</strong></div>
-              <div><span>Estado de cuenta</span><strong>{{ item.campos.estado_cuenta || '—' }}</strong></div>
-              <div v-if="item.campos.observaciones"><span>Observaciones</span><strong>{{ item.campos.observaciones }}</strong></div>
-            </div>
-            <div v-if="item.advertencias && item.advertencias.length" class="pi-warn">
-              <div v-for="(a, i) in item.advertencias" :key="i"><i class="bi bi-exclamation-triangle"></i> {{ a }}</div>
-            </div>
-            <div class="pi-actions">
-              <button class="secondary" @click="loadPapeleta(item.id)"><i class="bi bi-eye"></i> Ver PDF</button>
-              <button class="primary" :disabled="!item.campos" @click="usarPapeleta(item)"><i class="bi bi-magic"></i> Usar datos</button>
-            </div>
           </div>
         </div>
       </div>
@@ -518,6 +496,7 @@ async function submitModal() {
     }
     closeModal()
     fetchTrabajos(currentPage.value)
+    if (!isEditing.value) fetchPendientes()
     setTimeout(() => { globalSuccess.value = ''; globalWarning.value = '' }, 5000)
   } catch (err) {
     modalError.value = err.message
@@ -545,70 +524,20 @@ async function doDelete() {
   } finally { deleteSubmitting.value = false }
 }
 
-/* ===== Papeletas ===== */
-const showUploadModal = ref(false)
-const uploading = ref(false)
-const uploadError = ref('')
-const uploadItems = ref([])
-const fileInput = ref(null)
+/* ===== Papeletas pendientes ===== */
+const pendientes = ref([])
+const pendientesLoading = ref(false)
 const viewerOpen = ref(false)
 const viewerUrl = ref('')
-let uploadUid = 0
 
-function openUpload() {
-  uploadError.value = ''
-  uploadItems.value = []
-  showUploadModal.value = true
-}
-
-function closeUploadModal() {
-  showUploadModal.value = false
-  uploadItems.value = []
-}
-
-function onDrop(e) {
-  subirArchivos(e.dataTransfer?.files)
-}
-
-function onFileInput(e) {
-  subirArchivos(e.target.files)
-  e.target.value = ''
-}
-
-async function subirArchivos(fileList) {
-  const files = Array.from(fileList || [])
-  if (!files.length) return
-  uploading.value = true; uploadError.value = ''
+async function fetchPendientes() {
+  pendientesLoading.value = true
   try {
-    const fd = new FormData()
-    files.forEach(f => fd.append('archivos', f))
-    const res = await api.post('/trabajos/papeletas', fd, { headers: { 'Content-Type': 'multipart/form-data' } })
-    const nuevos = (res.data || []).map(item => ({ ...item, uid: ++uploadUid, dup: null }))
-    uploadItems.value = [...nuevos, ...uploadItems.value]
-    for (const item of nuevos) {
-      if (item.campos?.formulario) {
-        try {
-          const v = await api.get('/trabajos/verificar-formulario', { params: { formulario: item.campos.formulario } })
-          item.dup = v.data.exists
-        } catch { item.dup = null }
-      }
-    }
+    const res = await api.get('/papeletas', { params: { pendientes: 1 } })
+    pendientes.value = res.data || []
   } catch (err) {
-    uploadError.value = err.message
-  } finally {
-    uploading.value = false
-  }
-}
-
-function badgeText(item) {
-  if (item.dup) return '⚠️ Formulario ya registrado'
-  if (item.campos) return '✅ Leído'
-  return '✏️ Lectura manual'
-}
-function badgeClass(item) {
-  if (item.dup) return 'papeleta-badge badge-warn'
-  if (item.campos) return 'papeleta-badge badge-ok'
-  return 'papeleta-badge badge-muted'
+    console.error(err)
+  } finally { pendientesLoading.value = false }
 }
 
 function usarPapeleta(item) {
@@ -633,14 +562,13 @@ function usarPapeleta(item) {
   }
   modalPapeletaId.value = item.id
   formIdStatus.value = ''; formIdExists.value = false; abonadoStatus.value = ''
-  showUploadModal.value = false
   showModal.value = true
   if (c.formulario) checkFormulario()
 }
 
 async function loadPapeleta(archivoId) {
   try {
-    const res = await api.get(`/trabajos/papeletas/${archivoId}/archivo`, { responseType: 'blob' })
+    const res = await api.get(`/papeletas/${archivoId}/archivo`, { responseType: 'blob' })
     revokeViewer()
     viewerUrl.value = URL.createObjectURL(res.data)
     viewerOpen.value = true
@@ -664,6 +592,7 @@ function revokeViewer() {
 onMounted(() => {
   fetchTrabajos()
   fetchStats()
+  fetchPendientes()
 })
 </script>
 
@@ -844,6 +773,20 @@ onMounted(() => {
   border-radius: 0 0 14px 14px;
   background: #fff;
 }
+
+.pendientes-list { display: flex; flex-direction: column; gap: 8px; }
+.pendiente-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; flex-wrap: wrap;
+}
+.pendiente-item:hover { border-color: var(--accent); background: rgba(6,182,212,0.03); }
+.pendiente-info { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; min-width: 0; flex: 1; }
+.pendiente-form { font-weight: 700; color: var(--ink); }
+.pendiente-tel { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.pendiente-abonado { color: var(--ink); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+.pendiente-tipo { font-size: 12px; color: var(--accent); background: rgba(6,182,212,0.1); padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
+.pendiente-fecha { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.pendiente-actions { display: flex; gap: 8px; }
 
 @media (max-width: 640px) {
   .pi-grid { grid-template-columns: 1fr; }

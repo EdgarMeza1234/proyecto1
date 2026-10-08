@@ -27,6 +27,7 @@ const permisosRoutes = require('./routes/permisos.routes');
 const traficoRoutes = require('./routes/trafico.routes');
 const nortelRoutes = require('./routes/nortel.routes');
 const mineralesRoutes = require('./routes/minerales.routes');
+const papeletasRoutes = require('./routes/papeletas.routes');
 
 const app = express();
 const server = http.createServer(app);
@@ -55,6 +56,7 @@ app.use('/api/permisos', permisosRoutes);
 app.use('/api/trafico', traficoRoutes);
 app.use('/api/nortel', nortelRoutes);
 app.use('/api/minerales', mineralesRoutes);
+app.use('/api/papeletas', papeletasRoutes);
 
 // === SISATT REST routes ===
 app.get('/api/sisatt/logs', (req, res) => {

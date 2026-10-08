@@ -46,6 +46,7 @@ const titles = {
   '/reports': 'Reportes operativos',
   '/users': 'Administracion de usuarios',
   '/integrations': 'Conexion con API y base de datos',
+  '/suscripciones': 'Suscripciones - Envio de formularios',
   '/registro1': 'Registro de Trabajo 1 - Papeletas'
 }
 
