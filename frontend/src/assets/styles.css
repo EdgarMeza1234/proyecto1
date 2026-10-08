@@ -2015,24 +2015,65 @@ h3 {
     display: none;
   }
 
-  .brand-text,
-  .nav-label {
-    display: block !important;
-  }
-
   nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    flex-direction: column;
+    gap: 4px;
     overflow-y: auto;
   }
 
   .nav-item {
     min-height: 38px;
     padding: 0 10px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .nav-label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
   .nav-subitem { padding-left: 10px !important; }
-  .nav-section { min-height: 36px; font-size: 10px; }
+  .nav-section { display: flex; min-height: 36px; font-size: 10px; }
+
+  /* En modo cajón no aplica el estado "colapsado" persistido: menú completo */
+  .sidebar.collapsed {
+    padding: 20px;
+    align-items: stretch;
+  }
+  .sidebar.collapsed .brand {
+    gap: 12px;
+    align-items: center;
+  }
+  .sidebar.collapsed .brand-logo {
+    display: block;
+  }
+  .sidebar.collapsed .brand-collapsed-text {
+    display: none;
+  }
+  .sidebar.collapsed .brand-text,
+  .sidebar.collapsed .nav-label {
+    display: block;
+  }
+  .sidebar.collapsed .nav-section {
+    display: flex;
+  }
+  .sidebar.collapsed nav {
+    width: 100%;
+  }
+  .sidebar.collapsed .nav-item {
+    width: 100%;
+    height: auto;
+    min-height: 38px;
+    padding: 0 10px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
 
   .grid.two,
   .tickets-layout {
@@ -2110,10 +2151,6 @@ h3 {
 
   .nav-section { display: flex; font-size: 10px; min-height: 34px; }
   .nav-subitem { padding-left: 10px !important; }
-  nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    display: grid;
-  }
 
   .info-grid,
   .schema,
