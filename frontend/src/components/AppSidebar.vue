@@ -117,7 +117,7 @@ const collapsed = ref(localStorage.getItem('telefonia-sidebar-collapsed') === 't
 const mobileOpen = ref(false)
 
 function isMobileView() {
-  return window.matchMedia('(max-width: 1024px)').matches
+  return window.matchMedia('(max-width: 1366px)').matches
 }
 
 function getDefaultSections() {

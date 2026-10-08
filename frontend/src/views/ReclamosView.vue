@@ -102,6 +102,7 @@
         </table>
       </div>
     </div>
+    <div v-if="mobileDetailOpen" class="detail-backdrop" @click="closeMobileDetail"></div>
     <div class="panel reclamos-detail-panel" :class="{ open: mobileDetailOpen }">
       <div class="mobile-detail-bar">
         <button type="button" class="ghost" @click="closeMobileDetail">← Volver</button>
@@ -154,7 +155,7 @@ const conTecnico = computed(() => store.reclamos.filter((r) => r.TecnicoAsignado
 
 function select(reclamo) {
   store.selectedId = reclamo.IdReclamo
-  if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+  if (window.matchMedia && window.matchMedia('(max-width: 1366px)').matches) {
     mobileDetailOpen.value = true
   }
 }
