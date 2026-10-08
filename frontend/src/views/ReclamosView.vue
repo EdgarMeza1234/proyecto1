@@ -95,7 +95,7 @@
                 <span v-else class="badge" :class="statusBadge(reclamo.Estado)">{{ estadoLabel(reclamo.Estado) }}</span>
               </td>
             </tr>
-            <tr v-if="!store.filteredReclamos.length">
+            <tr v-if="!store.filteredReclamos.length" class="empty">
               <td colspan="7" class="empty">No hay reclamos para el filtro actual.</td>
             </tr>
           </tbody>
