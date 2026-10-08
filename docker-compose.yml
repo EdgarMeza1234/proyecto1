@@ -11,6 +11,9 @@ services:
     environment:
       - DB_HOST=192.168.1.151
       - NODE_ENV=production
+      - UPLOAD_DIR=/app/uploads/papeletas
+    volumes:
+      - ./backend/uploads:/app/uploads
     networks:
       - sisatt-net
 

@@ -18,6 +18,10 @@ backend/*.out
 backend/*.log
 *.out
 
+# ===== Papeletas subidas =====
+backend/uploads/
+/*.pdf
+
 # ===== Builds =====
 dist/
 dist-ssr/

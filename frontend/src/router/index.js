@@ -13,6 +13,7 @@ const routes = [
   { path: '/reclamos', name: 'Reclamos', component: () => import('../views/ReclamosView.vue'), meta: { requiresAuth: true } },
   { path: '/iskratel', name: 'Iskratel', component: () => import('../views/IskratelView.vue'), meta: { requiresAuth: true } },
   { path: '/registro', name: 'RegistroTrabajos', component: () => import('../views/RegistroTrabajosView.vue'), meta: { requiresAuth: true } },
+  { path: '/registro1', name: 'RegistroTrabajo1', component: () => import('../views/RegistroTrabajos1View.vue'), meta: { requiresAuth: true } },
   { path: '/trafico', name: 'Trafico', component: () => import('../views/TraficoView.vue'), meta: { requiresAuth: true } },
   { path: '/nortel', name: 'Nortel', component: () => import('../views/NortelView.vue'), meta: { requiresAuth: true } },
   { path: '/permisos', name: 'Permisos', component: () => import('../views/PermisosView.vue'), meta: { requiresAuth: true } },

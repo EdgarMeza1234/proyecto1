@@ -45,7 +45,8 @@ const titles = {
   '/auditoria': 'Auditoria de cambios en bloques',
   '/reports': 'Reportes operativos',
   '/users': 'Administracion de usuarios',
-  '/integrations': 'Conexion con API y base de datos'
+  '/integrations': 'Conexion con API y base de datos',
+  '/registro1': 'Registro de Trabajo 1 - Papeletas'
 }
 
 const title = computed(() => titles[route.path] || 'Sistema de reparacion')

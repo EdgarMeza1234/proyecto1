@@ -154,6 +154,9 @@ const { ensureAuditTable: ensureGeneralAuditTable, ensureTrabajosColumns } = req
 ensureGeneralAuditTable().catch(err => console.error('[auditoria] Error fatal:', err.message))
 ensureTrabajosColumns().catch(err => console.error('[auditoria-trabajos] Error fatal:', err.message))
 
+const { ensurePapeletasTable } = require('./services/papeleta.service');
+ensurePapeletasTable().catch(err => console.error('[papeletas] Error fatal:', err.message))
+
 server.listen(config.port, config.host, () => {
   const displayHost = config.host === '0.0.0.0' ? 'TU_IP_LOCAL' : config.host;
   console.log(`Backend disponible en http://${displayHost}:${config.port}`);

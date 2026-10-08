@@ -20,6 +20,7 @@ const PERMISSION_LIST = [
   { codigo: 'nortel', nombre: 'Trafico Nortel', modulo: 'Centrales' },
   { codigo: 'sisatt', nombre: 'Trafico SISATT', modulo: 'Centrales' },
   { codigo: 'registro', nombre: 'Registro de Trabajos', modulo: 'General' },
+  { codigo: 'registro1', nombre: 'Registro de Trabajo 1', modulo: 'General' },
   { codigo: 'permisos', nombre: 'Permisos', modulo: 'Admin' },
   { codigo: 'createTicket', nombre: 'Crear Boleta', modulo: 'Acciones' },
   { codigo: 'createReclamo', nombre: 'Crear Reclamo', modulo: 'Acciones' },
@@ -34,8 +35,8 @@ const PERMISSION_LIST = [
 
 const DEFAULT_PERMISOS = {
   admin: PERMISSION_LIST.map(p => p.codigo),
-  jefe: ['dashboard', 'tickets', 'reclamos', 'reports', 'iskratel', 'registro', 'trafico', 'nortel', 'sisatt', 'assignTech', 'distribucion', 'addEvent', 'closeTicket', 'printTicket'],
-  operador: ['dashboard', 'tickets', 'reclamos', 'blocks', 'iskratel', 'registro', 'trafico', 'nortel', 'createTicket', 'reviewReclamo', 'addEvent', 'printTicket'],
+  jefe: ['dashboard', 'tickets', 'reclamos', 'reports', 'iskratel', 'registro', 'registro1', 'trafico', 'nortel', 'sisatt', 'assignTech', 'distribucion', 'addEvent', 'closeTicket', 'printTicket'],
+  operador: ['dashboard', 'tickets', 'reclamos', 'blocks', 'iskratel', 'registro', 'registro1', 'trafico', 'nortel', 'createTicket', 'reviewReclamo', 'addEvent', 'printTicket'],
   odeco: ['tickets', 'reclamos', 'iskratel', 'createReclamo', 'addEvent', 'printTicket'],
   tecnico: ['dashboard', 'tickets', 'iskratel', 'addEvent', 'closeTicket', 'printTicket'],
   usuario: ['tickets', 'printTicket']
@@ -121,6 +122,23 @@ async function seedPermisos() {
             .input('PermisoCodigo', sql.VarChar(50), perm.codigo)
             .query('INSERT INTO RolesPermisos (IdRol, PermisoCodigo) VALUES (@IdRol, @PermisoCodigo)')
           console.log('[permisos] Agregado permiso faltante:', perm.codigo)
+        }
+      }
+
+      const todasAsignaciones = await pool.request()
+        .query(`SELECT IdRol, PermisoCodigo FROM RolesPermisos`)
+      const porRol = {}
+      for (const row of todasAsignaciones.recordset) {
+        if (!porRol[row.IdRol]) porRol[row.IdRol] = new Set()
+        porRol[row.IdRol].add(row.PermisoCodigo)
+      }
+      for (const [idRol, perms] of Object.entries(porRol)) {
+        if (perms.has('registro') && !perms.has('registro1')) {
+          await pool.request()
+            .input('IdRol', sql.Int, Number(idRol))
+            .input('PermisoCodigo', sql.VarChar(50), 'registro1')
+            .query('INSERT INTO RolesPermisos (IdRol, PermisoCodigo) VALUES (@IdRol, @PermisoCodigo)')
+          console.log(`[permisos] registro1 agregado al rol ${idRol} (espejo de registro)`)
         }
       }
       console.log('[permisos] Ya inicializados.')
