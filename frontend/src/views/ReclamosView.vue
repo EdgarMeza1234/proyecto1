@@ -190,9 +190,7 @@ function timeColorClass(fechaRegistro, estado) {
   if (!fechaRegistro || estado === 'CerradoCentral' || estado === 'Cerrado') return ''
   try {
     const hours = (Date.now() - new Date(fechaRegistro).getTime()) / 36e5
-    if (hours < 24) return 'time-ok'
-    if (hours < 48) return 'time-warn'
-    return 'time-overdue'
+    return hours >= 24 ? 'time-overdue' : 'time-ok'
   } catch { return '' }
 }
 

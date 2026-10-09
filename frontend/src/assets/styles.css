@@ -933,37 +933,17 @@ h3 {
   box-shadow: 0 0 15px rgba(6, 182, 212, 0.18);
 }
 
-.reclamos-table tbody tr.time-ok td {
-  background: rgba(16, 185, 129, 0.07);
-  border-color: rgba(16, 185, 129, 0.40);
-}
-.reclamos-table tbody tr.time-warn td {
-  background: rgba(245, 158, 11, 0.11);
-  border-color: rgba(245, 158, 11, 0.45);
-}
 .reclamos-table tbody tr.time-overdue td {
-  background: rgba(244, 63, 94, 0.13);
-  border-color: rgba(244, 63, 94, 0.50);
+  background: rgba(244, 63, 94, 0.14);
+  border-color: rgba(244, 63, 94, 0.55);
 }
 
-.reclamos-table tbody tr.time-ok td:first-child {
-  border-left: 4px solid var(--ok);
-}
-.reclamos-table tbody tr.time-warn td:first-child {
-  border-left: 4px solid var(--warn);
-}
 .reclamos-table tbody tr.time-overdue td:first-child {
   border-left: 4px solid var(--danger);
 }
 
-.reclamos-table tbody tr.selected.time-ok td {
-  background: rgba(16, 185, 129, 0.18);
-}
-.reclamos-table tbody tr.selected.time-warn td {
-  background: rgba(245, 158, 11, 0.22);
-}
 .reclamos-table tbody tr.selected.time-overdue td {
-  background: rgba(244, 63, 94, 0.24);
+  background: rgba(244, 63, 94, 0.26);
 }
 
 .reclamos-table tbody tr:hover td:first-child {
@@ -1954,22 +1934,8 @@ h3 {
   border-color: rgba(244, 63, 94, 0.5) !important;
 }
 
-@keyframes row-pulse-warn {
-  0%, 100% { background-color: rgba(245, 158, 11, 0.10); }
-  50% { background-color: rgba(245, 158, 11, 0.32); }
-}
-
-@keyframes row-pulse-danger {
-  0%, 100% { background-color: rgba(244, 63, 94, 0.12); }
-  50% { background-color: rgba(244, 63, 94, 0.36); }
-}
-
-.reclamo-row.pulse.time-warn td {
-  animation: row-pulse-warn 1.6s ease-in-out infinite;
-}
-
 .reclamo-row.pulse.time-overdue td {
-  animation: row-pulse-danger 1.6s ease-in-out infinite;
+  animation: row-pulse-danger 1.2s ease-in-out infinite;
 }
 
 /* Responsive Overrides */
