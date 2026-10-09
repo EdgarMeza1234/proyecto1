@@ -1934,6 +1934,12 @@ h3 {
   border-color: rgba(244, 63, 94, 0.5) !important;
 }
 
+@keyframes row-pulse-danger {
+  0% { background-color: rgba(244, 63, 94, 0.16); }
+  50% { background-color: rgba(244, 63, 94, 0.44); }
+  100% { background-color: rgba(244, 63, 94, 0.16); }
+}
+
 .reclamo-row.pulse.time-overdue td {
   animation: row-pulse-danger 1.2s ease-in-out infinite;
 }
