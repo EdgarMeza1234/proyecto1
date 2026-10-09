@@ -194,6 +194,7 @@ function timeColorClass(fechaRegistro, estado) {
   } catch { return '' }
 }
 
+// force cache bust: reclamos pulse >=24h rojo en celdas
 function timePulse(fechaRegistro, estado) {
   if (!fechaRegistro || estado === 'CerradoCentral' || estado === 'Cerrado') return false
   try {
