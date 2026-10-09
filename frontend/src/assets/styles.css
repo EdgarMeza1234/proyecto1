@@ -1954,6 +1954,28 @@ h3 {
   border-color: rgba(244, 63, 94, 0.5) !important;
 }
 
+@keyframes pulse-amber {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.reclamo-row.pulse.time-warn {
+  animation: pulse-amber 2s infinite;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+}
+
+.reclamo-row.pulse.time-overdue {
+  animation: pulse-red 2s infinite;
+  border-color: rgba(244, 63, 94, 0.5) !important;
+}
+
 /* Responsive Overrides */
 .detail-backdrop {
   display: none;

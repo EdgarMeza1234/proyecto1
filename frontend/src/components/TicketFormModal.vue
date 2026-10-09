@@ -20,7 +20,7 @@
           <div class="form-grid customer-grid">
             <label class="field">
               <span>No. Telef.</span>
-              <input v-model="form.phone" name="phone" placeholder="Numero del abonado" />
+              <input v-model="form.phone" name="phone" placeholder="Numero del abonado" @keydown.enter.prevent="lookupErp" />
             </label>
             <label class="field">
               <span>Nombre</span>
@@ -93,6 +93,7 @@ import { ref, reactive, computed } from 'vue'
 import { useTicketStore } from '../stores/tickets'
 import { useAuthStore } from '../stores/auth'
 import api from '../services/api'
+import { openTicketFormulario } from '../services/api'
 
 const emit = defineEmits(['close', 'saved'])
 const ticketStore = useTicketStore()
@@ -198,7 +199,7 @@ async function createTicket() {
       events: [{ at: new Date().toISOString(), title: 'Boleta generada', note: form.claim || 'Creada desde el panel.', actor: form.receivedBy }]
     })
     emit('saved')
-    window.open(`/api/boletas/${res.data.id}/formulario`, '_blank')
+    openTicketFormulario(res.data.id).catch(() => {})
   } catch (err) {
     error.value = err.message
   } finally {

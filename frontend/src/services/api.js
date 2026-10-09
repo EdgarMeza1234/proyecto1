@@ -28,6 +28,26 @@ api.interceptors.response.use(
   }
 )
 
+export async function openTicketFormulario(id) {
+  const win = window.open('', '_blank')
+  try {
+    const res = await api.get(`/boletas/${id}/formulario`, { responseType: 'text' })
+    if (win) {
+      win.document.open()
+      win.document.write(res.data)
+      win.document.close()
+    } else {
+      const blob = new Blob([res.data], { type: 'text/html' })
+      const url = URL.createObjectURL(blob)
+      window.open(url, '_blank')
+      setTimeout(() => URL.revokeObjectURL(url), 60000)
+    }
+  } catch (err) {
+    if (win) win.close()
+    throw err
+  }
+}
+
 export const iskratelApi = {
   getAll: () => api.get('/iskratel'),
   getByNumero: (numero) => api.get(`/iskratel/${encodeURIComponent(numero)}`),

@@ -46,6 +46,7 @@ import { computed, watch } from 'vue'
 import { useAuthStore } from '../stores/auth'
 import { useTicketStore } from '../stores/tickets'
 import { formatElapsed } from '../utils/formatElapsed'
+import { openTicketFormulario } from '../services/api'
 
 const props = defineProps({
   ticket: { type: Object, required: true }
@@ -128,6 +129,6 @@ function closeTicket() {
 }
 
 function printTicket() {
-  window.open(`/api/boletas/${props.ticket.dbId}/formulario`, '_blank')
+  openTicketFormulario(props.ticket.dbId).catch(() => {})
 }
 </script>

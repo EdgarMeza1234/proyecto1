@@ -67,7 +67,7 @@
               v-for="reclamo in store.filteredReclamos"
               :key="reclamo.IdReclamo"
               class="reclamo-row"
-              :class="[timeColorClass(reclamo.FechaRegistro, reclamo.Estado), { selected: store.selectedId === reclamo.IdReclamo }]"
+              :class="[timeColorClass(reclamo.FechaRegistro, reclamo.Estado), { selected: store.selectedId === reclamo.IdReclamo, pulse: timePulse(reclamo.FechaRegistro, reclamo.Estado) }]"
               @click="select(reclamo)"
             >
               <td class="reclamo-main">
@@ -194,6 +194,14 @@ function timeColorClass(fechaRegistro, estado) {
     if (hours < 48) return 'time-warn'
     return 'time-overdue'
   } catch { return '' }
+}
+
+function timePulse(fechaRegistro, estado) {
+  if (!fechaRegistro || estado === 'CerradoCentral' || estado === 'Cerrado') return false
+  try {
+    const hours = (Date.now() - new Date(fechaRegistro).getTime()) / 36e5
+    return hours >= 24
+  } catch { return false }
 }
 
 function formatDate(value) {
