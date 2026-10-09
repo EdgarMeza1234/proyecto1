@@ -934,16 +934,16 @@ h3 {
 }
 
 .reclamos-table tbody tr.time-ok td {
-  background: rgba(16, 185, 129, 0.04);
-  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.07);
+  border-color: rgba(16, 185, 129, 0.40);
 }
 .reclamos-table tbody tr.time-warn td {
-  background: rgba(245, 158, 11, 0.04);
-  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.11);
+  border-color: rgba(245, 158, 11, 0.45);
 }
 .reclamos-table tbody tr.time-overdue td {
-  background: rgba(244, 63, 94, 0.04);
-  border-color: rgba(244, 63, 94, 0.35);
+  background: rgba(244, 63, 94, 0.13);
+  border-color: rgba(244, 63, 94, 0.50);
 }
 
 .reclamos-table tbody tr.time-ok td:first-child {
@@ -957,13 +957,13 @@ h3 {
 }
 
 .reclamos-table tbody tr.selected.time-ok td {
-  background: rgba(16, 185, 129, 0.10);
+  background: rgba(16, 185, 129, 0.18);
 }
 .reclamos-table tbody tr.selected.time-warn td {
-  background: rgba(245, 158, 11, 0.10);
+  background: rgba(245, 158, 11, 0.22);
 }
 .reclamos-table tbody tr.selected.time-overdue td {
-  background: rgba(244, 63, 94, 0.10);
+  background: rgba(244, 63, 94, 0.24);
 }
 
 .reclamos-table tbody tr:hover td:first-child {
@@ -1954,26 +1954,22 @@ h3 {
   border-color: rgba(244, 63, 94, 0.5) !important;
 }
 
-@keyframes pulse-amber {
-  0% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
-  }
+@keyframes row-pulse-warn {
+  0%, 100% { background-color: rgba(245, 158, 11, 0.10); }
+  50% { background-color: rgba(245, 158, 11, 0.32); }
 }
 
-.reclamo-row.pulse.time-warn {
-  animation: pulse-amber 2s infinite;
-  border-color: rgba(245, 158, 11, 0.5) !important;
+@keyframes row-pulse-danger {
+  0%, 100% { background-color: rgba(244, 63, 94, 0.12); }
+  50% { background-color: rgba(244, 63, 94, 0.36); }
 }
 
-.reclamo-row.pulse.time-overdue {
-  animation: pulse-red 2s infinite;
-  border-color: rgba(244, 63, 94, 0.5) !important;
+.reclamo-row.pulse.time-warn td {
+  animation: row-pulse-warn 1.6s ease-in-out infinite;
+}
+
+.reclamo-row.pulse.time-overdue td {
+  animation: row-pulse-danger 1.6s ease-in-out infinite;
 }
 
 /* Responsive Overrides */
