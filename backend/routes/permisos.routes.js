@@ -16,6 +16,7 @@ const PERMISSION_LIST = [
   { codigo: 'users', nombre: 'Usuarios', modulo: 'Admin' },
   { codigo: 'integrations', nombre: 'Integraciones', modulo: 'Admin' },
   { codigo: 'iskratel', nombre: 'Central Iskratel', modulo: 'Centrales' },
+  { codigo: 'teliskratel', nombre: 'Registro Teliskratel', modulo: 'Centrales' },
   { codigo: 'trafico', nombre: 'Trafico Iskratel', modulo: 'Centrales' },
   { codigo: 'nortel', nombre: 'Trafico Nortel', modulo: 'Centrales' },
   { codigo: 'sisatt', nombre: 'Trafico SISATT', modulo: 'Centrales' },
@@ -36,10 +37,10 @@ const PERMISSION_LIST = [
 
 const DEFAULT_PERMISOS = {
   admin: PERMISSION_LIST.map(p => p.codigo),
-  jefe: ['dashboard', 'tickets', 'reclamos', 'reports', 'iskratel', 'registro', 'registro1', 'trafico', 'nortel', 'sisatt', 'assignTech', 'distribucion', 'addEvent', 'closeTicket', 'printTicket'],
-  operador: ['dashboard', 'tickets', 'reclamos', 'blocks', 'iskratel', 'registro', 'registro1', 'trafico', 'nortel', 'createTicket', 'reviewReclamo', 'addEvent', 'printTicket'],
-  odeco: ['tickets', 'reclamos', 'iskratel', 'createReclamo', 'addEvent', 'printTicket'],
-  tecnico: ['dashboard', 'tickets', 'iskratel', 'addEvent', 'closeTicket', 'printTicket'],
+  jefe: ['dashboard', 'tickets', 'reclamos', 'reports', 'iskratel', 'teliskratel', 'registro', 'registro1', 'trafico', 'nortel', 'sisatt', 'assignTech', 'distribucion', 'addEvent', 'closeTicket', 'printTicket'],
+  operador: ['dashboard', 'tickets', 'reclamos', 'blocks', 'iskratel', 'teliskratel', 'registro', 'registro1', 'trafico', 'nortel', 'createTicket', 'reviewReclamo', 'addEvent', 'printTicket'],
+  odeco: ['tickets', 'reclamos', 'iskratel', 'teliskratel', 'createReclamo', 'addEvent', 'printTicket'],
+  tecnico: ['dashboard', 'tickets', 'iskratel', 'teliskratel', 'addEvent', 'closeTicket', 'printTicket'],
   usuario: ['tickets', 'printTicket']
 }
 
@@ -140,6 +141,13 @@ async function seedPermisos() {
             .input('PermisoCodigo', sql.VarChar(50), 'registro1')
             .query('INSERT INTO RolesPermisos (IdRol, PermisoCodigo) VALUES (@IdRol, @PermisoCodigo)')
           console.log(`[permisos] registro1 agregado al rol ${idRol} (espejo de registro)`)
+        }
+        if (perms.has('iskratel') && !perms.has('teliskratel')) {
+          await pool.request()
+            .input('IdRol', sql.Int, Number(idRol))
+            .input('PermisoCodigo', sql.VarChar(50), 'teliskratel')
+            .query('INSERT INTO RolesPermisos (IdRol, PermisoCodigo) VALUES (@IdRol, @PermisoCodigo)')
+          console.log(`[permisos] teliskratel agregado al rol ${idRol} (espejo de iskratel)`)
         }
       }
       console.log('[permisos] Ya inicializados.')

@@ -30,6 +30,66 @@
     <p v-if="dnStatus" :class="dnStatusType">{{ dnStatus }}</p>
   </section>
 
+  <section v-if="combinedLoaded" class="panel">
+    <div class="panel-head">
+      <h2>Resultados (últimos 5 dígitos: {{ combinedUlt5 }})</h2>
+    </div>
+
+    <h3 class="result-sub">MDF ({{ combinedMdf.length }})</h3>
+    <div v-if="combinedMdf.length" class="block-table-wrap" style="max-height:320px">
+      <table class="block-table">
+        <thead>
+          <tr>
+            <th>Dn</th><th>Central</th><th>ParPriBloq</th><th>ParPriPar</th>
+            <th>ParSec</th><th style="min-width:160px">Obs</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in combinedMdf" :key="row.ID">
+            <td>{{ row.Dn }}</td>
+            <td>{{ row.Central || '—' }}</td>
+            <td>{{ row.ParPriBloq || '—' }}</td>
+            <td>{{ row.ParPriPar || '—' }}</td>
+            <td>{{ row.ParSec || '—' }}</td>
+            <td>{{ row.Obs || '—' }}</td>
+            <td><button type="button" class="secondary" style="font-size:12px" @click="loadMdfBlock(row)">Ver bloque</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p v-else class="muted">Sin coincidencias en MDF.</p>
+
+    <h3 class="result-sub">Teliskratel ({{ combinedTeliskratel.length }})</h3>
+    <div v-if="combinedTeliskratel.length" class="block-table-wrap" style="max-height:320px">
+      <table class="block-table">
+        <thead>
+          <tr>
+            <th>DN</th><th>Estado</th><th>IP</th><th>Central</th><th>Puerto</th>
+            <th>Abonado</th><th>Servicio compl.</th><th>Origen</th><th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in combinedTeliskratel" :key="row.id">
+            <td>{{ row.directory_number || '—' }}</td>
+            <td>
+              <span class="badge" :class="row.estado_registro === 'REGISTRADO' ? 'ok' : 'error'">
+                {{ row.estado_registro || '—' }}
+              </span>
+            </td>
+            <td>{{ row.ip_origen || '—' }}</td>
+            <td>{{ row.central || '—' }}</td>
+            <td>{{ row.puerto || '—' }}</td>
+            <td>{{ row.subscriber_type || '—' }}</td>
+            <td>{{ row.supplementary_service_set || '—' }}</td>
+            <td>{{ row.origen_archivo || '—' }}</td>
+            <td>{{ formatFecha(row.fecha_import) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p v-else class="muted">Sin coincidencias en Teliskratel.</p>
+  </section>
+
   <section class="panel block-panel">
     <div class="panel-head">
       <h2>{{ rowsLabel }}</h2>
@@ -46,7 +106,7 @@
 import { ref, computed, nextTick } from 'vue'
 import { useBlockStore } from '../stores/blocks'
 import BlockTable from '../components/BlockTable.vue'
-import api from '../services/api'
+import { lookupDnCombinado } from '../services/api'
 
 const store = useBlockStore()
 
@@ -55,6 +115,11 @@ const dnLoading = ref(false)
 const dnStatus = ref('')
 const dnStatusType = ref('muted')
 const highlightedDn = ref('')
+
+const combinedLoaded = ref(false)
+const combinedMdf = ref([])
+const combinedTeliskratel = ref([])
+const combinedUlt5 = ref('')
 
 const rowsLabel = computed(() => {
   if (!store.rows.length) return 'Pares del bloque'
@@ -91,6 +156,16 @@ function handleSave() {
   store.saveBlock()
 }
 
+function formatFecha(value) {
+  if (!value) return '—'
+  try {
+    return new Intl.DateTimeFormat('es-BO', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/La_Paz'
+    }).format(new Date(value))
+  } catch { return '—' }
+}
+
 async function searchDn() {
   const phone = dnSearch.value.trim()
   if (!phone) {
@@ -99,32 +174,50 @@ async function searchDn() {
     return
   }
   dnLoading.value = true
-  dnStatus.value = 'Buscando en MDF...'
+  dnStatus.value = 'Buscando en MDF y Teliskratel...'
   dnStatusType.value = 'muted'
   highlightedDn.value = ''
+  combinedLoaded.value = false
   try {
-    const res = await api.get(`/facilidades/dn/${encodeURIComponent(phone)}`)
-    if (!res.data) {
-      dnStatus.value = 'ℹ️ No se encontró el número en MDF'
+    const res = await lookupDnCombinado(phone)
+    const mdf = res.data?.mdf || []
+    const teliskratel = res.data?.teliskratel || []
+    combinedMdf.value = mdf
+    combinedTeliskratel.value = teliskratel
+    combinedUlt5.value = res.data?.ultimos5 || phone.replace(/\D/g, '').slice(-5)
+    combinedLoaded.value = true
+
+    if (mdf.length) {
+      await loadMdfBlock(mdf[0], phone)
+      dnStatus.value = `✅ MDF: ${mdf.length} coincidencia(s) — Teliskratel: ${teliskratel.length}`
+      dnStatusType.value = 'success-text'
+    } else if (teliskratel.length) {
+      dnStatus.value = `ℹ️ Sin coincidencias en MDF — Teliskratel: ${teliskratel.length}`
       dnStatusType.value = 'muted'
-      return
+    } else {
+      dnStatus.value = 'ℹ️ No se encontró el número en MDF ni en Teliskratel'
+      dnStatusType.value = 'muted'
     }
-    const data = res.data
-    store.central = store.normalizeCode(data.Central || '')
-    store.block = store.normalizeCode(data.ParPriBloq || data.ParPriPar || '')
-    store.error = ''
-    store.message = ''
-    dnStatus.value = `✅ ${data.Central}-${data.ParPriBloq} par ${data.ParPriPar} — cargando bloque...`
-    await handleSearch()
-    highlightedDn.value = phone
-    dnStatus.value = `✅ ${data.Central}-${data.ParPriBloq} par ${data.ParPriPar} — encontrado`
-    dnStatusType.value = 'success-text'
   } catch {
-    dnStatus.value = '⚠️ Error al consultar MDF'
+    dnStatus.value = '⚠️ Error al consultar MDF/Teliskratel'
     dnStatusType.value = 'error-text'
   } finally {
     dnLoading.value = false
   }
+}
+
+async function loadMdfBlock(row, phone) {
+  store.central = store.normalizeCode(row.Central || '')
+  store.block = store.normalizeCode(row.ParPriBloq || row.ParPriPar || '')
+  store.error = ''
+  store.message = ''
+  if (!store.central || !store.block) {
+    dnStatus.value = 'ℹ️ El registro MDF no tiene central/bloque definidos.'
+    dnStatusType.value = 'muted'
+    return
+  }
+  await handleSearch()
+  highlightedDn.value = phone || row.Dn || ''
 }
 
 async function reloadObservations() {

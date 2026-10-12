@@ -4,6 +4,7 @@ const { authenticate, authorize } = require('../middleware/auth');
 
 const router = Router();
 
+router.get('/dn-combinado/:dn', authenticate, facilitiesController.lookupDnCombinado);
 router.get('/dn/:dn', authenticate, facilitiesController.lookupDn);
 router.get('/bloques/:bloque', authenticate, facilitiesController.lookupBlock);
 router.put('/bloques/:bloque', authenticate, facilitiesController.updateBlock);

@@ -178,6 +178,34 @@ Todas requieren autenticación (`Authorization: Bearer <token>`).
 | GET    | `/api/tipos-falla`      | Lista los tipos de falla activos   |
 | POST   | `/api/tipos-falla`      | Crea un nuevo tipo de falla        |
 
+### Suscripciones / Registro de Trabajo 1 (`/api/papeletas`)
+
+| Método | Ruta                     | Permiso                       | Descripción                          |
+|--------|--------------------------|-------------------------------|--------------------------------------|
+| POST   | `/api/papeletas`         | `suscripciones`               | Sube PDFs (campo `archivos`)         |
+| GET    | `/api/papeletas`         | `suscripciones`, `registro1`  | Lista papeletas (`?pendientes=1`)    |
+| GET    | `/api/papeletas/:id/archivo` | `suscripciones`, `registro1` | Sirve el archivo subido           |
+
+### Búsqueda combinada MDF + Teliskratel
+
+| Método | Ruta                                  | Descripción                                                       |
+|--------|---------------------------------------|-------------------------------------------------------------------|
+| GET    | `/api/facilidades/dn-combinado/:dn`   | Busca por **últimos 5 dígitos** en MDF y Teliskratel. Responde `{ ultimos5, mdf:[], teliskratel:[] }` |
+
+### Teliskratel (`/api/teliskratel`)
+
+Registro persistente de los archivos `.out` de la central (`teliskratel.out`, `teliskratel6.out`).
+
+| Método | Ruta                                  | Permiso                              | Descripción                                       |
+|--------|---------------------------------------|--------------------------------------|---------------------------------------------------|
+| GET    | `/api/teliskratel`                    | `teliskratel`, `iskratel`            | Lista paginada (`q, estado, central, origen, lote, page, limit`) |
+| GET    | `/api/teliskratel/importaciones`      | `teliskratel`, `iskratel`            | Lotes importados                                  |
+| GET    | `/api/teliskratel/archivos`           | `teliskratel`, `iskratel`            | Archivos `.out` detectados en `data/`             |
+| GET    | `/api/teliskratel/buscar/:numero`     | `teliskratel`, `iskratel`, `blocks`  | Match por últimos 5 dígitos                       |
+| POST   | `/api/teliskratel/importar`           | `teliskratel`                        | Sube `.out/.txt` (multipart `archivos`)           |
+| POST   | `/api/teliskratel/importar-data`      | `teliskratel`                        | Importa desde `backend/data/`                     |
+| DELETE | `/api/teliskratel/importaciones/:lote`| `teliskratel`                        | Elimina un lote y sus registros                   |
+
 ## Autenticación y roles
 
 El middleware `authenticate` valida el token JWT del header `Authorization: Bearer <token>`. El middleware `authorize('admin')` restringe el acceso por rol.
@@ -204,6 +232,12 @@ Las tablas esperadas en SQL Server son:
 - **`ReclamosTelefonia`** — reclamos registrados por ODECO (`IdReclamo`, `CodigoReclamo`, `Dn`, `TipoFalla`, `Estado`, `IdBoletaGenerada`, ...)
 - **`ReclamoSeguimiento`** — eventos/historial de cada reclamo (`IdReclamo`, `TipoEvento`, `Titulo`, `Detalle`, ...)
 - **`TiposFallaReclamo`** — catálogo de tipos de falla para reclamos (`IdTipoFalla`, `Nombre`, `Activo`)
+- **`trabajos_papeletas`** — PDFs subidos en Suscripciones (`id`, `nombre_original`, `ruta`, `campos`, `creado_en`...) + columna `trabajos.papeleta_id`
+- **`teliskratel`** — registros de abonados de la central (`lote_import`, `fecha_import`, `origen_archivo`, `directory_number`, `dn_digitos`, `estado_registro`, `ip_origen`, `central`, `puerto`, `subscriber_type`, `supplementary_service_set`, `bloqueo`, `hash_linea`...)
+- **`teliskratel_import`** — metadatos de cada importación (`lote_import`, conteos)
+
+Las tablas `trabajos_papeletas`, `teliskratel` y `teliskratel_import` se crean automáticamente al arrancar
+(`ensurePapeletasTable`, `ensureTeliskratelTable` en `server.js`). Teliskratel autocarga los `.out` si la tabla está vacía.
 
 Las contraseñas se almacenan con hash **PBKDF2** (120000 iteraciones, SHA-256, salt de 16 bytes).
 

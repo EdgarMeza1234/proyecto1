@@ -14,6 +14,7 @@ const DEFAULT_PERMISSIONS = {
   users: ['admin'],
   integrations: ['admin'],
   iskratel: ['admin', 'jefe', 'operador', 'tecnico'],
+  teliskratel: ['admin', 'jefe', 'operador', 'tecnico', 'odeco'],
   registro: ['admin', 'jefe', 'operador'],
   trafico: ['admin', 'jefe', 'operador'],
   nortel: ['admin', 'jefe', 'operador'],

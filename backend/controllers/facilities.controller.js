@@ -1,5 +1,8 @@
 const { getPool, getSql, getFacilidadesTable, safeSqlName } = require('../db/pool');
 const { registrarAuditoria } = require('../services/facilities-audit.service');
+const teliskratelService = require('../services/teliskratel.service');
+
+const DN_SOLO_DIGITOS = "REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LTRIM(RTRIM(ISNULL(Dn,''))),'-',''),' ',''),'.',''),'(',''),')',''),'+','')";
 
 const CAMPOS_COMPARABLES = ['Dn', 'ParSec', 'ParSecCentral', 'ParSecBloq', 'ParSecPar', 'Obs'];
 
@@ -58,6 +61,38 @@ async function lookupDn(req, res, next) {
       `);
 
     res.json(result.recordset[0] || null);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function lookupDnCombinado(req, res, next) {
+  try {
+    const raw = decodeURIComponent(req.params.dn || '').trim();
+    const digitos = raw.replace(/\D/g, '');
+    if (!digitos) return res.status(400).json({ message: 'Debe enviar el DN o numero telefonico.' });
+    const ult5 = digitos.slice(-5);
+
+    const pool = await getPool();
+    const table = safeSqlName(getFacilidadesTable());
+    const mdfResult = await pool.request()
+      .input('ult5', (await getSql()).VarChar(5), ult5)
+      .query(`
+        SELECT TOP (50)
+          ID, Dn, Central, ParPriBloq, ParPriPar, ParSec, ParSecCentral, ParSecBloq, ParSecPar, Obs
+        FROM ${table}
+        WHERE RIGHT(${DN_SOLO_DIGITOS}, 5) = @ult5
+        ORDER BY ID DESC
+      `);
+
+    let teliskratel = [];
+    try {
+      teliskratel = await teliskratelService.buscarPorUltimos5(digitos);
+    } catch (err) {
+      console.error('Error consultando teliskratel:', err.message);
+    }
+
+    res.json({ ultimos5: ult5, mdf: mdfResult.recordset, teliskratel });
   } catch (error) {
     next(error);
   }
@@ -285,4 +320,4 @@ async function getAuditoria(req, res, next) {
   }
 }
 
-module.exports = { lookupDn, lookupBlock, updateBlock, getObservations, addObservation, getAuditoria };
+module.exports = { lookupDn, lookupDnCombinado, lookupBlock, updateBlock, getObservations, addObservation, getAuditoria };

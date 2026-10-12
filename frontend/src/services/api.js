@@ -54,6 +54,20 @@ export const iskratelApi = {
   getArchivos: () => api.get('/iskratel/archivos')
 }
 
+export const teliskratelApi = {
+  list: (params) => api.get('/teliskratel', { params }),
+  importaciones: () => api.get('/teliskratel/importaciones'),
+  archivos: () => api.get('/teliskratel/archivos'),
+  buscar: (numero) => api.get(`/teliskratel/buscar/${encodeURIComponent(numero)}`),
+  importar: (formData) => api.post('/teliskratel/importar', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  importarData: (archivos) => api.post('/teliskratel/importar-data', { archivos }),
+  eliminarImportacion: (lote) => api.delete(`/teliskratel/importaciones/${encodeURIComponent(lote)}`)
+}
+
+export const lookupDnCombinado = (numero) => api.get(`/facilidades/dn-combinado/${encodeURIComponent(numero)}`)
+
 export const nortelApi = {
   listFiles: (mes, ano) => api.get('/nortel/archivos', { params: { mes, ano } }),
   consolidar: (data) => api.post('/nortel/consolidar', data),

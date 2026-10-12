@@ -28,6 +28,7 @@ const traficoRoutes = require('./routes/trafico.routes');
 const nortelRoutes = require('./routes/nortel.routes');
 const mineralesRoutes = require('./routes/minerales.routes');
 const papeletasRoutes = require('./routes/papeletas.routes');
+const teliskratelRoutes = require('./routes/teliskratel.routes');
 
 const app = express();
 const server = http.createServer(app);
@@ -57,6 +58,7 @@ app.use('/api/trafico', traficoRoutes);
 app.use('/api/nortel', nortelRoutes);
 app.use('/api/minerales', mineralesRoutes);
 app.use('/api/papeletas', papeletasRoutes);
+app.use('/api/teliskratel', teliskratelRoutes);
 
 // === SISATT REST routes ===
 app.get('/api/sisatt/logs', (req, res) => {
@@ -158,6 +160,9 @@ ensureTrabajosColumns().catch(err => console.error('[auditoria-trabajos] Error f
 
 const { ensurePapeletasTable } = require('./services/papeleta.service');
 ensurePapeletasTable().catch(err => console.error('[papeletas] Error fatal:', err.message))
+
+const { ensureTeliskratelTable } = require('./services/teliskratel.service');
+ensureTeliskratelTable().catch(err => console.error('[teliskratel] Error fatal:', err.message))
 
 server.listen(config.port, config.host, () => {
   const displayHost = config.host === '0.0.0.0' ? 'TU_IP_LOCAL' : config.host;

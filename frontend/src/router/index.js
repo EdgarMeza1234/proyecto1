@@ -12,6 +12,7 @@ const routes = [
   { path: '/integrations', name: 'Integrations', component: () => import('../views/IntegrationsView.vue'), meta: { requiresAuth: true } },
   { path: '/reclamos', name: 'Reclamos', component: () => import('../views/ReclamosView.vue'), meta: { requiresAuth: true } },
   { path: '/iskratel', name: 'Iskratel', component: () => import('../views/IskratelView.vue'), meta: { requiresAuth: true } },
+  { path: '/teliskratel', name: 'Teliskratel', component: () => import('../views/TeliskratelView.vue'), meta: { requiresAuth: true } },
   { path: '/registro', name: 'RegistroTrabajos', component: () => import('../views/RegistroTrabajosView.vue'), meta: { requiresAuth: true } },
   { path: '/suscripciones', name: 'Suscripciones', component: () => import('../views/SuscripcionesView.vue'), meta: { requiresAuth: true } },
   { path: '/registro1', name: 'RegistroTrabajo1', component: () => import('../views/RegistroTrabajos1View.vue'), meta: { requiresAuth: true } },

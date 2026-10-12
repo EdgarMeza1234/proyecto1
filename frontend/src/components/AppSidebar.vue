@@ -135,7 +135,7 @@ function toggleSection(name) {
 }
 
 const navGroups = computed(() => {
-  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/auditoria': 'auditoria', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/suscripciones': 'suscripciones', '/registro1': 'registro1', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales', '/auditoria-general': 'auditoria-general' }
+  const permMap = { '/': 'dashboard', '/reclamos': 'reclamos', '/tickets': 'tickets', '/blocks': 'blocks', '/auditoria': 'auditoria', '/reports': 'reports', '/users': 'users', '/integrations': 'integrations', '/iskratel': 'iskratel', '/teliskratel': 'teliskratel', '/trafico': 'trafico', '/nortel': 'nortel', '/registro': 'registro', '/suscripciones': 'suscripciones', '/registro1': 'registro1', '/permisos': 'permisos', '/sisatt': 'sisatt', '/minerales': 'minerales', '/auditoria-general': 'auditoria-general' }
 
   const all = [
     { view: '/', label: 'Tablero', icon: '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
@@ -146,6 +146,7 @@ const navGroups = computed(() => {
     { view: '/users', label: 'Usuarios', icon: '<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>' },
     { view: '/integrations', label: 'Integraciones', icon: '<svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>' },
     { view: '/iskratel', label: 'Central Iskratel', icon: '<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>' },
+    { view: '/teliskratel', label: 'Registro Teliskratel', icon: '<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline><line x1="8" y1="16" x2="16" y2="16"></line></svg>' },
     { view: '/trafico', label: 'Trafico Iskratel', icon: '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>' },
     { view: '/nortel', label: 'Trafico Nortel', icon: '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>' },
     { view: '/registro', label: 'Registro de Trabajos', icon: '<svg viewBox="0 0 24 24"><path d="M9 12h6"></path><path d="M9 16h6"></path><path d="M9 8h6"></path><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18"></path></svg>' },
@@ -159,7 +160,7 @@ const navGroups = computed(() => {
 
   const groups = [
     { name: 'General', items: ['/', '/tickets', '/reclamos', '/reports', '/registro', '/suscripciones', '/registro1'] },
-    { name: 'Centrales', items: ['/iskratel', '/trafico', '/nortel', '/sisatt'] },
+    { name: 'Centrales', items: ['/iskratel', '/teliskratel', '/trafico', '/nortel', '/sisatt'] },
     { name: 'Facilidades', items: ['/blocks'] },
     { name: 'Administración', items: ['/users', '/permisos', '/auditoria', '/auditoria-general', '/integrations'] }
   ]
