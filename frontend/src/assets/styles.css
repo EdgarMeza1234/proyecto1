@@ -1281,6 +1281,13 @@ h3 {
   color: var(--ink);
 }
 
+.info strong.highlight {
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
 /* Timeline */
 .timeline {
   list-style: none;

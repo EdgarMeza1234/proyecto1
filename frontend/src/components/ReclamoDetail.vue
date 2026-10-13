@@ -27,6 +27,26 @@
         <span>Nro. boleta talonario</span>
         <strong>{{ reclamo.NumBoleta }}</strong>
       </div>
+      <div v-if="reclamo.IdBoletaGenerada" class="info">
+        <span>Par primario</span>
+        <strong class="highlight">{{ reclamo.ParPrimarioCompleto || '—' }}</strong>
+      </div>
+      <div v-if="reclamo.IdBoletaGenerada" class="info">
+        <span>Central</span>
+        <strong>{{ reclamo.Central || '—' }}</strong>
+      </div>
+      <div v-if="reclamo.IdBoletaGenerada && reclamo.ParSec" class="info">
+        <span>Par secundario</span>
+        <strong>{{ reclamo.ParSec }}</strong>
+      </div>
+      <div v-if="reclamo.IdBoletaGenerada && reclamo.Armario" class="info">
+        <span>Armario</span>
+        <strong>{{ reclamo.Armario }}</strong>
+      </div>
+      <div v-if="reclamo.IdBoletaGenerada && reclamo.CajDis" class="info">
+        <span>Caja dist.</span>
+        <strong>{{ reclamo.CajDis }}</strong>
+      </div>
       <div v-if="reclamo.TecnicoAsignado" class="info">
         <span>Tecnico asignado</span>
         <strong>{{ reclamo.TecnicoAsignado }}</strong>

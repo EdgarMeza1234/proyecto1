@@ -10,7 +10,8 @@ async function listReclamos() {
       r.FechaRegistro, r.Estado, r.ResultadoRevision,
       r.RevisadoPor, r.FechaRevision, r.IdBoletaGenerada,
       r.Observaciones,
-      b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado
+      b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado,
+      b.Central, b.ParPrimarioCompleto, b.ParPriBloq, b.ParPriPar
     FROM ReclamosTelefonia r
     LEFT JOIN BoletasReparacion b ON b.IdBoleta = r.IdBoletaGenerada
     ORDER BY r.FechaRegistro DESC
@@ -23,7 +24,9 @@ async function getReclamoById(id) {
   const result = await pool.request()
     .input('IdReclamo', (await getSql()).Int, id)
     .query(`
-      SELECT r.*, b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado
+      SELECT r.*, b.CodigoBoleta, b.NumBoleta, b.TecnicoAsignado,
+             b.Central, b.ParPriBloq, b.ParPriPar, b.ParPrimarioCompleto,
+             b.ParSec, b.Armario, b.CajDis, b.PruebaCentral
       FROM ReclamosTelefonia r
       LEFT JOIN BoletasReparacion b ON b.IdBoleta = r.IdBoletaGenerada
       WHERE r.IdReclamo = @IdReclamo
