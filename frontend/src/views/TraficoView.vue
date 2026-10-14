@@ -39,11 +39,25 @@
         </p>
       </div>
     </div>
-    <div class="block-toolbar" style="gap:12px;flex-wrap:wrap">
-      <input ref="fileInput" type="file" accept=".ama" multiple />
-      <button class="primary" :disabled="uploading || !mes || !ano" @click="subirArchivos">
+    <div class="block-toolbar" style="gap:12px;flex-wrap:wrap;align-items:center">
+      <input ref="fileInput" type="file" accept=".ama" multiple @change="onFilesSelected" />
+      <button class="primary" :disabled="uploading || !selectedFiles.length || !mes || !ano" @click="subirArchivos">
         {{ uploading ? 'Subiendo...' : 'Subir archivos' }}
       </button>
+      <span v-if="selectedFiles.length" class="muted" style="font-size:13px">
+        {{ selectedFiles.length }} archivo(s) · {{ selectedTotalMB }} MB
+      </span>
+    </div>
+    <p v-if="selectedFiles.length && (!mes || !ano)" class="muted" style="margin-top:6px;font-size:12px">
+      Seleccione Mes y Anio (arriba) para habilitar el boton "Subir archivos".
+    </p>
+    <div v-if="uploading" style="padding:12px 0">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px">
+        <span>Subiendo archivos al servidor...</span><span>{{ uploadPct }}%</span>
+      </div>
+      <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden">
+        <div style="height:100%;background:var(--accent);transition:width 0.3s" :style="{ width: uploadPct + '%' }"></div>
+      </div>
     </div>
     <div v-if="uploadResult" class="block-message success" style="margin-top:8px">{{ uploadResult }}</div>
   </section>
@@ -220,6 +234,13 @@ const erroresCargados = ref(false)
 const fileInput = ref(null)
 const uploading = ref(false)
 const uploadResult = ref('')
+const uploadPct = ref(0)
+const selectedFiles = ref([])
+
+const selectedTotalMB = computed(() => {
+  const bytes = selectedFiles.value.reduce((sum, f) => sum + (f.size || 0), 0)
+  return (bytes / (1024 * 1024)).toFixed(1)
+})
 
 const convPct = ref(0)
 const convArchivoActual = ref(0)
@@ -316,9 +337,13 @@ async function listarArchivos() {
   }
 }
 
+function onFilesSelected(e) {
+  selectedFiles.value = Array.from(e.target.files || [])
+  uploadResult.value = ''
+}
+
 async function subirArchivos() {
-  const files = fileInput.value?.files
-  if (!files || !files.length) {
+  if (!selectedFiles.value.length) {
     error.value = 'Seleccione al menos un archivo .ama para subir'
     return
   }
@@ -329,15 +354,20 @@ async function subirArchivos() {
   uploading.value = true
   error.value = ''
   uploadResult.value = ''
+  uploadPct.value = 0
   try {
     const formData = new FormData()
-    for (const f of files) formData.append('archivos', f)
+    for (const f of selectedFiles.value) formData.append('archivos', f)
     formData.append('mes', mes.value)
     formData.append('ano', ano.value)
     const res = await api.post('/trafico/subir', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' }
+      headers: { 'Content-Type': 'multipart/form-data' },
+      onUploadProgress: (e) => {
+        if (e.total) uploadPct.value = Math.round((e.loaded / e.total) * 100)
+      }
     })
     uploadResult.value = `${res.data.total} archivo(s) subido(s) a la carpeta ${dirName.value}`
+    selectedFiles.value = []
     if (fileInput.value) fileInput.value.value = ''
     await listarArchivos()
   } catch (err) {
