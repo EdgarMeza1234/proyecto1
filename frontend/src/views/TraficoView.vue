@@ -22,10 +22,30 @@
     </div>
 
     <div v-if="dirName" class="block-message" style="margin-top:8px">
-      Directorio: <code>E:\AMAS\2026\{{ dirName }}\</code> |
+      Carpeta de trabajo en el servidor: <code>{{ dirName }}</code> |
       Tabla BD: <code>{{ tableName }}</code> |
       Archivo salida: <code>{{ dirName }}.TXT</code>
     </div>
+  </section>
+
+  <!-- 0. SUBIR ARCHIVOS -->
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>0. Subir archivos .ama desde mi PC</h2>
+        <p class="muted">
+          Los archivos .ama se copian al servidor dentro de la carpeta del mes/anio seleccionado.
+          Elija primero Mes y Anio, seleccione los archivos de su PC y presione Subir.
+        </p>
+      </div>
+    </div>
+    <div class="block-toolbar" style="gap:12px;flex-wrap:wrap">
+      <input ref="fileInput" type="file" accept=".ama" multiple />
+      <button class="primary" :disabled="uploading || !mes || !ano" @click="subirArchivos">
+        {{ uploading ? 'Subiendo...' : 'Subir archivos' }}
+      </button>
+    </div>
+    <div v-if="uploadResult" class="block-message success" style="margin-top:8px">{{ uploadResult }}</div>
   </section>
 
   <!-- 1. ARCHIVOS -->
@@ -197,6 +217,10 @@ const splitResult = ref(null)
 const errores = ref([])
 const erroresCargados = ref(false)
 
+const fileInput = ref(null)
+const uploading = ref(false)
+const uploadResult = ref('')
+
 const convPct = ref(0)
 const convArchivoActual = ref(0)
 const convTotalArchivos = ref(0)
@@ -289,6 +313,37 @@ async function listarArchivos() {
     archivos.value = []
   } finally {
     loading.value = false
+  }
+}
+
+async function subirArchivos() {
+  const files = fileInput.value?.files
+  if (!files || !files.length) {
+    error.value = 'Seleccione al menos un archivo .ama para subir'
+    return
+  }
+  if (!mes.value || !ano.value) {
+    error.value = 'Seleccione Mes y Anio antes de subir archivos'
+    return
+  }
+  uploading.value = true
+  error.value = ''
+  uploadResult.value = ''
+  try {
+    const formData = new FormData()
+    for (const f of files) formData.append('archivos', f)
+    formData.append('mes', mes.value)
+    formData.append('ano', ano.value)
+    const res = await api.post('/trafico/subir', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+    uploadResult.value = `${res.data.total} archivo(s) subido(s) a la carpeta ${dirName.value}`
+    if (fileInput.value) fileInput.value.value = ''
+    await listarArchivos()
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    uploading.value = false
   }
 }
 

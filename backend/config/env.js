@@ -40,5 +40,6 @@ module.exports = {
     trustServerCertificate: process.env.SQLSERVER_TRUST_CERT !== 'false',
     facilidadesTable: process.env.SQLSERVER_FACILIDADES_TABLE || 'FacilidadesLinea'
   },
-  traficoDb: process.env.SQLSERVER_TRAFICO_DATABASE || 'trafico'
+  traficoDb: process.env.SQLSERVER_TRAFICO_DATABASE || 'trafico',
+  traficoBaseDir: process.env.TRAFICO_BASE_DIR || 'E:\\AMAS\\2026'
 };

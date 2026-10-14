@@ -5,7 +5,7 @@ const sql = require('mssql');
 const config = require('../config/env');
 const socketService = require('./socket');
 
-const BASE_DIR = 'E:\\AMAS\\2026';
+const BASE_DIR = config.traficoBaseDir;
 
 let traficoPool;
 
@@ -279,6 +279,30 @@ async function listFiles(mes, ano) {
       ruta: path.join(dirPath, f),
       tamano: fs.statSync(path.join(dirPath, f)).size
     }));
+}
+
+async function guardarArchivosSubidos(mes, ano, files = []) {
+  const dirPath = getDirPath(mes, ano);
+  await fsPromises.mkdir(dirPath, { recursive: true });
+  const guardados = [];
+  for (const file of files) {
+    const nombre = path.basename(file.originalname || `ama_${Date.now()}`);
+    const destino = path.join(dirPath, nombre);
+    try {
+      if (file.buffer) {
+        await fsPromises.writeFile(destino, file.buffer);
+      } else {
+        await fsPromises.copyFile(file.path, destino);
+      }
+    } finally {
+      if (file.path) {
+        try { await fsPromises.unlink(file.path); } catch {}
+      }
+    }
+    const stat = await fsPromises.stat(destino);
+    guardados.push({ nombre, tamano: stat.size });
+  }
+  return { directorio: dirPath, guardados, total: guardados.length };
 }
 
 async function convertirArchivo(filePath, mes, ano, tipo = 'TXT') {
@@ -621,6 +645,7 @@ async function limpiarTabla(mes, ano) {
 
 module.exports = {
   listFiles,
+  guardarArchivosSubidos,
   convertirArchivo,
   splitArchivo,
   splitPorDia,

@@ -102,7 +102,8 @@ Payload JWT: `{ id, username, name, role, roleName, dn }`.
 | Suscripciones | `/suscripciones` | `suscripciones` | estable (§5.2) |
 | Registro de Trabajo 1 | `/registro1` | `registro1` | estable (§5.2) |
 | Registro de Trabajos | `/registro` | `registro` | **NO tocar** |
-| Tráfico / Nortel / SISATT | `/trafico` `/nortel` `/sisatt` | varios | estable |
+| Tráfico | `/trafico` | `trafico` | estable + **subida .ama por navegador** (§5.4) |
+| Nortel / SISATT | `/nortel` `/sisatt` | varios | estable |
 | Permisos / Auditoría | `/permisos` `/auditoria-general` | admin | estable |
 
 ### 5.1 Reclamos — resaltado por tiempo
@@ -136,6 +137,20 @@ Persiste los archivos `.out` de la central y permite consultarlos, además de in
 - **Migración manual (opcional):** `database/migrations/002_teliskratel.sql` (idempotente; crea tablas + índices igual que `ensureTeliskratelTable`, para servidores donde no arranque el backend). La 001 es `001_reclamos_direccion1_celulares.sql`.
 - **Endpoints** (`/api/teliskratel`, ver §6).
 
+### 5.4 Tráfico — carga de `.ama` por navegador
+El backend corre en el servidor (Tailscale/Docker) y **no** puede leer `E:\AMAS\2026` de la PC del usuario.
+Por eso los `.ama` se **suben desde el navegador** y se materializan en una carpeta de trabajo del servidor.
+
+- **Carpeta base configurable:** `TRAFICO_BASE_DIR` (en `config/env.js` → `traficoBaseDir`).
+  - Local (Windows): default `E:\AMAS\2026`.
+  - Servidor (compose): `TRAFICO_BASE_DIR=/app/trafico-data` + volumen `./backend/trafico-data:/app/trafico-data`.
+- Dentro de la base, los archivos viven en `<MES_ABBR><ANO>/` (ej. `AGO2026\`). Tabla de salida `CDR<MES_ABBR><ANO>`.
+- **Flujo:** elegir Mes/Año → `POST /api/trafico/subir` (multipart, campo `archivos`) → se guardan los `.ama` →
+  `listar archivos` → `Convertir todo a TXT` → `Insertar .ama en BD` → `Split` / `Errores`. El resto del pipeline quedó intacto.
+- **Servicio:** `trafico.service.js` (`guardarArchivosSubidos` escribe en `getDirPath(mes,ano)`).
+  Toda la lógica (parseo de fechas, `padWithF`, minutos, columnas `un..setdos`, `InvalidData.txt`) se conserva.
+- `backend/trafico-data/` está en `.gitignore` (datos subidos, no se versiona).
+
 ---
 
 ## 6. Endpoints relevantes (nuevos)
@@ -150,6 +165,19 @@ Persiste los archivos `.out` de la central y permite consultarlos, además de in
 | POST | `/importar` | `teliskratel` | Subir `.out/.txt` (multipart, campo `archivos`) |
 | POST | `/importar-data` | `teliskratel` | Importar desde `backend/data/` (`{ archivos:[...] }`) |
 | DELETE | `/importaciones/:lote` | `teliskratel` | Elimina lote y sus registros |
+
+### Tráfico — `/api/trafico`
+| Método | Ruta | Descripción |
+|---|---|---|
+| POST | `/subir` | Sube `.ama` (multipart, campo `archivos` + `mes`,`ano`); los guarda en `<TRAFICO_BASE_DIR>/<MES><ANO>/` |
+| GET | `/archivos` | Lista `.ama` de la carpeta del mes/año (`mes`, `ano`) |
+| POST | `/convertir` | Convierte un `.ama` a `.TXT` (`ruta, mes, ano`) |
+| POST | `/procesar-mes` | Convierte todos los `.ama` del mes a `<MES><ANO>.TXT` (progreso por socket `trafico-progress`) |
+| POST | `/split-mes` | Divide `<MES><ANO>.TXT` en `.SAL`/`.ENT` |
+| POST | `/crear-tabla` | Crea/valida la tabla `CDR<MES><ANO>` |
+| POST | `/limpiar-tabla` | Vacía la tabla del mes |
+| POST | `/insertar-bd` | Inserta los `.ama` en la tabla `CDR<MES><ANO>` |
+| GET | `/errores` | Lee `ERROR`/`InvalidData.txt` de la carpeta del mes |
 
 ### Búsqueda combinada (usada por el módulo Bloques)
 | Método | Ruta | Descripción |
@@ -183,7 +211,7 @@ Persiste los archivos `.out` de la central y permite consultarlos, además de in
 ## 9. Convenciones y avisos
 
 - **NO tocar ni versionar:** `frontend/src/views/SISATTView.vue`, `frontend/src/views/RegistroTrabajosView.vue` (producción).
-- **NO versionar:** `.env`, `/*.pdf`, `backend/uploads/`, `backend/data/`, `*.out` (ver `.gitignore`).
+- **NO versionar:** `.env`, `/*.pdf`, `backend/uploads/`, `backend/data/`, `backend/trafico-data/`, `*.out` (ver `.gitignore`).
 - Estilo: no agregar comentarios salvo necesidad; seguir patrones existentes (`ensureXTable`, `authorizePermiso`).
 - PowerShell remoto: para comandos con comillas complejas usar `-C`/base64; `rg` no está disponible (usar `grep`/`Select-String`).
 - Colores/estilos globales en `frontend/src/assets/styles.css`.
@@ -206,3 +234,4 @@ Persiste los archivos `.out` de la central y permite consultarlos, además de in
 - `ffae40a`, `64568e8`, `3a1c3d0`, `023c5f6`, `aa99ddf` Reclamos: umbral >=24h y parpadeo por borde.
 - Formulario boleta con token (`openTicketFormulario`).
 - **Sin commitear (trabajo local de esta sesión):** módulo Teliskratel (backend + frontend) y ajustes de Bloques.
+- Tráfico: carga de `.ama` por navegador (`POST /api/trafico/subir`) + `TRAFICO_BASE_DIR` configurable y volumen `backend/trafico-data`.

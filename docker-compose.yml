@@ -12,8 +12,10 @@ services:
       - DB_HOST=192.168.1.151
       - NODE_ENV=production
       - UPLOAD_DIR=/app/uploads/papeletas
+      - TRAFICO_BASE_DIR=/app/trafico-data
     volumes:
       - ./backend/uploads:/app/uploads
+      - ./backend/trafico-data:/app/trafico-data
     networks:
       - sisatt-net
 
