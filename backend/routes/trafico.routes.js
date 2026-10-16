@@ -18,6 +18,8 @@ const upload = multer({
 
 router.get('/archivos', authenticate, traficoController.listFiles);
 router.post('/subir', authenticate, upload.array('archivos', 40), traficoController.subirArchivos);
+router.get('/generados', authenticate, traficoController.listarGenerados);
+router.get('/descargar', authenticate, traficoController.descargar);
 router.post('/convertir', authenticate, traficoController.convertirArchivo);
 router.post('/procesar-mes', authenticate, traficoController.procesarMes);
 router.post('/split-mes', authenticate, traficoController.splitMes);

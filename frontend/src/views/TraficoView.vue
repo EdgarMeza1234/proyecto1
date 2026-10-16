@@ -151,6 +151,36 @@
     </div>
   </section>
 
+  <!-- 3.1 ARCHIVOS GENERADOS / DESCARGAR -->
+  <section class="panel" v-if="dirName">
+    <div class="panel-head">
+      <div>
+        <h2>Archivos generados en la carpeta (descargar)</h2>
+        <p class="muted">
+          Se guardan en el servidor, en la carpeta <code>{{ dirName }}</code>.
+          Descargue el <code>.TXT</code> para revision y los <code>.SAL</code> / <code>.ENT</code> para enviarlos a otra unidad.
+        </p>
+      </div>
+      <div class="panel-tools">
+        <button class="secondary small" :disabled="!mes || !ano" @click="cargarGenerados">Actualizar</button>
+      </div>
+    </div>
+
+    <div v-if="archivosGenerados.length" class="table">
+      <div class="table-header" style="display:grid;grid-template-columns:2fr 1fr auto;gap:16px;padding:0 16px;font-weight:600;font-size:13px;color:var(--muted);margin-bottom:4px">
+        <span>Archivo</span>
+        <span>Tamano</span>
+        <span>Accion</span>
+      </div>
+      <div v-for="f in archivosGenerados" :key="f.nombre" class="table-row">
+        <span><code>{{ f.nombre }}</code></span>
+        <span>{{ (f.tamano / 1024).toFixed(1) }} KB</span>
+        <span><button class="secondary small" @click="descargarArchivo(f.nombre)">Descargar</button></span>
+      </div>
+    </div>
+    <div v-else class="block-message" style="margin-top:8px">Sin archivos en la carpeta todavia.</div>
+  </section>
+
   <!-- 4. ERRORES -->
   <section class="panel">
     <div class="panel-head">
@@ -236,6 +266,7 @@ const uploading = ref(false)
 const uploadResult = ref('')
 const uploadPct = ref(0)
 const selectedFiles = ref([])
+const archivosGenerados = ref([])
 
 const selectedTotalMB = computed(() => {
   const bytes = selectedFiles.value.reduce((sum, f) => sum + (f.size || 0), 0)
@@ -335,6 +366,7 @@ async function listarArchivos() {
   } finally {
     loading.value = false
   }
+  cargarGenerados()
 }
 
 function onFilesSelected(e) {
@@ -377,10 +409,40 @@ async function subirArchivos() {
   }
 }
 
+async function cargarGenerados() {
+  if (!mes.value || !ano.value) return
+  try {
+    const res = await api.get('/trafico/generados', { params: { mes: mes.value, ano: ano.value } })
+    archivosGenerados.value = res.data.archivos || []
+  } catch (err) {
+    archivosGenerados.value = []
+  }
+}
+
+async function descargarArchivo(nombre) {
+  try {
+    const res = await api.get('/trafico/descargar', {
+      params: { mes: mes.value, ano: ano.value, archivo: nombre },
+      responseType: 'blob'
+    })
+    const url = URL.createObjectURL(res.data)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = nombre
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 60000)
+  } catch (err) {
+    error.value = 'Error al descargar: ' + err.message
+  }
+}
+
 async function convertirArchivo(ruta) {
   try {
     const res = await api.post('/trafico/convertir', { ruta, mes: mes.value, ano: ano.value })
     conversionResult.value = `Convertido: ${res.data.convertidos} reg, Errores: ${res.data.errores}, Omitidos: ${res.data.omitidos || 0}`
+    cargarGenerados()
   } catch (err) {
     error.value = err.message
   }
@@ -405,6 +467,7 @@ async function procesarMesCompleto() {
   } finally {
     procesando.value = false
   }
+  cargarGenerados()
 }
 
 async function crearTabla() {
@@ -450,6 +513,7 @@ async function insertarMes() {
   } finally {
     insertando.value = false
   }
+  cargarGenerados()
 }
 
 async function splitearMes() {
@@ -458,6 +522,7 @@ async function splitearMes() {
   try {
     const res = await api.post('/trafico/split-mes', { mes: mes.value, ano: ano.value })
     splitResult.value = res.data
+    cargarGenerados()
   } catch (err) {
     error.value = err.message
   }

@@ -305,6 +305,28 @@ async function guardarArchivosSubidos(mes, ano, files = []) {
   return { directorio: dirPath, guardados, total: guardados.length };
 }
 
+async function listarArchivosGenerados(mes, ano) {
+  const dirPath = getDirPath(mes, ano);
+  try {
+    const files = await fsPromises.readdir(dirPath);
+    const archivos = [];
+    for (const f of files) {
+      const stat = await fsPromises.stat(path.join(dirPath, f));
+      archivos.push({ nombre: f, tamano: stat.size });
+    }
+    return { directorio: getDirName(mes, ano), archivos };
+  } catch {
+    return { directorio: getDirName(mes, ano), archivos: [] };
+  }
+}
+
+function rutaArchivoGenerado(mes, ano, nombre) {
+  const dirPath = getDirPath(mes, ano);
+  const safe = path.basename(String(nombre || '').trim());
+  if (!safe) throw new Error('Nombre de archivo invalido');
+  return path.join(dirPath, safe);
+}
+
 async function convertirArchivo(filePath, mes, ano, tipo = 'TXT') {
   const dirName = getDirName(mes, ano);
   const outputDir = getDirPath(mes, ano);
@@ -651,6 +673,8 @@ async function limpiarTabla(mes, ano) {
 module.exports = {
   listFiles,
   guardarArchivosSubidos,
+  listarArchivosGenerados,
+  rutaArchivoGenerado,
   convertirArchivo,
   splitArchivo,
   splitPorDia,
