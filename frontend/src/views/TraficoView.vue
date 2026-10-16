@@ -443,7 +443,7 @@ async function insertarMes() {
   try {
     const res = await api.post('/trafico/insertar-bd', { mes: mes.value, ano: ano.value })
     const d = res.data
-    bdResultado.value = `Insertados: ${d.insertados} | Errores: ${d.errores} | Omitidos: ${d.omitidos || 0} | Total: ${d.total}\nTabla: ${d.tabla}${d.tablaCreada ? ' (creada)' : ''}`
+    bdResultado.value = `TXT generado: ${d.archivoTxt || dirName.value + '.TXT'} (convertidos: ${d.conversion?.totalConvertidos ?? 0})\nInsertados: ${d.insertados} | Errores: ${d.errores} | Omitidos: ${d.omitidos || 0} | Total: ${d.total}\nTabla: ${d.tabla}${d.tablaCreada ? ' (creada)' : ''}`
     resumen.value = d.resumen || []
   } catch (err) {
     error.value = err.message

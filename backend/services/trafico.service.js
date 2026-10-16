@@ -544,17 +544,20 @@ async function procesarEInsertar(mes, ano) {
   } catch {
     throw new Error(`Directorio no encontrado: ${dirPath}`);
   }
-  const tableName = getTableName(mes, ano);
-  const tableInfo = await asegurarTabla(mes, ano);
-  const pool = await getTraficoPool();
-  await pool.request().query(`DELETE FROM ${tableName}`);
-
   const files = await fsPromises.readdir(dirPath);
   const amaFiles = files.filter(f => f.toLowerCase().endsWith('.ama'));
 
   if (amaFiles.length === 0) {
     throw new Error(`No hay archivos .ama en ${dirPath}`);
   }
+
+  const conversion = await procesarArchivosPorDia(mes, ano);
+
+  const tableName = getTableName(mes, ano);
+  const tableInfo = await asegurarTabla(mes, ano);
+  const pool = await getTraficoPool();
+  await pool.request().query(`DELETE FROM ${tableName}`);
+
 
   let totalInsertados = 0;
   let totalErrores = 0;
@@ -601,6 +604,8 @@ async function procesarEInsertar(mes, ano) {
     tabla: tableName,
     tablaCreada: tableInfo.creada,
     archivosProcesados: amaFiles.length,
+    archivoTxt: `${dirName}.TXT`,
+    conversion,
     resumen
   };
 }
