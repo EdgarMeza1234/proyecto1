@@ -38,7 +38,7 @@ const MONTH_NUMBERS = {
   SEPTIEMBRE: '09', OCTUBRE: '10', NOVIEMBRE: '11', DICIEMBRE: '12'
 };
 
-function padWithF(field, targetLen = 16) {
+function padWithF(field, targetLen = 15) {
   const len = field.length;
   if (len >= targetLen) return field;
   return 'F'.repeat(targetLen - len) + field;
@@ -355,14 +355,18 @@ async function convertirArchivo(filePath, mes, ano, tipo = 'TXT') {
         omitidos++;
         continue;
       }
+      if (!(aDatos[9] || '').trim()) {
+        omitidos++;
+        continue;
+      }
       aDatos[12] = parseDateField(rawDate);
       const fecha1 = (aDatos[12] || '').substring(3, 8);
       const hora1 = (aDatos[12] || '').substring(9, 15);
       const t2 = secondsToMinutesStr(aDatos[37] || '0');
       const [minPart, secPart] = t2.split(':');
       const minuto1 = padMinute1(minPart || '0');
-      aDatos[9] = padWithF(aDatos[9] || '', 16);
-      const minuto2 = padMinute2(secPart || '0');
+      aDatos[9] = padWithF(aDatos[9] || '', 15);
+      const minuto2 = padMinute2(String(parseInt(secPart || '0', 10)));
       const aux = `AA00500|${fecha1}|000${aDatos[8] || ''}|${aDatos[9]}|${hora1}|${minuto1}|${minuto2}`;
       outputLines.push(aux);
     } catch {
@@ -393,8 +397,9 @@ async function splitArchivo(archivoPath) {
   const baseName = path.basename(archivoPath).replace(/\.[^.]+$/, '');
   const salPath = path.join(dir, `${baseName}.SAL`);
   const entPath = path.join(dir, `${baseName}.ENT`);
-  await fsPromises.writeFile(salPath, salLines.join('\r\n') + '\r\n', 'utf8');
-  await fsPromises.writeFile(entPath, entLines.join('\r\n') + '\r\n', 'utf8');
+  const strip = (arr) => arr.map(l => l.replace(/\|/g, ''));
+  await fsPromises.writeFile(salPath, strip(salLines).join('\r\n') + '\r\n', 'utf8');
+  await fsPromises.writeFile(entPath, strip(entLines).join('\r\n') + '\r\n', 'utf8');
   return { sal: salLines.length, ent: entLines.length, total: lines.length };
 }
 
