@@ -44,11 +44,11 @@
     <div class="date-range">
       <label>
         <span>Desde</span>
-        <input type="date" v-model="store.dateFrom" @change="applyDateRange" />
+        <input type="date" v-model="desdeInput" @change="applyDateRange" />
       </label>
       <label>
         <span>Hasta</span>
-        <input type="date" v-model="store.dateTo" @change="applyDateRange" />
+        <input type="date" v-model="hastaInput" @change="applyDateRange" />
       </label>
     </div>
     <div class="date-actions">
@@ -168,6 +168,8 @@ const reviewTarget = ref(null)
 const mobileDetailOpen = ref(false)
 const exporting = ref(false)
 const rangeError = ref('')
+const desdeInput = ref(store.dateFrom)
+const hastaInput = ref(store.dateTo)
 
 const canCreate = computed(() => auth.hasPermission('createReclamo'))
 
@@ -185,12 +187,14 @@ function closeMobileDetail() {
   store.selectedId = null
 }
 
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+
 function validateRange() {
-  if (!store.dateFrom || !store.dateTo) {
-    rangeError.value = 'Seleccione ambas fechas.'
+  if (!ISO_DATE.test(desdeInput.value) || !ISO_DATE.test(hastaInput.value)) {
+    rangeError.value = 'Complete ambas fechas (aaaa-mm-dd) antes de buscar.'
     return false
   }
-  if (store.dateFrom > store.dateTo) {
+  if (desdeInput.value > hastaInput.value) {
     rangeError.value = 'La fecha desde no puede ser mayor que la fecha hasta.'
     return false
   }
@@ -198,8 +202,12 @@ function validateRange() {
   return true
 }
 
+// Al store solo llega un rango valido: un valor a medio escribir dejaba el polling
+// de 30 s pidiendo un 400 y la lista congelada sin los reclamos nuevos.
 async function applyDateRange() {
   if (!validateRange()) return
+  store.dateFrom = desdeInput.value
+  store.dateTo = hastaInput.value
   try {
     await store.fetchReclamos()
   } catch (error) {
@@ -210,13 +218,21 @@ async function applyDateRange() {
 async function resetDateRange() {
   rangeError.value = ''
   store.resetDateRange()
-  await applyDateRange()
+  desdeInput.value = store.dateFrom
+  hastaInput.value = store.dateTo
+  try {
+    await store.fetchReclamos()
+  } catch (error) {
+    rangeError.value = error.message || 'No se pudieron cargar los reclamos.'
+  }
 }
 
 async function exportExcel() {
   if (!validateRange()) return
   exporting.value = true
   rangeError.value = ''
+  store.dateFrom = desdeInput.value
+  store.dateTo = hastaInput.value
   try {
     const response = await store.exportReclamos()
     const type = response.headers['content-type'] || 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
@@ -224,7 +240,7 @@ async function exportExcel() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `reclamos_${store.dateFrom}_${store.dateTo}.xlsx`
+    link.download = `reclamos_${store.activeRange.desde}_${store.activeRange.hasta}.xlsx`
     document.body.appendChild(link)
     link.click()
     link.remove()

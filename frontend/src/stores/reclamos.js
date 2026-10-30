@@ -57,6 +57,17 @@ export const useReclamoStore = defineStore('reclamos', () => {
     return { total, pendientes, enRevision, cerradosCentral, conBoleta }
   })
 
+  // Un valor a medio escribir (Chrome deja pasar anios de 6 digitos) hacia que el backend
+  // respondiera 400 y el polling quedara congelado sin datos nuevos.
+  const activeRange = computed(() => {
+    const valido = (v) => /^\d{4}-\d{2}-\d{2}$/.test(String(v || ''))
+    if (valido(dateFrom.value) && valido(dateTo.value) && dateFrom.value <= dateTo.value) {
+      return { desde: dateFrom.value, hasta: dateTo.value }
+    }
+    const today = isoDate()
+    return { desde: addDaysIso(today, -4), hasta: today }
+  })
+
   function notifySync() {
     localStorage.setItem(SYNC_KEY, Date.now().toString())
   }
@@ -82,14 +93,12 @@ export const useReclamoStore = defineStore('reclamos', () => {
   }
 
   async function fetchReclamos() {
-    const res = await api.get('/reclamos', {
-      params: { desde: dateFrom.value, hasta: dateTo.value }
-    })
+    const res = await api.get('/reclamos', { params: activeRange.value })
     setReclamos(res.data)
   }
 
   async function exportReclamos() {
-    const params = { desde: dateFrom.value, hasta: dateTo.value }
+    const params = { ...activeRange.value }
     if (statusFilter.value !== 'Todos') params.estado = statusFilter.value
     if (search.value.trim()) params.q = search.value.trim()
     return api.get('/reclamos/exportar', { params, responseType: 'blob' })
@@ -139,7 +148,7 @@ export const useReclamoStore = defineStore('reclamos', () => {
 
   return {
     reclamos, search, statusFilter, dateFrom, dateTo, selectedId,
-    filteredReclamos, selectedReclamo, stats,
+    filteredReclamos, selectedReclamo, stats, activeRange,
     setReclamos, addReclamo, updateReclamo, resetDateRange,
     fetchReclamos, fetchReclamoDetail, reviewReclamo, exportReclamos,
     startPolling, stopPolling, listenCrossTab, connectSocket

@@ -21,6 +21,7 @@ backend/*.log
 # ===== Papeletas subidas =====
 backend/uploads/
 /*.pdf
+docs/04-datos-papeletas/
 
 # ===== Datos de trafico subidos =====
 backend/trafico-data/
@@ -52,3 +53,9 @@ lerna-debug.log*
 # ===== Sistema operativo =====
 .DS_Store
 Thumbs.db
+
+# ===== Documentacion con credenciales =====
+# Los .docx de servidor llevan contraseñas en texto plano: nunca al remote.
+docs/**/*.docx
+docs/**/*.pptx
+~$*
