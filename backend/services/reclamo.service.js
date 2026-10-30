@@ -3,13 +3,15 @@ const { getPool, getSql } = require('../db/pool');
 async function listReclamos({ desde, hasta, limit = 1000, estado, q } = {}) {
   const pool = await getPool();
   const sql = await getSql();
+  // Viaja como texto y SQL lo convierte: un bind sql.Date con cadena reinterpreta
+  // la medianoche UTC en la zona del contenedor y corre el rango un dia entero.
   const request = pool.request()
-    .input('Desde', sql.Date, desde)
-    .input('Hasta', sql.Date, hasta);
+    .input('Desde', sql.VarChar(10), desde)
+    .input('Hasta', sql.VarChar(10), hasta);
 
   const where = [
-    'r.FechaRegistro >= @Desde',
-    'r.FechaRegistro < DATEADD(day, 1, @Hasta)'
+    'r.FechaRegistro >= CAST(@Desde AS date)',
+    'r.FechaRegistro < DATEADD(day, 1, CAST(@Hasta AS date))'
   ];
 
   if (estado) {

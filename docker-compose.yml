@@ -11,7 +11,6 @@ services:
     environment:
       - DB_HOST=192.168.1.151
       - NODE_ENV=production
-      - TZ=America/La_Paz
       - UPLOAD_DIR=/app/uploads/papeletas
       - TRAFICO_BASE_DIR=/app/trafico-data
       - NORTEL_BASE_DIR=/app/trafico-data/NORTEL
