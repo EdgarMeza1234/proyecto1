@@ -1,9 +1,33 @@
 const { getPool, getSql } = require('../db/pool');
 
-async function listReclamos() {
+async function listReclamos({ desde, hasta, limit = 1000, estado, q } = {}) {
   const pool = await getPool();
-  const result = await pool.request().query(`
-    SELECT TOP (200)
+  const sql = await getSql();
+  const request = pool.request()
+    .input('Desde', sql.Date, desde)
+    .input('Hasta', sql.Date, hasta);
+
+  const where = [
+    'r.FechaRegistro >= @Desde',
+    'r.FechaRegistro < DATEADD(day, 1, @Hasta)'
+  ];
+
+  if (estado) {
+    request.input('Estado', sql.VarChar(30), String(estado).trim().slice(0, 30));
+    where.push('r.Estado = @Estado');
+  }
+
+  const term = String(q || '').trim();
+  if (term) {
+    request.input('Q', sql.VarChar(200), `%${term.slice(0, 200)}%`);
+    where.push('(r.CodigoReclamo LIKE @Q OR r.Dn LIKE @Q OR r.NombreCliente LIKE @Q OR r.ReclamoDescripcion LIKE @Q)');
+  }
+
+  const safeLimit = Number.isInteger(limit) && limit > 0 ? limit : null;
+  const top = safeLimit ? `TOP (${safeLimit})` : '';
+
+  const result = await request.query(`
+    SELECT ${top}
       r.IdReclamo, r.CodigoReclamo, r.Dn, r.NombreCliente,
       r.Direccion, r.Direccion1, r.Celulares,
       r.TipoFalla, r.ReclamoDescripcion, r.RegistradoPor,
@@ -14,6 +38,7 @@ async function listReclamos() {
       b.Central, b.ParPrimarioCompleto, b.ParPriBloq, b.ParPriPar
     FROM ReclamosTelefonia r
     LEFT JOIN BoletasReparacion b ON b.IdBoleta = r.IdBoletaGenerada
+    WHERE ${where.join(' AND ')}
     ORDER BY r.FechaRegistro DESC
   `);
   return result.recordset;

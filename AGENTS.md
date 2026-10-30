@@ -1,7 +1,7 @@
 # AGENTS.md — Guía de continuación del proyecto
 
 Documento de traspaso para continuar el desarrollo del **Sistema de Reparación Telefónica (SISATT / COMACOTA)**.
-Última actualización: 2026-10-10.
+Última actualización: 2026-10-30.
 
 ---
 
@@ -95,7 +95,7 @@ Payload JWT: `{ id, username, name, role, roleName, dn }`.
 |---|---|---|---|
 | Tablero | `/` | `dashboard` | estable |
 | Boletas | `/tickets` | `tickets` | estable |
-| Reclamos | `/reclamos` | `reclamos` | estable (ver §5.1) |
+| Reclamos | `/reclamos` | `reclamos` | estable + **rango de fechas y export Excel** (ver §5.1) |
 | Bloques (MDF) | `/blocks` | `blocks` | estable + **búsqueda combinada** (§5.3) |
 | Central Iskratel | `/iskratel` | `iskratel` | lee `.out` en disco |
 | **Registro Teliskratel** | `/teliskratel` | `teliskratel` | **nuevo** (§5.3) |
@@ -106,10 +106,14 @@ Payload JWT: `{ id, username, name, role, roleName, dn }`.
 | Nortel / SISATT | `/nortel` `/sisatt` | varios | estable |
 | Permisos / Auditoría | `/permisos` `/auditoria-general` | admin | estable |
 
-### 5.1 Reclamos — resaltado por tiempo
+### 5.1 Reclamos — resaltado por tiempo, fechas y exportación
 - Umbral único **>= 24h sin cerrar** → rojo + parpadeo. `< 24h` verde. Estados `CerradoCentral`/`Cerrado` sin color.
 - Lógica: `views/ReclamosView.vue` (`timeColorClass`, `timePulse`).
 - Estilos: `assets/styles.css` (`@keyframes row-pulse-danger` con `box-shadow: inset` sobre `td`; **no** pintar la fila completa).
+- **Carga por defecto:** solo los últimos 5 días calendario (`desde = hoy - 4`, `hasta = hoy`). El backend aplica el rango en `GET /api/reclamos`; el frontend envía `desde`/`hasta` y muestra inputs `type="date"` con botones **Buscar** y **Últimos 5 días**.
+- **Lista:** máximo 1000 filas en pantalla; la exportación no tiene límite de filas.
+- **Exportación Excel:** botón **Exportar Excel** en la vista; `GET /api/reclamos/exportar?desde=YYYY-MM-DD&hasta=YYYY-MM-DD&estado=&q=` genera `.xlsx` con **ExcelJS**, respetando el rango, el estado y la búsqueda activos.
+- Backend: `services/reclamo.service.js` (`listReclamos({ desde, hasta, limit, estado, q })`); `controllers/reclamos.controller.js` (`getDateRange`, `exportExcel`). Dependencia nueva: `exceljs` (reconstruir el backend al desplegar).
 
 ### 5.2 Suscripciones / Registro 1
 - Separación: **Suscripciones** (`/suscripciones`) solo sube PDFs; **Registro de Trabajo 1** (`/registro1`) procesa formularios pendientes.
@@ -154,6 +158,12 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 ---
 
 ## 6. Endpoints relevantes (nuevos)
+
+### Reclamos — fechas y exportación
+| Método | Ruta | Permiso | Descripción |
+|---|---|---|---|
+| GET | `/api/reclamos?desde=&hasta=` | autenticado | Lista del rango; sin fechas usa los últimos 5 días (máximo 1000 filas). |
+| GET | `/api/reclamos/exportar?desde=&hasta=&estado=&q=` | autenticado | Descarga `.xlsx` con todo el rango y los filtros indicados. |
 
 ### Teliskratel — `/api/teliskratel`
 | Método | Ruta | Permiso | Descripción |
@@ -235,3 +245,4 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 - Formulario boleta con token (`openTicketFormulario`).
 - **Sin commitear (trabajo local de esta sesión):** módulo Teliskratel (backend + frontend) y ajustes de Bloques.
 - Tráfico: carga de `.ama` por navegador (`POST /api/trafico/subir`) + `TRAFICO_BASE_DIR` configurable y volumen `backend/trafico-data`.
+- Reclamos: rango de fechas (últimos 5 días por defecto), inputs de fecha y exportación a Excel con `exceljs`; implementado el 2026-10-30.

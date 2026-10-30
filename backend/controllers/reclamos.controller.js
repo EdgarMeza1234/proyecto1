@@ -1,7 +1,60 @@
+const ExcelJS = require('exceljs');
 const { getPool, getSql } = require('../db/pool');
 const reclamoService = require('../services/reclamo.service');
 const ticketService = require('../services/ticket.service');
 const { emitEvent } = require('../services/socket');
+
+const TZ = 'America/La_Paz';
+
+function isoDate(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(date);
+  const values = {};
+  for (const part of parts) {
+    if (part.type !== 'literal') values[part.type] = part.value;
+  }
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function addDaysIso(iso, days) {
+  const date = new Date(`${iso}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return isoDate(date);
+}
+
+function validIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(`${value}T12:00:00Z`);
+  return !Number.isNaN(date.getTime()) && isoDate(date) === value;
+}
+
+function badRequest(message) {
+  const error = new Error(message);
+  error.status = 400;
+  return error;
+}
+
+function getDateRange(query) {
+  const today = isoDate();
+  let desde = String(query.desde || '').trim();
+  let hasta = String(query.hasta || '').trim();
+
+  if (desde && !validIsoDate(desde)) throw badRequest('Fecha desde invalida.');
+  if (hasta && !validIsoDate(hasta)) throw badRequest('Fecha hasta invalida.');
+
+  if (!desde && !hasta) {
+    hasta = today;
+    desde = addDaysIso(today, -4);
+  } else if (!desde) {
+    desde = addDaysIso(hasta, -4);
+  } else if (!hasta) {
+    hasta = today;
+  }
+
+  if (desde > hasta) throw badRequest('La fecha desde no puede ser mayor que la fecha hasta.');
+  return { desde, hasta };
+}
 
 async function historial(req, res, next) {
   try {
@@ -18,8 +71,71 @@ async function historial(req, res, next) {
 
 async function list(req, res, next) {
   try {
-    const reclamos = await reclamoService.listReclamos();
+    const { desde, hasta } = getDateRange(req.query);
+    const reclamos = await reclamoService.listReclamos({ desde, hasta, limit: 1000 });
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.json(reclamos);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function exportExcel(req, res, next) {
+  try {
+    const { desde, hasta } = getDateRange(req.query);
+    const estado = String(req.query.estado || '').trim() || undefined;
+    const q = String(req.query.q || '').trim() || undefined;
+    const reclamos = await reclamoService.listReclamos({ desde, hasta, limit: null, estado, q });
+
+    const workbook = new ExcelJS.Workbook();
+    workbook.creator = 'SISATT';
+    workbook.created = new Date();
+
+    const worksheet = workbook.addWorksheet('Reclamos');
+    worksheet.columns = [
+      { header: 'Código reclamo', key: 'CodigoReclamo', width: 18 },
+      { header: 'Teléfono', key: 'Dn', width: 14 },
+      { header: 'Celulares', key: 'Celulares', width: 16 },
+      { header: 'Cliente', key: 'NombreCliente', width: 28 },
+      { header: 'Dirección', key: 'Direccion', width: 30 },
+      { header: 'Dirección 1', key: 'Direccion1', width: 30 },
+      { header: 'Tipo de falla', key: 'TipoFalla', width: 22 },
+      { header: 'Descripción', key: 'ReclamoDescripcion', width: 40 },
+      { header: 'Registrado por', key: 'RegistradoPor', width: 18 },
+      { header: 'Fecha registro', key: 'FechaRegistro', width: 20 },
+      { header: 'Estado', key: 'Estado', width: 16 },
+      { header: 'Resultado revisión', key: 'ResultadoRevision', width: 35 },
+      { header: 'Revisado por', key: 'RevisadoPor', width: 18 },
+      { header: 'Fecha revisión', key: 'FechaRevision', width: 20 },
+      { header: 'Código boleta', key: 'CodigoBoleta', width: 16 },
+      { header: 'N° boleta', key: 'NumBoleta', width: 12 },
+      { header: 'Técnico', key: 'TecnicoAsignado', width: 20 },
+      { header: 'Central', key: 'Central', width: 16 },
+      { header: 'Par primario', key: 'ParPrimarioCompleto', width: 20 },
+      { header: 'Observaciones', key: 'Observaciones', width: 35 }
+    ];
+
+    worksheet.addRows(reclamos);
+    worksheet.getColumn('FechaRegistro').numFmt = 'dd/mm/yyyy hh:mm';
+    worksheet.getColumn('FechaRevision').numFmt = 'dd/mm/yyyy hh:mm';
+    worksheet.views = [{ state: 'frozen', ySplit: 1 }];
+
+    const header = worksheet.getRow(1);
+    header.height = 24;
+    header.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+    header.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B5ED7' } };
+    header.alignment = { vertical: 'middle', horizontal: 'center' };
+
+    const lastColumn = worksheet.getColumn(worksheet.columns.length).letter;
+    const lastRow = Math.max(1, reclamos.length + 1);
+    worksheet.autoFilter = `A1:${lastColumn}${lastRow}`;
+
+    const buffer = await workbook.xlsx.writeBuffer();
+    const filename = `reclamos_${desde}_${hasta}.xlsx`;
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.setHeader('Content-Length', buffer.length);
+    res.send(Buffer.from(buffer));
   } catch (error) {
     next(error);
   }
@@ -119,4 +235,4 @@ async function review(req, res, next) {
   }
 }
 
-module.exports = { list, historial, detail, create, addEvent, review };
+module.exports = { list, exportExcel, historial, detail, create, addEvent, review };

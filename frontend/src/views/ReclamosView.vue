@@ -32,7 +32,7 @@
     </article>
   </section>
 
-    <section class="filters">
+    <section class="filters reclamos-filters">
     <input v-model="store.search" placeholder="Buscar por codigo, telefono, nombre, reclamo" />
     <select v-model="store.statusFilter">
       <option value="Todos">Todos</option>
@@ -41,7 +41,25 @@
       <option value="CerradoCentral">Cerrado (central)</option>
       <option value="GeneradoBoleta">Con boleta</option>
     </select>
+    <div class="date-range">
+      <label>
+        <span>Desde</span>
+        <input type="date" v-model="store.dateFrom" @change="applyDateRange" />
+      </label>
+      <label>
+        <span>Hasta</span>
+        <input type="date" v-model="store.dateTo" @change="applyDateRange" />
+      </label>
+    </div>
+    <div class="date-actions">
+      <button type="button" class="primary" @click="applyDateRange">Buscar</button>
+      <button type="button" class="ghost" @click="resetDateRange">Últimos 5 días</button>
+      <button type="button" class="secondary" :disabled="exporting" @click="exportExcel">
+        {{ exporting ? 'Exportando...' : 'Exportar Excel' }}
+      </button>
+    </div>
   </section>
+  <p v-if="rangeError" class="range-error">{{ rangeError }}</p>
 
   <section class="grid tickets-layout">
     <div class="panel">
@@ -148,6 +166,8 @@ const ticketStore = useTicketStore()
 const showModal = ref(false)
 const reviewTarget = ref(null)
 const mobileDetailOpen = ref(false)
+const exporting = ref(false)
+const rangeError = ref('')
 
 const canCreate = computed(() => auth.hasPermission('createReclamo'))
 
@@ -163,6 +183,57 @@ function select(reclamo) {
 function closeMobileDetail() {
   mobileDetailOpen.value = false
   store.selectedId = null
+}
+
+function validateRange() {
+  if (!store.dateFrom || !store.dateTo) {
+    rangeError.value = 'Seleccione ambas fechas.'
+    return false
+  }
+  if (store.dateFrom > store.dateTo) {
+    rangeError.value = 'La fecha desde no puede ser mayor que la fecha hasta.'
+    return false
+  }
+  rangeError.value = ''
+  return true
+}
+
+async function applyDateRange() {
+  if (!validateRange()) return
+  try {
+    await store.fetchReclamos()
+  } catch (error) {
+    rangeError.value = error.message || 'No se pudieron cargar los reclamos.'
+  }
+}
+
+async function resetDateRange() {
+  rangeError.value = ''
+  store.resetDateRange()
+  await applyDateRange()
+}
+
+async function exportExcel() {
+  if (!validateRange()) return
+  exporting.value = true
+  rangeError.value = ''
+  try {
+    const response = await store.exportReclamos()
+    const type = response.headers['content-type'] || 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    const blob = new Blob([response.data], { type })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `reclamos_${store.dateFrom}_${store.dateTo}.xlsx`
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  } catch (error) {
+    rangeError.value = error.message || 'No se pudo exportar.'
+  } finally {
+    exporting.value = false
+  }
 }
 
 function openReview(reclamo) {
@@ -251,3 +322,76 @@ onUnmounted(() => {
   store.stopPolling()
 })
 </script>
+
+<style scoped>
+.reclamos-filters {
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.reclamos-filters > input {
+  flex: 1 1 260px;
+}
+
+.reclamos-filters > select {
+  flex: 0 0 190px;
+}
+
+.date-range {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.date-range label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 150px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.date-range input {
+  flex: none;
+  width: 100%;
+  min-height: 42px;
+  color-scheme: dark;
+}
+
+.date-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.date-actions button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.range-error {
+  margin: -8px 0 18px;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .reclamos-filters > input,
+  .date-range,
+  .date-actions {
+    flex: 1 1 100%;
+  }
+
+  .reclamos-filters > select {
+    flex: 1 1 190px;
+  }
+
+  .date-range label {
+    flex: 1 1 160px;
+  }
+}
+</style>

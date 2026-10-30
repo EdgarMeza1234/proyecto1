@@ -134,8 +134,8 @@ Las rutas protegidas redirigen a `/login` si no hay sesión activa.
 
 ### `reclamos`
 
-- **Estado:** lista de reclamos, filtros de búsqueda y estado, reclamo seleccionado
-- **Acciones:** `fetchReclamos()`, `fetchReclamoDetail(id)`, `reviewReclamo(id, data)`
+- **Estado:** lista de reclamos, filtros de búsqueda y estado, rango de fechas (últimos 5 días por defecto), reclamo seleccionado
+- **Acciones:** `fetchReclamos()`, `fetchReclamoDetail(id)`, `reviewReclamo(id, data)`, `resetDateRange()`, `exportReclamos()`
 - **Derivados:** `filteredReclamos`, `selectedReclamo`, `stats` (totales, pendientes, en revisión, cerrados central, con boleta)
 
 ### `tickets`
@@ -187,7 +187,7 @@ Para producción, los archivos estáticos deben servirse desde el backend o desd
 - **`TicketDetail`** — Muestra información completa de la boleta, timeline de eventos, horas transcurridas y botones contextuales según permisos (asignar técnico, agregar evento, cerrar, imprimir).
 - **`BlockTable`** — Tabla de 100 filas editables para administrar un bloque de pares telefónicos. Incluye combo de observaciones con opción de agregar nuevas observaciones al vuelo.
 - **`LoginView`** — Pantalla de inicio con animación Matrix sobre canvas + logo corporativo.
-- **`ReclamosView`** — Dashboard ODECO con métricas, listado de reclamos, filtros y panel de detalle con timeline.
+- **`ReclamosView`** — Dashboard ODECO con métricas, listado de reclamos, filtros, rango de fechas, exportación Excel y panel de detalle con timeline.
 - **`ReclamoFormModal`** — Modal para registrar un reclamo telefónico con consulta a ERP.
 - **`ReclamoDetail`** — Panel de detalle del reclamo con datos del abonado, estado, resultado de revisión y timeline de seguimiento.
 - **`ReclamoReviewModal`** — Modal para que el operador revise el reclamo, decida si es falla de central o externa y, en su caso, genere la boleta técnica.

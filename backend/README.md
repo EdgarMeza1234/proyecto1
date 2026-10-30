@@ -153,11 +153,16 @@ Todas requieren autenticación (`Authorization: Bearer <token>`).
 
 | Método | Ruta                              | Roles requeridos      | Descripción                                     |
 |--------|-----------------------------------|----------------------|-------------------------------------------------|
-| GET    | `/api/reclamos`                   | autenticado          | Lista los últimos 200 reclamos                  |
+| GET    | `/api/reclamos`                   | autenticado          | Lista el rango de fechas (por defecto, últimos 5 días) |
+| GET    | `/api/reclamos/exportar`          | autenticado          | Exporta el rango/filtros a Excel (`.xlsx`)      |
 | GET    | `/api/reclamos/:id`               | autenticado          | Detalle del reclamo + eventos                   |
 | POST   | `/api/reclamos`                   | odeco, admin, operador | Crea un nuevo reclamo                         |
 | POST   | `/api/reclamos/:id/seguimiento`   | autenticado          | Agrega un evento al reclamo                     |
 | PUT    | `/api/reclamos/:id/revisar`       | operador, admin      | Revisa un reclamo (CerradoCentral o GeneradoBoleta) |
+
+**Filtros y exportación:**
+- `GET /api/reclamos?desde=YYYY-MM-DD&hasta=YYYY-MM-DD` — si no se envían fechas, usa los **últimos 5 días** (hoy - 4 a hoy). La lista visual se limita a 1000 filas.
+- `GET /api/reclamos/exportar?desde=YYYY-MM-DD&hasta=YYYY-MM-DD&estado=&q=` — descarga un `.xlsx` con **todas** las filas del rango y los filtros opcionales de estado/búsqueda. Usa `exceljs`.
 
 **Flujo de revisión:**
 - El operador revisa el reclamo y decide si la falla es en **central** o en **planta externa**.

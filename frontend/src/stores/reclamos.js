@@ -4,12 +4,34 @@ import api from '../services/api'
 import { io } from 'socket.io-client'
 
 const SYNC_KEY = 'telefonia-reclamos-sync'
+const TZ = 'America/La_Paz'
 let socket = null
+
+function isoDate(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(date)
+  const values = {}
+  for (const part of parts) {
+    if (part.type !== 'literal') values[part.type] = part.value
+  }
+  return `${values.year}-${values.month}-${values.day}`
+}
+
+function addDaysIso(iso, days) {
+  const date = new Date(`${iso}T12:00:00Z`)
+  date.setUTCDate(date.getUTCDate() + days)
+  return isoDate(date)
+}
+
+const initialToday = isoDate()
 
 export const useReclamoStore = defineStore('reclamos', () => {
   const reclamos = ref([])
   const search = ref('')
   const statusFilter = ref('Todos')
+  const dateFrom = ref(addDaysIso(initialToday, -4))
+  const dateTo = ref(initialToday)
   const selectedId = ref(null)
   let pollTimer = null
 
@@ -53,9 +75,24 @@ export const useReclamoStore = defineStore('reclamos', () => {
     if (idx !== -1) Object.assign(reclamos.value[idx], data)
   }
 
+  function resetDateRange() {
+    const today = isoDate()
+    dateTo.value = today
+    dateFrom.value = addDaysIso(today, -4)
+  }
+
   async function fetchReclamos() {
-    const res = await api.get('/reclamos')
+    const res = await api.get('/reclamos', {
+      params: { desde: dateFrom.value, hasta: dateTo.value }
+    })
     setReclamos(res.data)
+  }
+
+  async function exportReclamos() {
+    const params = { desde: dateFrom.value, hasta: dateTo.value }
+    if (statusFilter.value !== 'Todos') params.estado = statusFilter.value
+    if (search.value.trim()) params.q = search.value.trim()
+    return api.get('/reclamos/exportar', { params, responseType: 'blob' })
   }
 
   async function fetchReclamoDetail(id) {
@@ -101,10 +138,10 @@ export const useReclamoStore = defineStore('reclamos', () => {
   }
 
   return {
-    reclamos, search, statusFilter, selectedId,
+    reclamos, search, statusFilter, dateFrom, dateTo, selectedId,
     filteredReclamos, selectedReclamo, stats,
-    setReclamos, addReclamo, updateReclamo,
-    fetchReclamos, fetchReclamoDetail, reviewReclamo,
+    setReclamos, addReclamo, updateReclamo, resetDateRange,
+    fetchReclamos, fetchReclamoDetail, reviewReclamo, exportReclamos,
     startPolling, stopPolling, listenCrossTab, connectSocket
   }
 })
