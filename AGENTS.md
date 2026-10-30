@@ -184,12 +184,20 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 | Método | Ruta | Descripción |
 |---|---|---|
 | POST | `/subir` | Sube archivos crudos (multipart, campo `archivos` + `mes`,`ano`); los guarda en `<NORTEL_BASE_DIR>/<MES><ANO>/` |
-| GET | `/archivos` | Lista los archivos de la carpeta del mes/año (`mes`, `ano`) |
-| POST | `/consolidar` | Consolida uno o todos los crudos a `.emc` (`archivo` opcional) |
-| POST | `/split` | Separa registros `2001` de los `.emc` |
+| GET | `/archivos` | Lista la carpeta del mes/año con `categoria` por archivo: `crudo` / `consolidado` / `ama` / `dosmil` / `error` |
+| GET | `/generados` | Solo los archivos que produce el módulo (`.emc`, `AMA.EMC`, `2001.EMC`, `InvalidData.txt`) con tamaño y `mtime`; dice si la carpeta `existe` |
+| GET | `/descargar` | `mes`, `ano`, `archivo` (nombre limpio, sin rutas) → descarga desde el servidor |
+| POST | `/consolidar` | Consolida **solo crudos** a `.emc` (`archivo` = uno solo; sin `archivo` = todos) |
+| POST | `/split` | Separa los `2001` de cada `.emc` → genera `*AMA.EMC` y `*2001.EMC` |
 | POST | `/crear-tabla` | Crea/valida la tabla `CDR<MES><ANO>N` |
 | POST | `/limpiar-tabla` | Vacía la tabla del mes |
 | POST | `/insertar-bd` | Inserta los `*AMA.EMC` en la tabla |
+
+El crudo Nortel es un log de consola: cada registro ocupa **dos líneas** (la segunda empieza con el destino
+rellenado con `F`, p. ej. `FFFFFFFFFFF2001C...`) y entre registros aparecen líneas en blanco y `>>>BLOCK NO: n`.
+`consolidar` únicamente concatena la línea siguiente cuando no arranca con `AA` ni con `>>>`; antes se unía a
+ciegas y dos registros quedaban pegados en una línea del `.emc`, con lo que el `AMA.EMC` insertaba columnas
+desalineadas. Los `2001` se detectan por el marcador `FFFFFFFFFFF2001` (11 `F` + el número, campo de 15).
 
 ### Tráfico — `/api/trafico`
 | Método | Ruta | Descripción |
