@@ -13,6 +13,7 @@ services:
       - NODE_ENV=production
       - UPLOAD_DIR=/app/uploads/papeletas
       - TRAFICO_BASE_DIR=/app/trafico-data
+      - NORTEL_BASE_DIR=/app/trafico-data/NORTEL
     volumes:
       - ./backend/uploads:/app/uploads
       - ./backend/trafico-data:/app/trafico-data

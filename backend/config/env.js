@@ -41,5 +41,6 @@ module.exports = {
     facilidadesTable: process.env.SQLSERVER_FACILIDADES_TABLE || 'FacilidadesLinea'
   },
   traficoDb: process.env.SQLSERVER_TRAFICO_DATABASE || 'trafico',
-  traficoBaseDir: process.env.TRAFICO_BASE_DIR || 'E:\\AMAS\\2026'
+  traficoBaseDir: process.env.TRAFICO_BASE_DIR || 'E:\\AMAS\\2026',
+  nortelBaseDir: process.env.NORTEL_BASE_DIR || (process.env.TRAFICO_BASE_DIR ? path.join(process.env.TRAFICO_BASE_DIR, 'NORTEL') : 'E:\\AMAS\\NORTEL')
 };

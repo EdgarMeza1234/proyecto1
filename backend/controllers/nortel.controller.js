@@ -12,6 +12,20 @@ async function listFiles(req, res) {
   }
 }
 
+async function subirArchivos(req, res) {
+  try {
+    const { mes, ano } = req.body;
+    if (!mes || !ano) return res.status(400).json({ message: 'Se requieren mes y ano' });
+    const files = req.files || [];
+    if (!files.length) return res.status(400).json({ message: 'Debe adjuntar al menos un archivo crudo de Nortel' });
+    const result = await nortelService.guardarArchivosSubidos(mes, ano, files);
+    res.json(result);
+  } catch (error) {
+    console.error('Error subirArchivos:', error);
+    res.status(500).json({ message: 'Error al subir archivos: ' + error.message });
+  }
+}
+
 async function consolidar(req, res) {
   try {
     const { mes, ano, archivo } = req.body;
@@ -84,6 +98,7 @@ async function insertarBD(req, res) {
 
 module.exports = {
   listFiles,
+  subirArchivos,
   consolidar,
   split,
   crearTabla,

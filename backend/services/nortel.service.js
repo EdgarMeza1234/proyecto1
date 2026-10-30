@@ -5,7 +5,7 @@ const sql = require('mssql');
 const config = require('../config/env');
 const socketService = require('./socket');
 
-const BASE_DIR = 'E:\\AMAS\\NORTEL';
+const BASE_DIR = config.nortelBaseDir;
 
 const MONTH_MAP = {
   ENERO: 'ENE', FEBRERO: 'FEB', MARZO: 'MAR', ABRIL: 'ABR',
@@ -148,6 +148,32 @@ async function listAllFiles(mes, ano) {
     tamano: fs.statSync(path.join(dirPath, f)).size,
     extension: path.extname(f).toLowerCase()
   }));
+}
+
+async function guardarArchivosSubidos(mes, ano, files = []) {
+  const dirPath = getDirPath(mes, ano);
+  await fsPromises.mkdir(dirPath, { recursive: true });
+  const guardados = [];
+  for (const file of files) {
+    const nombre = path.basename(file.originalname || `nortel_${Date.now()}`);
+    const destino = path.join(dirPath, nombre);
+    try {
+      if (file.buffer) {
+        await fsPromises.writeFile(destino, file.buffer);
+      } else if (file.path) {
+        await fsPromises.copyFile(file.path, destino);
+      } else {
+        throw new Error('Archivo invalido');
+      }
+    } finally {
+      if (file.path) {
+        try { await fsPromises.unlink(file.path); } catch {}
+      }
+    }
+    const stat = await fsPromises.stat(destino);
+    guardados.push({ nombre, tamano: stat.size });
+  }
+  return { directorio: dirPath, guardados, total: guardados.length };
 }
 
 const MONTH_NUMBERS = {
@@ -494,6 +520,7 @@ async function limpiarTabla(mes, ano) {
 module.exports = {
   listFiles,
   listAllFiles,
+  guardarArchivosSubidos,
   consolidar,
   consolidarTodo,
   splitArchivo,

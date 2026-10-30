@@ -80,6 +80,10 @@ SQLSERVER_ENCRYPT=false
 SQLSERVER_TRUST_CERT=true
 SQLSERVER_FACILIDADES_TABLE=FacilidadesLinea
 
+# Carpetas de trabajo de centrales
+TRAFICO_BASE_DIR=E:\AMAS\2026
+NORTEL_BASE_DIR=E:\AMAS\NORTEL
+
 # ERP externo (opcional)
 ERP_API_URL=https://api.erp.cotapnet.com.bo/API/PersonasErp
 ERP_TOKEN=tu_token
@@ -169,6 +173,18 @@ Todas requieren autenticación (`Authorization: Bearer <token>`).
 - Si es **falla en central** → el reclamo se cierra como `CerradoCentral` (no genera boleta).
 - Si es **falla en planta externa** → el sistema genera automáticamente una boleta de reparación vinculada al reclamo, el estado pasa a `GeneradoBoleta`.
 - ODECO puede dar seguimiento al reclamo hasta su conclusión.
+
+### Tráfico Nortel (`/api/nortel`)
+
+| Método | Ruta                    | Roles       | Descripción |
+|--------|-------------------------|-------------|-------------|
+| POST   | `/api/nortel/subir`     | autenticado | Sube archivos crudos (multipart, campo `archivos` + `mes`, `ano`) a `NORTEL_BASE_DIR` |
+| GET    | `/api/nortel/archivos`  | autenticado | Lista los archivos del mes/año (`?mes=&ano=`) |
+| POST   | `/api/nortel/consolidar`| autenticado | Consolida uno o todos los archivos crudos a `.emc` |
+| POST   | `/api/nortel/split`     | autenticado | Separa registros `2001` |
+| POST   | `/api/nortel/crear-tabla` | autenticado | Crea/valida `CDR<MES><ANO>N` |
+| POST   | `/api/nortel/limpiar-tabla` | autenticado | Vacía la tabla del mes |
+| POST   | `/api/nortel/insertar-bd` | autenticado | Inserta los `*AMA.EMC` en la tabla |
 
 ### ERP externo
 

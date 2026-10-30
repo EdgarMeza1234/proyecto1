@@ -103,7 +103,7 @@ Payload JWT: `{ id, username, name, role, roleName, dn }`.
 | Registro de Trabajo 1 | `/registro1` | `registro1` | estable (§5.2) |
 | Registro de Trabajos | `/registro` | `registro` | **NO tocar** |
 | Tráfico | `/trafico` | `trafico` | estable + **subida .ama por navegador** (§5.4) |
-| Nortel / SISATT | `/nortel` `/sisatt` | varios | estable |
+| Nortel / SISATT | `/nortel` `/sisatt` | varios | estable + **subida de archivos crudos** |
 | Permisos / Auditoría | `/permisos` `/auditoria-general` | admin | estable |
 
 ### 5.1 Reclamos — resaltado por tiempo, fechas y exportación
@@ -141,7 +141,7 @@ Persiste los archivos `.out` de la central y permite consultarlos, además de in
 - **Migración manual (opcional):** `database/migrations/002_teliskratel.sql` (idempotente; crea tablas + índices igual que `ensureTeliskratelTable`, para servidores donde no arranque el backend). La 001 es `001_reclamos_direccion1_celulares.sql`.
 - **Endpoints** (`/api/teliskratel`, ver §6).
 
-### 5.4 Tráfico — carga de `.ama` por navegador
+### 5.4 Tráfico / Nortel — carga por navegador
 El backend corre en el servidor (Tailscale/Docker) y **no** puede leer `E:\AMAS\2026` de la PC del usuario.
 Por eso los `.ama` se **suben desde el navegador** y se materializan en una carpeta de trabajo del servidor.
 
@@ -153,6 +153,10 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
   `listar archivos` → `Convertir todo a TXT` → `Insertar .ama en BD` → `Split` / `Errores`. El resto del pipeline quedó intacto.
 - **Servicio:** `trafico.service.js` (`guardarArchivosSubidos` escribe en `getDirPath(mes,ano)`).
   Toda la lógica (parseo de fechas, `padWithF`, minutos, columnas `un..setdos`, `InvalidData.txt`) se conserva.
+- **Nortel:** mismo flujo de subida desde el navegador con `POST /api/nortel/subir` (multipart, `archivos` + `mes`,`ano`).
+  - `NORTEL_BASE_DIR` (en `config/env.js` → `nortelBaseDir`); local default `E:\AMAS\NORTEL`.
+  - Servidor: `NORTEL_BASE_DIR=/app/trafico-data/NORTEL` usando el volumen `./backend/trafico-data:/app/trafico-data`.
+  - Acepta archivos `.txt`, `.log`, `.ama`, `.dat`, `.cdr` y **sin extensión** (el crudo típico `JUN20261`).
 - `backend/trafico-data/` está en `.gitignore` (datos subidos, no se versiona).
 
 ---
@@ -175,6 +179,17 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 | POST | `/importar` | `teliskratel` | Subir `.out/.txt` (multipart, campo `archivos`) |
 | POST | `/importar-data` | `teliskratel` | Importar desde `backend/data/` (`{ archivos:[...] }`) |
 | DELETE | `/importaciones/:lote` | `teliskratel` | Elimina lote y sus registros |
+
+### Nortel — `/api/nortel`
+| Método | Ruta | Descripción |
+|---|---|---|
+| POST | `/subir` | Sube archivos crudos (multipart, campo `archivos` + `mes`,`ano`); los guarda en `<NORTEL_BASE_DIR>/<MES><ANO>/` |
+| GET | `/archivos` | Lista los archivos de la carpeta del mes/año (`mes`, `ano`) |
+| POST | `/consolidar` | Consolida uno o todos los crudos a `.emc` (`archivo` opcional) |
+| POST | `/split` | Separa registros `2001` de los `.emc` |
+| POST | `/crear-tabla` | Crea/valida la tabla `CDR<MES><ANO>N` |
+| POST | `/limpiar-tabla` | Vacía la tabla del mes |
+| POST | `/insertar-bd` | Inserta los `*AMA.EMC` en la tabla |
 
 ### Tráfico — `/api/trafico`
 | Método | Ruta | Descripción |
@@ -245,4 +260,5 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 - Formulario boleta con token (`openTicketFormulario`).
 - **Sin commitear (trabajo local de esta sesión):** módulo Teliskratel (backend + frontend) y ajustes de Bloques.
 - Tráfico: carga de `.ama` por navegador (`POST /api/trafico/subir`) + `TRAFICO_BASE_DIR` configurable y volumen `backend/trafico-data`.
+- Nortel: carga de archivos crudos por navegador (`POST /api/nortel/subir`) + `NORTEL_BASE_DIR`; usa el volumen `backend/trafico-data/NORTEL`.
 - Reclamos: rango de fechas (últimos 5 días por defecto), inputs de fecha y exportación a Excel con `exceljs`; implementado el 2026-10-30.
