@@ -62,15 +62,20 @@
   </section>
 
   <!-- 1. ARCHIVOS CRUDOS -->
-  <section class="panel" v-if="archivos.length">
+  <section class="panel">
     <div class="panel-head">
       <h2>1. Archivos crudos encontrados ({{ archivos.length }})</h2>
       <div class="panel-tools">
-        <button class="primary" :disabled="!mes || !ano || procesando" @click="consolidarTodo">
+        <button class="primary" :disabled="!mes || !ano || procesando || !archivos.length" @click="consolidarTodo">
           {{ procesando ? 'Consolidando...' : 'Consolidar todo (AMAs)' }}
         </button>
       </div>
     </div>
+    <p v-if="!archivos.length" class="muted" style="padding:8px 16px;font-size:13px">
+      {{ carpetaExiste
+        ? `La carpeta ${dirName} esta vacia: suba primero los archivos crudos de Nortel.`
+        : `La carpeta ${dirName || 'MESANO'} no existe en el servidor todavía. Suba un archivo o revise Mes y Anio.` }}
+    </p>
 
     <div v-if="procesando" style="padding:12px">
       <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px">
@@ -83,7 +88,9 @@
       <div style="font-size:12px;color:var(--muted)">{{ convLabel }}</div>
     </div>
 
-    <div class="table" style="max-height:300px;overflow-y:auto">
+    <div v-if="conversionResult" class="block-message success" style="margin-top:8px">{{ conversionResult }}</div>
+
+    <div v-if="archivos.length" class="table" style="max-height:300px;overflow-y:auto">
       <div class="table-header" style="display:grid;grid-template-columns:1.3fr 1fr 0.8fr;gap:16px;padding:0 16px;font-weight:600;font-size:13px;color:var(--muted);margin-bottom:4px">
         <span>Archivo</span>
         <span>Tamano</span>
@@ -99,6 +106,41 @@
     </div>
   </section>
 
+  <!-- 1.1 ARCHIVOS GENERADOS -->
+  <section class="panel" v-if="dirName">
+    <div class="panel-head">
+      <div>
+        <h2>Archivos generados en la carpeta (descargar)</h2>
+        <p class="muted">
+          Quedan en el servidor, en la carpeta <code>{{ dirName }}</code>.
+          <code>.emc</code> es la consolidacion, <code>AMA.EMC</code> el trafico normal y <code>2001.EMC</code> los registros separados.
+        </p>
+      </div>
+      <div class="panel-tools">
+        <button class="secondary small" :disabled="!mes || !ano" @click="cargarGenerados">Actualizar</button>
+      </div>
+    </div>
+    <div v-if="archivosGenerados.length" class="table" style="max-height:300px;overflow-y:auto">
+      <div class="table-header" style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr auto;gap:16px;padding:0 16px;font-weight:600;font-size:13px;color:var(--muted);margin-bottom:4px">
+        <span>Archivo</span>
+        <span>Tamano</span>
+        <span>Modificado</span>
+        <span>Accion</span>
+      </div>
+      <div v-for="f in archivosGenerados" :key="f.nombre" class="table-row">
+        <span><code>{{ f.nombre }}</code></span>
+        <span>{{ (f.tamano / 1024).toFixed(1) }} KB</span>
+        <span>{{ formatoFecha(f.modificado) }}</span>
+        <span>
+          <button class="secondary small" :disabled="descargando === f.nombre" @click="descargarArchivo(f.nombre)">
+            {{ descargando === f.nombre ? 'Descargando...' : 'Descargar' }}
+          </button>
+        </span>
+      </div>
+    </div>
+    <div v-else class="block-message" style="margin-top:8px">Sin archivos generados todavia.</div>
+  </section>
+
   <!-- 2. SPLIT 2001 -->
   <section class="panel">
     <div class="panel-head">
@@ -108,9 +150,11 @@
       <button class="secondary" :disabled="!mes || !ano || splitteando" @click="splitAll">
         {{ splitteando ? 'Separando...' : 'Separar todo' }}
       </button>
+      <span class="muted" style="font-size:12px">Separa de cada <code>.emc</code> los registros con destino 2001.</span>
     </div>
     <div v-if="splitResult" class="block-message success" style="margin-top:8px">
       AMA: {{ splitResult.totalAma }} | 2001: {{ splitResult.total2001 }} | Total: {{ splitResult.totalAma + splitResult.total2001 }}
+      <template v-if="splitResult.total2001 === 0"> (este mes no tiene trafico 2001)</template>
     </div>
   </section>
 
@@ -206,6 +250,10 @@ const uploadResult = ref('')
 const uploadPct = ref(0)
 const selectedFiles = ref([])
 
+const archivosGenerados = ref([])
+const carpetaExiste = ref(false)
+const descargando = ref('')
+
 const selectedTotalMB = computed(() => {
   const bytes = selectedFiles.value.reduce((sum, f) => sum + (f.size || 0), 0)
   return (bytes / (1024 * 1024)).toFixed(1)
@@ -287,6 +335,52 @@ onUnmounted(() => {
   if (socket) socket.disconnect()
 })
 
+async function cargarArchivos() {
+  const res = await api.get('/nortel/archivos', { params: { mes: mes.value, ano: ano.value } })
+  archivos.value = (res.data.archivos || []).filter(f => f.categoria === 'crudo')
+  await cargarGenerados()
+}
+
+async function cargarGenerados() {
+  try {
+    const res = await api.get('/nortel/generados', { params: { mes: mes.value, ano: ano.value } })
+    archivosGenerados.value = res.data.archivos || []
+    carpetaExiste.value = !!res.data.existe
+  } catch {
+    archivosGenerados.value = []
+    carpetaExiste.value = false
+  }
+}
+
+function formatoFecha(iso) {
+  if (!iso) return '—'
+  const d = new Date(iso)
+  return isNaN(d.getTime()) ? '—' : d.toLocaleString('es-BO', { hour12: false })
+}
+
+async function descargarArchivo(nombre) {
+  descargando.value = nombre
+  error.value = ''
+  try {
+    const res = await api.get('/nortel/descargar', {
+      params: { mes: mes.value, ano: ano.value, archivo: nombre },
+      responseType: 'blob'
+    })
+    const url = URL.createObjectURL(res.data)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = nombre
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  } catch (err) {
+    error.value = `No se pudo descargar ${nombre}.`
+  } finally {
+    descargando.value = ''
+  }
+}
+
 async function listarArchivos() {
   loading.value = true
   error.value = ''
@@ -295,8 +389,7 @@ async function listarArchivos() {
   resumen.value = []
   splitResult.value = null
   try {
-    const res = await api.get('/nortel/archivos', { params: { mes: mes.value, ano: ano.value } })
-    archivos.value = res.data.archivos
+    await cargarArchivos()
   } catch (err) {
     error.value = err.message
     archivos.value = []
@@ -338,7 +431,7 @@ async function subirArchivos() {
     uploadResult.value = `${res.data.total} archivo(s) subido(s) a la carpeta ${dirName.value}`
     selectedFiles.value = []
     if (fileInput.value) fileInput.value.value = ''
-    await listarArchivos()
+    await cargarArchivos()
   } catch (err) {
     error.value = err.message
   } finally {
@@ -352,8 +445,8 @@ async function consolidarUnico(archivo) {
   conversionResult.value = ''
   try {
     const res = await api.post('/nortel/consolidar', { mes: mes.value, ano: ano.value, archivo })
-    conversionResult.value = `Consolidado: ${res.data.registros} registros`
-    await listarArchivos()
+    conversionResult.value = `${res.data.archivoSalida} generado con ${res.data.registros} registros (${res.data.omitidos} lineas de otro mes omitidas). Use "Descargar" para revisarlo.`
+    await cargarArchivos()
   } catch (err) {
     error.value = err.message
   } finally {
@@ -373,9 +466,9 @@ async function consolidarTodo() {
   try {
     const res = await api.post('/nortel/consolidar', { mes: mes.value, ano: ano.value })
     const d = res.data
-    conversionResult.value = `Archivos: ${d.archivosProcesados} | Registros: ${d.totalRegistros} | Omitidos (otro mes): ${d.totalOmitidos || 0}`
+    conversionResult.value = `Archivos: ${d.archivosProcesados} | Registros: ${d.totalRegistros} | Omitidos (otro mes): ${d.totalOmitidos || 0}. Descargue el .emc de la lista de generados para revisarlo.`
     resumen.value = d.resumen || []
-    await listarArchivos()
+    await cargarArchivos()
   } catch (err) {
     error.value = err.message
   } finally {
@@ -390,6 +483,7 @@ async function splitAll() {
   try {
     const res = await api.post('/nortel/split', { mes: mes.value, ano: ano.value })
     splitResult.value = res.data
+    await cargarArchivos()
   } catch (err) {
     error.value = err.message
   } finally {

@@ -19,6 +19,8 @@ const upload = multer({
 });
 
 router.get('/archivos', authenticate, nortelController.listFiles);
+router.get('/generados', authenticate, nortelController.listarGenerados);
+router.get('/descargar', authenticate, nortelController.descargar);
 router.post('/subir', authenticate, upload.array('archivos', 40), nortelController.subirArchivos);
 router.post('/consolidar', authenticate, nortelController.consolidar);
 router.post('/split', authenticate, nortelController.split);

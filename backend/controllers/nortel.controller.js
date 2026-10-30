@@ -1,3 +1,4 @@
+const path = require('path');
 const nortelService = require('../services/nortel.service');
 
 async function listFiles(req, res) {
@@ -9,6 +10,35 @@ async function listFiles(req, res) {
   } catch (error) {
     console.error('Error listFiles:', error);
     res.status(500).json({ message: 'Error al listar archivos: ' + error.message });
+  }
+}
+
+async function listarGenerados(req, res) {
+  try {
+    const { mes, ano } = req.query;
+    if (!mes || !ano) return res.status(400).json({ message: 'Se requieren mes y ano' });
+    const result = await nortelService.listarArchivosGenerados(mes, ano);
+    res.json(result);
+  } catch (error) {
+    console.error('Error listarGenerados:', error);
+    res.status(500).json({ message: 'Error al listar archivos generados: ' + error.message });
+  }
+}
+
+async function descargar(req, res) {
+  try {
+    const { mes, ano, archivo } = req.query;
+    if (!mes || !ano || !archivo) return res.status(400).json({ message: 'Se requieren mes, ano y archivo' });
+    const fullPath = nortelService.rutaArchivoGenerado(mes, ano, archivo);
+    const nombre = path.basename(archivo);
+    res.download(fullPath, nombre, (err) => {
+      if (err && !res.headersSent) {
+        res.status(404).json({ message: 'Archivo no encontrado: ' + nombre });
+      }
+    });
+  } catch (error) {
+    console.error('Error descargar:', error);
+    res.status(500).json({ message: 'Error al descargar archivo: ' + error.message });
   }
 }
 
@@ -98,6 +128,8 @@ async function insertarBD(req, res) {
 
 module.exports = {
   listFiles,
+  listarGenerados,
+  descargar,
   subirArchivos,
   consolidar,
   split,

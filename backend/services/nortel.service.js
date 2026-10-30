@@ -46,6 +46,21 @@ function getTableName(mes, ano) {
   return 'CDR' + getDirName(mes, ano) + 'N';
 }
 
+// El registro Nortel viene partido en dos lineas fisicas y el crudo se reconoce
+// justamente por no tener ninguna de estas extensiones.
+function clasificarArchivo(nombre) {
+  const n = String(nombre || '').toLowerCase();
+  if (n.endsWith('ama.emc')) return 'ama';
+  if (n.endsWith('2001.emc')) return 'dosmil';
+  if (n.endsWith('.emc')) return 'consolidado';
+  if (n === 'invaliddata.txt') return 'error';
+  return 'crudo';
+}
+
+function esArchivoCrudo(nombre) {
+  return clasificarArchivo(nombre) === 'crudo';
+}
+
 const CREATE_TABLE_SQL = `
   CREATE TABLE {TABLE_NAME} (
     [Id] INT IDENTITY(1,1) NOT NULL,
@@ -117,37 +132,60 @@ async function asegurarTabla(mes, ano) {
   return { creada: true, nombre: tableName };
 }
 
-async function listFiles(mes, ano) {
-  const dirPath = getDirPath(mes, ano);
-  try {
-    await fsPromises.access(dirPath);
-  } catch {
-    return [];
-  }
-  const files = await fsPromises.readdir(dirPath);
-  return files
-    .filter(f => !f.toLowerCase().includes('emc'))
-    .map(f => ({
-      nombre: f,
-      ruta: path.join(dirPath, f),
-      tamano: fs.statSync(path.join(dirPath, f)).size
-    }));
-}
-
 async function listAllFiles(mes, ano) {
   const dirPath = getDirPath(mes, ano);
+  let nombres;
   try {
-    await fsPromises.access(dirPath);
+    nombres = await fsPromises.readdir(dirPath);
   } catch {
     return [];
   }
-  const files = await fsPromises.readdir(dirPath);
-  return files.map(f => ({
-    nombre: f,
-    ruta: path.join(dirPath, f),
-    tamano: fs.statSync(path.join(dirPath, f)).size,
-    extension: path.extname(f).toLowerCase()
-  }));
+  return nombres.map(f => {
+    let tamano = 0;
+    try {
+      tamano = fs.statSync(path.join(dirPath, f)).size;
+    } catch {
+      // Un archivo borrado mientras se leia la carpeta no debe romper el listado.
+    }
+    return {
+      nombre: f,
+      tamano,
+      extension: path.extname(f).toLowerCase(),
+      categoria: clasificarArchivo(f)
+    };
+  });
+}
+
+async function listarArchivosGenerados(mes, ano) {
+  const dirPath = getDirPath(mes, ano);
+  let nombres;
+  try {
+    nombres = await fsPromises.readdir(dirPath);
+  } catch {
+    return { directorio: getDirName(mes, ano), existe: false, archivos: [] };
+  }
+  const archivos = [];
+  for (const f of nombres) {
+    const categoria = clasificarArchivo(f);
+    if (categoria === 'crudo') continue;
+    let stat;
+    try {
+      stat = await fsPromises.stat(path.join(dirPath, f));
+    } catch {
+      continue;
+    }
+    archivos.push({ nombre: f, categoria, tamano: stat.size, modificado: stat.mtime.toISOString() });
+  }
+  return { directorio: getDirName(mes, ano), existe: true, archivos };
+}
+
+function rutaArchivoGenerado(mes, ano, nombre) {
+  const texto = String(nombre || '').trim();
+  const safe = path.basename(texto);
+  if (!safe || safe !== texto || safe === '.' || safe === '..') {
+    throw new Error('Nombre de archivo invalido.');
+  }
+  return path.join(getDirPath(mes, ano), safe);
 }
 
 async function guardarArchivosSubidos(mes, ano, files = []) {
@@ -183,6 +221,9 @@ const MONTH_NUMBERS = {
 };
 
 async function consolidar(mes, ano, fileName) {
+  if (!esArchivoCrudo(fileName)) {
+    throw new Error(`${fileName} no es un crudo: solo se consoliden los archivos listados en "Archivos crudos".`);
+  }
   const dirPath = getDirPath(mes, ano);
   const inputPath = path.join(dirPath, fileName);
   const baseName = path.basename(fileName, path.extname(fileName));
@@ -198,7 +239,10 @@ async function consolidar(mes, ano, fileName) {
     const line = lines[i].replace(/\r/g, '');
     if (line.includes('AA')) {
       const nextLine = (i + 1 < lines.length) ? lines[i + 1].replace(/\r/g, '') : '';
-      const concatenated = line + nextLine;
+      const esContinuacion = nextLine.trim() !== ''
+        && !nextLine.trim().startsWith('AA')
+        && !nextLine.trim().startsWith('>>>');
+      const concatenated = esContinuacion ? line + nextLine : line;
       const result = concatenated.replace(/ /g, '');
       const trimmed = result.endsWith('C') ? result.slice(0, -1) : result;
       const parts = trimmed.split('C');
@@ -215,7 +259,12 @@ async function consolidar(mes, ano, fileName) {
   }
   outputLines.push(count.toString());
   await fsPromises.writeFile(outputPath, outputLines.join('\r\n') + '\r\n', 'utf8');
-  return { archivoSalida: outputPath, registros: count, omitidos, archivo: fileName };
+  return {
+    archivoSalida: path.basename(outputPath),
+    registros: count,
+    omitidos,
+    archivo: fileName
+  };
 }
 
 async function consolidarTodo(mes, ano) {
@@ -223,15 +272,12 @@ async function consolidarTodo(mes, ano) {
   try {
     await fsPromises.access(dirPath);
   } catch {
-    throw new Error(`Directorio no encontrado: ${dirPath}`);
+    throw new Error(`Directorio no encontrado: ${dirPath}. Suba primero los archivos crudos.`);
   }
   const files = await fsPromises.readdir(dirPath);
-  const rawFiles = files.filter(f => {
-    const ext = path.extname(f).toLowerCase();
-    return ['.txt', '.log', ''].includes(ext) || (!f.includes('.') && !f.toLowerCase().includes('emc'));
-  });
+  const rawFiles = files.filter(esArchivoCrudo);
   if (rawFiles.length === 0) {
-    throw new Error(`No hay archivos crudos en ${dirPath}`);
+    throw new Error(`No hay archivos crudos que consolidar en ${dirPath}`);
   }
   let totalRegistros = 0;
   let totalOmitidos = 0;
@@ -266,6 +312,9 @@ async function consolidarTodo(mes, ano) {
 }
 
 async function splitArchivo(mes, ano, fileName) {
+  if (clasificarArchivo(fileName) !== 'consolidado') {
+    throw new Error(`${fileName} no es un .emc consolidado: separe solo los archivos generados por "Consolidar".`);
+  }
   const dirPath = getDirPath(mes, ano);
   const baseName = path.basename(fileName, path.extname(fileName));
   const inputPath = path.join(dirPath, fileName);
@@ -275,40 +324,46 @@ async function splitArchivo(mes, ano, fileName) {
     throw new Error(`Archivo no encontrado: ${inputPath}`);
   }
   const content = await fsPromises.readFile(inputPath, 'utf8');
-  const lines = content.split(/\r?\n/).filter(l => l.trim());
+  const todas = content.split(/\r?\n/).map(l => l.replace(/\r/g, '')).filter(l => l.trim());
+  // El .emc termina con una linea que es el total de registros; no es un registro.
+  const ultima = todas[todas.length - 1] || '';
+  const lineas = /^\d+$/.test(ultima) ? todas.slice(0, -1) : todas;
   const amaLines = [];
   const dosmilLines = [];
-  for (const line of lines) {
+  for (const line of lineas) {
     if (line.includes('FFFFFFFFFFF2001')) {
       dosmilLines.push(line);
     } else {
       amaLines.push(line);
     }
   }
-  const amaPath = path.join(dirPath, baseName + 'AMA.EMC');
-  const dosmilPath = path.join(dirPath, baseName + '2001.EMC');
-  await fsPromises.writeFile(amaPath, amaLines.join('\r\n') + '\r\n', 'utf8');
-  await fsPromises.writeFile(dosmilPath, dosmilLines.join('\r\n') + '\r\n', 'utf8');
+  const amaNombre = baseName + 'AMA.EMC';
+  const dosmilNombre = baseName + '2001.EMC';
+  await fsPromises.writeFile(path.join(dirPath, amaNombre), amaLines.join('\r\n') + '\r\n', 'utf8');
+  await fsPromises.writeFile(path.join(dirPath, dosmilNombre), dosmilLines.join('\r\n') + '\r\n', 'utf8');
   return {
     ama: amaLines.length,
     dosmil: dosmilLines.length,
-    total: lines.length,
-    archivoAMA: amaPath,
-    archivo2001: dosmilPath
+    total: lineas.length,
+    archivoAMA: amaNombre,
+    archivo2001: dosmilNombre
   };
 }
 
 async function splitAll(mes, ano) {
   const dirPath = getDirPath(mes, ano);
+  let files;
   try {
-    await fsPromises.access(dirPath);
+    files = await fsPromises.readdir(dirPath);
   } catch {
-    throw new Error(`Directorio no encontrado: ${dirPath}`);
+    throw new Error(`Directorio no encontrado: ${dirPath}. Suba primero los archivos crudos.`);
   }
-  const files = await fsPromises.readdir(dirPath);
-  const emcFiles = files.filter(f => f.toLowerCase().endsWith('.emc') && !f.toLowerCase().includes('ama.') && !f.toLowerCase().includes('2001.'));
+  const emcFiles = files.filter(f => clasificarArchivo(f) === 'consolidado');
   if (emcFiles.length === 0) {
-    throw new Error(`No hay archivos .emc en ${dirPath}`);
+    const crudos = files.filter(esArchivoCrudo).length;
+    throw new Error(crudos > 0
+      ? `Hay ${crudos} archivo(s) crudo(s) sin consolidar en ${getDirName(mes, ano)}. Use primero "Consolidar todo (AMAs)" y despues "Separar todo".`
+      : `No hay archivos .emc que separar en ${dirPath}.`);
   }
   let totalAma = 0;
   let total2001 = 0;
@@ -466,9 +521,9 @@ async function procesarEInsertar(mes, ano) {
   const pool = await getTraficoPool();
   await pool.request().query(`DELETE FROM ${tableName}`);
   const files = await fsPromises.readdir(dirPath);
-  const amaFiles = files.filter(f => f.toUpperCase().endsWith('AMA.EMC'));
+  const amaFiles = files.filter(f => clasificarArchivo(f) === 'ama');
   if (amaFiles.length === 0) {
-    throw new Error(`No hay archivos *AMA.EMC en ${dirPath}`);
+    throw new Error(`No hay archivos *AMA.EMC en ${dirPath}. Use "Separar todo" para generarlos a partir del .emc.`);
   }
   let totalInsertados = 0;
   let totalErrores = 0;
@@ -518,8 +573,10 @@ async function limpiarTabla(mes, ano) {
 }
 
 module.exports = {
-  listFiles,
   listAllFiles,
+  listarArchivosGenerados,
+  rutaArchivoGenerado,
+  clasificarArchivo,
   guardarArchivosSubidos,
   consolidar,
   consolidarTodo,
