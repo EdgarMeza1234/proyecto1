@@ -12,11 +12,11 @@
       <form class="login-form" @submit.prevent="handleLogin">
         <label>
           <span>Usuario</span>
-          <input v-model="username" name="username" autocomplete="username" placeholder="admin" />
+          <input v-model="username" name="username" autocomplete="username" />
         </label>
         <label>
           <span>Contrasena</span>
-          <input v-model="password" name="password" type="password" autocomplete="current-password" placeholder="admin123" />
+          <input v-model="password" name="password" type="password" autocomplete="current-password" />
         </label>
         <button class="primary" :disabled="loading">{{ loading ? 'Ingresando...' : 'Ingresar' }}</button>
         <p class="error-text">{{ error }}</p>
