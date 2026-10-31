@@ -59,3 +59,7 @@ Thumbs.db
 docs/**/*.docx
 docs/**/*.pptx
 ~$*
+# Lo mismo aplica al compose de monitoring y al script de instalacion: fijan claves
+# de Grafana y de usuarios Linux dentro del archivo.
+docs/03-despliegue-servidor/*
+!docs/03-despliegue-servidor/.gitkeep
