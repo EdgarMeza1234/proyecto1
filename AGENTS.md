@@ -195,9 +195,14 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 
 El crudo Nortel es un log de consola: cada registro ocupa **dos líneas** (la segunda empieza con el destino
 rellenado con `F`, p. ej. `FFFFFFFFFFF2001C...`) y entre registros aparecen líneas en blanco y `>>>BLOCK NO: n`.
-`consolidar` únicamente concatena la línea siguiente cuando no arranca con `AA` ni con `>>>`; antes se unía a
-ciegas y dos registros quedaban pegados en una línea del `.emc`, con lo que el `AMA.EMC` insertaba columnas
-desalineadas. Los `2001` se detectan por el marcador `FFFFFFFFFFF2001` (11 `F` + el número, campo de 15).
+`consolidar` únicamente concatena la línea siguiente cuando no arranca con `AA` ni con `>>>`, y aun así corta
+el resultado en cada `AA` seguido de dígito (`extraerRegistros`), porque el log a veces deja **dos registros en
+una misma línea física**: dentro de un registro no puede aparecer otra `AA`, ya que los campos van rellenados
+con `F` y dígitos. El detonante es `startsWith('AA')` y no `includes('AA')` por la misma razón: una continuación
+con el registro pegado también lleva `AA` y contarla como registro la duplicaría. `split` aplica el mismo corte,
+así que un `.emc` ya duplicado se recupera al separarlo. Antes de todo esto se unía a ciegas y el `AMA.EMC`
+insertaba columnas desalineadas. Los `2001` se detectan por el marcador `FFFFFFFFFFF2001` (11 `F` + el número,
+campo de 15).
 
 ### Tráfico — `/api/trafico`
 | Método | Ruta | Descripción |
