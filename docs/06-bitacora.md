@@ -173,6 +173,10 @@ Cargar el mes desde el modulo usa ya el AMA regenerado.
   admin de Grafana y las de los usuarios Linux dentro del archivo. Pendiente pasarlas a `.env` y rotarlas;
   mientras tanto esa carpeta esta excluida de git, junto con los `.docx` exportados por
   `generar-documentacion.py`.
+- **Rotar la clave de administrador de la app.** El login llevaba el usuario y la clave de administrador como
+  `placeholder`, o sea que la pantalla regalaba las credenciales; se quitaron en `067ccfa`, pero el repo es
+  publico y el literal sigue en el historial desde `b2e25bc`. Quitarlo del tip no alcanza: hace falta cambiar
+  la clave, y si se quiere borrar el rastro, reescribir el historial.
 - `E:\Proyectos\tt-cotap` no tiene repo git. Inicializar uno si el proyecto sigue activo.
 - Faltan `docs\01-requerimientos`, `02-diseno-arquitectura` y `05-pruebas`: estan vacios,
   hay que llenarlos con lo que ya se sabe del sistema.
