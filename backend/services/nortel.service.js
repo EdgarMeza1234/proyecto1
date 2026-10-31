@@ -220,6 +220,13 @@ const MONTH_NUMBERS = {
   SEPTIEMBRE: '09', OCTUBRE: '10', NOVIEMBRE: '11', DICIEMBRE: '12'
 };
 
+// El crudo llega a veces con dos registros en una misma linea fisica. Dentro de un
+// registro la unica "AA" posible es la que abre el siguiente, porque los campos van
+// rellenados con digitos y F, asi que cortar ahi los recupera por separado.
+function extraerRegistros(texto) {
+  return texto.split(/(?=AA[0-9])/).filter(p => p.length > 6);
+}
+
 async function consolidar(mes, ano, fileName) {
   if (!esArchivoCrudo(fileName)) {
     throw new Error(`${fileName} no es un crudo: solo se consoliden los archivos listados en "Archivos crudos".`);
@@ -234,26 +241,32 @@ async function consolidar(mes, ano, fileName) {
   const targetYearDigit = ano.slice(-1);
   let count = 0;
   let omitidos = 0;
+  let lineasPegadas = 0;
   const outputLines = [];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].replace(/\r/g, '');
-    if (line.includes('AA')) {
+    // Start, no "includes": una linea de continuation que trae pegado el registro
+    // siguiente tambien lleva "AA" y contarse como registro la duplicaria.
+    if (line.trim().startsWith('AA')) {
       const nextLine = (i + 1 < lines.length) ? lines[i + 1].replace(/\r/g, '') : '';
       const esContinuacion = nextLine.trim() !== ''
         && !nextLine.trim().startsWith('AA')
         && !nextLine.trim().startsWith('>>>');
       const concatenated = esContinuacion ? line + nextLine : line;
-      const result = concatenated.replace(/ /g, '');
-      const trimmed = result.endsWith('C') ? result.slice(0, -1) : result;
-      const parts = trimmed.split('C');
-      const dateField = parts[6] || '';
-      const recordMonth = dateField.substring(1, 3);
-      const recordYear = dateField.substring(0, 1);
-      if (recordMonth === targetMonth && recordYear === targetYearDigit) {
-        count++;
-        outputLines.push(result);
-      } else {
-        omitidos++;
+      const registros = extraerRegistros(concatenated.replace(/ /g, ''));
+      if (registros.length > 1) lineasPegadas++;
+      for (const registro of registros) {
+        const trimmed = registro.endsWith('C') ? registro.slice(0, -1) : registro;
+        const parts = trimmed.split('C');
+        const dateField = parts[6] || '';
+        const recordMonth = dateField.substring(1, 3);
+        const recordYear = dateField.substring(0, 1);
+        if (recordMonth === targetMonth && recordYear === targetYearDigit) {
+          count++;
+          outputLines.push(registro);
+        } else {
+          omitidos++;
+        }
       }
     }
   }
@@ -263,6 +276,7 @@ async function consolidar(mes, ano, fileName) {
     archivoSalida: path.basename(outputPath),
     registros: count,
     omitidos,
+    lineasPegadas,
     archivo: fileName
   };
 }
@@ -331,10 +345,12 @@ async function splitArchivo(mes, ano, fileName) {
   const amaLines = [];
   const dosmilLines = [];
   for (const line of lineas) {
-    if (line.includes('FFFFFFFFFFF2001')) {
-      dosmilLines.push(line);
-    } else {
-      amaLines.push(line);
+    for (const registro of extraerRegistros(line)) {
+      if (registro.includes('FFFFFFFFFFF2001')) {
+        dosmilLines.push(registro);
+      } else {
+        amaLines.push(registro);
+      }
     }
   }
   const amaNombre = baseName + 'AMA.EMC';
@@ -344,7 +360,7 @@ async function splitArchivo(mes, ano, fileName) {
   return {
     ama: amaLines.length,
     dosmil: dosmilLines.length,
-    total: lineas.length,
+    total: amaLines.length + dosmilLines.length,
     archivoAMA: amaNombre,
     archivo2001: dosmilNombre
   };

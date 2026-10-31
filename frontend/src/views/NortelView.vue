@@ -445,13 +445,21 @@ async function consolidarUnico(archivo) {
   conversionResult.value = ''
   try {
     const res = await api.post('/nortel/consolidar', { mes: mes.value, ano: ano.value, archivo })
-    conversionResult.value = `${res.data.archivoSalida} generado con ${res.data.registros} registros (${res.data.omitidos} lineas de otro mes omitidas). Use "Descargar" para revisarlo.`
+    const d = res.data
+    conversionResult.value = `${d.archivoSalida} generado con ${d.registros} registros (${d.omitidos} de otro mes omitidos).`
+      + avisoPegados(d.lineasPegadas)
+      + ' Descarguelo en "Archivos generados" para revisarlo.'
     await cargarArchivos()
   } catch (err) {
     error.value = err.message
   } finally {
     procesando.value = false
   }
+}
+
+function avisoPegados(total) {
+  if (!total) return ''
+  return ` ${total} linea(s) del crudo traian mas de un registro y se cortaron por separado.`
 }
 
 async function consolidarTodo() {
@@ -466,7 +474,10 @@ async function consolidarTodo() {
   try {
     const res = await api.post('/nortel/consolidar', { mes: mes.value, ano: ano.value })
     const d = res.data
-    conversionResult.value = `Archivos: ${d.archivosProcesados} | Registros: ${d.totalRegistros} | Omitidos (otro mes): ${d.totalOmitidos || 0}. Descargue el .emc de la lista de generados para revisarlo.`
+    const pegados = (d.resumen || []).reduce((sum, r) => sum + (r.lineasPegadas || 0), 0)
+    conversionResult.value = `Archivos: ${d.archivosProcesados} | Registros: ${d.totalRegistros} | Omitidos (otro mes): ${d.totalOmitidos || 0}.`
+      + avisoPegados(pegados)
+      + ' Descargue el .emc desde "Archivos generados" para revisarlo.'
     resumen.value = d.resumen || []
     await cargarArchivos()
   } catch (err) {
