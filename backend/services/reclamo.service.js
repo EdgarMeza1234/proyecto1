@@ -3,27 +3,34 @@ const { getPool, getSql } = require('../db/pool');
 async function listReclamos({ desde, hasta, limit = 1000, estado, q } = {}) {
   const pool = await getPool();
   const sql = await getSql();
-  // Viaja como texto y SQL lo convierte: un bind sql.Date con cadena reinterpreta
-  // la medianoche UTC en la zona del contenedor y corre el rango un dia entero.
-  const request = pool.request()
-    .input('Desde', sql.VarChar(10), desde)
-    .input('Hasta', sql.VarChar(10), hasta);
+  const request = pool.request();
 
-  const where = [
-    'r.FechaRegistro >= CAST(@Desde AS date)',
-    'r.FechaRegistro < DATEADD(day, 1, CAST(@Hasta AS date))'
-  ];
+  const term = String(q || '').trim();
+  const where = [];
+  // Buscar es prioridad: quien escribe un telefono o un codigo quiere ese registro,
+  // aunque este fuera del rango que muestra la pantalla. El rango solo recorta cuando
+  // no hay busqueda. Viaja como texto y SQL lo convierte, porque un bind sql.Date con
+  // cadena reinterpreta la medianoche UTC en la zona del contenedor y corre un dia.
+  if (!term) {
+    request.input('Desde', sql.VarChar(10), desde)
+      .input('Hasta', sql.VarChar(10), hasta);
+    where.push(
+      'r.FechaRegistro >= CAST(@Desde AS date)',
+      'r.FechaRegistro < DATEADD(day, 1, CAST(@Hasta AS date))'
+    );
+  }
 
   if (estado) {
     request.input('Estado', sql.VarChar(30), String(estado).trim().slice(0, 30));
     where.push('r.Estado = @Estado');
   }
 
-  const term = String(q || '').trim();
   if (term) {
     request.input('Q', sql.VarChar(200), `%${term.slice(0, 200)}%`);
     where.push('(r.CodigoReclamo LIKE @Q OR r.Dn LIKE @Q OR r.NombreCliente LIKE @Q OR r.ReclamoDescripcion LIKE @Q)');
   }
+
+  if (!where.length) where.push('1 = 1');
 
   const safeLimit = Number.isInteger(limit) && limit > 0 ? limit : null;
   const top = safeLimit ? `TOP (${safeLimit})` : '';

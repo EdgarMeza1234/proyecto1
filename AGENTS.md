@@ -111,9 +111,10 @@ Payload JWT: `{ id, username, name, role, roleName, dn }`.
 - Lógica: `views/ReclamosView.vue` (`timeColorClass`, `timePulse`).
 - Estilos: `assets/styles.css` (`@keyframes row-pulse-danger` con `box-shadow: inset` sobre `td`; **no** pintar la fila completa).
 - **Carga por defecto:** solo los últimos 5 días calendario (`desde = hoy - 4`, `hasta = hoy`). El backend aplica el rango en `GET /api/reclamos`; el frontend envía `desde`/`hasta` y muestra inputs `type="date"` con botones **Buscar** y **Últimos 5 días**.
+- **La búsqueda manda sobre el rango:** con `q` de 2 o más caracteres, `listReclamos` **omite el filtro de fechas** y busca en todo el historial (topes: 1000 filas en pantalla, sin tope en la exportación). El rango solo recorta cuando no hay término. El frontend pide la búsqueda al servidor con debounce de 350 ms, avisa que el rango no se aplica, y los botones **Buscar** / **Últimos 5 días** vacían el buscador para volver al rango.
 - **Lista:** máximo 1000 filas en pantalla; la exportación no tiene límite de filas.
-- **Exportación Excel:** botón **Exportar Excel** en la vista; `GET /api/reclamos/exportar?desde=YYYY-MM-DD&hasta=YYYY-MM-DD&estado=&q=` genera `.xlsx` con **ExcelJS**, respetando el rango, el estado y la búsqueda activos.
-- Backend: `services/reclamo.service.js` (`listReclamos({ desde, hasta, limit, estado, q })`); `controllers/reclamos.controller.js` (`getDateRange`, `exportExcel`). Dependencia nueva: `exceljs` (reconstruir el backend al desplegar).
+- **Exportación Excel:** botón **Exportar Excel** en la vista; `GET /api/reclamos/exportar?desde=YYYY-MM-DD&hasta=YYYY-MM-DD&estado=&q=` genera `.xlsx`. Con `q` el archivo se llama `reclamos_busqueda_<termino>.xlsx` (el término se sanea a `A-Za-z0-9._-`) porque el rango no aplicó.
+- Backend: `services/reclamo.service.js` (`listReclamos({ desde, hasta, limit, estado, q })`); `controllers/reclamos.controller.js` (`getDateRange`, `rangoDeBusqueda`, `exportExcel`). Dependencia nueva: `exceljs` (reconstruir el backend al desplegar).
 
 ### 5.2 Suscripciones / Registro 1
 - Separación: **Suscripciones** (`/suscripciones`) solo sube PDFs; **Registro de Trabajo 1** (`/registro1`) procesa formularios pendientes.
@@ -166,8 +167,8 @@ Por eso los `.ama` se **suben desde el navegador** y se materializan en una carp
 ### Reclamos — fechas y exportación
 | Método | Ruta | Permiso | Descripción |
 |---|---|---|---|
-| GET | `/api/reclamos?desde=&hasta=` | autenticado | Lista del rango; sin fechas usa los últimos 5 días (máximo 1000 filas). |
-| GET | `/api/reclamos/exportar?desde=&hasta=&estado=&q=` | autenticado | Descarga `.xlsx` con todo el rango y los filtros indicados. |
+| GET | `/api/reclamos?desde=&hasta=&q=` | autenticado | Lista el rango (máximo 1000 filas); sin fechas usa los últimos 5 días. Con `q` ignora el rango y busca en todo el historial. |
+| GET | `/api/reclamos/exportar?desde=&hasta=&estado=&q=` | autenticado | Descarga `.xlsx` del rango y los filtros indicados; con `q` exporta los encontrados, sin límite de fechas. |
 
 ### Teliskratel — `/api/teliskratel`
 | Método | Ruta | Permiso | Descripción |

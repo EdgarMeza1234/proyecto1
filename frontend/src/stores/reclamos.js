@@ -5,6 +5,9 @@ import { io } from 'socket.io-client'
 
 const SYNC_KEY = 'telefonia-reclamos-sync'
 const TZ = 'America/La_Paz'
+// Con menos de 2 caracteres la busqueda del servidor devuelve demasiado como para
+// que valga la pena salir del rango de fechas.
+const MIN_BUSQUEDA = 2
 let socket = null
 
 function isoDate(date = new Date()) {
@@ -68,6 +71,15 @@ export const useReclamoStore = defineStore('reclamos', () => {
     return { desde: addDaysIso(today, -4), hasta: today }
   })
 
+  // La busqueda manda sobre el rango: mientras hay un termino escrito la lista y el
+  // exportado se piden sin fechas, y los cards pasan a contar lo encontrado.
+  const termino = computed(() => search.value.trim())
+  const buscando = computed(() => termino.value.length >= MIN_BUSQUEDA)
+
+  function filtrosListado() {
+    return buscando.value ? { q: termino.value } : { ...activeRange.value }
+  }
+
   function notifySync() {
     localStorage.setItem(SYNC_KEY, Date.now().toString())
   }
@@ -93,14 +105,13 @@ export const useReclamoStore = defineStore('reclamos', () => {
   }
 
   async function fetchReclamos() {
-    const res = await api.get('/reclamos', { params: activeRange.value })
+    const res = await api.get('/reclamos', { params: filtrosListado() })
     setReclamos(res.data)
   }
 
   async function exportReclamos() {
-    const params = { ...activeRange.value }
+    const params = filtrosListado()
     if (statusFilter.value !== 'Todos') params.estado = statusFilter.value
-    if (search.value.trim()) params.q = search.value.trim()
     return api.get('/reclamos/exportar', { params, responseType: 'blob' })
   }
 
@@ -148,7 +159,7 @@ export const useReclamoStore = defineStore('reclamos', () => {
 
   return {
     reclamos, search, statusFilter, dateFrom, dateTo, selectedId,
-    filteredReclamos, selectedReclamo, stats, activeRange,
+    filteredReclamos, selectedReclamo, stats, activeRange, buscando,
     setReclamos, addReclamo, updateReclamo, resetDateRange,
     fetchReclamos, fetchReclamoDetail, reviewReclamo, exportReclamos,
     startPolling, stopPolling, listenCrossTab, connectSocket

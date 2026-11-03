@@ -60,11 +60,14 @@
     </div>
   </section>
   <p v-if="rangeError" class="range-error">{{ rangeError }}</p>
+  <p v-if="store.buscando" class="range-note">
+    Buscando en todo el historial: el rango de fechas no se aplica. Use Buscar o Ultimos 5 dias para volver al rango.
+  </p>
 
   <section class="grid tickets-layout">
     <div class="panel">
       <div class="panel-head">
-        <h2>{{ store.filteredReclamos.length }} reclamos</h2>
+        <h2>{{ store.filteredReclamos.length }} {{ store.buscando ? 'encontrados' : 'reclamos' }}</h2>
         <button v-if="canCreate" class="primary" @click="showModal = true" style="font-size:21px;padding:8px 24px;min-height:48px">+ Nuevo reclamo</button>
       </div>
       <div class="table-wrap">
@@ -150,7 +153,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useReclamoStore } from '../stores/reclamos'
 import { useAuthStore } from '../stores/auth'
 import { useTicketStore } from '../stores/tickets'
@@ -174,6 +177,14 @@ const hastaInput = ref(store.dateTo)
 const canCreate = computed(() => auth.hasPermission('createReclamo'))
 
 const conTecnico = computed(() => store.reclamos.filter((r) => r.TecnicoAsignado).length)
+
+// La busqueda se resuelve en el servidor sobre todo el historial, asi que hay que
+// pedirla; el filtro local de la tabla solo alcanza para lo que ya esta cargado.
+let searchTimer = null
+watch(() => store.search, () => {
+  clearTimeout(searchTimer)
+  searchTimer = setTimeout(() => { store.fetchReclamos().catch(() => {}) }, 350)
+})
 
 function select(reclamo) {
   store.selectedId = reclamo.IdReclamo
@@ -206,6 +217,9 @@ function validateRange() {
 // de 30 s pidiendo un 400 y la lista congelada sin los reclamos nuevos.
 async function applyDateRange() {
   if (!validateRange()) return
+  // Pedir un rango es salir de la busqueda: si no, el boton daria la sensacion de no
+  // hacer nada mientras haya un termino escrito.
+  store.search = ''
   store.dateFrom = desdeInput.value
   store.dateTo = hastaInput.value
   try {
@@ -217,6 +231,7 @@ async function applyDateRange() {
 
 async function resetDateRange() {
   rangeError.value = ''
+  store.search = ''
   store.resetDateRange()
   desdeInput.value = store.dateFrom
   hastaInput.value = store.dateTo
@@ -228,7 +243,7 @@ async function resetDateRange() {
 }
 
 async function exportExcel() {
-  if (!validateRange()) return
+  if (!store.buscando && !validateRange()) return
   exporting.value = true
   rangeError.value = ''
   store.dateFrom = desdeInput.value
@@ -240,7 +255,10 @@ async function exportExcel() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `reclamos_${store.activeRange.desde}_${store.activeRange.hasta}.xlsx`
+    const sufijo = store.buscando
+      ? `busqueda_${store.search.trim().replace(/[^A-Za-z0-9._-]+/g, '-')}`
+      : `${store.activeRange.desde}_${store.activeRange.hasta}`
+    link.download = `reclamos_${sufijo}.xlsx`
     document.body.appendChild(link)
     link.click()
     link.remove()
@@ -335,6 +353,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  clearTimeout(searchTimer)
   store.stopPolling()
 })
 </script>
@@ -391,6 +410,13 @@ onUnmounted(() => {
 .range-error {
   margin: -8px 0 18px;
   color: var(--danger);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.range-note {
+  margin: -8px 0 18px;
+  color: var(--accent);
   font-size: 13px;
   font-weight: 600;
 }

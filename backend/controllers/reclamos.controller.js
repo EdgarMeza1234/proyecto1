@@ -69,10 +69,17 @@ async function historial(req, res, next) {
   }
 }
 
+function rangoDeBusqueda(query) {
+  const q = String(query.q || '').trim() || undefined;
+  // Con busqueda el rango no se aplica, y tampoco se valida: una fecha a medio escribir
+  // no puede responder 400 a quien solo quiere ver un registro viejo.
+  return { q, ...(q ? {} : getDateRange(query)) };
+}
+
 async function list(req, res, next) {
   try {
-    const { desde, hasta } = getDateRange(req.query);
-    const reclamos = await reclamoService.listReclamos({ desde, hasta, limit: 1000 });
+    const filtros = rangoDeBusqueda(req.query);
+    const reclamos = await reclamoService.listReclamos({ ...filtros, limit: 1000 });
     res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.json(reclamos);
   } catch (error) {
@@ -82,9 +89,8 @@ async function list(req, res, next) {
 
 async function exportExcel(req, res, next) {
   try {
-    const { desde, hasta } = getDateRange(req.query);
+    const { q, desde, hasta } = rangoDeBusqueda(req.query);
     const estado = String(req.query.estado || '').trim() || undefined;
-    const q = String(req.query.q || '').trim() || undefined;
     const reclamos = await reclamoService.listReclamos({ desde, hasta, limit: null, estado, q });
 
     const workbook = new ExcelJS.Workbook();
@@ -131,7 +137,10 @@ async function exportExcel(req, res, next) {
     worksheet.autoFilter = `A1:${lastColumn}${lastRow}`;
 
     const buffer = await workbook.xlsx.writeBuffer();
-    const filename = `reclamos_${desde}_${hasta}.xlsx`;
+    const nombreBusqueda = String(q || '').replace(/[^A-Za-z0-9._-]+/g, '-').slice(0, 40);
+    const filename = nombreBusqueda
+      ? `reclamos_busqueda_${nombreBusqueda}.xlsx`
+      : `reclamos_${desde}_${hasta}.xlsx`;
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
     res.setHeader('Content-Length', buffer.length);
