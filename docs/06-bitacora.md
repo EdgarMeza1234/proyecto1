@@ -155,6 +155,35 @@ no por el parser. En este crudo no hubo ninguna linea con dos registros pegados.
 **`CDROCT2026N` no existe**, o sea que el AMA corrupto nunca llego a la BD: no hay filas que limpiar.
 Cargar el mes desde el modulo usa ya el AMA regenerado.
 
+## 2026-11-03 - Reclamos: la busqueda manda sobre el rango
+
+Reportado: "las fechas estan bien para definir que se muestra y que se exporta, pero cuando busco
+por telefono, nombre o reclamo deberia aparecer el registro encontrado, no importa la fecha".
+
+**Por que no aparecia:** el buscador de `ReclamosView` filtraba en el navegador sobre `store.reclamos`,
+que es solo la ventana cargada (5 dias por defecto), y `GET /api/reclamos` ni siquiera leia `q`: el
+unico lugar donde el termino llegaba al backend era la exportacion, y ahi el rango se le aplicaba
+encima. Un reclamo del 29/10 era invisible desde el 31/10 en adelante.
+
+**Arreglo (`66e380c`):** `listReclamos` arma el `WHERE` segun el caso y omite las dos condiciones de
+fecha cuando hay termino (los binds `@Desde`/`@Hasta` ni se declaran); `rangoDeBusqueda` en el
+controlador decide si aplicar o saltear `getDateRange`, de modo que una fecha mal escrita no devuelva
+400 a quien esta buscando. El frontend pide la busqueda al servidor con debounce de 350 ms, avisa en
+pantalla que el rango no se aplica y titula el panel "N encontrados"; **Buscar** y **Ultimos 5 dias**
+vacan el buscador para volver al rango. Exportar comparte el criterio y el archivo sale como
+`reclamos_busqueda_<termino>.xlsx` (termino saneado a `A-Za-z0-9._-`). La busqueda activa necesita 2
+caracteres o mas, para que una letra suelta no devuelva la tabla entera.
+
+**Medido contra la BD de produccion** con este codigo: ventana `2026-10-30..2026-11-03` = 3 reclamos;
+buscar `RC-2026` sin fechas = 50, de los cuales 47 quedan fuera de la ventana; `RC-2026-0047` (del 29/10)
+aparece buscando por codigo, por su DN y por las 4 primeras letras del nombre. Sin `q` el rango sigue
+recortando y una fecha invalida sigue rechazandose como antes.
+
+**No verificado:** el click-through en el navegador. La pantalla de login rechazo las credenciales que
+estan en el historial del repo ("Usuario o contrasena incorrectos"), asi que quedo probado a nivel de
+servicio/controlador y en que el bundle desplegado lleva la vista nueva, pero falta que un usuario con
+sesion busque un reclamo viejo y lo vea aparecer.
+
 ## Pendientes abiertos
 
 - Pendiente el desfase de 4 h en las horas mostradas (el backend en UTC y la BD en hora boliviana).
